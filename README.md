@@ -6,5 +6,5 @@ Permite o acolhimento dos diversos elementos que caracterizam um livro de banda 
 ## Authors
 
 * **Catarina Gil:** [Catarinacg16](https://github.com/Catarinacg16)
-* **Gonçalo Ferreira:** [...](https://github.com/)
+* **Gonçalo Ferreira:** [TheCanT](https://github.com/TheCanT)
 * **João Nuno Abreu:** [JoaoNunoAbreu](https://github.com/JoaoNunoAbreu)
