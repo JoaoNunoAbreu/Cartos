@@ -1,0 +1,17 @@
+{"_id":"Artigo","desc":"Descrição de um artigo. Usualmente é uma secção do tombo.","wac":"\u003car","tag":"artigo","exemplo":"\u003cartigo\u003e\u003c/artigo\u003e","procura":true}
+{"_id":"Comarca","desc":"Identificação uma comarca.","wac":"\u003ccm","tag":"comarca","exemplo":"\u003ccomarca\u003e\u003c/comarca\u003e","procura":true}
+{"_id":"Couto","desc":"Identificação de um couto.","wac":"\u003cct","tag":"couto","exemplo":"\u003ccouto\u003e\u003c/couto\u003e","procura":true}
+{"_id":"Câmara","desc":"Identificação de uma câmara.","wac":"\u003cca","tag":"camara","exemplo":"\u003ccamara\u003e\u003c/camara\u003e","procura":true}
+{"_id":"Duvida","desc":"Identificação de uma dúvida.","wac":"\u003cdu","tag":"duvida","exemplo":"\u003cduvida\u003e[...]\u003c/duvida\u003e","procura":true}
+{"_id":"Folio","desc":"Identificação de um fólio, uma página do manuscrito.","wac":"\u003cfo ","tag":"folio","exemplo":"\u003cfolio\u003e345\u003c/folio\u003e","procura":true}
+{"_id":"Freguesia","desc":"Identificação de uma freguesia.","wac":"\u003cfr","tag":"freguesia","exemplo":"\u003cfreguesia\u003e\u003c/freguesia\u003e","procura":true}
+{"_id":"Item","desc":"Identificação de um item.","wac":"\u003cit ","tag":"item ","exemplo":"\u003citem\u003e\u003c/item\u003e","procura":true}
+{"_id":"Local","desc":"Identificação de um local.","wac":"\u003clo","tag":"local","exemplo":"\u003clocal\u003e\u003c/local\u003e","procura":true}
+{"_id":"Lugar","desc":"Identificação de um lugar.","wac":"\u003clu","tag":"lugar","exemplo":"\u003clugar\u003e\u003c/lugar\u003e","procura":true}
+{"_id":"Nome","desc":"Identificação de um nome.","wac":"\u003cno","tag":"nome","exemplo":"\u003cnome\u003e\u003c/nome\u003e","procura":true}
+{"_id":"Nova Linha","desc":"Mudança de Linha.","wac":"\u003cnl","tag":"nl","exemplo":"\u003cnl\u003e","procura":true}
+{"_id":"Profissão","desc":"Identificação de uma profissão.","wac":"\u003cpr","tag":"profissao","exemplo":"\u003cprofissao\u003e\u003c/profissao\u003e","procura":true}
+{"_id":"Propriedade","desc":"Identificação de uma propriedade.","wac":"\u003cpr","tag":"propriedade","exemplo":"\u003cpropriedade\u003e\u003c/propriedade\u003e","procura":true}
+{"_id":"Registo","desc":"Identificação de um registo.","wac":"\u003cre","tag":"registo","exemplo":"\u003cregisto\u003e\u003c/registo\u003e","procura":true}
+{"_id":"Reino","desc":"Identificação de um reino.","wac":"\u003cri","tag":"reino","exemplo":"\u003creino\u003e\u003c/reino\u003e","procura":true}
+{"_id":"Título","desc":"Identificação de um título.","wac":"\u003cti","tag":"titulo","exemplo":"\u003ctitulo\u003e\u003c/titulo\u003e","procura":true}

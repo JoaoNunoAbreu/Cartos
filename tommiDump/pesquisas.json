@@ -1,0 +1,60 @@
+{"_id":{"$oid":"5f135bb34f721dadc65bb6b4"},"pesquisa":"Braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-18","hora":"21:29"}
+{"_id":{"$oid":"5f136220eca2aeafb26a0a9a"},"pesquisa":"a","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-18","hora":"21:57"}
+{"_id":{"$oid":"5f1480ccc6a5dd156252b6f5"},"pesquisa":"Braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-19","hora":"18:20"}
+{"_id":{"$oid":"5f14819dc6a5dd156252b6fb"},"pesquisa":"o","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-19","hora":"18:23"}
+{"_id":{"$oid":"5f14827dc6a5dd156252b704"},"pesquisa":"Braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-19","hora":"18:27"}
+{"_id":{"$oid":"5f148339c6a5dd156252b707"},"pesquisa":"Braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-19","hora":"18:30"}
+{"_id":{"$oid":"5f149c28c6a5dd156252b718"},"pesquisa":"Braga Lecenciado","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-19","hora":"20:16"}
+{"_id":{"$oid":"5f149c52c6a5dd156252b719"},"pesquisa":"Braga Lecenciado","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-19","hora":"20:17"}
+{"_id":{"$oid":"5f149c6bc6a5dd156252b71a"},"pesquisa":"Braga Lecenciado","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-19","hora":"20:18"}
+{"_id":{"$oid":"5f149d4bc6a5dd156252b71b"},"pesquisa":"Braga -Lecenciado","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-19","hora":"20:21"}
+{"_id":{"$oid":"5f149d57c6a5dd156252b71c"},"pesquisa":"\"Braga Primas despanha\"","folio":"Todos","versao":"todas","resultado":"linha","data":"2020-7-19","hora":"20:21"}
+{"_id":{"$oid":"5f149dadc6a5dd156252b71d"},"pesquisa":"Braga -Lecenciado","folio":"Todos","versao":"todas","resultado":"linha","data":"2020-7-19","hora":"20:23"}
+{"_id":{"$oid":"5f149dc9c6a5dd156252b71e"},"pesquisa":"Braga","folio":"Todos","versao":"todas","resultado":"npalavras","data":"2020-7-19","hora":"20:23"}
+{"_id":{"$oid":"5f149de4c6a5dd156252b71f"},"pesquisa":"Braga","folio":"Todos","versao":"interpretativa","resultado":"periodo","data":"2020-7-19","hora":"20:24"}
+{"_id":{"$oid":"5f149debc6a5dd156252b720"},"pesquisa":"Braga -Lecenciado","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-19","hora":"20:24"}
+{"_id":{"$oid":"5f149df4c6a5dd156252b721"},"pesquisa":"Braga -Lecenciado","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-19","hora":"20:24"}
+{"_id":{"$oid":"5f14cacdc6a5dd156252b856"},"pesquisa":"Ambios ","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-19","hora":"23:35"}
+{"_id":{"$oid":"5f14ccb9c6a5dd156252b86f"},"pesquisa":"Antonio","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-19","hora":"23:44"}
+{"_id":{"$oid":"5f15cd254d994df512c529f4"},"pesquisa":"--","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-20","hora":"17:58"}
+{"_id":{"$oid":"5f15cd324d994df512c529f5"},"pesquisa":"--asd","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-20","hora":"17:58"}
+{"_id":{"$oid":"5f15cd6b4d994df512c529fa"},"pesquisa":"--aa","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-20","hora":"17:59"}
+{"_id":{"$oid":"5f15cd814d994df512c529ff"},"pesquisa":"--aa","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-20","hora":"17:59"}
+{"_id":{"$oid":"5f15cd924d994df512c52a02"},"pesquisa":"--bb","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-20","hora":"18:0"}
+{"_id":{"$oid":"5f15d4efc77a1ad56e7cab53"},"pesquisa":"--asdasfad","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-20","hora":"18:31"}
+{"_id":{"$oid":"5f170210b75db2e816fc81d7"},"pesquisa":"\"Religiosos da Ordem de São Bento\"","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-21","hora":"15:56"}
+{"_id":{"$oid":"5f170229b75db2e816fc81d8"},"pesquisa":"a","folio":"TM-F0026v","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-21","hora":"15:56"}
+{"_id":{"$oid":"5f1753beb75db2e816fc8213"},"pesquisa":"Antonio","folio":"TM-F0026v","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-21","hora":"21:44"}
+{"_id":{"$oid":"5f1780b6b75db2e816fc8227"},"pesquisa":"braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"0:56"}
+{"_id":{"$oid":"5f1780c1b75db2e816fc8228"},"pesquisa":"a","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"0:56"}
+{"_id":{"$oid":"5f1780dbb75db2e816fc8229"},"pesquisa":"Bouça da Retorta","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"0:57"}
+{"_id":{"$oid":"5f1780eab75db2e816fc822a"},"pesquisa":"Bouça da Retorta","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"0:57"}
+{"_id":{"$oid":"5f1780feb75db2e816fc822b"},"pesquisa":"'Bouça da Retorta'","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"0:57"}
+{"_id":{"$oid":"5f178121b75db2e816fc822c"},"pesquisa":"\"Bouça da Retorta\"","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"0:58"}
+{"_id":{"$oid":"5f1814385354248128656018"},"pesquisa":"asdsad","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"11:26"}
+{"_id":{"$oid":"5f18143c5354248128656019"},"pesquisa":"a","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"11:26"}
+{"_id":{"$oid":"5f1830da535424812865609a"},"pesquisa":"Braga -Lecenciado","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"13:28"}
+{"_id":{"$oid":"5f189c4e3c59ce20d14c1291"},"pesquisa":"Braga -Lecenciado","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-22","hora":"21:6"}
+{"_id":{"$oid":"5f18cb323c59ce20d14c1292"},"pesquisa":"\"Religiosos da Ordem de São Bento\"","folio":"TM-F0026v","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-23","hora":"0:26"}
+{"_id":{"$oid":"5f18cb3e3c59ce20d14c1293"},"pesquisa":"a","folio":"TM-F0026v","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-23","hora":"0:26"}
+{"_id":{"$oid":"5f18cb453c59ce20d14c1294"},"pesquisa":"a","folio":"TM-F0026v","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-23","hora":"0:27"}
+{"_id":{"$oid":"5f18cb513c59ce20d14c1295"},"pesquisa":"Ambios ","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-23","hora":"0:27"}
+{"_id":{"$oid":"5f1f22f94e242633b291b25d"},"pesquisa":"Braga","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-27","hora":"19:54"}
+{"_id":{"$oid":"5f1f23004e242633b291b25e"},"pesquisa":"a","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-27","hora":"19:54"}
+{"_id":{"$oid":"5f1f23084e242633b291b25f"},"pesquisa":"a","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-27","hora":"19:55"}
+{"_id":{"$oid":"5f1f23104e242633b291b260"},"pesquisa":"\"Religiosos da Ordem de São Bento\"","folio":"Todos","versao":"semi-diplomatica","resultado":"periodo","data":"2020-7-27","hora":"19:55"}
+{"_id":{"$oid":"5f1f231b4e242633b291b261"},"pesquisa":"a","folio":"Todos","versao":"semidiplomática","resultado":"periodo","data":"2020-7-27","hora":"19:55"}
+{"_id":{"$oid":"5f1f23254e242633b291b262"},"pesquisa":"Braga","folio":"Todos","versao":"semidiplomática","resultado":"periodo","data":"2020-7-27","hora":"19:55"}
+{"_id":{"$oid":"5f1f234f4e242633b291b263"},"pesquisa":"Braga","folio":"Todos","versao":"semidiplomática","resultado":"periodo","data":"2020-7-27","hora":"19:56"}
+{"_id":{"$oid":"5f2465924e242633b291b2a7"},"pesquisa":"braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-31","hora":"19:40"}
+{"_id":{"$oid":"5f2465984e242633b291b2a8"},"pesquisa":"Braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-7-31","hora":"19:40"}
+{"_id":{"$oid":"5f664d8519a293ca4838dc3f"},"pesquisa":"braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-9-19","hora":"19:27"}
+{"_id":{"$oid":"5f664d8e19a293ca4838dc40"},"pesquisa":"a","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-9-19","hora":"19:27"}
+{"_id":{"$oid":"5f664d9c19a293ca4838dc41"},"pesquisa":"Braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-9-19","hora":"19:27"}
+{"_id":{"$oid":"5f886b6319a293ca4838dc9d"},"pesquisa":"braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-10-15","hora":"16:31"}
+{"_id":{"$oid":"5f886b6919a293ca4838dc9e"},"pesquisa":"a","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-10-15","hora":"16:31"}
+{"_id":{"$oid":"5f886b7219a293ca4838dc9f"},"pesquisa":"braga","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-10-15","hora":"16:32"}
+{"_id":{"$oid":"5f886b8119a293ca4838dca0"},"pesquisa":"a","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-10-15","hora":"16:32"}
+{"_id":{"$oid":"5f886b9219a293ca4838dca1"},"pesquisa":"Juizes","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-10-15","hora":"16:32"}
+{"_id":{"$oid":"5f886bc819a293ca4838dca2"},"pesquisa":"bispo","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-10-15","hora":"16:33"}
+{"_id":{"$oid":"5f886beb19a293ca4838dca3"},"pesquisa":"Gaspar","folio":"Todos","versao":"todas","resultado":"periodo","data":"2020-10-15","hora":"16:34"}

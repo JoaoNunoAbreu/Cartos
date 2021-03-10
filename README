@@ -1,0 +1,18 @@
+################# README #####################
+###############################################################
+
+QUANDO O FLASK TIVER DE SER REINICIADO
+(na diretoria /var/www/LEI/tommi-master)
+
+1-> killall flask
+
+2-> export FLASK_APP=tommi.py ; nohup flask run >logs/accesslog.txt 2>logs/errorlog.txt </dev/null &
+
+###############################################################
+
+QUANDO HOUVER ATUALIZAÇÕES DA INTERFACE
+(na diretoria /var/www/LEI/tommi-interface)
+
+1-> verificar que o js não possui console.log() ou que estão comentados
+
+2-> npm run build

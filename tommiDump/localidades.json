@@ -1,0 +1,743 @@
+{"_id":1,"nome":"Casas","latitude":37.29185,"longitude":-8.16475,"nFolios":4,"folios":["222.txt","1.txt","222.txt","1.txt"],"remover":false}
+{"_id":2,"nome":"Casas","latitude":41.78727,"longitude":-7.33081,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":3,"nome":"Populo","latitude":41.37403,"longitude":-7.50302,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":4,"nome":"Populo","latitude":37.75,"longitude":-25.6,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":5,"nome":"Mesa","latitude":40.64436,"longitude":-8.46503,"nFolios":5,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt","TM-F0159.txt"]}
+{"_id":6,"nome":"Campo","latitude":39.43727,"longitude":-9.15197,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":7,"nome":"Campo","latitude":41.73755,"longitude":-7.44513,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":8,"nome":"Campo","latitude":41.6992,"longitude":-8.32971,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":9,"nome":"Campo","latitude":41.59108,"longitude":-8.61162,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":10,"nome":"Campo","latitude":41.54094,"longitude":-8.28421,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":11,"nome":"Campo","latitude":41.46151,"longitude":-7.5874,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":12,"nome":"Campo","latitude":41.3617,"longitude":-8.36128,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":13,"nome":"Campo","latitude":41.18516,"longitude":-8.46493,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":14,"nome":"Campo","latitude":40.71086,"longitude":-7.91445,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":15,"nome":"Campo","latitude":41.59134,"longitude":-8.61183,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":16,"nome":"Campo","latitude":38.30971,"longitude":-7.48709,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":17,"nome":"Campo","latitude":41.17043,"longitude":-8.46323,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":18,"nome":"Campo","latitude":40.70508,"longitude":-7.92838,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":19,"nome":"Assento","latitude":41.48379,"longitude":-8.2594,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":20,"nome":"Assento","latitude":41.25596,"longitude":-7.77069,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":21,"nome":"Assento","latitude":41.16783,"longitude":-8.34555,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":22,"nome":"Mosteiro","latitude":39.93767,"longitude":-8.18527,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":23,"nome":"Mosteiro","latitude":39.89529,"longitude":-7.96316,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":24,"nome":"Mosteiro","latitude":39.85392,"longitude":-8.18059,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":25,"nome":"Mosteiro","latitude":38.95,"longitude":-9.03333,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":26,"nome":"Mosteiro","latitude":37.79179,"longitude":-7.72603,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":27,"nome":"Mosteiro","latitude":41.78947,"longitude":-7.24451,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":28,"nome":"Mosteiro","latitude":41.61852,"longitude":-8.13591,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":29,"nome":"Mosteiro","latitude":41.61849,"longitude":-7.15883,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":30,"nome":"Mosteiro","latitude":41.26484,"longitude":-8.03259,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":31,"nome":"Mosteiro","latitude":40.89337,"longitude":-7.92419,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":32,"nome":"Mosteiro","latitude":40.8182,"longitude":-8.4219,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":33,"nome":"Mosteiro","latitude":40.7247,"longitude":-7.49458,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":34,"nome":"Mosteiro","latitude":41.60492,"longitude":-8.12949,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":35,"nome":"Mosteiro","latitude":39.89377,"longitude":-7.9785,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":36,"nome":"Mosteiro","latitude":39.4147,"longitude":-31.24415,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":37,"nome":"Mosteiro","latitude":39.41312,"longitude":-31.25095,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":38,"nome":"Cerca","latitude":39.11475,"longitude":-9.35838,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":39,"nome":"Cerca","latitude":37.83063,"longitude":-7.88595,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":40,"nome":"Cerca","latitude":41.48961,"longitude":-8.28028,"nFolios":4,"remover":false,"folios":["222.txt","1.txt","222.txt","1.txt"]}
+{"_id":41,"nome":"Norte","latitude":37.0,"longitude":-25.08333,"nFolios":8,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt","TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":42,"nome":"Rua","latitude":41.67066,"longitude":-8.50465,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":43,"nome":"Rua","latitude":41.567,"longitude":-8.49395,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":44,"nome":"Rua","latitude":40.94722,"longitude":-7.57548,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":45,"nome":"Rua","latitude":40.94369,"longitude":-7.57193,"nFolios":6,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt"]}
+{"_id":46,"nome":"Cidade","latitude":39.46108,"longitude":-9.19255,"nFolios":7,"remover":false,"folios":["222.txt","1.txt","teste.txt","222.txt","1.txt","teste.txt","TM-F0159.txt"]}
+{"_id":47,"nome":"Ordem","latitude":41.28458,"longitude":-8.30891,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":48,"nome":"Ordem","latitude":40.9356,"longitude":-8.61249,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":49,"nome":"Ordem","latitude":40.03667,"longitude":-8.46168,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":50,"nome":"Ordem","latitude":41.29455,"longitude":-8.29553,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":51,"nome":"São Bento","latitude":39.52765,"longitude":-8.79044,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":52,"nome":"São Bento","latitude":42.07273,"longitude":-8.43861,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":53,"nome":"São Bento","latitude":41.52715,"longitude":-8.29669,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":54,"nome":"São Bento","latitude":38.8,"longitude":-27.3,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":55,"nome":"São Bento","latitude":42.04684,"longitude":-8.16241,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":56,"nome":"São Bento","latitude":39.51778,"longitude":-8.77317,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":57,"nome":"São Bento","latitude":38.68081,"longitude":-27.19555,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":58,"nome":"Pedra","latitude":39.05856,"longitude":-9.34535,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":59,"nome":"Pedra","latitude":42.06095,"longitude":-8.45199,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":60,"nome":"Sardinha","latitude":40.79676,"longitude":-8.57128,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":61,"nome":"Sousa","latitude":38.60522,"longitude":-8.09404,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":62,"nome":"Sousa","latitude":41.34494,"longitude":-8.2496,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":63,"nome":"Sousa","latitude":41.34842,"longitude":-8.24792,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":64,"nome":"Souto","latitude":39.57559,"longitude":-8.23445,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":65,"nome":"Souto","latitude":42.10359,"longitude":-8.29309,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":66,"nome":"Souto","latitude":42.05533,"longitude":-8.52225,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":67,"nome":"Souto","latitude":42.03923,"longitude":-8.49674,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":68,"nome":"Souto","latitude":41.86667,"longitude":-8.26667,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":69,"nome":"Souto","latitude":41.85519,"longitude":-8.84467,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":70,"nome":"Souto","latitude":41.81631,"longitude":-8.44618,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":71,"nome":"Souto","latitude":41.77537,"longitude":-8.62601,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":72,"nome":"Souto","latitude":41.69389,"longitude":-8.34321,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":73,"nome":"Souto","latitude":41.49943,"longitude":-8.29593,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":74,"nome":"Souto","latitude":41.51008,"longitude":-8.28745,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":75,"nome":"Souto","latitude":41.42506,"longitude":-8.59093,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":76,"nome":"Souto","latitude":41.1,"longitude":-8.53333,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":77,"nome":"Souto","latitude":41.03333,"longitude":-8.71667,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":78,"nome":"Souto","latitude":41.01793,"longitude":-7.354,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":79,"nome":"Souto","latitude":40.98675,"longitude":-8.6223,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":80,"nome":"Souto","latitude":40.88976,"longitude":-8.55145,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":81,"nome":"Souto","latitude":40.86378,"longitude":-7.95819,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":82,"nome":"Souto","latitude":40.76711,"longitude":-8.47522,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":83,"nome":"Souto","latitude":40.56451,"longitude":-8.25615,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":84,"nome":"Souto","latitude":40.89426,"longitude":-8.56044,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":85,"nome":"Souto","latitude":41.69088,"longitude":-8.34383,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":86,"nome":"Souto","latitude":40.34662,"longitude":-6.94371,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":87,"nome":"Souto","latitude":39.56614,"longitude":-8.23998,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":88,"nome":"Souto","latitude":41.81736,"longitude":-8.44265,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":89,"nome":"Souto","latitude":41.03195,"longitude":-7.36059,"nFolios":3,"remover":false,"folios":["1.txt","1.txt","TM-F0159v.txt"]}
+{"_id":90,"nome":"Cunha","latitude":41.88992,"longitude":-8.59388,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":91,"nome":"Cunha","latitude":41.76957,"longitude":-8.41797,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":92,"nome":"Cunha","latitude":41.49061,"longitude":-8.5107,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":93,"nome":"Cunha","latitude":41.03333,"longitude":-8.2,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":94,"nome":"Cunha","latitude":40.83835,"longitude":-7.44899,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":95,"nome":"Cunha","latitude":41.49811,"longitude":-8.51356,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":96,"nome":"Cunha","latitude":41.87859,"longitude":-8.58344,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":97,"nome":"Cunha","latitude":40.84227,"longitude":-7.45144,"nFolios":4,"remover":false,"folios":["1.txt","teste.txt","1.txt","teste.txt"]}
+{"_id":98,"nome":"Barros","latitude":41.71821,"longitude":-8.39752,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":99,"nome":"Barros","latitude":41.56303,"longitude":-8.39034,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":100,"nome":"Barros","latitude":41.45336,"longitude":-8.75232,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":101,"nome":"Barros","latitude":41.7255,"longitude":-8.40174,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":102,"nome":"Nora","latitude":37.55818,"longitude":-8.47941,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":103,"nome":"Nora","latitude":37.24411,"longitude":-7.58208,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":104,"nome":"Nora","latitude":37.22751,"longitude":-8.33536,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":105,"nome":"Nora","latitude":37.17301,"longitude":-7.56547,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":106,"nome":"Vermoim","latitude":41.41773,"longitude":-8.44241,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":107,"nome":"Vermoim","latitude":41.24315,"longitude":-8.60651,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":108,"nome":"Vermoim","latitude":41.42195,"longitude":-8.45022,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":109,"nome":"Vermoim","latitude":41.23795,"longitude":-8.60832,"nFolios":2,"remover":false,"folios":["1.txt","1.txt"]}
+{"_id":110,"nome":"Ver","latitude":40.94927,"longitude":-8.39508,"nFolios":2,"remover":false,"folios":["Idk.txt","Idk.txt"]}
+{"_id":111,"nome":"Golegã","latitude":39.40474,"longitude":-8.48625,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":112,"nome":"Golegã","latitude":39.38683,"longitude":-8.50591,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":113,"nome":"Golegã","latitude":39.41183,"longitude":-8.47843,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":114,"nome":"Seara","latitude":41.73421,"longitude":-8.6174,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":115,"nome":"Seara","latitude":41.70926,"longitude":-8.24464,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":116,"nome":"Seara","latitude":41.60733,"longitude":-7.87503,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":117,"nome":"Seara","latitude":41.18183,"longitude":-7.80031,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":118,"nome":"Seara","latitude":37.86667,"longitude":-25.8,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":119,"nome":"Seara","latitude":37.875,"longitude":-25.80694,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":120,"nome":"Seara","latitude":42.0222,"longitude":-8.12315,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":121,"nome":"Seara","latitude":41.73351,"longitude":-8.61296,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":122,"nome":"Brasil","latitude":36.95,"longitude":-25.13333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":123,"nome":"França","latitude":41.90242,"longitude":-6.73606,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":124,"nome":"França","latitude":41.94034,"longitude":-6.75378,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":125,"nome":"Chão","latitude":41.84742,"longitude":-8.80593,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":126,"nome":"Chão","latitude":41.48412,"longitude":-8.42052,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":127,"nome":"Memorial","latitude":41.09137,"longitude":-8.24571,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":128,"nome":"Reis","latitude":39.97995,"longitude":-8.6516,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":129,"nome":"Além","latitude":38.96726,"longitude":-9.12295,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":130,"nome":"Além","latitude":38.81811,"longitude":-9.2219,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":131,"nome":"Além","latitude":37.08214,"longitude":-7.98899,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":132,"nome":"Além","latitude":41.83149,"longitude":-8.66172,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":133,"nome":"Além","latitude":41.50789,"longitude":-8.41968,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":134,"nome":"Além","latitude":41.46528,"longitude":-8.34655,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":135,"nome":"Além","latitude":38.68333,"longitude":-27.25,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":136,"nome":"Portugal","latitude":39.07088,"longitude":-8.22931,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":137,"nome":"Roma","latitude":38.74626,"longitude":-9.14058,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":138,"nome":"Praça","latitude":41.41667,"longitude":-8.66667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":139,"nome":"Praça","latitude":38.63333,"longitude":-28.7,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":140,"nome":"Mafra","latitude":38.8988,"longitude":-9.29423,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":141,"nome":"Mafra","latitude":38.93793,"longitude":-9.32756,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":142,"nome":"Mafra","latitude":38.94107,"longitude":-9.32636,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":143,"nome":"Mafra","latitude":38.96432,"longitude":-9.32825,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":144,"nome":"Unhão","latitude":41.31622,"longitude":-8.23316,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":145,"nome":"Unhão","latitude":41.31666,"longitude":-8.23562,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":146,"nome":"Conceição","latitude":38.73333,"longitude":-9.31667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":147,"nome":"Conceição","latitude":37.77579,"longitude":-8.2418,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":148,"nome":"Conceição","latitude":37.15055,"longitude":-7.60539,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":149,"nome":"Conceição","latitude":37.06472,"longitude":-7.91703,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":150,"nome":"Conceição","latitude":41.68333,"longitude":-8.73333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":151,"nome":"Conceição","latitude":38.53333,"longitude":-28.63333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":152,"nome":"Conceição","latitude":37.85,"longitude":-25.16667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":153,"nome":"Conceição","latitude":37.77668,"longitude":-8.23702,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":154,"nome":"Conceição","latitude":37.05963,"longitude":-7.91649,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":155,"nome":"Conceição","latitude":37.20485,"longitude":-7.60145,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":156,"nome":"Cardais","latitude":39.44808,"longitude":-8.58878,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":157,"nome":"Cardais","latitude":41.05217,"longitude":-7.63156,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":158,"nome":"Roque","latitude":40.6766,"longitude":-7.13016,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":159,"nome":"Santo Aleixo","latitude":39.91191,"longitude":-8.821,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":160,"nome":"Santo Aleixo","latitude":39.5278,"longitude":-7.8457,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":161,"nome":"Santo Aleixo","latitude":38.92096,"longitude":-7.41878,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":162,"nome":"Santo Aleixo","latitude":38.66667,"longitude":-8.3,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":163,"nome":"Santo Aleixo","latitude":38.06863,"longitude":-7.14965,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":164,"nome":"Santo Aleixo","latitude":41.13938,"longitude":-7.57209,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":165,"nome":"Santo Aleixo","latitude":41.08481,"longitude":-7.77003,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":166,"nome":"Santo Aleixo","latitude":38.91786,"longitude":-7.41043,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":167,"nome":"Terreiro","latitude":41.66205,"longitude":-8.27242,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":168,"nome":"Paço","latitude":39.98763,"longitude":-8.68368,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":169,"nome":"Paço","latitude":39.90555,"longitude":-8.82973,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":170,"nome":"Paço","latitude":39.55802,"longitude":-8.50417,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":171,"nome":"Paço","latitude":39.2981,"longitude":-9.28536,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":172,"nome":"Paço","latitude":39.0,"longitude":-9.11667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":173,"nome":"Paço","latitude":42.00982,"longitude":-8.60877,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":174,"nome":"Paço","latitude":42.01287,"longitude":-8.53719,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":175,"nome":"Paço","latitude":41.87053,"longitude":-6.9506,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":176,"nome":"Paço","latitude":41.792,"longitude":-8.46365,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":177,"nome":"Paço","latitude":41.75495,"longitude":-8.86019,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":178,"nome":"Paço","latitude":41.66845,"longitude":-8.70974,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":179,"nome":"Paço","latitude":41.56667,"longitude":-8.61667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":180,"nome":"Paço","latitude":41.55711,"longitude":-8.50667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":181,"nome":"Paço","latitude":41.31471,"longitude":-6.64061,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":182,"nome":"Paço","latitude":41.2,"longitude":-8.58333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":183,"nome":"Paço","latitude":41.16875,"longitude":-8.5335,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":184,"nome":"Paço","latitude":41.17691,"longitude":-7.83013,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":185,"nome":"Paço","latitude":40.91425,"longitude":-8.3094,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":186,"nome":"Paço","latitude":40.67641,"longitude":-8.62847,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":187,"nome":"Paço","latitude":40.62117,"longitude":-8.43492,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":188,"nome":"Paço","latitude":40.33001,"longitude":-8.39591,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":189,"nome":"Paço","latitude":39.55288,"longitude":-8.49866,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":190,"nome":"Santa","latitude":41.91749,"longitude":-8.55581,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":191,"nome":"Santa","latitude":41.61243,"longitude":-8.73585,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":192,"nome":"Madalena","latitude":39.57133,"longitude":-8.44635,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":193,"nome":"Madalena","latitude":39.33333,"longitude":-7.51667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":194,"nome":"Madalena","latitude":41.26814,"longitude":-8.07267,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":195,"nome":"Madalena","latitude":41.21616,"longitude":-8.33451,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":196,"nome":"Madalena","latitude":41.10166,"longitude":-8.64761,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":197,"nome":"Madalena","latitude":40.8527,"longitude":-7.14099,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":198,"nome":"Madalena","latitude":38.53642,"longitude":-28.5266,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":199,"nome":"Madalena","latitude":38.53559,"longitude":-28.52343,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":200,"nome":"Madalena","latitude":38.70869,"longitude":-9.1345,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":201,"nome":"Madalena","latitude":41.26991,"longitude":-8.06753,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":202,"nome":"Madalena","latitude":41.21665,"longitude":-8.3356,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":203,"nome":"Madalena","latitude":41.1072,"longitude":-8.64657,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":204,"nome":"Madalena","latitude":39.57222,"longitude":-8.43412,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":205,"nome":"Madalena","latitude":38.51239,"longitude":-28.4694,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":206,"nome":"Madalena","latitude":41.73583,"longitude":-7.45501,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":207,"nome":"Guimarães","latitude":39.11238,"longitude":-9.36701,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":208,"nome":"Guimarães","latitude":41.44443,"longitude":-8.29619,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":209,"nome":"Guimarães","latitude":41.05307,"longitude":-8.57536,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":210,"nome":"Guimarães","latitude":40.70011,"longitude":-7.80644,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":211,"nome":"Guimarães","latitude":41.44384,"longitude":-8.28918,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":212,"nome":"Santo António","latitude":38.83333,"longitude":-7.58333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":213,"nome":"Santo António","latitude":32.65,"longitude":-16.93333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":214,"nome":"Santo António","latitude":41.75,"longitude":-7.18333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":215,"nome":"Santo António","latitude":41.64956,"longitude":-8.54373,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":216,"nome":"Santo António","latitude":41.53774,"longitude":-7.98732,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":217,"nome":"Santo António","latitude":41.51248,"longitude":-8.22614,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":218,"nome":"Santo António","latitude":41.4963,"longitude":-8.43886,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":219,"nome":"Santo António","latitude":41.03003,"longitude":-7.29937,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":220,"nome":"Santo António","latitude":40.96005,"longitude":-8.58544,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":221,"nome":"Santo António","latitude":40.69674,"longitude":-8.45705,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":222,"nome":"Santo António","latitude":38.73333,"longitude":-27.11667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":223,"nome":"Santo António","latitude":38.68333,"longitude":-28.1,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":224,"nome":"Santo António","latitude":38.68333,"longitude":-27.06667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":225,"nome":"Santo António","latitude":38.53601,"longitude":-28.34084,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":226,"nome":"Santo António","latitude":37.85,"longitude":-25.7,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":227,"nome":"Santo António","latitude":37.75,"longitude":-25.28333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":228,"nome":"Santo António","latitude":37.73333,"longitude":-25.56667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":229,"nome":"Santo António","latitude":37.85134,"longitude":-25.72835,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":230,"nome":"Santo António","latitude":38.5111,"longitude":-28.36185,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":231,"nome":"Santo António","latitude":32.69185,"longitude":-16.94563,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":232,"nome":"Xabregas","latitude":38.7285,"longitude":-9.10996,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":233,"nome":"Cotovia","latitude":38.47232,"longitude":-9.10112,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":234,"nome":"Bairro","latitude":39.57718,"longitude":-8.59209,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":235,"nome":"Bairro","latitude":39.38668,"longitude":-9.15599,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":236,"nome":"Bairro","latitude":39.13333,"longitude":-8.9,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":237,"nome":"Bairro","latitude":39.11356,"longitude":-9.02011,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":238,"nome":"Bairro","latitude":41.63264,"longitude":-8.31099,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":239,"nome":"Bairro","latitude":41.37514,"longitude":-8.42479,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":240,"nome":"Bairro","latitude":41.07714,"longitude":-8.31911,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":241,"nome":"Bairro","latitude":41.37309,"longitude":-8.42657,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":242,"nome":"Porta","latitude":39.84037,"longitude":-8.40118,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":243,"nome":"Porta","latitude":42.12807,"longitude":-8.19994,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":244,"nome":"Santa Cruz","latitude":39.13419,"longitude":-9.38066,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":245,"nome":"Santa Cruz","latitude":38.88291,"longitude":-9.10849,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":246,"nome":"Santa Cruz","latitude":38.81424,"longitude":-9.29969,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":247,"nome":"Santa Cruz","latitude":38.05413,"longitude":-8.70897,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":248,"nome":"Santa Cruz","latitude":37.44075,"longitude":-7.91827,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":249,"nome":"Santa Cruz","latitude":32.68333,"longitude":-16.8,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":250,"nome":"Santa Cruz","latitude":41.89916,"longitude":-6.95054,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":251,"nome":"Santa Cruz","latitude":41.86667,"longitude":-8.8,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":252,"nome":"Santa Cruz","latitude":41.78333,"longitude":-7.23333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":253,"nome":"Santa Cruz","latitude":41.75623,"longitude":-7.46486,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":254,"nome":"Santa Cruz","latitude":41.50304,"longitude":-8.61997,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":255,"nome":"Santa Cruz","latitude":40.84575,"longitude":-8.36236,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":256,"nome":"Santa Cruz","latitude":41.0643,"longitude":-7.3142,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":257,"nome":"Santa Cruz","latitude":32.67495,"longitude":-16.83088,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":258,"nome":"Santa Cruz","latitude":37.43458,"longitude":-7.9757,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":259,"nome":"Santa Cruz","latitude":41.90406,"longitude":-6.95567,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":260,"nome":"Santa Cruz","latitude":38.06052,"longitude":-8.70676,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":261,"nome":"Santa Cruz","latitude":41.05557,"longitude":-7.68123,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":262,"nome":"Santa Cruz","latitude":32.69738,"longitude":-16.80195,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":263,"nome":"Conde","latitude":41.39171,"longitude":-8.33346,"nFolios":3,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159.txt"]}
+{"_id":264,"nome":"Conde","latitude":41.39303,"longitude":-8.33259,"nFolios":3,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159.txt"]}
+{"_id":265,"nome":"Linhares","latitude":38.79204,"longitude":-8.17533,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":266,"nome":"Linhares","latitude":41.91855,"longitude":-8.76025,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":267,"nome":"Linhares","latitude":41.51652,"longitude":-8.29967,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":268,"nome":"Linhares","latitude":41.20658,"longitude":-7.36325,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":269,"nome":"Linhares","latitude":40.54019,"longitude":-7.46095,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":270,"nome":"Linhares","latitude":40.18075,"longitude":-8.03409,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":271,"nome":"Linhares","latitude":41.18682,"longitude":-7.36075,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":272,"nome":"Linhares","latitude":40.543,"longitude":-7.45018,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":273,"nome":"Linhares","latitude":41.93159,"longitude":-8.61088,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":274,"nome":"Mar","latitude":41.57767,"longitude":-8.78945,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":275,"nome":"Mar","latitude":41.57491,"longitude":-8.78736,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":276,"nome":"Rossio","latitude":39.11667,"longitude":-7.28333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":277,"nome":"Rossio","latitude":37.65,"longitude":-8.21667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":278,"nome":"Rossio","latitude":41.08413,"longitude":-8.11458,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":279,"nome":"Rossio","latitude":38.71369,"longitude":-9.13927,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":280,"nome":"Este","latitude":41.57124,"longitude":-8.35777,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":281,"nome":"Este","latitude":41.56236,"longitude":-8.3692,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":282,"nome":"Igreja","latitude":37.15214,"longitude":-7.60043,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":283,"nome":"Igreja","latitude":37.10558,"longitude":-7.95856,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":284,"nome":"Igreja","latitude":37.09157,"longitude":-8.00307,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":285,"nome":"Igreja","latitude":42.05755,"longitude":-8.5167,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":286,"nome":"Igreja","latitude":41.9374,"longitude":-8.41334,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":287,"nome":"Igreja","latitude":41.68503,"longitude":-8.78351,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":288,"nome":"Igreja","latitude":41.48467,"longitude":-8.77019,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":289,"nome":"Igreja","latitude":40.75056,"longitude":-8.61644,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":290,"nome":"Igreja","latitude":40.75124,"longitude":-7.815,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":291,"nome":"Igreja","latitude":40.70018,"longitude":-8.46354,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":292,"nome":"Cem","latitude":41.88055,"longitude":-8.47046,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":293,"nome":"Salvador","latitude":39.36955,"longitude":-7.38491,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":294,"nome":"Salvador","latitude":39.21118,"longitude":-8.40506,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":295,"nome":"Salvador","latitude":40.0885,"longitude":-7.0914,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":296,"nome":"Salvador","latitude":40.08628,"longitude":-7.1022,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":297,"nome":"Sete","latitude":37.61763,"longitude":-7.95476,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":298,"nome":"Madre de Deus","latitude":38.81667,"longitude":-9.4,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":299,"nome":"Mateus","latitude":41.3005,"longitude":-7.71748,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":300,"nome":"Mateus","latitude":41.3025,"longitude":-7.71092,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":301,"nome":"Évora","latitude":39.51595,"longitude":-8.97095,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":302,"nome":"Évora","latitude":38.56667,"longitude":-7.9,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":303,"nome":"Évora","latitude":38.5665,"longitude":-7.8946,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":304,"nome":"Beira","latitude":38.7,"longitude":-28.2,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":305,"nome":"Alentejo","latitude":38.5,"longitude":-8.0,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":306,"nome":"Alentejo","latitude":41.16416,"longitude":-8.11137,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":307,"nome":"Alentejo","latitude":40.31398,"longitude":-7.80108,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":308,"nome":"Montemor","latitude":38.8203,"longitude":-9.20128,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":309,"nome":"Montemor","latitude":38.82378,"longitude":-9.20475,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":310,"nome":"Pegões","latitude":38.66439,"longitude":-8.61784,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":311,"nome":"Pegões","latitude":38.68044,"longitude":-8.59857,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":312,"nome":"Santos","latitude":39.59905,"longitude":-7.97302,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":313,"nome":"Santos","latitude":39.37442,"longitude":-8.71334,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":314,"nome":"Pancas","latitude":39.05745,"longitude":-9.03385,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":315,"nome":"Pancas","latitude":38.80959,"longitude":-8.91859,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":316,"nome":"Lara","latitude":42.04393,"longitude":-8.52706,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":317,"nome":"Lara","latitude":42.03836,"longitude":-8.52938,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":318,"nome":"Lara","latitude":42.02604,"longitude":-8.64538,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":319,"nome":"Senhora da Oliveira","latitude":41.95155,"longitude":-8.18602,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":320,"nome":"Elvas","latitude":38.8815,"longitude":-7.16282,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":321,"nome":"Elvas","latitude":38.89868,"longitude":-7.22426,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":322,"nome":"Esperança","latitude":39.16001,"longitude":-7.19466,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":323,"nome":"Esperança","latitude":39.00212,"longitude":-8.87666,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":324,"nome":"Esperança","latitude":41.58568,"longitude":-8.16394,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":325,"nome":"Esperança","latitude":40.20918,"longitude":-8.79274,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":326,"nome":"Esperança","latitude":40.16019,"longitude":-8.85326,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":327,"nome":"Esperança","latitude":41.58323,"longitude":-8.16767,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":328,"nome":"Esperança","latitude":39.16381,"longitude":-7.19703,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":329,"nome":"Trindade","latitude":37.88794,"longitude":-7.89462,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":330,"nome":"Trindade","latitude":41.40053,"longitude":-7.07164,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":331,"nome":"Trindade","latitude":41.2937,"longitude":-8.39827,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":332,"nome":"Trindade","latitude":37.87563,"longitude":-7.88804,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":333,"nome":"Trindade","latitude":41.39449,"longitude":-7.0763,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":334,"nome":"Tarouca","latitude":39.92821,"longitude":-8.46948,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":335,"nome":"Tarouca","latitude":41.01444,"longitude":-7.78143,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":336,"nome":"Tarouca","latitude":41.02651,"longitude":-7.74998,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":337,"nome":"Tarouca","latitude":41.00687,"longitude":-7.79517,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":338,"nome":"Junqueira","latitude":39.80068,"longitude":-8.47819,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":339,"nome":"Junqueira","latitude":37.25698,"longitude":-7.47074,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":340,"nome":"Junqueira","latitude":32.73333,"longitude":-16.83333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":341,"nome":"Junqueira","latitude":41.66552,"longitude":-8.77165,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":342,"nome":"Junqueira","latitude":41.58611,"longitude":-7.47018,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":343,"nome":"Junqueira","latitude":41.48,"longitude":-6.64331,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":344,"nome":"Junqueira","latitude":41.38318,"longitude":-8.67817,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":345,"nome":"Junqueira","latitude":41.35,"longitude":-8.73333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":346,"nome":"Junqueira","latitude":41.2691,"longitude":-7.08178,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":347,"nome":"Junqueira","latitude":41.10565,"longitude":-8.61256,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":348,"nome":"Junqueira","latitude":40.80535,"longitude":-8.33542,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":349,"nome":"Junqueira","latitude":40.80328,"longitude":-8.33939,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":350,"nome":"Junqueira","latitude":41.38013,"longitude":-8.67984,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":351,"nome":"Boavista","latitude":39.98674,"longitude":-8.58685,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":352,"nome":"Boavista","latitude":39.1743,"longitude":-7.19755,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":353,"nome":"Boavista","latitude":39.11977,"longitude":-9.37372,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":354,"nome":"Boavista","latitude":37.80755,"longitude":-8.68676,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":355,"nome":"Boavista","latitude":37.073,"longitude":-7.82075,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":356,"nome":"Boavista","latitude":42.07277,"longitude":-8.48905,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":357,"nome":"Boavista","latitude":41.92116,"longitude":-8.58266,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":358,"nome":"Boavista","latitude":41.06667,"longitude":-8.63333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":359,"nome":"Boavista","latitude":40.10255,"longitude":-8.8343,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":360,"nome":"Boavista","latitude":39.05,"longitude":-27.98333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":361,"nome":"Misericórdia","latitude":38.882,"longitude":-7.35422,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":362,"nome":"Misericórdia","latitude":38.74481,"longitude":-7.27658,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":363,"nome":"Misericórdia","latitude":41.52473,"longitude":-8.44768,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":364,"nome":"Santo André","latitude":39.05532,"longitude":-8.24414,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":365,"nome":"Santo André","latitude":38.05445,"longitude":-8.75211,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":366,"nome":"Santo André","latitude":42.02971,"longitude":-8.41045,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":367,"nome":"Santo André","latitude":41.86498,"longitude":-7.66699,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":368,"nome":"Santo André","latitude":41.64597,"longitude":-8.49385,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":369,"nome":"Santo André","latitude":41.56804,"longitude":-8.54444,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":370,"nome":"Santo André","latitude":41.41744,"longitude":-8.78117,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":371,"nome":"Santo André","latitude":41.30768,"longitude":-6.84142,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":372,"nome":"Santo André","latitude":40.81306,"longitude":-8.56456,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":373,"nome":"Santo André","latitude":40.62358,"longitude":-7.7552,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":374,"nome":"Santo André","latitude":40.51088,"longitude":-8.67412,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":375,"nome":"Santo André","latitude":38.63977,"longitude":-9.05834,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":376,"nome":"Santo André","latitude":38.0656,"longitude":-8.77295,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":377,"nome":"Santo André","latitude":41.88177,"longitude":-7.67397,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":378,"nome":"Mártires","latitude":38.7125,"longitude":-9.14306,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":379,"nome":"Mártires","latitude":38.70912,"longitude":-9.1407,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":380,"nome":"Oliveira","latitude":38.7,"longitude":-8.05,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":381,"nome":"Oliveira","latitude":41.35775,"longitude":-8.76508,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":382,"nome":"Oliveira","latitude":41.82574,"longitude":-8.39465,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":383,"nome":"Oliveira","latitude":41.72087,"longitude":-8.53327,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":384,"nome":"Oliveira","latitude":41.5843,"longitude":-8.54966,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":385,"nome":"Oliveira","latitude":41.58137,"longitude":-8.21882,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":386,"nome":"Oliveira","latitude":41.47819,"longitude":-8.46965,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":387,"nome":"Oliveira","latitude":41.40648,"longitude":-8.40273,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":388,"nome":"Oliveira","latitude":41.25741,"longitude":-8.20168,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":389,"nome":"Oliveira","latitude":41.17815,"longitude":-7.83238,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":390,"nome":"Oliveira","latitude":41.06301,"longitude":-8.21226,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":391,"nome":"Oliveira","latitude":41.03333,"longitude":-8.36667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":392,"nome":"Oliveira","latitude":40.95435,"longitude":-8.43747,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":393,"nome":"Oliveira","latitude":40.82406,"longitude":-8.04591,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":394,"nome":"Oliveira","latitude":40.63148,"longitude":-7.75061,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":395,"nome":"Oliveira","latitude":41.58631,"longitude":-8.54716,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":396,"nome":"Oliveira","latitude":41.58859,"longitude":-8.21848,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":397,"nome":"Oliveira","latitude":41.2531,"longitude":-8.1991,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":398,"nome":"Oliveira","latitude":41.8258,"longitude":-8.39343,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":399,"nome":"Oliveira","latitude":41.17473,"longitude":-7.82862,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":400,"nome":"Pereira","latitude":39.41667,"longitude":-8.31667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":401,"nome":"Pereira","latitude":39.32125,"longitude":-8.47272,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":402,"nome":"Pereira","latitude":42.03688,"longitude":-8.27109,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":403,"nome":"Pereira","latitude":41.98803,"longitude":-8.48287,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":404,"nome":"Pereira","latitude":41.66956,"longitude":-7.91491,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":405,"nome":"Pereira","latitude":41.51456,"longitude":-8.20777,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":406,"nome":"Pereira","latitude":41.4946,"longitude":-8.62663,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":407,"nome":"Pereira","latitude":41.47879,"longitude":-8.06097,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":408,"nome":"Pereira","latitude":41.41036,"longitude":-7.31505,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":409,"nome":"Pereira","latitude":41.02666,"longitude":-8.53219,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":410,"nome":"Pereira","latitude":40.94435,"longitude":-7.96475,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":411,"nome":"Pereira","latitude":40.38347,"longitude":-8.28207,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":412,"nome":"Pereira","latitude":40.29777,"longitude":-8.02606,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":413,"nome":"Pereira","latitude":40.18671,"longitude":-8.58608,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":414,"nome":"Pereira","latitude":40.07548,"longitude":-8.31204,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":415,"nome":"Pereira","latitude":41.48851,"longitude":-8.63248,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":416,"nome":"Pereira","latitude":41.41379,"longitude":-7.31641,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":417,"nome":"Pereira","latitude":40.16868,"longitude":-8.57021,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":418,"nome":"Graça","latitude":38.65,"longitude":-7.96667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":419,"nome":"Graça","latitude":39.89361,"longitude":-8.22329,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":420,"nome":"Graça","latitude":38.71758,"longitude":-9.12949,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":421,"nome":"Graça","latitude":39.89314,"longitude":-8.22326,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":422,"nome":"Graça","latitude":38.71803,"longitude":-9.12953,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":423,"nome":"Carneiro","latitude":41.21849,"longitude":-7.96861,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":424,"nome":"Carneiro","latitude":41.21337,"longitude":-7.96491,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":425,"nome":"Portel","latitude":38.30697,"longitude":-7.70244,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":426,"nome":"Portel","latitude":38.29385,"longitude":-7.72762,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":427,"nome":"Portel","latitude":38.29712,"longitude":-7.72387,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":428,"nome":"Teixeira","latitude":41.44507,"longitude":-6.50451,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":429,"nome":"Teixeira","latitude":41.19467,"longitude":-7.92352,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":430,"nome":"Teixeira","latitude":40.18429,"longitude":-7.94676,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":431,"nome":"Teixeira","latitude":40.18554,"longitude":-7.93559,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":432,"nome":"Teixeira","latitude":40.26048,"longitude":-7.74151,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":433,"nome":"Teixeira","latitude":41.21273,"longitude":-7.91158,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":434,"nome":"Carmo","latitude":38.71667,"longitude":-7.75,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":435,"nome":"Carmo","latitude":32.65734,"longitude":-16.86607,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":436,"nome":"Belém","latitude":38.69875,"longitude":-9.19289,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":437,"nome":"Belém","latitude":37.31667,"longitude":-8.58333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":438,"nome":"Belém","latitude":37.75,"longitude":-25.65,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":439,"nome":"Real","latitude":42.10041,"longitude":-8.26512,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":440,"nome":"Real","latitude":42.07441,"longitude":-8.48172,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":441,"nome":"Real","latitude":42.00558,"longitude":-8.61647,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":442,"nome":"Real","latitude":41.66884,"longitude":-8.57844,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":443,"nome":"Real","latitude":41.63882,"longitude":-8.18098,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":444,"nome":"Real","latitude":41.59907,"longitude":-8.5749,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":445,"nome":"Real","latitude":41.56886,"longitude":-8.64734,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":446,"nome":"Real","latitude":41.56002,"longitude":-8.43878,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":447,"nome":"Real","latitude":41.01725,"longitude":-8.26749,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":448,"nome":"Real","latitude":40.64258,"longitude":-7.6774,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":449,"nome":"Real","latitude":40.44845,"longitude":-8.13759,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":450,"nome":"Real","latitude":41.00039,"longitude":-8.27911,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":451,"nome":"Real","latitude":41.55647,"longitude":-8.44098,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":452,"nome":"Real","latitude":41.24705,"longitude":-8.16853,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":453,"nome":"Real","latitude":40.63659,"longitude":-7.68014,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":454,"nome":"Casa","latitude":41.54106,"longitude":-8.02165,"nFolios":3,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159.txt"]}
+{"_id":455,"nome":"Sacramento","latitude":38.7125,"longitude":-9.14306,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":456,"nome":"Sacramento","latitude":38.71204,"longitude":-9.14145,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":457,"nome":"Pinto","latitude":40.56133,"longitude":-7.22916,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":458,"nome":"Aveiro","latitude":40.64427,"longitude":-8.64554,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":459,"nome":"Aveiro","latitude":40.62398,"longitude":-8.61628,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":460,"nome":"Pedreira","latitude":39.64128,"longitude":-8.4092,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":461,"nome":"Pedreira","latitude":39.58805,"longitude":-8.61832,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":462,"nome":"Pedreira","latitude":39.16701,"longitude":-9.03785,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":463,"nome":"Pedreira","latitude":39.04288,"longitude":-8.07144,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":464,"nome":"Pedreira","latitude":39.00164,"longitude":-9.17049,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":465,"nome":"Pedreira","latitude":37.19869,"longitude":-8.44557,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":466,"nome":"Pedreira","latitude":42.13192,"longitude":-8.21716,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":467,"nome":"Pedreira","latitude":42.00974,"longitude":-8.53099,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":468,"nome":"Pedreira","latitude":41.78926,"longitude":-8.64972,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":469,"nome":"Pedreira","latitude":41.77545,"longitude":-8.8468,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":470,"nome":"Pedreira","latitude":41.40485,"longitude":-8.72231,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":471,"nome":"Pedreira","latitude":41.33218,"longitude":-8.21456,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":472,"nome":"Pedreira","latitude":41.14008,"longitude":-8.53309,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":473,"nome":"Pedreira","latitude":40.38578,"longitude":-8.62279,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":474,"nome":"Pedreira","latitude":40.13223,"longitude":-8.33252,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":475,"nome":"Pedreira","latitude":37.8,"longitude":-25.15,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":476,"nome":"Pedreira","latitude":41.32795,"longitude":-8.21007,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":477,"nome":"Pedreira","latitude":39.6393,"longitude":-8.42193,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":478,"nome":"Taipas","latitude":37.31796,"longitude":-7.71589,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":479,"nome":"Taipas","latitude":37.15732,"longitude":-8.28411,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":480,"nome":"Valverde","latitude":39.46899,"longitude":-8.86123,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":481,"nome":"Valverde","latitude":39.37272,"longitude":-8.59946,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":482,"nome":"Valverde","latitude":38.91907,"longitude":-9.36469,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":483,"nome":"Valverde","latitude":38.53307,"longitude":-8.02244,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":484,"nome":"Valverde","latitude":37.10465,"longitude":-8.70958,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":485,"nome":"Valverde","latitude":41.69793,"longitude":-6.77708,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":486,"nome":"Valverde","latitude":41.65198,"longitude":-8.75139,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":487,"nome":"Valverde","latitude":41.5948,"longitude":-7.27478,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":488,"nome":"Valverde","latitude":41.33022,"longitude":-6.98844,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":489,"nome":"Valverde","latitude":41.291,"longitude":-6.81089,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":490,"nome":"Valverde","latitude":41.03834,"longitude":-8.05369,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":491,"nome":"Valverde","latitude":41.0089,"longitude":-7.7787,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":492,"nome":"Valverde","latitude":40.81883,"longitude":-8.52604,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":493,"nome":"Valverde","latitude":40.78245,"longitude":-7.51933,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":494,"nome":"Valverde","latitude":40.70147,"longitude":-6.97883,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":495,"nome":"Valverde","latitude":40.53498,"longitude":-8.06282,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":496,"nome":"Valverde","latitude":40.29881,"longitude":-7.30411,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":497,"nome":"Valverde","latitude":40.15267,"longitude":-7.4733,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":498,"nome":"Valverde","latitude":36.95,"longitude":-25.13333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":499,"nome":"Valverde","latitude":41.32635,"longitude":-6.97913,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":500,"nome":"Valverde","latitude":41.3957,"longitude":-7.20238,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":501,"nome":"Valverde","latitude":41.29787,"longitude":-6.81982,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":502,"nome":"Valverde","latitude":40.16743,"longitude":-7.46388,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":503,"nome":"Valverde","latitude":40.78815,"longitude":-7.51728,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":504,"nome":"Santa Marta","latitude":39.31667,"longitude":-8.43333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":505,"nome":"Santa Marta","latitude":37.49889,"longitude":-7.56971,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":506,"nome":"Santa Marta","latitude":38.69226,"longitude":-9.42605,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":507,"nome":"Santa Marta","latitude":41.21209,"longitude":-6.73773,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":508,"nome":"Santa Marta","latitude":41.60747,"longitude":-8.41815,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":509,"nome":"Santa Marta","latitude":41.59148,"longitude":-8.11565,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":510,"nome":"Santa Marta","latitude":41.21725,"longitude":-8.26111,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":511,"nome":"Santa Marta","latitude":41.13258,"longitude":-8.4177,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":512,"nome":"Santa Marta","latitude":41.43333,"longitude":-8.43333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":513,"nome":"Santa Marta","latitude":41.20994,"longitude":-8.25248,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":514,"nome":"Banhos","latitude":40.44223,"longitude":-8.5461,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":515,"nome":"Rio","latitude":42.02103,"longitude":-8.46099,"nFolios":4,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":516,"nome":"Rio","latitude":41.54844,"longitude":-8.78768,"nFolios":4,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":517,"nome":"Rio","latitude":40.13275,"longitude":-7.70945,"nFolios":4,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":518,"nome":"Macau","latitude":38.61667,"longitude":-8.91667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":519,"nome":"Senhora da Piedade","latitude":41.17864,"longitude":-7.82465,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":520,"nome":"Senhora da Piedade","latitude":37.75,"longitude":-25.68333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":521,"nome":"Senhora da Piedade","latitude":37.71667,"longitude":-25.36667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":522,"nome":"Dão","latitude":39.93969,"longitude":-7.86355,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":523,"nome":"Cadaval","latitude":39.24298,"longitude":-9.10327,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":524,"nome":"Cadaval","latitude":41.39567,"longitude":-7.48337,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":525,"nome":"Cadaval","latitude":40.73601,"longitude":-8.56035,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":526,"nome":"Cadaval","latitude":40.51438,"longitude":-8.35807,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":527,"nome":"Cadaval","latitude":39.24621,"longitude":-9.06738,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":528,"nome":"Cadaval","latitude":39.24151,"longitude":-9.10488,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":529,"nome":"Torno","latitude":39.99985,"longitude":-8.19934,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":530,"nome":"Torno","latitude":41.2947,"longitude":-8.20995,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":531,"nome":"Torno","latitude":40.04768,"longitude":-8.30491,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":532,"nome":"Torno","latitude":41.29824,"longitude":-8.20874,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":533,"nome":"Peniche","latitude":39.3558,"longitude":-9.38112,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":534,"nome":"Peniche","latitude":39.36166,"longitude":-9.36869,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":535,"nome":"Algarve","latitude":37.18849,"longitude":-8.15642,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":536,"nome":"Santarém","latitude":39.91155,"longitude":-8.26563,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":537,"nome":"Santarém","latitude":39.23333,"longitude":-8.68333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":538,"nome":"Santarém","latitude":40.95464,"longitude":-8.09001,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":539,"nome":"Santarém","latitude":39.32131,"longitude":-8.71313,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":540,"nome":"Tancos","latitude":39.45,"longitude":-8.4,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":541,"nome":"Tancos","latitude":39.46624,"longitude":-8.39801,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":542,"nome":"Porto","latitude":39.87143,"longitude":-7.99307,"nFolios":3,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159.txt"]}
+{"_id":543,"nome":"Porto","latitude":39.06667,"longitude":-9.03333,"nFolios":3,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159.txt"]}
+{"_id":544,"nome":"Porto","latitude":38.78333,"longitude":-9.2,"nFolios":3,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159.txt"]}
+{"_id":545,"nome":"Porto","latitude":42.0213,"longitude":-8.45221,"nFolios":3,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159.txt"]}
+{"_id":546,"nome":"Porto","latitude":41.14961,"longitude":-8.61099,"nFolios":3,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159.txt"]}
+{"_id":547,"nome":"Porto","latitude":41.15556,"longitude":-8.62672,"nFolios":3,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159.txt"]}
+{"_id":548,"nome":"Adão","latitude":40.45888,"longitude":-7.16758,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":549,"nome":"Adão","latitude":40.45096,"longitude":-7.17444,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":550,"nome":"Vela","latitude":40.44181,"longitude":-7.31173,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":551,"nome":"Vela","latitude":40.43585,"longitude":-7.30369,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":552,"nome":"Alcobaça","latitude":39.55223,"longitude":-8.97749,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":553,"nome":"Alcobaça","latitude":38.8909,"longitude":-7.36107,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":554,"nome":"Alcobaça","latitude":39.55441,"longitude":-8.98833,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":555,"nome":"Alcobaça","latitude":39.55022,"longitude":-8.97692,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":556,"nome":"Costa","latitude":42.04668,"longitude":-8.61205,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":557,"nome":"Costa","latitude":42.03954,"longitude":-8.50798,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":558,"nome":"Costa","latitude":41.90159,"longitude":-8.62202,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":559,"nome":"Costa","latitude":41.88393,"longitude":-8.59922,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":560,"nome":"Costa","latitude":41.76863,"longitude":-8.78308,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":561,"nome":"Costa","latitude":41.72162,"longitude":-8.79931,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":562,"nome":"Costa","latitude":41.65517,"longitude":-8.3088,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":563,"nome":"Costa","latitude":41.60624,"longitude":-8.24161,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":564,"nome":"Costa","latitude":41.55167,"longitude":-8.35064,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":565,"nome":"Costa","latitude":41.49623,"longitude":-8.52039,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":566,"nome":"Costa","latitude":41.48886,"longitude":-8.50182,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":567,"nome":"Costa","latitude":41.44327,"longitude":-8.27681,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":568,"nome":"Costa","latitude":41.21667,"longitude":-8.55,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":569,"nome":"Costa","latitude":41.16351,"longitude":-8.52757,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":570,"nome":"Costa","latitude":41.11369,"longitude":-8.63943,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":571,"nome":"Costa","latitude":41.43787,"longitude":-8.27364,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":572,"nome":"Costa","latitude":39.38483,"longitude":-31.24177,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":573,"nome":"Castelo","latitude":38.71667,"longitude":-9.13333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":574,"nome":"Castelo","latitude":39.89409,"longitude":-8.54804,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":575,"nome":"Castelo","latitude":39.84311,"longitude":-8.17447,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":576,"nome":"Castelo","latitude":39.77209,"longitude":-8.6316,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":577,"nome":"Castelo","latitude":39.60292,"longitude":-8.00132,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":578,"nome":"Castelo","latitude":38.45241,"longitude":-9.11167,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":579,"nome":"Castelo","latitude":39.45,"longitude":-9.01667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":580,"nome":"Castelo","latitude":37.31667,"longitude":-8.48333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":581,"nome":"Castelo","latitude":42.05,"longitude":-8.43333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":582,"nome":"Castelo","latitude":41.48478,"longitude":-7.39766,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":583,"nome":"Castelo","latitude":41.4699,"longitude":-7.6829,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":584,"nome":"Castelo","latitude":41.36469,"longitude":-8.05202,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":585,"nome":"Castelo","latitude":41.36591,"longitude":-6.92731,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":586,"nome":"Castelo","latitude":41.13333,"longitude":-8.63333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":587,"nome":"Castelo","latitude":41.1246,"longitude":-7.93513,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":588,"nome":"Castelo","latitude":41.03431,"longitude":-7.62242,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":589,"nome":"Castelo","latitude":40.5575,"longitude":-8.25667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":590,"nome":"Castelo","latitude":42.02322,"longitude":-8.15872,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":591,"nome":"Castelo","latitude":39.85501,"longitude":-8.17593,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":592,"nome":"Castelo","latitude":38.71322,"longitude":-9.13291,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":593,"nome":"Castelo","latitude":41.03485,"longitude":-7.6209,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":594,"nome":"Salvaterra de Magos","latitude":39.02788,"longitude":-8.7935,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":595,"nome":"Salvaterra de Magos","latitude":39.04482,"longitude":-8.68903,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":596,"nome":"Salvaterra de Magos","latitude":39.03309,"longitude":-8.77009,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":597,"nome":"Eva","latitude":37.016,"longitude":-7.936,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":598,"nome":"Caparica","latitude":38.66667,"longitude":-9.2,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":599,"nome":"Caparica","latitude":38.65372,"longitude":-9.20464,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":600,"nome":"Arraiolos","latitude":38.72761,"longitude":-7.96153,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":601,"nome":"Arraiolos","latitude":38.72363,"longitude":-7.98478,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":602,"nome":"Arraiolos","latitude":38.7254,"longitude":-7.98813,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":603,"nome":"Arraiolos","latitude":38.76774,"longitude":-7.95831,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":604,"nome":"Arraiolos","latitude":38.76084,"longitude":-8.02166,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":605,"nome":"Sé","latitude":39.28761,"longitude":-7.42203,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":606,"nome":"Sé","latitude":38.70901,"longitude":-9.1318,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":607,"nome":"Sé","latitude":41.14282,"longitude":-8.60798,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":608,"nome":"Gião","latitude":37.08605,"longitude":-7.77558,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":609,"nome":"Gião","latitude":41.31538,"longitude":-8.67313,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":610,"nome":"Gião","latitude":41.25164,"longitude":-7.97801,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":611,"nome":"Gião","latitude":40.99933,"longitude":-8.46588,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":612,"nome":"Gião","latitude":40.99299,"longitude":-8.46988,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":613,"nome":"Gião","latitude":41.31137,"longitude":-8.67835,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":614,"nome":"Castela","latitude":40.1,"longitude":-8.81667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":615,"nome":"Paraíso","latitude":37.06526,"longitude":-7.86669,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":616,"nome":"Paraíso","latitude":41.00956,"longitude":-8.30701,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":617,"nome":"Paraíso","latitude":41.00579,"longitude":-8.32437,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":618,"nome":"Cheira","latitude":42.03471,"longitude":-8.49195,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":619,"nome":"Cheira","latitude":41.90621,"longitude":-8.66576,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":620,"nome":"Cheira","latitude":40.26279,"longitude":-8.28254,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":621,"nome":"Marta","latitude":39.71422,"longitude":-8.4763,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":622,"nome":"Álvaro","latitude":39.96526,"longitude":-7.96833,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":623,"nome":"Vila","latitude":40.95737,"longitude":-8.0707,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":624,"nome":"Vila","latitude":40.93173,"longitude":-8.36974,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":625,"nome":"Vila","latitude":42.0304,"longitude":-8.1588,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":626,"nome":"Vila","latitude":42.11369,"longitude":-8.25983,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":627,"nome":"Sul","latitude":40.8368,"longitude":-8.04413,"nFolios":4,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":628,"nome":"Sul","latitude":36.91667,"longitude":-25.06667,"nFolios":4,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":629,"nome":"Sul","latitude":40.83498,"longitude":-8.04709,"nFolios":4,"remover":false,"folios":["teste.txt","teste.txt","TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":630,"nome":"Espírito Santo","latitude":37.54531,"longitude":-7.64757,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":631,"nome":"Espírito Santo","latitude":41.91718,"longitude":-8.67646,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":632,"nome":"Espírito Santo","latitude":40.18843,"longitude":-8.46968,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":633,"nome":"Espírito Santo","latitude":40.08906,"longitude":-8.60985,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":634,"nome":"Espírito Santo","latitude":39.49667,"longitude":-7.62385,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":635,"nome":"Espírito Santo","latitude":37.55344,"longitude":-7.62385,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":636,"nome":"Encarnação","latitude":39.03379,"longitude":-9.3677,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":637,"nome":"Encarnação","latitude":38.71166,"longitude":-9.14374,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":638,"nome":"Encarnação","latitude":39.03778,"longitude":-9.37892,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":639,"nome":"Marvila","latitude":39.86835,"longitude":-8.23792,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":640,"nome":"Marvila","latitude":39.69569,"longitude":-8.80265,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":641,"nome":"Marvila","latitude":38.73981,"longitude":-9.10165,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":642,"nome":"Marvila","latitude":38.74833,"longitude":-9.1117,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":643,"nome":"Senhora da Luz","latitude":37.08771,"longitude":-8.72649,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":644,"nome":"Senhora da Luz","latitude":41.76951,"longitude":-8.59219,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":645,"nome":"Nossa Senhora da Graça","latitude":39.54029,"longitude":-7.65452,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":646,"nome":"Alcântara","latitude":38.70102,"longitude":-9.17145,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":647,"nome":"Alcântara","latitude":38.71115,"longitude":-9.18391,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":648,"nome":"Loreto","latitude":39.46667,"longitude":-8.38333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":649,"nome":"Loreto","latitude":32.7,"longitude":-17.15,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":650,"nome":"Loreto","latitude":41.80572,"longitude":-6.76528,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":651,"nome":"Bom Sucesso","latitude":39.48333,"longitude":-8.16667,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":652,"nome":"Bom Sucesso","latitude":40.61057,"longitude":-8.64744,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":653,"nome":"Bom Sucesso","latitude":40.26414,"longitude":-8.77952,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":654,"nome":"Bom Sucesso","latitude":40.28383,"longitude":-8.81139,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":655,"nome":"Senhora das Mercês","latitude":38.65,"longitude":-27.15,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":656,"nome":"Boa Hora","latitude":38.66667,"longitude":-27.23333,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":657,"nome":"Nossa Senhora do Monte","latitude":32.66667,"longitude":-16.9,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":658,"nome":"Odivelas","latitude":38.79269,"longitude":-9.1838,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":659,"nome":"Odivelas","latitude":38.16815,"longitude":-8.14755,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":660,"nome":"Odivelas","latitude":38.79705,"longitude":-9.19108,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":661,"nome":"Odivelas","latitude":38.16518,"longitude":-8.17156,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":662,"nome":"Odivelas","latitude":38.7913,"longitude":-9.18183,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":663,"nome":"Setúbal","latitude":38.5244,"longitude":-8.8882,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":664,"nome":"Setúbal","latitude":38.51742,"longitude":-8.90817,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":665,"nome":"Almeida","latitude":40.72573,"longitude":-6.90542,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":666,"nome":"Almeida","latitude":40.7307,"longitude":-6.90594,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":667,"nome":"Almeida","latitude":40.73021,"longitude":-6.90423,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":668,"nome":"Belas","latitude":38.77721,"longitude":-9.26078,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":669,"nome":"Belas","latitude":38.77541,"longitude":-9.2716,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":670,"nome":"Coimbra","latitude":40.20564,"longitude":-8.41955,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":671,"nome":"Coimbra","latitude":40.21816,"longitude":-8.45369,"nFolios":2,"remover":false,"folios":["teste.txt","teste.txt"]}
+{"_id":672,"nome":"Monte","latitude":41.66748,"longitude":-8.78454,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":673,"nome":"Monte","latitude":41.64817,"longitude":-8.64005,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":674,"nome":"Monte","latitude":41.6577,"longitude":-8.436,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":675,"nome":"Monte","latitude":41.63405,"longitude":-8.77892,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":676,"nome":"Monte","latitude":41.64081,"longitude":-8.37222,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":677,"nome":"Monte","latitude":41.60779,"longitude":-8.76423,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":678,"nome":"Monte","latitude":41.60012,"longitude":-8.61486,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":679,"nome":"Monte","latitude":41.60893,"longitude":-8.30507,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":680,"nome":"Monte","latitude":41.51317,"longitude":-8.68779,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":681,"nome":"Monte","latitude":41.52693,"longitude":-8.16785,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":682,"nome":"Monte","latitude":41.50921,"longitude":-8.47445,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":683,"nome":"Monte","latitude":41.475,"longitude":-8.42975,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":684,"nome":"Monte","latitude":41.3834,"longitude":-8.44586,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":685,"nome":"Monte","latitude":41.38511,"longitude":-8.00752,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":686,"nome":"Monte","latitude":41.13333,"longitude":-8.56667,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":687,"nome":"Monte","latitude":41.07931,"longitude":-8.62235,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":688,"nome":"Monte","latitude":40.98191,"longitude":-8.62508,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":689,"nome":"Monte","latitude":40.75271,"longitude":-8.64325,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":690,"nome":"Monte","latitude":38.49404,"longitude":-28.5292,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":691,"nome":"Monte","latitude":40.75211,"longitude":-8.64002,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":692,"nome":"Monte","latitude":41.53448,"longitude":-8.15087,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":693,"nome":"Monte","latitude":41.69559,"longitude":-8.24875,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":694,"nome":"Monte","latitude":32.69975,"longitude":-16.90266,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":695,"nome":"Casal","latitude":41.94328,"longitude":-8.45618,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":696,"nome":"Casal","latitude":41.88957,"longitude":-8.66663,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":697,"nome":"Casal","latitude":41.84592,"longitude":-8.37049,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":698,"nome":"Casal","latitude":41.82465,"longitude":-8.46121,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":699,"nome":"Casal","latitude":41.61494,"longitude":-8.43119,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":700,"nome":"Casal","latitude":41.24718,"longitude":-8.09848,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":701,"nome":"Casal","latitude":41.2,"longitude":-8.66667,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":702,"nome":"Casal","latitude":41.11447,"longitude":-7.88004,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":703,"nome":"Casal","latitude":41.09316,"longitude":-8.09314,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":704,"nome":"Casal","latitude":41.04181,"longitude":-8.58333,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":705,"nome":"Casal","latitude":40.74464,"longitude":-7.99211,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":706,"nome":"Casal","latitude":40.73209,"longitude":-7.67182,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":707,"nome":"Casal","latitude":40.74318,"longitude":-7.44184,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":708,"nome":"Casal","latitude":40.70965,"longitude":-7.87603,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":709,"nome":"Casal","latitude":40.63543,"longitude":-8.01072,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":710,"nome":"Casal","latitude":40.61723,"longitude":-8.36859,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":711,"nome":"Casal","latitude":40.41443,"longitude":-7.81823,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":712,"nome":"Casal","latitude":40.34,"longitude":-7.98847,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":713,"nome":"Casal","latitude":40.30783,"longitude":-8.64138,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":714,"nome":"Casal","latitude":37.83472,"longitude":-25.79167,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":715,"nome":"Braga","latitude":41.55032,"longitude":-8.42005,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":716,"nome":"Braga","latitude":41.55801,"longitude":-8.42308,"nFolios":2,"remover":false,"folios":["TM-F0159v.txt","TM-F0159.txt"]}
+{"_id":717,"nome":"Junto","latitude":41.83512,"longitude":-8.29513,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":718,"nome":"Medas","latitude":41.05679,"longitude":-8.43304,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":719,"nome":"Medas","latitude":40.24061,"longitude":-8.00809,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":720,"nome":"Medas","latitude":41.05794,"longitude":-8.44189,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":721,"nome":"Bouça","latitude":42.13805,"longitude":-8.244,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":722,"nome":"Bouça","latitude":42.02612,"longitude":-8.48069,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":723,"nome":"Bouça","latitude":41.80489,"longitude":-8.48476,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":724,"nome":"Bouça","latitude":41.65064,"longitude":-7.21321,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":725,"nome":"Bouça","latitude":41.01667,"longitude":-8.35,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":726,"nome":"Bouça","latitude":40.26714,"longitude":-7.5692,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":727,"nome":"Bouça","latitude":41.66667,"longitude":-8.65,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":728,"nome":"Bouça","latitude":41.65252,"longitude":-7.21253,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":729,"nome":"Vendas","latitude":39.43333,"longitude":-8.48333,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":730,"nome":"Vendas","latitude":38.53333,"longitude":-8.98333,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":731,"nome":"Vendas","latitude":41.48454,"longitude":-8.47611,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":732,"nome":"Vendas","latitude":41.1911,"longitude":-8.11838,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":733,"nome":"Vendas","latitude":40.42484,"longitude":-7.29913,"nFolios":1,"remover":false,"folios":["TM-F0159v.txt"]}
+{"_id":734,"nome":"Castanheiros","latitude":41.91564,"longitude":-8.74965,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
+{"_id":735,"nome":"Castanheiros","latitude":40.96389,"longitude":-8.61728,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
+{"_id":736,"nome":"Redondo","latitude":38.64872,"longitude":-7.54708,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
+{"_id":737,"nome":"Redondo","latitude":41.59282,"longitude":-8.39613,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
+{"_id":738,"nome":"Redondo","latitude":41.08333,"longitude":-8.01667,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
+{"_id":739,"nome":"Redondo","latitude":38.5801,"longitude":-7.59659,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
+{"_id":740,"nome":"Redondo","latitude":38.64613,"longitude":-7.60738,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
+{"_id":741,"nome":"Vimioso","latitude":41.58473,"longitude":-6.52767,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
+{"_id":742,"nome":"Vimioso","latitude":41.57287,"longitude":-6.52087,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
+{"_id":743,"nome":"Vimioso","latitude":41.58419,"longitude":-6.51585,"nFolios":1,"remover":false,"folios":["TM-F0159.txt"]}
