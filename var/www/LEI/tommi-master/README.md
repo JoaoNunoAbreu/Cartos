@@ -15,7 +15,7 @@ If first time:
 	
 	Start Mongo
 	
-	export FLASK_APP=tommy.py
+	export FLASK_APP=tommi.py
 	
 	flask run
 
@@ -23,6 +23,6 @@ else:
 
 	Start Mongo
 	
-	export FLASK_APP=tommy.py
+	export FLASK_APP=tommi.py
 	
 	flask run
