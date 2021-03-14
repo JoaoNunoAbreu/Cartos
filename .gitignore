@@ -1,1 +1,12 @@
 .DS_Store
+
+node_modules
+logs
+
+tommi_master/app/folios/static/
+tommi_master/app/users/static/
+**/*.pyc
+**/__pycache*/
+**/*.log
+**/.DS*
+**/package-lock.json
