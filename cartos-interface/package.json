@@ -1,5 +1,5 @@
 {
-  "name": "tommy",
+  "name": "cartos",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "jw-vue-pagination": "^1.0.3",
     "vee-validate": "^3.2.5",
@@ -35,7 +35,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "fibers": "^5.0.0",
-    "sass": "^1.26.9",
+    "sass": "^1.32.8",
     "sass-loader": "^8.0.2",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",

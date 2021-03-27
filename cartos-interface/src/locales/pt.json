@@ -63,7 +63,7 @@
         "fixMenu":"Fixar o menu de navegação lateral",
         "exit":"Sair da aplicação",
         "se":"Procura",
-        "tituloProjeto" : "Sistema de Análise do Livro das Propriedades ou Tombo da Mitra Arquiepiscopal de Braga"
+        "tituloProjeto" : "Sistema de Acolhimento e Exploração de Livros de Banda Desenhada"
     },
     "nav": { 
         "instrucoesPesquisa" : "Instruções de pesquisa", 
@@ -104,8 +104,8 @@
         "textoTermos" : "\n Texto termos", 
         "textoPriv" : "\n Texto privacidade",
         "buttonAjuda" : "Ajuda", 
-        "folioAnaliseHeadline" : "Livro de Propriedades do Tombo da Mitra - Análise de Fólios", 
-        "tituloProjeto" : "Sistema de Análise do Livro das Propriedades do Tombo da Mitra",
+        "folioAnaliseHeadline" : "Sistema de Acolhimento e Exploração de Livros de Banda Desenhada",
+        "tituloProjeto" : "Sistema de Acolhimento e Exploração de Livros de Banda Desenhada",
         "imprimir" : "Imprimir", 
         "primeiroPagina" : "Primeira", 
         "ultimaPagina" : "Última", 

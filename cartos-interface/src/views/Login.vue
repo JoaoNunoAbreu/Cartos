@@ -1,7 +1,7 @@
 <template>
   <div>
     <loginHeader :ajuda='ajuda'></loginHeader>
-      <v-img class="center" src="@/assets/tommi_logo.png" max-height="150px" max-width="150px" @click="popup = true"/>
+      <v-img class="center" src="@/assets/cartos_logo.png" max-height="150px" max-width="150px" @click="popup = true"/>
       <v-dialog @keydown.esc="popup = false" v-model="popup" scrollable width="500">
         <v-card>
           <v-toolbar color="#2A3F54" dark>
@@ -32,7 +32,7 @@
         </v-card>
       </v-dialog>
       <div class="text">
-        <h2>{{ $t('navd.tituloProjeto') }}</h2>
+        <h2>{{ $t('nav.tituloProjeto') }}</h2>
         <h5>{{ $t('login.adminSystem') }}</h5>
       </div>
     <div id="form">
