@@ -4,27 +4,37 @@ Documentação oficial Neo4j para o docker container [aqui](https://neo4j.com/do
 
 Neo4j container da comunidade:
 
-```
+```bash
+# Deve-se ajustar a diretoria
+export CARTOS_NEO4J=$(pwd) && \
+
 docker run \
     --publish=7474:7474 --publish=7687:7687 \
-    --volume=$HOME/neo4j/data:/data \
-    --volume=$HOME/neo4j/logs:/logs \
+    --volume=$CARTOS_NEO4J/neo4j/data:/data \
+    --volume=$CARTOS_NEO4J/neo4j/logs:/logs \
+    --volume=$CARTOS_NEO4J/neo4j/conf:/conf \
+    --name cartos_neo4j_db \
     neo4j:latest
 ```
 
 Neo4j Enterprise Edition container:
 
-```
+```bash
+# Deve-se ajustar a diretoria
+export CARTOS_NEO4J=$(pwd) && \
+
 docker run \
     --publish=7474:7474 --publish=7687:7687 \
     --env=NEO4J_ACCEPT_LICENSE_AGREEMENT=yes \
-    --volume=$HOME/neo4j/data:/data \
-    --volume=$HOME/neo4j/logs:/logs \
+    --volume=$CARTOS_NEO4J/neo4j/data:/data \
+    --volume=$CARTOS_NEO4J/neo4j/logs:/logs \
+    --volume=$CARTOS_NEO4J/neo4j/conf:/conf \
+    --name cartos_neo4j_db \
     neo4j:enterprise
 ```
 
 Dispor as pastas `/data` e `/logs` é opcional, 
-mas estas premitem navegar pelo conteúdo da base de dados, como também persistir os dados em Neo4j containers.
+mas estas permitem navegar pelo conteúdo da base de dados, como também persistir os dados em Neo4j containers.
 
 # Documentação
 
