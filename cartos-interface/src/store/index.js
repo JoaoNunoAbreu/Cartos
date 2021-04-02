@@ -16,7 +16,7 @@ export default new Vuex.Store({
     },   
     plugins: [createPersistedState()],   
     mutations: {     
-      guardaTokenUtilizador(state, token) {       
+      guardaTokenUtilizador(state, token) { 
         state.jwt = token;     
       },    
       guardaNomeUtilizador(state, user) {       
@@ -40,7 +40,7 @@ export default new Vuex.Store({
     },
     getters:{
       isAuthenticated (state) {
-        if (!state.jwt || state.jwt.split('.').length < 3) {
+        if (!state.jwt || (state.jwt.split('.').length < 3)) {
           return false
         }
         const data = JSON.parse(atob(state.jwt.split('.')[1]))

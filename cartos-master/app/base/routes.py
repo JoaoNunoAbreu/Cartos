@@ -224,7 +224,7 @@ def login():
             'exp': datetime.utcnow() + timedelta(minutes=720)},
             '\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i' #jwt app.config['SECRET_KEY']
         )
-        return json_util.dumps({'token': token, 'user':user, 'users': users, 'nome': nome})
+        return json_util.dumps({'token': token.decode('UTF-8'), 'user':user, 'users': users, 'nome': nome})
     else:
         return json_util.dumps({'error': 'O utilizador não existe!'})
 
