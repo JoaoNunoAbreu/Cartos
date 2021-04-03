@@ -150,3 +150,4 @@ def photo_auth(request, picName):
         elif user['_id'] == picName:
             return True
     return False
+

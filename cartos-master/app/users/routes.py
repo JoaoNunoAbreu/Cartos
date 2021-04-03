@@ -18,6 +18,11 @@ CORS(blueprint)
 #######
 UPLOAD_FOLDER = './static/pics/'
 
+#Neo4j
+from py2neo import Graph,Node
+#g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
+g = Graph("bolt://localhost:11003",password='cartos', user='neo4j') 
+#
 
 @blueprint.route('/users', methods=['GET'])
 @admin_required
@@ -267,8 +272,11 @@ def route_pedidos():
 #@login_required
 def route_template_registar_pedido():
     username = request.form.get('username')
-    existeU = mongo.db.users.find_one({"_id":username})
-    existeP = mongo.db.pedidos.find_one({"_id":username})
+    #existeU = mongo.db.users.find_one({"_id":username})
+    #existeP = mongo.db.pedidos.find_one({"_id":username})
+    existeU = g.evaluate('match (x:User) where x.username=$v return x',v=username)
+    existeP = g.evaluate('match (x:Pedidos) where x.username=$v return x',v=username)
+
     nome = request.args.get('nome')
     if existeU or existeP:
         #flash('ERRO: Username já escolhido. Por favor escolha outro...')
@@ -305,8 +313,19 @@ def route_template_registar_pedido():
                 upload_path2 = join(dirname(realpath(__file__)), 'static/curriculoPedidos/', username + ".pdf")
                 copyfile(src, upload_path)
         obs = request.form.get('obs')
-        value = mongo.db.pedidos.insert({"_id":username,"nome":name,"email":email,"password":encryptPass,"tipo":tipo,"universidade":universidade,"departamento":departamento,"data":data,"obs":obs})
-        pedidos = mongo.db.pedidos.find()
+        #value = mongo.db.pedidos.insert({"_id":username,"nome":name,"email":email,"password":encryptPass,"tipo":tipo,"universidade":universidade,"departamento":departamento,"data":data,"obs":obs})
+        #pedidos = mongo.db.pedidos.find()
+        value = g.run('CREATE (n:User{_id:$username,nome:$name,email:$email,password:$password,tipo:$tipo,universidade:$universidade,departamento:$departamento,data:$data,obs:$obs})',
+            username=username,
+            name=name,
+            email=email,
+            password=encryptPass,
+            tipo=tipo,
+            universidade=universidade,
+            departamento=departamento,
+            data=data,
+            obs=obs
+        )
         return json_util.dumps({'nome': nome})
 
 

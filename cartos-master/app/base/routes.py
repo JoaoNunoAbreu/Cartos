@@ -26,6 +26,12 @@ import jwt
 CORS(blueprint)
 #######
 
+#Neo4j
+from py2neo import Graph,Node
+#g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
+g = Graph("bolt://localhost:11003",password='cartos', user='neo4j') 
+#
+
 @blueprint.route('/')
 def route_default():
     return redirect(url_for('base_blueprint.pesquisa'))
@@ -212,10 +218,16 @@ def route_errors(error):
 @blueprint.route('/login', methods=['POST'])
 def login():
     _id = request.form.get('id')
+    print(f"user: {_id}")
     password = request.form.get('password')
-    user = mongo.db.users.find_one({"_id":_id})
+    #user = mongo.db.users.find_one({"_id":_id})
+    user = g.evaluate('match (x:User) where x._id=$v return x',v=_id)
+    print(f"user: {user}")
+
     if user and check_password_hash(user["password"], password):
-        users= [doc for doc in mongo.db.users.find()]
+        print("ENTREIII")
+        #users= [doc for doc in mongo.db.users.find()]
+        users= g.evaluate('match (x:User) return x')
         nome = request.args.get('nome')
 
         token = jwt.encode({
@@ -224,7 +236,7 @@ def login():
             'exp': datetime.utcnow() + timedelta(minutes=720)},
             '\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i' #jwt app.config['SECRET_KEY']
         )
-        return json_util.dumps({'token': token.decode('UTF-8'), 'user':user, 'users': users, 'nome': nome})
+        return json_util.dumps({'token': token, 'user':user, 'users': users, 'nome': nome})
     else:
         return json_util.dumps({'error': 'O utilizador não existe!'})
 

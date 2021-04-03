@@ -376,7 +376,7 @@ export default {
       let formData = new FormData()
         formData.append('id',this.id)
         formData.append('password',this.password)
-      axios.post('https://tommi2.di.uminho.pt/api/login',formData,{
+      axios.post('http://localhost:5000/login',formData,{
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization:`Bearer: ${this.$store.state.jwt}`     
