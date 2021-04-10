@@ -14,9 +14,9 @@
     "navd": {
         "home": "Início",
         "import": "Importação",
-        "documents": "Documentos",
+        "documents": "Elementos ",
         "index":"Indexação",
-        "folios": "Gestão de Fólios",
+        "folios": "Gestão de Elementos",
         "indexes": "Gestor de Índices",
         "tags": "Lista de etiquetas",
         "analysis": "Análise",
@@ -143,8 +143,13 @@
         "elim":"Tem a certeza que deseja eliminar esta definição?"
     },
     "fol": {
-        "title": "Gestão de fólios",
+        "title": "Gestão de Elementos",
         "id": "Identificador",
+        "dom": "Dominio",
+        "col": "Coleção",
+        "edi": "Editora",
+        "data": "Data",
+        "lin": "Língua",
         "desc": "Descrição",
         "versao": "Versão",
         "sum": "Sumário",

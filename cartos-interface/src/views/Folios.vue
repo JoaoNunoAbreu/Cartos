@@ -77,16 +77,19 @@
       <template v-slot:header._id="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.descricao="{ header }">
+      <template v-slot:header.dominio="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.versao="{ header }">
+      <template v-slot:header.colecao="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.sumario="{ header }">
+      <template v-slot:header.editora="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.tipo="{ header }">
+      <template v-slot:header.data="{ header }">
+        <label> {{ header.text }} </label>
+      </template>
+      <template v-slot:header.lingua="{ header }">
         <label> {{ header.text }} </label>
       </template>
       <template v-slot:header.options="{ header }">
@@ -234,26 +237,30 @@ export default {
   data() {
     return {
       headers: [
-        {
+       {
           text: `${this.$t("fol.id")}`,
           align: "start",
           value: "_id",
         },
         {
-          text: `${this.$t("fol.desc")}`,
-          value: "descricao",
+          text: `${this.$t("fol.dom")}`,
+          value: "dominio",
         },
         {
-          text: `${this.$t("fol.versao")}`,
-          value: "versao",
+          text: `${this.$t("fol.col")}`,
+          value: "colecao",
         },
         {
-          text: `${this.$t("fol.sum")}`,
-          value: "sumario",
+          text: `${this.$t("fol.edi")}`,
+          value: "editora",
         },
         {
-          text: `${this.$t("fol.tipo")}`,
-          value: "tipo",
+          text: `${this.$t("fol.data")}`,
+          value: "data",
+        },
+        {
+          text: `${this.$t("fol.lin")}`,
+          value: "lingua",
         },
         {
           text: `${this.$t("fol.opt")}`,
