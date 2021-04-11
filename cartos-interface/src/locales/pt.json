@@ -150,15 +150,12 @@
         "edi": "Editora",
         "data": "Data",
         "lin": "Língua",
-        "desc": "Descrição",
         "versao": "Versão",
-        "sum": "Sumário",
-        "tipo": "Tipo",
         "opt": "Opções",
-        "insert": "Inserção de documento",
+        "insert": "Inserção de elemento",
         "print":"Imprimir ou exportar registos",
-        "elim":"Tem a certeza que deseja eliminar este fólio?",
-        "noPicText":"Este fólio não possui fotografia."
+        "elim":"Tem a certeza que deseja eliminar este elemento?",
+        "noPicText":"Este elemento não possui fotografia."
     },
     "imp": {
         "back":"Voltar ao passo anterior",

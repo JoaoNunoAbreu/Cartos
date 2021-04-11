@@ -10,7 +10,7 @@
         "home": "Comienzo",
         "import": "Importar",
         "documents": "Documentos",
-        "folios": "Folios",
+        "folios": "Gestión de Elementos",
         "indexes": "Índices",
         "tags": "Etiquetas",
         "analysis": "Analizar",
@@ -105,12 +105,14 @@
         "opt": "Opciones"
     },
     "fol": {
-        "title": "Folios",
+        "title": "Gestión de Elementos",
         "id": "Identificador",
-        "desc": "Descripción",
+        "dom": "Dominio",
+        "col": "Colección",
+        "edi": "Compañia de Publicidad",
+        "data": "Fecha",
+        "lin": "Idioma",
         "versao": "Versión",
-        "sum": "Resumen",
-        "tipo": "Tipo",
         "opt": "Opciones",
         "insert": "Insertar Folio",
         "print": "Imprimir o exportar registros"

@@ -105,9 +105,13 @@
         "opt": "Options"
     },
     "fol": {
-        "title": "Folios",
+        "title": "Element Management",
         "id": "Id",
-        "desc": "Description",
+        "dom": "Dominion",
+        "col": "Collection",
+        "edi": "Publishing Company",
+        "data": "Date",
+        "lin": "Language",
         "versao": "Version",
         "sum": "Summary",
         "tipo": "Type",
