@@ -238,7 +238,7 @@ export default {
     return {
       headers: [
        {
-          text: `${this.$t("fol.id")}`,
+          text: this.$t("fol.id"),
           align: "start",
           value: "_id",
         },
@@ -251,7 +251,7 @@ export default {
           value: "colecao",
         },
         {
-          text: `${this.$t("fol.edi")}`,
+          text: this.$t("fol.edi"),
           value: "editora",
         },
         {

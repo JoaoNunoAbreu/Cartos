@@ -29,7 +29,7 @@ CORS(blueprint)
 #Neo4j
 from py2neo import Graph,Node
 #g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
-g = Graph("bolt://localhost:11003",password='cartos', user='neo4j') 
+g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
 #
 
 @blueprint.route('/')
@@ -218,7 +218,7 @@ def route_errors(error):
 @blueprint.route('/login', methods=['POST'])
 def login():
     _id = request.form.get('id')
-    print(f"user: {_id}")
+    print(f"_id: {_id}")
     password = request.form.get('password')
     #user = mongo.db.users.find_one({"_id":_id})
     user = g.evaluate('match (x:User) where x._id=$v return x',v=_id)
