@@ -155,14 +155,14 @@
         "sum": "Sumário",
         "tipo": "Tipo",
         "opt": "Opções",
-        "insert": "Inserção de documento",
+        "insert": "Inserção de elemento",
         "print":"Imprimir ou exportar registos",
-        "elim":"Tem a certeza que deseja eliminar este fólio?",
-        "noPicText":"Este fólio não possui fotografia."
+        "elim":"Tem a certeza que deseja eliminar este elemento?",
+        "noPicText":"Este elemento não possui fotografia."
     },
     "imp": {
         "back":"Voltar ao passo anterior",
-        "passo": "Inserção de Documentos",
+        "passo": "Inserção de Elementos",
         "or":"ou",
         "seq":"Sequência de carateres proibida detetada no pedido.",
         "new":"Já existe um fólio com esse identificador, escolha outro."
@@ -283,7 +283,7 @@
         "close": "Fechar"
     },
     "p1": {
-        "ins": "Inserir fólio",
+        "ins": "Inserir elemento",
         "id": "Identificador",
         "ver": "Versão",
         "int": "Interpretativa",
@@ -292,11 +292,22 @@
         "fre": "Rosto",
         "v": "Verso",
         "desc": "Descrição",
+        "col": "Coleção",
+        "tit": "Título",
+        "num":"Número",
+        "serie":"Série",
+        "lin":"Língua",
+        "pag":"Página",
+        "size": "Size",
+        "pers": "Personagens",
+        "estado": "Estado",
+        "edi": "Editora",
+        "dataP": "Data de Publicação",
         "sum": "Sumário",
         "trans": "Transcrição",
         "rev": "Revisão",
         "obs": "Observações",
-        "foto": "Adicionar fotografia",
+        "foto": "Adicionar Capa",
         "f": "Foto",
         "file": "Ficheiro",
         "tfile": "Ficheiro de texto",
@@ -369,7 +380,7 @@
         "tag":"Etiquetas",
         "pal":"Palavras",
         "users":"Utilizadores",
-        "ins":"Inserção de Documentos"
+        "ins":"Inserção de Elementos"
     },
     "pr":{
         "pesq":"Pesquisas",
@@ -380,7 +391,7 @@
         "h":"Hora"
     },
     "docs":{
-        "ins":"Inserção de Documentos",
+        "ins":"Inserção de Elementos",
         "title": "Documentação",
         "id":"Título",
         "desc":"Descrição",

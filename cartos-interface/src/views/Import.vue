@@ -25,8 +25,8 @@
                     >
                         <v-toolbar dark flat color="#2A3F54">
                             <h3 class="ml-5"> {{$t('imp.passo')}}</h3>
-                            <h3 v-if="n==1">/{{$t('p1.ins')}}</h3>
-                            <h3 v-else-if="n==2">/{{$t('p2.tit')}}</h3>
+                            <!--<h3 v-if="n==1">/{{$t('p1.ins')}}</h3>-->
+                            <h3 v-if="n==2">/{{$t('p2.tit')}}</h3>
                             <h3 v-else-if="n==3">/{{$t('p3.av')}}</h3>
                             <h3 v-else-if="n==4">/{{$t('p4.tit')}}</h3>
                             <h3 v-else-if="n==5">/{{$t('p5.tit')}}</h3>
