@@ -278,20 +278,20 @@ export default {
       skip: 0,
       dialog: false,
       rules: {
-        inicioNome: (value) =>
+        inicioNome: value =>
           value.startsWith("TM-F") ||
           "O nome do Fólio necessita de começar com TM-F",
-        umHifen: (value) =>
+        umHifen: value =>
           value.split("-").length - 1 == 1 ||
-          "O nome do Fólio não pode ter mais hífens",
+          "O nome do Fólio não pode ter mais hífens"
       },
-      foliosNames: ["ola", "adeus"],
+      foliosNames: ["ola", "adeus"]
     };
   },
   props: {
     folio: {
-      type: Object,
-    },
+      type: Object
+    }
   },
   created() {
     this.idFolio = this.folio.idFolio;
@@ -321,14 +321,8 @@ export default {
     },
     saveSkip() {
       this.skip = 1;
-      //console.log(this.skip)
       this.$emit("atualizaFolio", this);
-    },
-
-    /*
-    atualizarInfo(){
-      this.$emit('atualizarInfoPasso1','skip')
-    }*/
+    }
   },
   computed: {
     disableButton() {
@@ -342,8 +336,8 @@ export default {
       )
         return false;
       else return true;
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>

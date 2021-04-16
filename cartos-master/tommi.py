@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 from os import environ
 from sys import exit
 from config import config_dict
-from app import create_app,mongo
+from app import create_app
 
 
 

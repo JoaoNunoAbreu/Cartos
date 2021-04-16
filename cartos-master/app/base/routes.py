@@ -18,7 +18,7 @@ from app import mongo
 import re
 
 ###### este é meu
-import json 
+from flask import jsonify
 from bson import json_util
 from flask_cors import CORS, cross_origin
 from datetime import datetime, timedelta
@@ -220,13 +220,10 @@ def login():
     _id = request.form.get('id')
     print(f"_id: {_id}")
     password = request.form.get('password')
-    #user = mongo.db.users.find_one({"_id":_id})
     user = g.evaluate('match (x:User) where x._id=$v return x',v=_id)
     print(f"user: {user}")
 
     if user and check_password_hash(user["password"], password):
-        print("ENTREIII")
-        #users= [doc for doc in mongo.db.users.find()]
         users= g.evaluate('match (x:User) return x')
         nome = request.args.get('nome')
 
@@ -237,8 +234,10 @@ def login():
             '\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i' #jwt app.config['SECRET_KEY']
         )
         return json_util.dumps({'token': token, 'user':user, 'users': users, 'nome': nome})
+    elif(user == None):
+        return json_util.dumps({'error': 'O utilizador não existe!'},indent=4,ensure_ascii=False)
     else:
-        return json_util.dumps({'error': 'O utilizador não existe!'})
+        return json_util.dumps({'error': 'Password incorrecta!'},indent=4,ensure_ascii=False)
 
 
 

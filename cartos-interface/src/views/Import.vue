@@ -240,14 +240,12 @@
                 formData.append('foto',this.info.foto)
                 formData.append('ficheiro',this.info.ficheiro)
             
-                // axios.post(`https://tommi2.di.uminho.pt/api/import/passo1/?nome=${this.$store.state.user._id}`,formData,{
                 axios.post(`https://tommi2.di.uminho.pt/api/import/passo1/?nome=${this.$store.state.user._id}`,formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer: ${this.$store.state.jwt}`       
                 }
                 }).then(data => {
-                    //console.log(data)
                     //if folio ok 
                     if( data.data.message == 'não existe'){
                         //console.log("O FOLIO NÂO EXISTE")
