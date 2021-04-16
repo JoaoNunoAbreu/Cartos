@@ -1,3 +1,14 @@
+"""
+Script para criar nodos de:
+    - Tipo
+    - Lingua
+    - Colecao
+    - Editora
+    - Area
+    - Autor
+
+"""
+
 from py2neo import Graph
 g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
 
