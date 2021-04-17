@@ -56,17 +56,17 @@ def route_template_passo6():
 
     nome = request.args.get('nome')
     path = ""
-    #print(request.form)
-    if 'ficheiro' in request.files:
+    print(request.files)
+    """if 'ficheiro' in request.files:
         ficheiro = request.files['ficheiro']
         if ficheiro.filename == '':
             flash('Não submeteu nenhum Ficheiro')
             return json_util.dumps({'nome': nome, 'message':'nao correu bem'})
         else:
-            ficheiro.filename = request.form.get('id') + '.txt'
+            ficheiro.filename = request.form.get('id') + '.pdf'
             path = join(dirname(realpath(__file__)), '..', 'folios/static/doc', ficheiro.filename)
             ficheiro.save(path)
-
+"""
     """if 'foto' in request.files:
         foto = request.files['foto']
         if foto.filename != '':
@@ -123,16 +123,16 @@ def route_template_reindex():
 class Aux: 
 ############## Aux: create_elemento.py 
 
-
-    def create_element(elem_id,titulo,numero,serie,personagens,nr_paginas,tamanho,estado,data_publicacao,capa,texto,observacoes):
+                       
+    def create_element(elem_id,titulo,numero,serie,nr_paginas,tamanho,personagens,estado,data_publicacao,capa,texto,observacoes):
         q = f'CREATE (n:Elemento\
             {{\
                 id : "{elem_id}",\
                 titulo : "{titulo}",\
                 numero : "{numero}",\
                 serie : "{serie}",\
-                personagens : {personagens},\
-                nr_paginas : {nr_paginas},\
+                personagens : "{personagens}",\
+                nr_paginas : "{nr_paginas}",\
                 tamanho : "{tamanho}",\
                 estado : "{estado}",\
                 data_publicacao : "{data_publicacao}",\
@@ -183,4 +183,4 @@ class Aux:
         Aux.create_relationship("Elemento","Tipo",elem_id,tipo,"é")
         Aux.create_relationship("Elemento","Editora",elem_id,editora,"publicado")
         Aux.create_relationship("Elemento","Lingua",elem_id,lingua,"escrito")
-        Aux.create_relationship("Elemento","Colecao",elem_id,colecao,"integra")s
+        Aux.create_relationship("Elemento","Colecao",elem_id,colecao,"integra")

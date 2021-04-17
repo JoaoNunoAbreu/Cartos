@@ -75,12 +75,16 @@
                   </div>
                 </div>
                 <div class="child-left">
-                  <div class="file-upload-form">
-                    Capa:
-                    <input type="file" @change="previewImage" accept="image/*">
-                  </div>
+                  <label>{{ $t("p1.foto") }}:</label>
+                  <v-file-input
+                    show-size
+                    accept="image/jpg, image/jpeg, image/png"
+                    :label="$t('p1.file')"
+                    v-model="capa"
+                    @change="previewImage">
+                  </v-file-input>
                   <div class="image-preview" v-if="imageData.length > 0">
-                    <img class="preview" :src="imageData">
+                      <img class="preview" :src="imageData">
                   </div>
                 </div>
               </div>
@@ -282,6 +286,7 @@ export default {
       ficheiro: null,
       tipo: "",
       imageData: "" ,
+      capa: null,
       rules: {
         /*inicioNome: (value) =>
           value.startsWith("TM-F") ||
@@ -316,7 +321,7 @@ export default {
     this.dataPub = this.elemento.dataPub;
     this.ficheiro = this.elemento.ficheiro;
     this.tipo = this.elemento.tipo;
-    this.imageData = this.elemento.imageData;
+    this.capa= this.elemento.capa;
   },
   methods: {
     reset() {
@@ -336,7 +341,8 @@ export default {
       (this.dataPub= ""),
       (this.ficheiro= null),
       (this.tipo= ""),
-      (this.imageData= null)
+      (this.imageData= ""),
+      (this.capa=null)
       },
     save() {
       this.$emit("atualizaElemento", this);

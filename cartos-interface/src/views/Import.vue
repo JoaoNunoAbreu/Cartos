@@ -147,6 +147,7 @@
                 editora: "",
                 dataPub: "",
                 ficheiro: null,
+                capa: null,
                 tipo: "",
                 imageData: "" ,
             },
@@ -183,6 +184,7 @@
                 this.editora = ""
                 this.dataPub = ""
                 this.ficheiro = null
+                this.capa = null
                 this.tipo = ""
                 this.imageData = ""
                 // ----------------------------
@@ -207,6 +209,7 @@
                 this.info.editora = elemento.editora
                 this.info.dataPub = elemento.dataPub
                 this.info.ficheiro = elemento.ficheiro
+                this.info.capa = elemento.capa
                 this.info.tipo = elemento.tipo
                 this.info.imageData = elemento.imageData
 
@@ -275,6 +278,7 @@
                 formData.append('editora',this.info.editora)
                 formData.append('dataPub',this.info.dataPub)
                 formData.append('ficheiro',this.info.ficheiro)
+                formData.append('capa',this.info.capa)
                 formData.append('tipo',this.info.tipo)
                 formData.append('imageData',this.info.imageData)
 
