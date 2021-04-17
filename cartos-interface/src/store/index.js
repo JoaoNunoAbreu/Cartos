@@ -40,6 +40,7 @@ export default new Vuex.Store({
     },
     getters:{
       isAuthenticated (state) {
+        console.log("state.jwt = " + JSON.stringify(state.jwt))
         if (!state.jwt || (state.jwt.split('.').length < 3)) {
           return false
         }
@@ -49,7 +50,7 @@ export default new Vuex.Store({
         return now < exp
       },
       isAdmin(state){
-        if(state.user.tipo != 'Admin' ){
+        if(state.user.tipo != 'Admin'){
           return false
         }
         return true

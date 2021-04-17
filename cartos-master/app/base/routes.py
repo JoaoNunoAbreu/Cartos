@@ -29,7 +29,7 @@ CORS(blueprint)
 #Neo4j
 from py2neo import Graph
 #g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
-g = Graph("bolt://localhost:11003",password='cartos', user='neo4j') 
+g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
 #
 
 @blueprint.route('/')
@@ -233,7 +233,7 @@ def login():
             'exp': datetime.utcnow() + timedelta(minutes=720)},
             '\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i' #jwt app.config['SECRET_KEY']
         )
-        return json_util.dumps({'token': token, 'user':user, 'users': users, 'nome': nome})
+        return json_util.dumps({'token': token.decode('UTF-8'), 'user':user, 'users': users, 'nome': nome})
     elif(user == None):
         return json_util.dumps({'error': 'O utilizador não existe!'},indent=4,ensure_ascii=False)
     else:
