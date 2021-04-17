@@ -118,7 +118,8 @@ def route_template_passo6():
         else:
             mongo.db.tags.insert_one({"_id":t["tag"],"n_ocorrencias":t["n_ocorrencias"],"ref":t["ref"],"conteudoTag":t["conteudoTag"]})
     """
-    return json_util.dumps(request.args)
+    print("\n\n\nola\n\n\n")
+    return json_util.dumps({'pixa': "pixa"})
 
     #return json_util.dumps({'nome': nome, 'message':'inserido com sucesso'})
 

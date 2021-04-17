@@ -14,7 +14,7 @@
                         <v-toolbar dark flat color="#2A3F54">
                             <h3 class="ml-5"> {{$t('imp.passo')}}</h3>
                         </v-toolbar>
-                        <passo1 v-if="n == 1 && renderComponent" :elemento="info" :cancelado="cancelado" @atualizaFolio=atualizaFolio($event)></passo1>
+                        <passo1 v-if="n == 1 && renderComponent" :elemento="info" :cancelado="cancelado" @atualizaElemento=atualizaElemento($event) @submeterElemento=submeterElemento() ></passo1>
                         
                         <!--<passo2 v-else-if="n == 2" :elemento="info" @cancela=cancela()></passo2>
                         
@@ -192,8 +192,8 @@
                     this.renderComponent = true;
                 });
             },
-            atualizaFolio(elemento){
-                //console.log(elemento)
+            atualizaElemento(elemento){
+                console.log("atualizaElemento, elemento = " + JSON.stringify(elemento.id))
                 this.info.id = elemento.id
                 this.info.titulo = elemento.titulo
                 this.info.colecao = elemento.colecao
@@ -212,7 +212,7 @@
 
                 //console.log('FILE1: ' + this.info.ficheiro)
 
-                let formData = new FormData()
+                /* let formData = new FormData()
 
                 formData.append('id',this.info.id)
                 formData.append('titulo',this.info.titulo)
@@ -257,10 +257,10 @@
                     }
                 }) .catch(() => {
                     this.fotoErro = true
-                })
+                }) */
 
             },
-            submeterFolio(){
+            submeterElemento(){
                 let formData = new FormData()
                 formData.append('id',this.info.id)
                 formData.append('titulo',this.info.titulo)
@@ -278,17 +278,19 @@
                 formData.append('tipo',this.info.tipo)
                 formData.append('imageData',this.info.imageData)
 
-                //console.log(this.info.list)
-                axios.post(`https://tommi2.di.uminho.pt/api/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
+                console.log("this.info.id = " + JSON.stringify(this.info.id))
+
+                axios.post(`http://localhost:5000/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
                     'Content-Type': 'multipart/form-data',
                     Authorization:`Bearer: ${this.$store.state.jwt}`
                 }})
                 .then(() => {
                     this.model = 0
                 }).catch(e => {
+                    console.log("ERRO = " + e)
                     this.errors.push(e)
                 })
-                this.cancela()
+                //this.cancela()
             }
         },
         updated () {

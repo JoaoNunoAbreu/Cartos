@@ -309,36 +309,11 @@
         "file": "Ficheiro",
         "tfile": "Ficheiro de texto",
         "reset": "Repôr formulário por omissão",
-        "sub": "Passar ao passo seguinte",
-        "skip": "Saltar",
+        "save": "Salvar",
+        "sub": "Submeter",
         "ajuda": "Texto de ajuda",
         "leave": "Sair da inserção",
         "acept": "Aceitar Pedido"
-    },
-    "p2": {
-        "tit":"Texto Importado com e sem Etiquetas",
-        "tComTags": "Texto com etiquetas",
-        "tSemTags": "Texto sem etiquetas",
-        "reset": "Repôr"
-    },
-    "p3": {
-        "av": "Imagem representativa do Documento",
-        "reset": "Repôr"
-    },
-    "p4": {
-        "tit":"Etiquetas Identificadas",
-        "reset": "Repôr"
-    },
-    "p5":{
-        "tit":"Índices Gerados"
-    },
-    "p6": {
-        "tit":"Resumo",
-        "nfolios": "Número de fólios",
-        "nlinhas": "Número de linhas",
-        "ntags": "Número de etiquetas",
-        "nindices": "Número de índices",
-        "sucD":"Documento inserido no sistema."
     },
     "pForm": {
         "aU": "Adicionar utilizadores",

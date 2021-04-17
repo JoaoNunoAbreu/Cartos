@@ -153,7 +153,7 @@
                     >
                   </template>
                   <span>
-                    {{ $t("p1.sub") }}
+                    {{ $t("p1.save") }}
                   </span>
                 </v-tooltip>
                 <v-tooltip bottom>
@@ -173,15 +173,15 @@
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on: tooltip }">
                     <v-btn
-                      ref="skip"
-                      @click="saveSkip()"
+                      ref="submit"
+                      @click="submeter()"
                       class="mr-5"
                       v-on="{ ...tooltip }"
                       ><v-icon>mdi-exit-to-app</v-icon></v-btn
                     >
                   </template>
                   <span>
-                    {{ $t("p1.skip") }}
+                    {{ $t("p1.sub") }}
                   </span>
                 </v-tooltip>
                 <v-spacer></v-spacer>
@@ -290,9 +290,9 @@ export default {
           value.split("-").length - 1 == 1 ||
           "O nome do Fólio não pode ter mais hífens",
       */},
-      colecaoSel: ["Coleçao1", "Coleção2"],
-      linguaSel: ["Português", "Inglês", "Francês", "Espanhol"],
-      editoraSel:["Editora1","Editora2","Editora3"],
+      colecaoSel: ["C1", "C2","C3"],
+      linguaSel: ["Português", "Inglês", "Espanhol"],
+      editoraSel:["Porto Editora","Porto Editora 2","Porto Editora 3"],
       tipoSel:["Tipo1","Tipo2","Tipo3"]
     };
   },
@@ -339,12 +339,12 @@ export default {
       (this.imageData= null)
       },
     save() {
-      this.$emit("atualizaFolio", this);
+      this.$emit("atualizaElemento", this);
     },
-    saveSkip() {
+    submeter() {
       this.skip = 1;
       //console.log(this.skip)
-      this.$emit("atualizaFolio", this);
+      this.$emit("submeterElemento", this);
     },
     previewImage: function(event) {
             // Reference to the DOM input element
