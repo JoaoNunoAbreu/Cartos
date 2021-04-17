@@ -18,7 +18,7 @@ CORS(blueprint)
 UPLOAD_FOLDER = '../folios/static/pics/'
 
 from py2neo import Graph
-g = Graph("bolt://localhost:11003",password='cartos', user='neo4j') 
+g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
 
 @blueprint.route('/passo1/',methods=['POST'])
 @admin_required
@@ -54,10 +54,12 @@ def route_template_passo1():
 #@login_required
 def route_template_passo6():
 
-    nome = request.args.get('nome')
+    """ nome = request.args.get('nome')
     path = ""
     print(request.files)
-    """if 'ficheiro' in request.files:
+    """
+
+    if 'ficheiro' in request.files:
         ficheiro = request.files['ficheiro']
         if ficheiro.filename == '':
             flash('Não submeteu nenhum Ficheiro')
@@ -66,21 +68,21 @@ def route_template_passo6():
             ficheiro.filename = request.form.get('id') + '.pdf'
             path = join(dirname(realpath(__file__)), '..', 'folios/static/doc', ficheiro.filename)
             ficheiro.save(path)
-"""
-    """if 'foto' in request.files:
+    """
+    if 'foto' in request.files:
         foto = request.files['foto']
         if foto.filename != '':
             foto.filename = request.form.get('idFolio')
             upload_path = join(dirname(realpath(__file__)),'..' ,'folios/static/pics/')
             foto.save(upload_path + foto.filename + '.png')
     now = datetime.datetime.now()
-    data = now.strftime("%Y-%m-%d %H:%M")"""
-
+    data = now.strftime("%Y-%m-%d %H:%M")
+    """
 
     aux= Aux
     aux.save_element(request.form['id'],request.form['titulo'],request.form['colecao'],request.form['numero'],request.form['serie'],request.form['lingua'],\
                 request.form['paginas'],request.form['size'],request.form['personagens'],request.form['estado'],request.form['editora'],request.form['dataPub'],\
-                request.form['tipo'],request.form['imageData'],path)
+                request.form['tipo'],request.form['imageData'],path) """
 
     print("\n\n\nola\n\n\n")
     return json_util.dumps({'pixa': "pixa"})
@@ -121,10 +123,15 @@ def route_template_reindex():
 
 
 class Aux: 
+<<<<<<< HEAD
 ############## Aux: create_elemento.py 
 
                        
     def create_element(elem_id,titulo,numero,serie,nr_paginas,tamanho,personagens,estado,data_publicacao,capa,texto,observacoes):
+=======
+    
+    def create_element(elem_id,titulo,numero,serie,personagens,nr_paginas,tamanho,estado,data_publicacao,capa,texto,observacoes):
+>>>>>>> 52216b83647dfbdac5501c2345cab72b9b1772c7
         q = f'CREATE (n:Elemento\
             {{\
                 id : "{elem_id}",\
