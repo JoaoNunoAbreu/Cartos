@@ -21,7 +21,7 @@ UPLOAD_FOLDER = './static/pics/'
 #Neo4j
 from py2neo import Graph
 #g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
-g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
+g = Graph("bolt://localhost:11003",password='cartos', user='neo4j') 
 #
 
 @blueprint.route('/users', methods=['GET'])
@@ -91,7 +91,7 @@ def route_template_registar():
 
 
 @blueprint.route('/ver/<user>', methods=['GET'])
-@admin_required
+#@admin_required
 #@login_required
 def route_template_ver(user):
     nome = request.args.get('nome')

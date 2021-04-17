@@ -10,7 +10,7 @@ Script para criar nodos de:
 """
 
 from py2neo import Graph
-g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
+g = Graph("bolt://localhost:11003",password='cartos', user='neo4j') 
 
 print("Nodo: ",end="")
 nodo = input()
