@@ -66,14 +66,14 @@ def route_template_passo6():
             return json_util.dumps({'nome': nome, 'message':'nao correu bem'})
         else:
             ficheiro.filename = request.form.get('id') + '.pdf'
-            path = join(dirname(realpath(__file__)), '..', 'folios/static/doc', ficheiro.filename)
+            path = join(dirname(realpath(__file__)), '..', 'elementos/static/doc', ficheiro.filename)
             ficheiro.save(path)
 
     if 'capa' in request.files:
         capa = request.files['capa']
         if capa.filename != '':
             capa.filename = request.form.get('id')
-            upload_path = join(dirname(realpath(__file__)),'..' ,'folios/static/pics/')
+            upload_path = join(dirname(realpath(__file__)),'..' ,'elementos/static/pics/')
             capa.save(upload_path + capa.filename + '.png')
 
     aux = Aux

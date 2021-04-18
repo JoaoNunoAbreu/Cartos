@@ -7,3 +7,4 @@ flask_sqlalchemy
 gunicorn
 psycopg2-binary
 PyJWT==1.7.1
+py2neo
