@@ -154,7 +154,8 @@
             cancelado: 0,
             renderComponent: true,
             fotoErro:false,
-            failureDialog:false
+            failureDialog:false,
+            url: process.env.VUE_APP_URL,
         }),
         components:{
             'appHeader': Header,
@@ -279,7 +280,7 @@
 
                 
 
-                axios.post(`https://tommi2.di.uminho.pt/api/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
+                axios.post(url+`/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
                     'Content-Type': 'multipart/form-data',
                     Authorization:`Bearer: ${this.$store.state.jwt}`
                 }})

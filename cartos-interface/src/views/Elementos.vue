@@ -236,6 +236,7 @@ import FolioForm from "../components/folioForm.vue";
 export default {
   data() {
     return {
+      url: process.env.VUE_APP_URL,
       headers: [
        {
           text: this.$t("fol.id"),
@@ -280,6 +281,7 @@ export default {
       deleteDialog: false,
       tempValue: "",
       item: {},
+      
     };
   },
   watch: {
@@ -296,7 +298,7 @@ export default {
   created() {
     axios
       .get(
-        `https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,
+        url+`/elementos/elementos?nome=${this.$store.state.user._id}`,
         {
           headers: {
             Authorization: `Bearer: ${this.$store.state.jwt}`,

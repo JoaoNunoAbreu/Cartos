@@ -101,6 +101,7 @@ export default {
         curriculo:{},
         observacoes:""
       },
+      url: process.env.VUE_APP_URL,
       dialog:false,
       ajuda:'registo',
       valid:true,
@@ -157,7 +158,7 @@ export default {
             formData.append('curriculo',this.pedido.curriculo)
             formData.append('obs',this.pedido.observacoes)
 
-        axios.post('https://tommi2.di.uminho.pt/api/users/pedidos/registar',formData,{
+        axios.post(url+'/users/pedidos/registar',formData,{
           headers: {
             'Content-Type': 'multipart/form-data'    
           }

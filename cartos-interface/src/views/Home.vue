@@ -292,13 +292,14 @@ export default {
       npalavras: "",
       resultado: "periodo", 
       pesquisas: [], 
-      show: false
+      show: false,
+      url: process.env.VUE_APP_URL,
     };
   }, 
 
   mounted: function() {
     axios
-      .get("https://tommi2.di.uminho.pt/api/analise/foliosnames")
+      .get(url+"/analise/foliosnames")
       .then(dados => {
         var objects = dados.data;
         objects.map(f => this.foliosNames.push(f._id));

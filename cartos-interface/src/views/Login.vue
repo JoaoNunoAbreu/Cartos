@@ -331,6 +331,7 @@ export default {
       popup:false,
       dialogPW:false,
       dialogPedido:false,
+      url: process.env.VUE_APP_URL,
       pedido:{
         username:"",
         nome:"",
@@ -341,7 +342,8 @@ export default {
         departamento:"",
         foto:{},
         curriculo:{},
-        observacoes:""
+        observacoes:"",
+        
       },
       valid:true,
       failureDialog:false,
@@ -376,7 +378,7 @@ export default {
       let formData = new FormData()
         formData.append('id',this.id)
         formData.append('password',this.password)
-      axios.post('https://tommi2.di.uminho.pt/api/login',formData,{
+      axios.post(url+'/login',formData,{
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization:`Bearer: ${this.$store.state.jwt}`     
