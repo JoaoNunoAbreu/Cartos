@@ -4,7 +4,7 @@
 from app.users import blueprint
 from flask import render_template, request, flash, send_from_directory
 from flask_login import login_required
-from app import mongo, token_required, admin_required, photo_auth
+from app import mongo, token_required, admin_required, photo_auth, neo4j_db
 from os import path, remove, rename, replace
 from werkzeug.security import generate_password_hash
 import datetime
@@ -18,11 +18,6 @@ CORS(blueprint)
 #######
 UPLOAD_FOLDER = './static/pics/'
 
-#Neo4j
-from py2neo import Graph
-g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
-#g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
-#
 
 @blueprint.route('/users', methods=['GET'])
 @admin_required
@@ -272,8 +267,8 @@ def route_template_registar_pedido():
     username = request.form.get('username')
     #existeU = mongo.db.users.find_one({"_id":username})
     #existeP = mongo.db.pedidos.find_one({"_id":username})
-    existeU = g.evaluate('match (x:User) where x.username=$v return x',v=username)
-    existeP = g.evaluate('match (x:Pedidos) where x.username=$v return x',v=username)
+    existeU = neo4j_db.evaluate('match (x:User) where x.username=$v return x',v=username)
+    existeP = neo4j_db.evaluate('match (x:Pedidos) where x.username=$v return x',v=username)
 
     nome = request.args.get('nome')
     if existeU or existeP:
@@ -313,7 +308,7 @@ def route_template_registar_pedido():
         obs = request.form.get('obs')
         #value = mongo.db.pedidos.insert({"_id":username,"nome":name,"email":email,"password":encryptPass,"tipo":tipo,"universidade":universidade,"departamento":departamento,"data":data,"obs":obs})
         #pedidos = mongo.db.pedidos.find()
-        g.run('CREATE (n:User{_id:$username,nome:$name,email:$email,password:$password,tipo:$tipo,universidade:$universidade,departamento:$departamento,data:$data,obs:$obs})',
+        neo4j_db.run('CREATE (n:User{_id:$username,nome:$name,email:$email,password:$password,tipo:$tipo,universidade:$universidade,departamento:$departamento,data:$data,obs:$obs})',
             username=username,
             name=name,
             email=email,

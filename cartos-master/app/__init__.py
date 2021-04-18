@@ -20,10 +20,13 @@ dadosFolio = {}
 indexList = []
 tags = []
 
+
 #################
+import os
+from dotenv import load_dotenv
 from py2neo import Graph
-g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
-#g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
+load_dotenv()
+neo4j_db = Graph(os.getenv("DB_URL"),password=os.getenv("DB_PASS"), user=os.getenv("DB_USER"))
 #################
 
 def register_extensions(app):
@@ -86,7 +89,7 @@ def token_required(f):
             token = auth_headers[1]
             data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
             query = f'match (n:User) where n.id = "{data["sub"]}" return n'
-            user = g.run(query)
+            user = neo4j_db.run(query)
             now = datetime.datetime.now()
             date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
             did = ObjectId()
@@ -125,7 +128,7 @@ def admin_required(f):
             token = auth_headers[1]
             data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
             query = f'match (n:User) where n.id = "{data["sub"]}" AND n.tipo = "Admin" return n'
-            user = g.run(query)
+            user = neo4j_db.run(query)
             now = datetime.datetime.now()
             date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
             did = ObjectId()
