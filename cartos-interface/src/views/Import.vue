@@ -7,44 +7,24 @@
             elevation="8"
             max-width="800"
         >   
-            <div class="import">
-                <v-progress-linear
-                :size="100"
-                :value="value"
-                :height="30"
-                color="primary"
-                >
-                    {{value}}%
-                </v-progress-linear>
-            </div>
+            <div class="import"></div>
             <v-card>
                 <v-window v-model="model">
-                    <v-window-item
-                    v-for="n in 6"
-                    :key="n"
-                    >
+                    <v-window-item v-for="n in 1" :key="n">
                         <v-toolbar dark flat color="#2A3F54">
                             <h3 class="ml-5"> {{$t('imp.passo')}}</h3>
-                            <!--<h3 v-if="n==1">/{{$t('p1.ins')}}</h3>-->
-                            <h3 v-if="n==2">/{{$t('p2.tit')}}</h3>
-                            <h3 v-else-if="n==3">/{{$t('p3.av')}}</h3>
-                            <h3 v-else-if="n==4">/{{$t('p4.tit')}}</h3>
-                            <h3 v-else-if="n==5">/{{$t('p5.tit')}}</h3>
-                            <h3 v-else-if="n==6">/{{$t('p6.tit')}}</h3>
-                            <v-spacer/>
-                            <h3 class="mr-5">{{"(" + n + "/6)"}}</h3>
                         </v-toolbar>
-                        <passo1 v-if="n == 1 && renderComponent" :folio="info" :cancelado="cancelado" @atualizaFolio=atualizaFolio($event)></passo1>
+                        <passo1 v-if="n == 1 && renderComponent" :elemento="info" :cancelado="cancelado" @atualizaElemento=atualizaElemento($event) @submeterElemento=submeterElemento() ></passo1>
                         
-                        <passo2 v-else-if="n == 2" :folio="info" @cancela=cancela()></passo2>
+                        <!--<passo2 v-else-if="n == 2" :elemento="info" @cancela=cancela()></passo2>
                         
-                        <passo3 v-else-if="n == 3 && renderComponent" :folio="info" @cancela=cancela()></passo3>
+                        <passo3 v-else-if="n == 3 && renderComponent" :elemento="info" @cancela=cancela()></passo3>
                         
-                        <passo4 v-else-if="n == 4 && renderComponent" :folio="info" @cancela=cancela()></passo4>
+                        <passo4 v-else-if="n == 4 && renderComponent" :elemento="info" @cancela=cancela()></passo4>
                         
-                        <passo5 v-else-if="n == 5 && renderComponent" :folio="info" @cancela=cancela()></passo5>
+                        <passo5 v-else-if="n == 5 && renderComponent" :elemento="info" @cancela=cancela()></passo5>
                         
-                        <passo6 v-else-if="n == 6 && renderComponent" :folio="info" :fileInfo="passo6info" @submeterFolio=submeterFolio() @cancela=cancela()></passo6>
+                        <passo6 v-else-if="n == 6 && renderComponent" :elemento="info" :fileInfo="passo6info" @submeterFolio=submeterFolio() @cancela=cancela()></passo6> -->
 
                         <v-toolbar flat color="white" v-if="n!=1 && n!=6">
                             <v-tooltip bottom>
@@ -147,11 +127,6 @@
     import Header from '../components/header.vue'
     import NavDraw from '../components/navDraw.vue'
     import Passo1 from '../components/passo1.vue'
-    import Passo2 from '../components/passo2.vue'
-    import Passo3 from '../components/passo3.vue'
-    import Passo4 from '../components/passo4.vue'
-    import Passo5 from '../components/passo5.vue'
-    import Passo6 from '../components/passo6.vue'
     import axios from 'axios'
     export default {
         data: () => ({
@@ -159,18 +134,22 @@
             model: null,
             ajuda:'imports',
             info:{
-                idFolio:"",
-                versao:"",
-                tipo:"",
-                descricao:"",
-                obs:"",
-                sumario:"",
-                textoTags:"",
-                textoSTags:"",
-                tags:[],
-                list:[],
-                foto:null,
-                ficheiro:null,
+                id: "",
+                titulo: "",
+                colecao: "",
+                numero: "",
+                serie: "",
+                lingua: "",
+                páginas: "",
+                size: "",
+                personagens: "",
+                estado: "",
+                editora: "",
+                dataPub: "",
+                ficheiro: null,
+                capa: null,
+                tipo: "",
+                imageData: "" ,
             },
             passo6info: {},
             cancelado: 0,
@@ -182,11 +161,6 @@
             'appHeader': Header,
             'navDraw':NavDraw,
             'passo1':Passo1,
-            'passo2':Passo2,
-            'passo3':Passo3,
-            'passo4':Passo4,
-            'passo5':Passo5,
-            'passo6':Passo6
         },
         methods:{
             prev(){
@@ -196,111 +170,131 @@
                 this.model += 1
             },
             cancela(){
-                this.info.idFolio=""
-                this.info.versao=""
-                this.info.tipo=""
-                this.info.descricao=""
-                this.info.obs=""
-                this.info.sumario=""
-                this.info.foto=null
-                this.info.ficheiro=null
-                this.info.textoTags=""
-                this.info.textoSTags=""                
-                this.info.tags=[]
-                this.info.list=[]
-                this.passo6info={}
-                //console.log('Info:' + JSON.stringify(this.info))
+                // ----------------------------
+                this.id = ""
+                this.titulo = ""
+                this.colecao = ""
+                this.numero = ""
+                this.serie = ""
+                this.lingua = ""
+                this.páginas = ""
+                this.size = ""
+                this.personagens = ""
+                this.estado = ""
+                this.editora = ""
+                this.dataPub = ""
+                this.ficheiro = null
+                this.capa = null
+                this.tipo = ""
+                this.imageData = ""
+                // ----------------------------
                 this.model = 0
-                this.renderComponent = false;
+                this.renderComponent = false
                 this.$nextTick (() => {
-                    // add my-component component in DOM
                     this.renderComponent = true;
                 });
             },
-            atualizaFolio(folio){
-                //console.log(folio)
-                this.info.idFolio=folio.idFolio
-                this.info.versao=folio.versao
-                this.info.tipo=folio.tipo
-                this.info.descricao=folio.descricao
-                this.info.obs=folio.obs
-                this.info.sumario=folio.sumario
-                this.info.foto=folio.foto
-                this.info.ficheiro=folio.ficheiro
+            atualizaElemento(elemento){
+                console.log("atualizaElemento, elemento = " + JSON.stringify(elemento.id))
+                this.info.id = elemento.id
+                this.info.titulo = elemento.titulo
+                this.info.colecao = elemento.colecao
+                this.info.numero = elemento.numero
+                this.info.serie = elemento.serie
+                this.info.lingua = elemento.lingua
+                this.info.paginas = elemento.paginas
+                this.info.size = elemento.size
+                this.info.personagens = elemento.personagens
+                this.info.estado = elemento.estado
+                this.info.editora = elemento.editora
+                this.info.dataPub = elemento.dataPub
+                this.info.ficheiro = elemento.ficheiro
+                this.info.capa = elemento.capa
+                this.info.tipo = elemento.tipo
+                this.info.imageData = elemento.imageData
 
                 //console.log('FILE1: ' + this.info.ficheiro)
 
-                let formData = new FormData()
-                formData.append('idFolio',this.info.idFolio)
-                formData.append('versao',this.info.versao)
-                formData.append('tipo',this.info.tipo)
-                formData.append('obs',this.info.obs)
-                formData.append('descricao',this.info.descricao)
-                formData.append('sumario',this.info.sumario)
-                formData.append('foto',this.info.foto)
+                /* let formData = new FormData()
+
+                formData.append('id',this.info.id)
+                formData.append('titulo',this.info.titulo)
+                formData.append('colecao',this.info.colecao)
+                formData.append('numero',this.info.numero)
+                formData.append('serie',this.info.serie)
+                formData.append('lingua',this.info.lingua)
+                formData.append('paginas',this.info.paginas)
+                formData.append('size',this.info.size)
+                formData.append('personagens',this.info.personagens)
+                formData.append('estado',this.info.estado)
+                formData.append('editora',this.info.editora)
+                formData.append('dataPub',this.info.dataPub)
                 formData.append('ficheiro',this.info.ficheiro)
+                formData.append('tipo',this.info.tipo)
+                formData.append('imageData',this.info.imageData)
             
-                // axios.post(`https://tommi2.di.uminho.pt/api/import/passo1/?nome=${this.$store.state.user._id}`,formData,{
                 axios.post(`https://tommi2.di.uminho.pt/api/import/passo1/?nome=${this.$store.state.user._id}`,formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer: ${this.$store.state.jwt}`       
                 }
                 }).then(data => {
-                    //console.log(data)
-                    //if folio ok 
+                    //if elemento ok 
                     if( data.data.message == 'não existe'){
-                        //console.log("O FOLIO NÂO EXISTE")
+                        //console.log("O elemento NÂO EXISTE")
                         //passos 2, 4, e 5?
                         this.info.textoTags=data.data.textoTags
                         this.info.textoSTags=data.data.textoSTags
                         this.info.tags=data.data.tags
                         this.info.list=data.data.list
                         this.passo6info=data.data.passo6
-                        if(folio.skip == 1){
+                        if(elemento.skip == 1){
                             this.model = 5
                         }else{
                             this.next()
                         }
                     }
-                    //folio not ok
+                    //elemento not ok
                     else {
                         this.failureDialog = true
                     }
                 }) .catch(() => {
                     this.fotoErro = true
-                    //console.log(e)
-                    //this.errors.push(e)
-                })
+                }) */
 
             },
-            submeterFolio(){
+            submeterElemento(){
                 let formData = new FormData()
-                formData.append('idFolio',this.info.idFolio)
-                formData.append('versao',this.info.versao)
-                formData.append('tipo',this.info.tipo)
-                formData.append('obs',this.info.obs)
-                formData.append('descricao',this.info.descricao)
-                formData.append('sumario',this.info.sumario)
-                formData.append('foto',this.info.foto)
+                formData.append('id',this.info.id)
+                formData.append('titulo',this.info.titulo)
+                formData.append('colecao',this.info.colecao)
+                formData.append('numero',this.info.numero)
+                formData.append('serie',this.info.serie)
+                formData.append('lingua',this.info.lingua)
+                formData.append('paginas',this.info.paginas)
+                formData.append('size',this.info.size)
+                formData.append('personagens',this.info.personagens)
+                formData.append('estado',this.info.estado)
+                formData.append('editora',this.info.editora)
+                formData.append('dataPub',this.info.dataPub)
                 formData.append('ficheiro',this.info.ficheiro)
-                formData.append('textoTags',this.info.textoTags)
-                formData.append('textoSTags',this.info.textoSTags)
-                //console.log(this.info.list)
-                axios.post(`https://tommi2.di.uminho.pt/api/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
+                formData.append('capa',this.info.capa)
+                formData.append('tipo',this.info.tipo)
+                formData.append('imageData',this.info.imageData)
+
+                console.log("this.info.id = " + JSON.stringify(this.info.id))
+
+                axios.post(`http://localhost:5000/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
                     'Content-Type': 'multipart/form-data',
                     Authorization:`Bearer: ${this.$store.state.jwt}`
                 }})
                 .then(() => {
-                    // JSON responses are automatically parsed.
-                    //console.log(response.data)
-                    this.model=0
-                    //this.infos[0] = response.data.info
-                    //console.log(this.infos)
+                    this.model = 0
                 }).catch(e => {
+                    console.log("ERRO = " + e)
                     this.errors.push(e)
                 })
-                this.cancela()
+                //this.cancela()
             }
         },
         updated () {

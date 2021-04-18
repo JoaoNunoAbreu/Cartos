@@ -1,90 +1,103 @@
 <template>
   <div>
-    <v-sheet color="grey lighten-4" height="1000" tile>
+    <v-sheet color="grey lighten-4" tile>
       <v-row class="fill-height ml-10" align="center" justify="center">
         <v-col class="text-left">
           <v-form
             ref="form"
             method="post"
-            enctype="multipart/form-data"
-            style="width: 500px"
-          >
+            enctype="multipart/form-data">
             <v-container>
-              <v-text-field
-                :label="$t('p1.id')"
-                v-model="idFolio"
-                :rules="[rules.inicioNome, rules.umHifen]"
-                required
-              ></v-text-field>
-              <v-text-field
-                :label="$t('p1.tit')"
-                v-model="idFolio"
-                required
-              ></v-text-field>
               <div class="p-container">
-                <div class="child">
-                  <v-select
-                    class="change-font"
-                    required
-                    v-model="selectedFolio"
-                    :items="foliosNames"
-                    v-bind:label="$t('p1.col')"
-                  ></v-select>
-                </div>
-                <div class="child">
+                <div class="child-right">
                   <v-text-field
-                    :label="$t('p1.num')"
-                    v-model="idFolio"
-                    required
-                  ></v-text-field>
-                </div>
-              </div>
-              <div class="p-container">
-                <div class="child">
+                    :label="$t('p1.id')"
+                    v-model="id"
+                    :rules="[rules.inicioNome, rules.umHifen]"
+                    required>
+                  </v-text-field>
                   <v-text-field
-                    :label="$t('p1.serie')"
-                    v-model="idFolio"
-                    required
-                  ></v-text-field>
+                    :label="$t('p1.tit')"
+                    v-model="titulo"
+                    required>
+                  </v-text-field>
+                  <div class="p-container">
+                    <div class="child">
+                      <v-select
+                        class="change-font"
+                        required
+                        v-model="colecao"
+                        :items="colecaoSel"
+                        v-bind:label="$t('p1.col')">
+                      </v-select>
+                    </div>
+                    <div class="child">
+                      <v-text-field
+                        :label="$t('p1.num')"
+                        v-model="numero"
+                        required
+                      ></v-text-field>
+                    </div>
+                  </div>
+                  <div class="p-container">
+                    <div class="child">
+                      <v-text-field
+                        :label="$t('p1.serie')"
+                        v-model="serie"
+                        required
+                      ></v-text-field>
+                    </div>
+                    <div class="child">
+                      <v-select
+                        class="change-font"
+                        required
+                        v-model="lingua"
+                        :items="linguaSel"
+                        v-bind:label="$t('p1.lin')"
+                      ></v-select>
+                    </div>
+                  </div>
+                  <div class="p-container">
+                    <div class="child">
+                      <v-text-field
+                        :label="$t('p1.pag')"
+                        v-model="paginas"
+                        required
+                      ></v-text-field>
+                    </div>
+                    <div class="child">
+                      <v-text-field
+                        :label="$t('p1.size')"
+                        v-model="size"
+                        required
+                      ></v-text-field>
+                    </div>
+                  </div>
                 </div>
-                <div class="child">
-                  <v-select
-                    class="change-font"
-                    required
-                    v-model="selectedFolio"
-                    :items="foliosNames"
-                    v-bind:label="$t('p1.lin')"
-                  ></v-select>
-                </div>
-              </div>
-              <div class="p-container">
-                <div class="child">
-                  <v-text-field
-                    :label="$t('p1.pag')"
-                    v-model="descricao"
-                    required
-                  ></v-text-field>
-                </div>
-                <div class="child">
-                  <v-text-field
-                    :label="$t('p1.size')"
-                    v-model="descricao"
-                    required
-                  ></v-text-field>
+                <div class="child-left">
+                  <label>{{ $t("p1.foto") }}:</label>
+                  <v-file-input
+                    show-size
+                    accept="image/jpg, image/jpeg, image/png"
+                    :label="$t('p1.file')"
+                    v-model="capa"
+                    @change="previewImage">
+                  </v-file-input>
+                  <v-img :src="url" contain></v-img>
                 </div>
               </div>
               <div class="p-container">
                 <div class="child">
                   <v-text-field
                     :label="$t('p1.pers')"
-                    v-model="descricao"
+                    v-model="personagens"
                     required
                   ></v-text-field>
                 </div>
                 <div class="child">
                   <v-text-field
                     :label="$t('p1.estado')"
-                    v-model="descricao"
+                    v-model="estado"
                     required
                   ></v-text-field>
                 </div>
@@ -94,61 +107,65 @@
                   <v-select
                     class="change-font"
                     required
-                    v-model="selectedFolio"
-                    :items="foliosNames"
+                    v-model="editora"
+                    :items="editoraSel"
                     v-bind:label="$t('p1.edi')"
                   ></v-select>
                 </div>
                 <div class="child">
                   <v-text-field
                     :label="$t('p1.dataP')"
-                    v-model="idFolio"
+                    v-model="dataPub"
                     required
                   ></v-text-field>
                 </div>
               </div>
               <div class="p-container">
-                <div class="child">
+                <div class="child" >
                   <v-row align="center">
-                    <label>{{ $t("p1.foto") }}:</label>
-                    <v-file-input
-                      show-size
-                      accept="image/jpg, image/jpeg, image/png"
-                      :label="$t('p1.file')"
-                      v-model="foto"
-                    >
-                    </v-file-input>
+                  <v-file-input
+                    show-size
+                    type="file"
+                    :label="$t('p1.tfile')"
+                    v-model="ficheiro"
+                  ></v-file-input>
                   </v-row>
                 </div>
                 <div class="child">
                   <v-select
                     class="change-font"
                     required
-                    v-model="selectedFolio"
-                    :items="foliosNames"
+                    v-model="tipo"
+                    :items="tipoSel"
                     v-bind:label="$t('p1.tipo')"
                   ></v-select>
                 </div>
               </div>
-              <v-row align="center">
-                <label>{{ $t("p1.file") }}:</label>
-                <v-file-input
-                  show-size
-                  type="file"
-                  :label="$t('p1.tfile')"
-                  v-model="ficheiro"
-                ></v-file-input>
-              </v-row>
             </v-container>
             <v-container style="width: 750px">
               <v-toolbar flat color="grey lighten-4">
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on: tooltip }">
                     <v-btn
+                      ref="submit"
+                      class="orange white--text mr-3"
+                      @click="save()"
+                      v-on="{ ...tooltip }"
+                      ><v-icon>mdi-checkbox-marked-outline</v-icon></v-btn
+                    >
+                  </template>
+                  <span>
+                    {{ $t("p1.save") }}
+                  </span>
+                </v-tooltip>
+                <v-tooltip bottom>
+                  <template v-slot:activator="{ on: tooltip }">
+                    <v-btn
                       @click.prevent="reset"
                       v-on="{ ...tooltip }"
-                      class="mr-3"
-                      ><v-icon>mdi-history</v-icon></v-btn
+                      color="#26B99A"
+                      class="white--text mr-3"
+                      ><v-icon>mdi-broom</v-icon></v-btn
                     >
                   </template>
                   <span>
@@ -159,31 +176,14 @@
                   <template v-slot:activator="{ on: tooltip }">
                     <v-btn
                       ref="submit"
-                      color="#26B99A"
-                      class="white--text mr-3"
-                      @click="save()"
-                      :disabled="disableButton"
+                      @click="submeter()"
+                      class="mr-5"
                       v-on="{ ...tooltip }"
-                      ><v-icon>mdi-check</v-icon></v-btn
+                      ><v-icon>mdi-exit-to-app</v-icon></v-btn
                     >
                   </template>
                   <span>
                     {{ $t("p1.sub") }}
-                  </span>
-                </v-tooltip>
-                <v-tooltip bottom>
-                  <template v-slot:activator="{ on: tooltip }">
-                    <v-btn
-                      ref="skip"
-                      @click="saveSkip()"
-                      class="orange white--text"
-                      :disabled="disableButton"
-                      v-on="{ ...tooltip }"
-                      ><v-icon>mdi-check-all</v-icon></v-btn
-                    >
-                  </template>
-                  <span>
-                    {{ $t("p1.skip") }}
                   </span>
                 </v-tooltip>
                 <v-spacer></v-spacer>
@@ -192,7 +192,8 @@
                     <v-btn
                       @click="dialog = true"
                       v-on="{ ...tooltip }"
-                      class="mr-5"
+                      color="#00004d"
+                      class="white--text mr-3"
                       ><v-icon>mdi-help</v-icon></v-btn
                     >
                   </template>
@@ -242,8 +243,9 @@
                       link
                       to="/admin/folios"
                       v-on="{ ...tooltip }"
-                      class="mr-12"
-                      ><v-icon>mdi-exit-to-app</v-icon></v-btn
+                      color="#26B99A"
+                      class="white--text mr-3"   
+                      ><v-icon>mdi-door-open</v-icon></v-btn
                     >
                   </template>
                   <span>
@@ -267,25 +269,35 @@
 export default {
   data() {
     return {
-      idFolio: "",
-      versao: "",
+      id: "",
+      titulo: "",
+      colecao: "",
+      numero: "",
+      serie: "",
+      lingua: "",
+      páginas: "",
+      size: "",
+      personagens: "",
+      estado: "",
+      editora: "",
+      dataPub: "",
+      ficheiro: null,
       tipo: "",
-      descricao: "",
-      obs: "",
-      sumario: "",
-      foto: {},
-      ficheiro: {},
-      skip: 0,
-      dialog: false,
+      imageData: "" ,
+      capa: null,
+      url:"",
       rules: {
-        inicioNome: (value) =>
+        /*inicioNome: (value) =>
           value.startsWith("TM-F") ||
           "O nome do Fólio necessita de começar com TM-F",
         umHifen: (value) =>
           value.split("-").length - 1 == 1 ||
           "O nome do Fólio não pode ter mais hífens",
-      },
-      foliosNames: ["ola", "adeus"],
+      */},
+      colecaoSel: ["C1", "C2","C3"],
+      linguaSel: ["Português", "Inglês", "Espanhol"],
+      editoraSel:["Porto Editora","Porto Editora 2","Porto Editora 3"],
+      tipoSel:["Tipo1","Tipo2","Tipo3"]
     };
   },
   props: {
@@ -294,36 +306,54 @@ export default {
     },
   },
   created() {
-    this.idFolio = this.folio.idFolio;
-    this.versao = this.folio.versao;
-    this.tipo = this.folio.tipo;
-    this.descricao = this.folio.descricao;
-    this.obs = this.folio.obs;
-    this.sumario = this.folio.sumario;
-    this.foto = this.folio.foto;
-    this.ficheiro = this.folio.ficheiro;
+    this.id = this.elemento.id;
+    this.titulo = this.elemento.titulo;
+    this.colecao = this.elemento.colecao;
+    this.numero = this.elemento.numero;
+    this.serie = this.elemento.serie;
+    this.lingua = this.elemento.lingua;
+    this.paginas = this.elemento.paginas;
+    this.size = this.elemento.size;
+    this.personagens = this.elemento.personagens;
+    this.estado = this.elemento.estado;
+    this.editora = this.elemento.editora;
+    this.dataPub = this.elemento.dataPub;
+    this.ficheiro = this.elemento.ficheiro;
+    this.tipo = this.elemento.tipo;
+    this.capa= this.elemento.capa;
   },
   methods: {
     reset() {
       //needs work for more resets
       this.$refs.form.reset();
-      (this.idFolio = ""),
-        (this.versao = ""),
-        (this.tipo = ""),
-        (this.obs = ""),
-        (this.descricao = ""),
-        (this.sumario = ""),
-        (this.foto = null),
-        (this.ficheiro = null);
-    },
+      (this.id =""),
+      (this.titulo = ""),
+      (this.colecao = ""),
+      (this.numero = ""),
+      (this.serie= ""),
+      (this.lingua= ""),
+      (this.paginas= ""),
+      (this.size= ""),
+      (this.personagens= ""),
+      (this.estado= ""),
+      (this.editora= ""),
+      (this.dataPub= ""),
+      (this.ficheiro= null),
+      (this.tipo= ""),
+      (this.imageData= ""),
+      (this.capa=null)
+      },
     save() {
-      this.$emit("atualizaFolio", this);
+      this.$emit("atualizaElemento", this);
     },
-    saveSkip() {
+    submeter() {
       this.skip = 1;
       //console.log(this.skip)
-      this.$emit("atualizaFolio", this);
+      this.$emit("submeterElemento", this);
     },
+    previewImage: function() {
+      this.url= URL.createObjectURL(this.capa)
+    }
 
     /*
     atualizarInfo(){
@@ -331,7 +361,7 @@ export default {
     }*/
   },
   computed: {
-    disableButton() {
+   /* disableButton() {
       if (
         this.idFolio.length > 1 &&
         this.versao &&
@@ -343,7 +373,7 @@ export default {
         return false;
       else return true;
     },
-  },
+  */},
 };
 </script>
 <style scoped>
@@ -351,9 +381,31 @@ export default {
   font-size: 20px;
 }
 
+.p-container {        
+    display: flex;
+    align-items: center;
+}
 .child {
-  width: 50%;
-  float: left;
-  padding: 20px;
+  width: 80%;
+}
+.child-right{
+  width: 1000px;
+  float: right;
+}
+.child-left{
+  width:50% ;
+  margin-left: 50px;
+  float: right;
+}
+
+.file-upload-form, .image-preview {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 20px;
+}
+img.preview {
+    width: 200px;
+    background-color: white;
+    border: 1px solid #DDD;
+    padding: 5px;
 }
 </style>

@@ -382,6 +382,7 @@ export default {
           Authorization:`Bearer: ${this.$store.state.jwt}`     
         }
       }).then(data => {
+          console.log("DATA = " + JSON.stringify(data))
           if (data.data.error){
             this.$refs.form.reset()
             this.dialog = !this.dialog

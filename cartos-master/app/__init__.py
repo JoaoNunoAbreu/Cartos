@@ -20,6 +20,12 @@ dadosFolio = {}
 indexList = []
 tags = []
 
+#################
+from py2neo import Graph
+#g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
+g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
+#################
+
 def register_extensions(app):
     login_manager.init_app(app)
 
@@ -78,9 +84,9 @@ def token_required(f):
 
         try:
             token = auth_headers[1]
-            #data = jwt.decode(token, current_app.config['SECRET_KEY'])
             data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
-            user = mongo.db.users.find_one({"_id":data['sub']})
+            query = f'match (n:User) where n.id = "{data["sub"]}" return n'
+            user = g.run(query)
             now = datetime.datetime.now()
             date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
             did = ObjectId()
@@ -117,9 +123,9 @@ def admin_required(f):
 
         try:
             token = auth_headers[1]
-            #data = jwt.decode(token, current_app.config['SECRET_KEY'])
             data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
-            user = mongo.db.users.find_one({"_id":data['sub'], "tipo":"Admin"})
+            query = f'match (n:User) where n.id = "{data["sub"]}" AND n.tipo = "Admin" return n'
+            user = g.run(query)
             now = datetime.datetime.now()
             date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
             did = ObjectId()

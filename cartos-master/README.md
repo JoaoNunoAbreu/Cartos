@@ -26,4 +26,4 @@ Se der erro:
 - JWT: 'module' object has no attribute 'encode'
   - pip uninstall JWT
   - pip uninstall PyJWT
-  - pip install PyJWT
+  - pip install PyJWT=1.7.1

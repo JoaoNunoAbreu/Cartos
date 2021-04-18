@@ -6,4 +6,4 @@ flask_wtf
 flask_sqlalchemy
 gunicorn
 psycopg2-binary
-PyJWT
+PyJWT==1.7.1
