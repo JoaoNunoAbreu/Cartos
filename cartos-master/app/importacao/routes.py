@@ -54,10 +54,8 @@ def route_template_passo1():
 #@login_required
 def route_template_passo6():
 
-    """ nome = request.args.get('nome')
+    nome = request.args.get('nome')
     path = ""
-    print(request.files)
-    """
 
     if 'ficheiro' in request.files:
         ficheiro = request.files['ficheiro']
@@ -68,26 +66,20 @@ def route_template_passo6():
             ficheiro.filename = request.form.get('id') + '.pdf'
             path = join(dirname(realpath(__file__)), '..', 'folios/static/doc', ficheiro.filename)
             ficheiro.save(path)
-    """
-    if 'foto' in request.files:
-        foto = request.files['foto']
-        if foto.filename != '':
-            foto.filename = request.form.get('idFolio')
-            upload_path = join(dirname(realpath(__file__)),'..' ,'folios/static/pics/')
-            foto.save(upload_path + foto.filename + '.png')
-    now = datetime.datetime.now()
-    data = now.strftime("%Y-%m-%d %H:%M")
-    """
 
-    aux= Aux
+    if 'capa' in request.files:
+        capa = request.files['capa']
+        if capa.filename != '':
+            capa.filename = request.form.get('id')
+            upload_path = join(dirname(realpath(__file__)),'..' ,'folios/static/pics/')
+            capa.save(upload_path + capa.filename + '.png')
+
+    aux = Aux
     aux.save_element(request.form['id'],request.form['titulo'],request.form['colecao'],request.form['numero'],request.form['serie'],request.form['lingua'],\
                 request.form['paginas'],request.form['size'],request.form['personagens'],request.form['estado'],request.form['editora'],request.form['dataPub'],\
-                request.form['tipo'],request.form['imageData'],path) """
+                request.form['tipo'],request.form['imageData'],path)
 
-    print("\n\n\nola\n\n\n")
-    return json_util.dumps({'pixa': "pixa"})
-
-    #return json_util.dumps({'nome': nome, 'message':'inserido com sucesso'})
+    return json_util.dumps({'nome': nome, 'message':'inserido com sucesso'})
 
 @blueprint.route('/reindex/',methods=['GET'])
 @admin_required
@@ -122,16 +114,8 @@ def route_template_reindex():
     return json_util.dumps({'message':'ok'})
 
 
-class Aux: 
-<<<<<<< HEAD
-############## Aux: create_elemento.py 
-
-                       
+class Aux:              
     def create_element(elem_id,titulo,numero,serie,nr_paginas,tamanho,personagens,estado,data_publicacao,capa,texto,observacoes):
-=======
-    
-    def create_element(elem_id,titulo,numero,serie,personagens,nr_paginas,tamanho,estado,data_publicacao,capa,texto,observacoes):
->>>>>>> 52216b83647dfbdac5501c2345cab72b9b1772c7
         q = f'CREATE (n:Elemento\
             {{\
                 id : "{elem_id}",\
@@ -152,7 +136,6 @@ class Aux:
 
 
     def create_relationship(node1,node2,first_id,second_desig,relationship):
-        print("save11")
         q = f'\
             MATCH (n1:{node1}),(n2:{node2}) \
             WHERE n1.id = "{first_id}" AND n2.designacao = "{second_desig}" \
@@ -160,8 +143,7 @@ class Aux:
             RETURN r'
         g.run(q)
 
-    def save_element(elem_id,titulo,colecao,numero,serie,lingua,paginas,size,personagens,estado,editora,dataPub,tipo,imagemData,filePath):
-        num_id = int(g.evaluate(f'match(n:Elemento) return count(n)')) + 1
+    def save_element(elem_id,titulo,colecao,numero,serie,lingua,paginas,size,personagens,estado,editora,dataPub,tipo,capaPath,filePath):
         elem_id = elem_id
         titulo = titulo
         numero = numero
@@ -171,7 +153,7 @@ class Aux:
         personagens = personagens
         estado = estado
         data_publicacao = dataPub
-        capa = imagemData
+        capa = capaPath
         texto = ""
         observacoes = ""
 
@@ -185,7 +167,6 @@ class Aux:
         # nacion_autor = "Francês"
         # -----------------------------------
 
-        print(nr_paginas)
         Aux.create_element(elem_id,titulo,numero,serie,nr_paginas,tamanho,personagens,estado,data_publicacao,capa,texto,observacoes)
         Aux.create_relationship("Elemento","Tipo",elem_id,tipo,"é")
         Aux.create_relationship("Elemento","Editora",elem_id,editora,"publicado")

@@ -108,7 +108,6 @@ def token_required(f):
 def admin_required(f):
     @wraps(f)
     def _verify(*args, **kwargs):
-        print("entrei 2")
         auth_headers = request.headers.get('Authorization', '').split()
         invalid_msg = {
             'message': 'Invalid token. Registeration and / or authentication required',
@@ -137,10 +136,8 @@ def admin_required(f):
             mongo.db.history.insert_one({"_id":did, "user":data['sub'], "stamp":date, "request":reqstring})
             return f(*args, **kwargs)
         except jwt.ExpiredSignatureError:
-            print("entrei 5")
             return jsonify(expired_msg), 401 # 401 is Unauthorized HTTP status code
         except (jwt.InvalidTokenError, Exception) as e:
-            print("entrei 6")
             print(e)
             return jsonify(invalid_msg), 401
 
