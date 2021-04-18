@@ -296,7 +296,7 @@ export default {
   created() {
     axios
       .get(
-        `http://localhost:5000/elementos/elementos?nome=${this.$store.state.user._id}`,
+        `https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,
         {
           headers: {
             Authorization: `Bearer: ${this.$store.state.jwt}`,

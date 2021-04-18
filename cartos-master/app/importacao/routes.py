@@ -18,7 +18,8 @@ CORS(blueprint)
 UPLOAD_FOLDER = '../folios/static/pics/'
 
 from py2neo import Graph
-g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
+g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
+#g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
 
 @blueprint.route('/passo1/',methods=['POST'])
 @admin_required
@@ -65,14 +66,14 @@ def route_template_passo6():
             return json_util.dumps({'nome': nome, 'message':'nao correu bem'})
         else:
             ficheiro.filename = request.form.get('id') + '.pdf'
-            path = join(dirname(realpath(__file__)), '..', 'folios/static/doc', ficheiro.filename)
+            path = join(dirname(realpath(__file__)), '..', 'elementos/static/doc', ficheiro.filename)
             ficheiro.save(path)
 
     if 'capa' in request.files:
         capa = request.files['capa']
         if capa.filename != '':
             capa.filename = request.form.get('id')
-            upload_path = join(dirname(realpath(__file__)),'..' ,'folios/static/pics/')
+            upload_path = join(dirname(realpath(__file__)),'..' ,'elementos/static/pics/')
             capa.save(upload_path + capa.filename + '.png')
 
     aux = Aux
