@@ -44,22 +44,6 @@ def pesquisaresultados():
     
     return jsonify(loads(dumps(res_pesquisa)))
 
-'''
-def searchTypeOne(palavras): 
-    for pal in palavras: 
-        if pal.startswith("+") or pal.startswith("-") or pal.startswith("~") or pal.startswith('"') or pal.startswith("<") or pal.startswith(">"): 
-           return False 
-    return True   
-'''
-
-'''
-# Retorna o tipo da pesquisa
-def searchType(pesquisa):
-    palavras = pesquisaIncludePalavra(pesquisa)
-    if searchTypeOne(palavras): 
-        return 1 
-'''      
-
 # split com o operador '+'
 def pesquisaIncludePalavra(palavra):
 

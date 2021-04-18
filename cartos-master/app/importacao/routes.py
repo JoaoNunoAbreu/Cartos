@@ -18,7 +18,8 @@ CORS(blueprint)
 UPLOAD_FOLDER = '../folios/static/pics/'
 
 from py2neo import Graph
-g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
+g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
+#g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
 
 @blueprint.route('/passo1/',methods=['POST'])
 @admin_required
