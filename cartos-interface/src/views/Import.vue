@@ -149,7 +149,6 @@
                 ficheiro: null,
                 capa: null,
                 tipo: "",
-                imageData: "" ,
             },
             passo6info: {},
             cancelado: 0,
@@ -186,7 +185,6 @@
                 this.ficheiro = null
                 this.capa = null
                 this.tipo = ""
-                this.imageData = ""
                 // ----------------------------
                 this.model = 0
                 this.renderComponent = false
@@ -211,7 +209,6 @@
                 this.info.ficheiro = elemento.ficheiro
                 this.info.capa = elemento.capa
                 this.info.tipo = elemento.tipo
-                this.info.imageData = elemento.imageData
 
                 //console.log('FILE1: ' + this.info.ficheiro)
 
@@ -231,7 +228,6 @@
                 formData.append('dataPub',this.info.dataPub)
                 formData.append('ficheiro',this.info.ficheiro)
                 formData.append('tipo',this.info.tipo)
-                formData.append('imageData',this.info.imageData)
             
                 axios.post(`https://tommi2.di.uminho.pt/api/import/passo1/?nome=${this.$store.state.user._id}`,formData,{
                 headers: {
@@ -280,9 +276,8 @@
                 formData.append('ficheiro',this.info.ficheiro)
                 formData.append('capa',this.info.capa)
                 formData.append('tipo',this.info.tipo)
-                formData.append('imageData',this.info.imageData)
 
-                console.log("this.info.id = " + JSON.stringify(this.info.id))
+                
 
                 axios.post(`http://localhost:5000/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
                     'Content-Type': 'multipart/form-data',
@@ -290,6 +285,7 @@
                 }})
                 .then(() => {
                     this.model = 0
+                    this.$router.push( {path:`/admin/elementos`})
                 }).catch(e => {
                     console.log("ERRO = " + e)
                     this.errors.push(e)

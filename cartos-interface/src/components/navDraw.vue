@@ -30,7 +30,7 @@
               <template v-slot:activator>
                 <v-list-item-title class="white--text">{{$t('navd.documents')}}</v-list-item-title>
               </template>
-                  <v-list-item link to="/admin/folios">
+                  <v-list-item link to="/admin/elementos">
                     <v-list-item-title class="white--text">{{$t('navd.folios')}}</v-list-item-title>
                   </v-list-item>
                   <v-list-item link to="/admin/compFolios">

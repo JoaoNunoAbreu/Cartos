@@ -1,5 +1,5 @@
 <template>
-  <div id="folios">
+  <div id="elementos">
     <appHeader :ajuda="ajuda"></appHeader>
     <div v-if="this.$store.state.user.tipo === 'Admin'">
       <navDraw></navDraw>
@@ -10,9 +10,9 @@
     <v-data-table
       id="tabelaFolios"
       :headers="headers"
-      :items="folios"
+      :items="elementos"
       :items-per-page="15"
-      :sort-by="['_id']"
+      :sort-by="['id']"
       :search="search"
       multi-sort
     >
@@ -74,7 +74,7 @@
           </v-dialog>
         </v-toolbar>
       </template>
-      <template v-slot:header._id="{ header }">
+      <template v-slot:header.id="{ header }">
         <label> {{ header.text }} </label>
       </template>
       <template v-slot:header.dominio="{ header }">
@@ -86,7 +86,7 @@
       <template v-slot:header.editora="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.data="{ header }">
+      <template v-slot:header.data_publicacao="{ header }">
         <label> {{ header.text }} </label>
       </template>
       <template v-slot:header.lingua="{ header }">
@@ -240,7 +240,7 @@ export default {
        {
           text: this.$t("fol.id"),
           align: "start",
-          value: "_id",
+          value: "id",
         },
         {
           text: `${this.$t("fol.dom")}`,
@@ -256,7 +256,7 @@ export default {
         },
         {
           text: `${this.$t("fol.data")}`,
-          value: "data",
+          value: "data_publicacao",
         },
         {
           text: `${this.$t("fol.lin")}`,
@@ -269,9 +269,9 @@ export default {
         },
       ],
       search: "",
-      ajuda: "folios",
+      ajuda: "elementos",
       ver: "ver",
-      folios: [],
+      elementos: [],
       errors: [],
       folioPic: "",
       dialog: false,
@@ -296,7 +296,7 @@ export default {
   created() {
     axios
       .get(
-        `https://tommi2.di.uminho.pt/api/folios/folios?nome=${this.$store.state.user._id}`,
+        `http://localhost:5000/elementos/elementos?nome=${this.$store.state.user._id}`,
         {
           headers: {
             Authorization: `Bearer: ${this.$store.state.jwt}`,
@@ -305,8 +305,8 @@ export default {
       )
       .then((response) => {
         // JSON responses are automatically parsed.
-        //console.log(response.data)
-        this.folios = response.data.folios;
+        console.log(response.data)
+        this.elementos = response.data;
       })
       .catch((e) => {
         //console.log(e)
@@ -327,12 +327,12 @@ export default {
       this.item = {};
     },
     deleteItem(item) {
-      const index = this.folios.indexOf(item);
+      const index = this.elementos.indexOf(item);
       //console.log('Index: ' + index + ' folioname: ' + this.folios[index]._id)
       axios
         .get(
           `https://tommi2.di.uminho.pt/api/folios/apagar/` +
-            this.folios[index]._id +
+            this.elementos[index]._id +
             `?nome=${this.$store.state.user._id}`,
           {
             headers: {
@@ -343,7 +343,7 @@ export default {
         .then((response) => {
           // JSON responses are automatically parsed.
           //console.log(response.data)
-          this.folios = response.data.folios;
+          this.elementos = response.data;
           this.tempValue = {};
         })
         .catch((e) => {
@@ -355,10 +355,10 @@ export default {
       this.dialog = false;
     },
     verFolioFoto: function (item) {
-      const index = this.folios.indexOf(item);
+      const index = this.elementos.indexOf(item);
       axios
         .get(
-          `https://tommi2.di.uminho.pt/api/folios/ver/${this.folios[index]._id}/foto`,
+          `https://tommi2.di.uminho.pt/api/folios/ver/${this.elementos[index]._id}/foto`,
           {
             responseType: "arraybuffer",
             headers: {
@@ -404,10 +404,10 @@ export default {
 .v-data-table /deep/ tr:nth-child(even) {
   background-color: rgb(245, 245, 245);
 }
-#folios * {
+#elementos * {
   box-sizing: border-box;
 }
-#folios {
+#elementos {
   margin: 20px auto;
   max-width: 1100px;
   margin-bottom: 80px;

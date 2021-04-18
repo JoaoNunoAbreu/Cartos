@@ -88,9 +88,9 @@ const routes = [
         }
       },
       {
-        path: 'folios',
-        name: 'Folios',
-        component: () => import('../views/Folios.vue'),
+        path: 'elementos',
+        name: 'Elementos',
+        component: () => import('../views/Elementos.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
             next(`/login`)
@@ -100,7 +100,7 @@ const routes = [
         }
       },
       {
-        path: 'folios/indices',
+        path: 'elementos/indices',
         name: 'Indices',
         component: () => import('../views/Indices.vue'),
         beforeEnter (to, from, next) {
@@ -112,7 +112,7 @@ const routes = [
         }
       },
       {
-        path: 'folios/tags',
+        path: 'elementos/tags',
         name: 'Tags',
         component: () => import('../views/Definitions.vue'),
         beforeEnter (to, from, next) {

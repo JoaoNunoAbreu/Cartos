@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from app.folios import blueprint
+from app.elementos import blueprint
 from flask import render_template, request, url_for, send_from_directory
 from flask_login import login_required
 from app import mongo, token_required, admin_required, photo_auth
@@ -17,18 +17,41 @@ from flask_cors import CORS, cross_origin
 CORS(blueprint)
 #######
 
+#Neo4j
+from py2neo import Graph
+#g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
+g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
+#
 
 ############################### FOLIOS #########################################
 
-@blueprint.route('/folios', methods=['GET'])
-@token_required
+@blueprint.route('/elementos', methods=['GET'])
+#@token_required
 #@login_required
-def route_template_folios():
-    folios = [doc for doc in mongo.db.folios.find()]
-    nome = request.args.get('nome')
-    return json_util.dumps({'folios': folios, 'nome': nome})
+def route_template_elementos():
+    
+    ##folios = [doc for doc in mongo.db.folios.find()]
+    elementos = g.run('match (x:Elemento) return x')
+  
+    data = [ ]
+    for elem in elementos:
+        #print(elem[0]['estado']) 
+        colecao = g.evaluate(f'match (e:Elemento)-[]->(c:Colecao) where e.id="{elem[0]["id"]}" return c.designacao')
+        editora = g.evaluate(f'match (e:Elemento)-[]->(c:Editora) where e.id="{elem[0]["id"]}" return c.designacao')
+        lingua = g.evaluate(f'match (e:Elemento)-[]->(c:Lingua) where e.id="{elem[0]["id"]}" return c.designacao')
+        data.append({
+            "id":elem[0]['id'] ,
+            "data_publicacao":elem[0]['data_publicacao'], 
+            "colecao":colecao,
+            "editora":editora,
+            "lingua":lingua
+        }) 
+        
+    #nome = request.args.get('nome')
+    #print(f"Data = {data}")
+    return json_util.dumps({data:data})
 
-@blueprint.route('/folios/intrepretativa', methods=['GET'])
+@blueprint.route('/elementos/intrepretativa', methods=['GET'])
 @token_required
 #@login_required
 def route_template_folios_intrepretativa():
@@ -36,7 +59,7 @@ def route_template_folios_intrepretativa():
     nome = request.args.get('nome')
     return render_template('folios.html',folios=folios,nome=nome,value='Intrepretativa')
 
-@blueprint.route('/folios/semidiplomatica')
+@blueprint.route('/elementos/semidiplomatica')
 @token_required
 #@login_required
 def route_template_folios_semi_diplomatica():

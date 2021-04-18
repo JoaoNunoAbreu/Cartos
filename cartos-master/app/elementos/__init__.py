@@ -4,9 +4,9 @@
 from flask import Blueprint
 
 blueprint = Blueprint(
-    'folios_blueprint',
+    'elementos_blueprint',
     __name__,
-    url_prefix='/folios',
+    url_prefix='/elementos',
     template_folder='templates',
     static_folder='static'
 )

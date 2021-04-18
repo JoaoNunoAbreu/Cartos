@@ -25,14 +25,14 @@
               <template v-slot:activator>
                 <v-list-item-title class="white--text">{{$t('navd.documents')}}</v-list-item-title>
               </template>
-                  <v-list-item link to="/admin/folios">
+                  <v-list-item link to="/admin/elementos">
                     <v-list-item-title class="white--text">{{$t('navd.folios')}}</v-list-item-title>
                   </v-list-item>
                   <v-list-item link to="/admin/compFolios">
                     <v-list-item-title class="white--text">{{$t('navd.cf')}}</v-list-item-title>
                   </v-list-item>
             </v-list-group>
-              <v-list-item link to="/admin/folios/indices">
+              <v-list-item link to="/admin/elementos/indices">
                   <v-list-item-icon>
                     <v-icon>mdi-format-list-bulleted-square</v-icon>
                   </v-list-item-icon>
@@ -50,10 +50,10 @@
               <v-list-item link to="/admin/tagging">
                 <v-list-item-title class="white--text">{{$t('navd.etags')}}</v-list-item-title>
               </v-list-item>
-              <v-list-item link to="/admin/folios/tags">
+              <v-list-item link to="/admin/elementos/tags">
                 <v-list-item-title class="white--text">{{$t('navd.eListaTags')}}</v-list-item-title>
               </v-list-item>
-              <v-list-item link to="/admin/folios/tags">
+              <v-list-item link to="/admin/elementos/tags">
                 <v-list-item-title class="white--text">{{$t('navd.tags')}}</v-list-item-title>
               </v-list-item>
               <v-list-item link to="/admin/users">

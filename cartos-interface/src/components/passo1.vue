@@ -13,7 +13,7 @@
                   <v-text-field
                     :label="$t('p1.id')"
                     v-model="id"
-                    :rules="[rules.inicioNome, rules.umHifen]"
+                    :rules="[rules.inicioNome, rules.tresDigitos, rules.seiscar]"
                     required>
                   </v-text-field>
                   <v-text-field
@@ -116,6 +116,7 @@
                   <v-text-field
                     :label="$t('p1.dataP')"
                     v-model="dataPub"
+                    :rules="[rules.dataRule]"
                     required
                   ></v-text-field>
                 </div>
@@ -177,6 +178,7 @@
                     <v-btn
                       ref="submit"
                       @click="submeter()"
+                      :disabled="disableButton"
                       class="mr-5"
                       v-on="{ ...tooltip }"
                       ><v-icon>mdi-exit-to-app</v-icon></v-btn
@@ -241,7 +243,7 @@
                   <template v-slot:activator="{ on: tooltip }">
                     <v-btn
                       link
-                      to="/admin/folios"
+                      to="/admin/elementos"
                       v-on="{ ...tooltip }"
                       color="#26B99A"
                       class="white--text mr-3"   
@@ -283,17 +285,25 @@ export default {
       dataPub: "",
       ficheiro: null,
       tipo: "",
-      imageData: "" ,
       capa: null,
       url:"",
+      saveClick: false,
+      dialog:false, 
       rules: {
-        /*inicioNome: (value) =>
-          value.startsWith("TM-F") ||
-          "O nome do Fólio necessita de começar com TM-F",
-        umHifen: (value) =>
-          value.split("-").length - 1 == 1 ||
-          "O nome do Fólio não pode ter mais hífens",
-      */},
+        inicioNome: (value) =>
+          value.startsWith("RPT") ||
+          "O nome do Elemento necessita de começar com RPT",
+        tresDigitos: (value) =>
+          value.replace(/[^0-9]/g,"").length == 3||
+          "O nome do Elemento tem de ter 3 dígitos",
+        seiscar: (value) =>
+          value.length == 6||
+          "O nome do Elemento tem de ter 6 caracteres",
+        dataRule: (value) =>{
+          const pattern = /^((0)[1-9]|[1-2][0-9]|(3)[0-1])(\/)(((0)[1-9])|((1)[0-2]))(\/)\d{4}$/
+          return pattern.test(value) || 'A data deve ter o formato : DD/MM/AAAA'
+        }
+      },
       colecaoSel: ["C1", "C2","C3"],
       linguaSel: ["Português", "Inglês", "Espanhol"],
       editoraSel:["Porto Editora","Porto Editora 2","Porto Editora 3"],
@@ -340,10 +350,10 @@ export default {
       (this.dataPub= ""),
       (this.ficheiro= null),
       (this.tipo= ""),
-      (this.imageData= ""),
       (this.capa=null)
       },
     save() {
+      this.saveClick=true;
       this.$emit("atualizaElemento", this);
     },
     submeter() {
@@ -361,19 +371,28 @@ export default {
     }*/
   },
   computed: {
-   /* disableButton() {
+    disableButton() {
       if (
-        this.idFolio.length > 1 &&
-        this.versao &&
+        this.id.length > 1 &&
+        this.titulo.length > 0 &&
+        this.colecao &&
+        this.numero.length >0 &&
+        this.serie.length > 0 &&
+        this.lingua &&
+        this.paginas.length > 0 &&
+        this.size.length > 0 &&
+        this.personagens.length > 0 &&
+        this.estado.length > 0 &&
+        this.editora &&
+        this.dataPub.length > 0 &&
+        this.ficheiro  &&
         this.tipo &&
-        this.descricao.length > 0 &&
-        this.sumario &&
-        this.ficheiro
+        this.saveClick
       )
         return false;
       else return true;
     },
-  */},
+  },
 };
 </script>
 <style scoped>

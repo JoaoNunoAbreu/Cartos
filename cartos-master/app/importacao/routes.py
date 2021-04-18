@@ -56,6 +56,7 @@ def route_template_passo6():
 
     nome = request.args.get('nome')
     path = ""
+    capa = ""
 
     if 'ficheiro' in request.files:
         ficheiro = request.files['ficheiro']
@@ -77,7 +78,7 @@ def route_template_passo6():
     aux = Aux
     aux.save_element(request.form['id'],request.form['titulo'],request.form['colecao'],request.form['numero'],request.form['serie'],request.form['lingua'],\
                 request.form['paginas'],request.form['size'],request.form['personagens'],request.form['estado'],request.form['editora'],request.form['dataPub'],\
-                request.form['tipo'],request.form['imageData'],path)
+                request.form['tipo'],capa,path)
 
     return json_util.dumps({'nome': nome, 'message':'inserido com sucesso'})
 
