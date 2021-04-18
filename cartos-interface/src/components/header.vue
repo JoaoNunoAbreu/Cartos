@@ -8,7 +8,7 @@
         >
             <v-list-item two-line class="px-0">
                 <v-list-item-avatar min-width="55px" tile class="ava" @click="about = true">
-                    <v-img src="@/assets/logo_original.png"/>
+                    <v-img src="@/assets/cartos_logo.png"/>
                 </v-list-item-avatar>
               <v-list-item-content>
                 <v-list-item-title><h2>{{$t('navd.tituloProjeto')}}</h2></v-list-item-title>

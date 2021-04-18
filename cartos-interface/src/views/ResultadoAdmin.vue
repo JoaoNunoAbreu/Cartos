@@ -13,7 +13,7 @@
       <v-col col="12">
         <div class="results">
           
-          <v-img :src="require('../assets/logo_original.png')" contain width="150px"></v-img> 
+          <v-img :src="require('../assets/cartos_logo.png')" contain width="150px"></v-img> 
 
         
           <h2 class="change-font black--text"> 

@@ -4,7 +4,7 @@
     <v-dialog @keydown.esc="dialog = false" v-model="dialog" scrollable width="500">
       <template v-slot:activator="{ on }"> 
         <!-- Já está igual ao login tb a imagem -->
-        <v-img class="center" max-height="150px" max-width="150px" src="../assets/logo_original.png" v-on="on"></v-img> 
+        <v-img class="center" max-height="150px" max-width="150px" src="../assets/cartos_logo.png" v-on="on"></v-img> 
       </template>
       <v-card>
         <v-card-title class="headline change-font">{{ $t('nav.SistemaTommiHeader') }}</v-card-title>
