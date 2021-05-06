@@ -4,8 +4,8 @@ node_modules
 logs
 .vscode/
 
-tommi_master/app/folios/static/
-tommi_master/app/users/static/
+cartos-master/app/elementos/static/
+cartos-master/app/users/static/
 **/*.pyc
 **/__pycache*/
 **/*.log
