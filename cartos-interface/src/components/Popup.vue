@@ -25,7 +25,7 @@
                                     
           <v-tooltip bottom> 
             <template v-slot:activator="{ on }">
-                <v-btn depressed color="white" @click="dialog=false" v-on="on">
+                <v-btn depressed color="#26B99A" @click="dialog=false" v-on="on">
                   <v-icon large>mdi-door-open</v-icon>
                 </v-btn>
               </template>

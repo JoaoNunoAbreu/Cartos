@@ -33,7 +33,7 @@
           
           <h3 class="font-weight-light change-font">
             {{ $t('nav.Parametros') }}
-            <span class="font-weight-black change-font">{{this.$route.params.selectedElemento}}, {{this.$route.params.tipo}}, {{this.$route.params.versao}}, {{this.$route.params.resultado}}</span>
+            <span class="font-weight-black change-font">{{this.$route.params.selectedFolio}}, {{this.$route.params.tipo}}, {{this.$route.params.versao}}, {{this.$route.params.resultado}}</span>
           </h3>  
           
           <h5 class="change-font blue--text text--darken-4">
@@ -94,7 +94,7 @@
                           
                           <v-tooltip bottom> 
                             <template v-slot:activator="{ on }">
-                                <v-btn depressed color="white" @click="dialog=false" v-on="on">
+                                <v-btn depressed color="#26B99A" @click="dialog=false" v-on="on">
                                   <v-icon large>mdi-door-open</v-icon>
                                 </v-btn>
                               </template>
@@ -136,14 +136,14 @@
           <div v-for="(item,index) in pageOfItems" v-bind:key="item.idelemento + index">
             <!-- se o item.periodo existe, ou seja, foi feita pesquisa por periodo inclui o periodo -->
             <h3 class="font-weight-black change-font" v-if="item.periodo">
-              <a class="change-font" @click.stop="showElemento(item.idelemento)">{{ item.idelemento }}</a>
+              <a class="change-font" @click.stop="showFolio(item.idelemento)">{{ item.idelemento }}</a>
               &#x25CF;
               {{ $t('nav.resultadoLinha') }} {{ item.linha}} &#x25CF; {{ $t('nav.resultadoPeriodo') }} {{ item.periodo }}
             </h3>            
 
             <!-- caso contrário, se é feita pesquisa por linha não inclui o periodo -->
             <h3 class="font-weight-black change-font" v-else>
-              <a class="change-font" @click.stop="showElemento(item.idelemento)">{{ item.idelemento }}</a>
+              <a class="change-font" @click.stop="showFolio(item.idelemento)">{{ item.idelemento }}</a>
               &#x25CF;
               {{ $t('nav.resultadoLinha') }} {{ item.linha}} 
             </h3> 
@@ -160,8 +160,8 @@
       </v-col>
     </v-row>
     <!-- tem de estar persistent para fazer clean do array conta -->
-    <v-dialog v-model="dialogElemento" @keydown.esc="dialogElemento = !dialogElemento; conta=[]" persistent scrollable max-width="800px">
-      <v-card v-if="conta != null && dialogElemento">
+    <v-dialog v-model="dialogFolio" @keydown.esc="dialogFolio = !dialogFolio; conta=[]" persistent scrollable max-width="800px">
+      <v-card v-if="conta != null && dialogFolio">
         <v-card-title class="headline change-font" v-if="conta.length <= 1"> <span class="change-font">{{ $t('nav.elementoAnaliseHeadline') }}</span>  <p> <small class="change-font">{{ this.elementoAtual }},</small> <small v-for="(count,idx) in conta" :key="idx" class="keep-spaces change-font"> {{count.key}} {{$t('nav.com')}} {{count.value}} {{$t('nav.occur1')}} </small> </p> </v-card-title>
         <!-- só para acrescentar separador entre as palavaras (+1 palavra no elemento) -->
         <v-card-title class="headline change-font" v-else> <span class="change-font"> {{ $t('nav.elementoAnaliseHeadline') }} </span> <p> <small class="change-font">{{ this.elementoAtual }}</small> <small v-for="(countElse,idx) in conta" :key="idx" class="keep-spaces change-font">, {{countElse.key}} {{$t('nav.com')}} {{countElse.value}} {{$t('nav.occur2')}}</small> </p> </v-card-title>
@@ -175,11 +175,11 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <!--
-          <v-btn depressed text class="grey--text change-font" @click="dialogElemento = !dialogElemento; conta=[]" >{{$t('nav.fechar')}}</v-btn>
+          <v-btn depressed text class="grey--text change-font" @click="dialogFolio = !dialogFolio; conta=[]" >{{$t('nav.fechar')}}</v-btn>
           --> 
           <v-tooltip bottom> 
             <template v-slot:activator="{ on }">
-                <v-btn depressed color="white" @click="dialogElemento = !dialogElemento; conta=[]" v-on="on">
+                <v-btn depressed color="#26B99A" @click="dialogFolio = !dialogFolio; conta=[]" v-on="on">
                   <v-icon large>mdi-door-open</v-icon>
                 </v-btn>
               </template>
@@ -208,7 +208,7 @@ export default {
       page: 1,
       resultados: null,
       dialog: false,
-      dialogElemento: false,
+      dialogFolio: false,
       elementoAtual: null,
       textoAtual: null,  
       pageOfItems: [],
@@ -351,7 +351,7 @@ export default {
       this.$htmlToPaper('imprimeMain');
     },
 
-    showElemento(idelemento) {
+    showFolio(idelemento) {
       this.elementoAtual = idelemento;
       var result = []; 
       var tam = 0;
@@ -383,7 +383,7 @@ export default {
               });
             } 
 
-            this.dialogElemento = true;
+            this.dialogFolio = true;
                   
 
         } else if (this.pesquisa.startsWith('"') && this.pesquisa.endsWith('"')) {
@@ -417,7 +417,7 @@ export default {
                 });
               } 
 
-              this.dialogElemento = true;
+              this.dialogFolio = true;
             }
           } else {
             // se não começa por aspas parte o resultado em partes...
@@ -459,7 +459,7 @@ export default {
                     });
                   } 
 
-                  this.dialogElemento = true;
+                  this.dialogFolio = true;
                 }
               }
               // caso contrário se não tem mais nem menos então é uma pesquisa normal
@@ -499,7 +499,7 @@ export default {
                     });
                   } 
 
-                  this.dialogElemento = true; 
+                  this.dialogFolio = true; 
                 }
               }
             } 

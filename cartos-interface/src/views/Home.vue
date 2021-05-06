@@ -25,6 +25,7 @@
           </v-row>
        </v-container>
 
+
         <v-container fluid>
             <v-row>
               <v-col cols="12">
@@ -38,7 +39,9 @@
           </v-row>
        </v-container>
         
-    
+      <!-- end -->
+
+
       <v-container style="padding:0">
         <v-form ref="form" lazy-validation>
         
@@ -111,7 +114,7 @@
                           
                           <v-tooltip bottom> 
                             <template v-slot:activator="{ on }">
-                                <v-btn depressed color="white" @click="dialog=false" v-on="on">
+                                <v-btn depressed color="#26B99A" @click="dialog=false" v-on="on">
                                   <v-icon large>mdi-door-open</v-icon>
                                 </v-btn>
                               </template>
@@ -246,7 +249,6 @@ export default {
     };
   }, 
 
- 
   created() {
     axios.get(this.url+`/elementos/editoras`,
         {
@@ -258,6 +260,7 @@ export default {
       .then((response) => {
         for (let i = 0; i < response.data.length; i++)
           this.editoraSel.push(response.data[i].x.designacao)
+        this.editoraSel.push("Todas")
       })
       .catch((e) => {
         //console.log(e)
@@ -273,6 +276,8 @@ export default {
       .then((response) => {
         for (let i = 0; i < response.data.length; i++)
           this.colecaoSel.push(response.data[i].x.designacao)
+
+        this.colecaoSel.push("Todas")
       })
       .catch((e) => {
         this.errors.push(e);
@@ -280,10 +285,18 @@ export default {
   },
   
   methods: { 
-
+    
     pesquisar() {
-     
-      
+      let params = {
+                pesquisa: this.pesquisa,
+                colecao: this.colecao, 
+                editora: this.editora
+            }
+      this.$router.push({
+            name: 'resultados',
+            params: params,
+            
+        });      
     }, 
     reset() {
       this.$refs.form.reset();
