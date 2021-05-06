@@ -4,7 +4,7 @@
 from app.importacao import blueprint
 from flask import render_template,request,flash,redirect,url_for, send_from_directory
 from flask_login import login_required
-from app import mongo,dadosFolio,indexList,tags, token_required, admin_required
+from app import mongo,indexList,tags, token_required, admin_required, neo4j_db
 from app.indexador import indexacao as index, extractor as extract
 import datetime
 import os
@@ -15,30 +15,26 @@ from bson import json_util
 from flask_cors import CORS, cross_origin
 CORS(blueprint)
 #######
-UPLOAD_FOLDER = '../folios/static/pics/'
-
-from py2neo import Graph
-g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
-#g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
+UPLOAD_FOLDER = '../elementos/static/pics/'
 
 @blueprint.route('/passo1/',methods=['POST'])
 @admin_required
 #@login_required
 def route_template_passo1():
     if request.method == 'POST':
-        folio = mongo.db.folios.find_one({"_id": request.form.get('idFolio')})
+        folio = mongo.db.folios.find_one({"_id": request.form.get('idElemento')})
         nome = request.args.get('nome')
         if folio:
             flash('Este id já existe')
-            return json_util.dumps({'nome': nome,'message':'O ID do Fólio já existe.'})
+            return json_util.dumps({'nome': nome,'message':'O ID do Elemento já existe.'})
         else:
             if 'ficheiro' in request.files:
                 ficheiro = request.files['ficheiro']
                 if ficheiro.filename == '':
-                    return json_util.dumps({'nome': nome,'message':'O Fólio não possui ficheiro.'})
+                    return json_util.dumps({'nome': nome,'message':'O Elemento não possui ficheiro.'})
                 else:
-                    ficheiro.filename = request.form.get('idFolio') + '.txt'
-                    path = join(dirname(realpath(__file__)), '..', 'folios/static/doc', ficheiro.filename)
+                    ficheiro.filename = request.form.get('idElemento') + '.txt'
+                    path = join(dirname(realpath(__file__)), '..', 'elementos/static/doc', ficheiro.filename)
                     ficheiro.save(path)
                     tags = []
                     indexList = []
@@ -134,7 +130,7 @@ class Aux:
                 observacoes : "{observacoes}" \
             }}\
         )'
-        g.run(q)
+        neo4j_db.run(q)
 
 
     def create_relationship(node1,node2,first_id,second_desig,relationship):
@@ -143,7 +139,7 @@ class Aux:
             WHERE n1.id = "{first_id}" AND n2.designacao = "{second_desig}" \
             CREATE (n1)-[r:{relationship}]->(n2) \
             RETURN r'
-        g.run(q)
+        neo4j_db.run(q)
 
     def save_element(elem_id,titulo,colecao,numero,serie,lingua,paginas,size,personagens,estado,editora,dataPub,tipo,capaPath,filePath):
         elem_id = elem_id

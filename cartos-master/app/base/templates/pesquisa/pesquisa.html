@@ -32,7 +32,7 @@
             $('#todas').removeAttr("disabled");
             $('#inter').removeAttr("disabled");
             $('#semi').removeAttr("disabled");
-            $('#folio').removeAttr("disabled");
+            $('#elemento').removeAttr("disabled");
             $('#periodo').removeAttr("disabled");
             $('#linha').removeAttr("disabled");
             $('#palavras').removeAttr("disabled");
@@ -119,13 +119,13 @@
                     </br>
                     <div class="form-group">
                         <label class="checkbox-inline">
-                            <b>Fólio(s):<b>
+                            <b>Elemento(s):<b>
                         </label>
                         <label class="checkbox-inline">
-                            <select class="form-control" id="folio" name="folio">
+                            <select class="form-control" id="elemento" name="elemento">
                                 <option name="todos">Todos</option>
-                                {% for folio in folios%}
-                                <option name="{{folio._id}}" id="{{folio._id}}">{{folio._id}}</option>
+                                {% for elemento in elementos%}
+                                <option name="{{elemento._id}}" id="{{elemento._id}}">{{elemento._id}}</option>
                                 {% endfor %}
                             </select>
                         </label>
@@ -166,7 +166,7 @@
                         Privacidade &nbsp;&nbsp;
                     </div>
                     <div>
-                        <p>©2019 Tommi</p>
+                        <p>©2021 Cartos</p>
                     </div>
                 </div>
             </section>

@@ -265,8 +265,6 @@ def route_pedidos():
 #@login_required
 def route_template_registar_pedido():
     username = request.form.get('username')
-    #existeU = mongo.db.users.find_one({"_id":username})
-    #existeP = mongo.db.pedidos.find_one({"_id":username})
     existeU = neo4j_db.evaluate('match (x:User) where x.username=$v return x',v=username)
     existeP = neo4j_db.evaluate('match (x:Pedidos) where x.username=$v return x',v=username)
 
@@ -306,8 +304,6 @@ def route_template_registar_pedido():
                 upload_path2 = join(dirname(realpath(__file__)), 'static/curriculoPedidos/', username + ".pdf")
                 copyfile(src, upload_path)
         obs = request.form.get('obs')
-        #value = mongo.db.pedidos.insert({"_id":username,"nome":name,"email":email,"password":encryptPass,"tipo":tipo,"universidade":universidade,"departamento":departamento,"data":data,"obs":obs})
-        #pedidos = mongo.db.pedidos.find()
         neo4j_db.run('CREATE (n:User{_id:$username,nome:$name,email:$email,password:$password,tipo:$tipo,universidade:$universidade,departamento:$departamento,data:$data,obs:$obs})',
             username=username,
             name=name,

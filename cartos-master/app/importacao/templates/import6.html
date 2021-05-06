@@ -1,6 +1,6 @@
 {% extends "base_site.html" %}
 
-{% block title %} Integração de Folios {% endblock title %}
+{% block title %} Integração de Elementos {% endblock title %}
 
 {% block stylesheets %}
 {{ super() }}
@@ -26,7 +26,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Integração de Folios - Resumo</h2>
+                        <h2>Integração de Elementos - Resumo</h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -42,16 +42,16 @@
                                 <th style="text-align:center">ID</th>
                                 <th style="text-align:center">Descrição</th>
                                 <th style="text-align:center">Tipo</th>
-                                <th style="text-align:center">Número de folios</th>
+                                <th style="text-align:center">Número de elementos</th>
                                 <th style="text-align:center">Número de linhas</th>
                                 <th style="text-align:center">Número de tags</th>
                                 <th style="text-align:center">Número de indices</th>
                             </tr>
                             <tr>
-                                <td align="center">{{info.idFolio}}</td>
+                                <td align="center">{{info.idElemento}}</td>
                                 <td align="center">{{info.descricao}}</td>
                                 <td align="center">{{info.tipo}}</td>
-                                <td align="center">{{info.n_folios}}</td>
+                                <td align="center">{{info.n_elementos}}</td>
                                 <td align="center">{{info.n_linhas}}</td>
                                 <td align="center">{{info.n_tags}}</td>
                                 <td align="center">{{info.n_indices}}</td>

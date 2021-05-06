@@ -15,16 +15,6 @@
                             <h3 class="ml-5"> {{$t('imp.passo')}}</h3>
                         </v-toolbar>
                         <passo1 v-if="n == 1 && renderComponent" :elemento="info" :cancelado="cancelado" @atualizaElemento=atualizaElemento($event) @submeterElemento=submeterElemento() ></passo1>
-                        
-                        <!--<passo2 v-else-if="n == 2" :elemento="info" @cancela=cancela()></passo2>
-                        
-                        <passo3 v-else-if="n == 3 && renderComponent" :elemento="info" @cancela=cancela()></passo3>
-                        
-                        <passo4 v-else-if="n == 4 && renderComponent" :elemento="info" @cancela=cancela()></passo4>
-                        
-                        <passo5 v-else-if="n == 5 && renderComponent" :elemento="info" @cancela=cancela()></passo5>
-                        
-                        <passo6 v-else-if="n == 6 && renderComponent" :elemento="info" :fileInfo="passo6info" @submeterFolio=submeterFolio() @cancela=cancela()></passo6> -->
 
                         <v-toolbar flat color="white" v-if="n!=1 && n!=6">
                             <v-tooltip bottom>

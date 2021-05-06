@@ -34,16 +34,16 @@
                             <table id="datatable-buttons" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Fólios</th>
+                                        <th>Elementos</th>
                                         <th>Linhas</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {%  for folio in index.ocorrencias %}
-                                        {%  for key in folio %}
+                                    {%  for elemento in index.ocorrencias %}
+                                        {%  for key in elemento %}
                                     <tr>
                                         <td>{{key}}</td>
-                                        <td>{{folio[key]}}</td>
+                                        <td>{{elemento[key]}}</td>
                                     </tr>
                                         {% endfor %}
                                     {% endfor %}

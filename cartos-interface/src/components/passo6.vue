@@ -7,7 +7,7 @@
             <v-data-table
                 :headers="headers"
                 :items="infos"
-                :sort-by="['idFolio','descricao','tipo','n_folios','n_linhas','n_tags','n_indices']"
+                :sort-by="['idElemento','descricao','tipo','n_elementos','n_linhas','n_tags','n_indices']"
                 :sort-desc="[true,false,true,true,true,true,true]"
                 multi-sort            
             >
@@ -70,7 +70,7 @@ export default {
                 {
                     text: `${this.$t('p1.id')}`,
                     align: 'start',
-                    value: 'idFolio'
+                    value: 'idElemento'
                 },
                 {
                     text:`${this.$t('p1.desc')}`,
@@ -81,8 +81,8 @@ export default {
                     value: 'tipo'
                 },
                 {
-                    text:`${this.$t('p6.nfolios')}`,
-                    value: 'n_folios'
+                    text:`${this.$t('p6.nelementos')}`,
+                    value: 'n_elementos'
                 },
                 {
                     text:`${this.$t('p6.nlinhas')}`,
@@ -103,7 +103,7 @@ export default {
         }
     },
     props:{
-        folio:{
+        elemento:{
             type:Object
         },
         fileInfo:{
@@ -111,35 +111,35 @@ export default {
         }
     },
     watch:{
-        folio: {
+        elemento: {
             immediate: true,
             deep: true,
             handler(){
-                this.onUpdateFolio()
+                this.onUpdateElemento()
             }
         }
     },
     methods:{
-        onUpdateFolio(){
+        onUpdateElemento(){
             var obj = {}
-            obj.idFolio = this.folio.idFolio
-            obj.descricao = this.folio.descricao
-            obj.tipo = this.folio.tipo
-            obj.n_folios = this.fileInfo.n_folios
+            obj.idElemento = this.elemento.idElemento
+            obj.descricao = this.elemento.descricao
+            obj.tipo = this.elemento.tipo
+            obj.n_elementos = this.fileInfo.n_elementos
             obj.n_tags = this.fileInfo.n_tags
             obj.n_indices = this.fileInfo.n_indices
             obj.n_linhas = this.fileInfo.n_linhas
             this.infos = [obj]
         },
         save (){
-            this.$emit('submeterFolio', this)
+            this.$emit('submeterElemento', this)
         },
         reset(){
             this.$emit('cancela')
         }
     },
     created() {
-        this.onUpdateFolio()
+        this.onUpdateElemento()
     }
 }
 </script>

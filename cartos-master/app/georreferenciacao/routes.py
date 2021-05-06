@@ -28,17 +28,13 @@ def route_geo_places():
 def route_processa():
     placesList = mongo.db.places.find()
     placesList = list(placesList)
-    dir_path = join(dirname(realpath(__file__)), '..','folios/static/doc')
+    dir_path = join(dirname(realpath(__file__)), '..','elementos/static/doc')
     for root, dirs,files in os.walk(dir_path,topdown = False):
         for name in files:
             file_path = join(root, name)
             text,words = tagging.tagging_file(file_path,placesList,name)
             if text != 'Já Foram Processados os Ficheiros':
-                tagging.insertPlacesAnotated(text,placesList,name)      
-    # folio_filename = 'Folio196v.txt'
-    # file_path = join(dirname(realpath(__file__)), 'static/doc/', folio_filename)
-    # text,words = tagging.tagging_file(file_path,placesList)
-    # tagging.insertPlacesAnotated(text,placesList)
+                tagging.insertPlacesAnotated(text,placesList,name)  
     return json.dumps({message: 'Já Foram Processados os Ficheiros'},indent=4,default=json_util.default, ensure_ascii=False)
 
 @blueprint.route('/remove',methods=['POST'])

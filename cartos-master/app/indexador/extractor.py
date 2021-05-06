@@ -3,7 +3,7 @@
 """
 Created on Wed Feb 27 09:45:33 2019
 
-@author: Tommi
+@author: Cartos
 """
 
 #import mongoInit
@@ -12,9 +12,6 @@ import datetime as dt
 import re 
 from collections import Counter
 import io
-
-#folios = mongoInit.getFolios()
-
 
 #Função cuja funcionalidade é limpar o texto, retirando '\n'
 def cleanText(texto):
@@ -27,29 +24,6 @@ def removeTags(texto):
     texto = re.sub(r'<nl>',r'\n',texto)
     texto = re.sub(r"<\/?\w+>", "",texto)
     return texto
-
-#Função que guarda os folios na base de dados, na coleção 'folios', e retira os respetivos documentos 
-#da pasta 'Fontes' e coloca-os na pasta 'Processados', depois de os inserir. Para cada fólio, é verificado 
-#se cada documento tem extensão '.txt', de seguida é limpo o texto (cleanText()) e por fim é atribuido e inserido
-#o seu nome, texto e a data 
-'''
-def guardarTexto(pathFiles):
-    dic = {}
-    for file in pathFiles:
-        name, ext = os.path.splitext(file)
-        if(ext == ".txt"):
-            file_path = "./../Fontes/" + file
-            file_open = io.open(file_path,"r",encoding="utf-8")
-            texto = file_open.read()
-            texto = cleanText(texto)
-            dic["_id"] = name
-            dic["texto"] = texto
-            dic["data"] = dt.datetime.utcnow()
-            folios.insert_one(dic)
-            new_path = "./../Processados/" + file
-            os.rename(file_path,new_path)
-'''
-
 
 def extraiTexto(file):
     name, ext = os.path.splitext(file)
@@ -105,7 +79,7 @@ def extraiTags(file):
 def getInfo(file,tags,indices):
     dic = {}
     file_open = io.open(file,"r",encoding="utf-8")
-    dic["n_folios"] = 1
+    dic["n_elementos"] = 1
     dic["n_linhas"] = len(file_open.readlines())
     dic["n_indices"] = 0
     for i in indices:

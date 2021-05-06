@@ -15,8 +15,6 @@ import time
 @blueprint.route('/foliosnames', methods=['GET'])
 def pesquisafolios():
     folios = mongo.db.folios.find({}, {"_id": 1})
-    #for folio in folios:
-     #   print(folio)
     return jsonify(loads(dumps(folios)))   
 
 @blueprint.route('/folio/<folio>', methods=['GET'])
@@ -28,7 +26,7 @@ def showfolios(folio):
 @blueprint.route('/pesquisa', methods=['GET'])
 def pesquisaresultados():
     palavra = request.args.get('pesquisa') 
-    selectedFolio = request.args.get('selectedFolio') 
+    selectedElemento = request.args.get('selectedElemento') 
     tipo = request.args.get('tipo')
     versao = request.args.get('versao')
     resultado = request.args.get('resultado') 
@@ -37,10 +35,10 @@ def pesquisaresultados():
     if resultado == "npalavras": 
         npalavras = request.args.get('npalavras')
     
-    if selectedFolio == "Todos": 
-        res_pesquisa = procuraTextoTodos(palavra,versao, resultado,selectedFolio,npalavras) 
+    if selectedElemento == "Todos": 
+        res_pesquisa = procuraTextoTodos(palavra,versao, resultado,selectedElemento,npalavras) 
     else: 
-        res_pesquisa = procuraTextoFolio(palavra,versao,selectedFolio,resultado,npalavras)
+        res_pesquisa = procuraTextoElemento(palavra,versao,selectedElemento,resultado,npalavras)
     
     return jsonify(loads(dumps(res_pesquisa)))
 
@@ -56,7 +54,7 @@ def pesquisaIncludePalavra(palavra):
         return palavra
 
                             
-# Função chamada quando é necessário procurar em todos os fólios
+# Função chamada quando é necessário procurar em todos os elementos
 def procuraTextoTodos(palavra, versao, resultado, folio, npalavras):
     resultados = [] 
     resposta = []
@@ -316,7 +314,7 @@ def procuraTextoTodos(palavra, versao, resultado, folio, npalavras):
     return unique 
     
 
-def procuraTextoFolio(palavra,versao,folio,resultado,npalavras):
+def procuraTextoElemento(palavra,versao,folio,resultado,npalavras):
     resultados = []
     
 
@@ -387,8 +385,6 @@ def procuraTextoFolio(palavra,versao,folio,resultado,npalavras):
                     }
                     resultados.append(novo)
 
-        #print(resultados)
-
         if resultado == 'npalavras': 
             return resultados 
 
@@ -407,7 +403,6 @@ def procuraTextoFolio(palavra,versao,folio,resultado,npalavras):
                 if not(palavra.startswith('"')) and not(palavra.endswith('"')):
                     
                     for pl in pls: 
-                        #print(periodos)
                     
                         if pl.startswith("+"): 
                             # remove o carater + da pesquisa

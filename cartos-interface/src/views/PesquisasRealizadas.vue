@@ -36,7 +36,7 @@
             <template v-slot:header.pesquisa="{ header }">
                 <label> {{header.text}} </label>
             </template>
-            <template v-slot:header.folio="{ header }">
+            <template v-slot:header.elemento="{ header }">
                 <label> {{header.text}} </label>
             </template>
             <template v-slot:header.versao="{ header }">
@@ -70,7 +70,7 @@ export default {
                 },
                 {
                     text:`${this.$t('pr.fol')}`,
-                    value: 'folio'
+                    value: 'elemento'
                 },
                 {
                     text:`${this.$t('pr.ver')}`,
@@ -116,7 +116,7 @@ export default {
     //     }
     // },
     created() {
-        axios.get(`https://tommi2.di.uminho.pt/api/folios/pesquisas?nome=${this.$store.state.user._id}`,{headers:{
+        axios.get(`https://tommi2.di.uminho.pt/api/elementos/pesquisas?nome=${this.$store.state.user._id}`,{headers:{
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
         .then(response => {

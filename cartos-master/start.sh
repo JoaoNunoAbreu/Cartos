@@ -1,7 +1,7 @@
 #!/bin/bash
 
 killall flask
-export FLASK_APP=tommi.py
-SUCCESS=$(flask run --host=localhost --port=16002) 
+export FLASK_APP=cartos.py
+SUCCESS=$(flask run) 
 echo $SUCCESS
 exit 0

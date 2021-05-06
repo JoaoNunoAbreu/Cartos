@@ -20,7 +20,7 @@ export default {
     data(){
         return{
             blog:{
-                body:'História do Tommi'
+                body:'História do Cartos'
             },
             ajuda:'about'
         }

@@ -311,7 +311,7 @@ export default {
     };
   },
   props: {
-    folio: {
+    elemento: {
       type: Object,
     },
   },

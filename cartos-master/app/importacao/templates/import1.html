@@ -1,6 +1,6 @@
 {% extends "base_site.html" %}
 
-{% block title %} Integração de Folios {% endblock title %}
+{% block title %} Integração de Elementos {% endblock title %}
 
 {% block stylesheets %}
 {{ super() }}
@@ -26,9 +26,9 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Integração de Folios - Identificação</h2>
+                        <h2>Integração de Elementos - Identificação</h2>
                         <div class="clearfix"></div>
-                        {% if folios %}
+                        {% if elementos %}
                             {% with messages = get_flashed_messages() %}
                                     {% if messages %}
                                         {% for message in messages %}
@@ -43,19 +43,19 @@
                     </div>
                     <div class="x_content">
                         <!-- start form for validation -->
-                        {% if folios %}
+                        {% if elementos %}
                             <form id="form-import1" action="/import/passo1/?nome={{nome}}" method="POST" enctype="multipart/form-data" data-parsley-validate>
                                 <a class="btn btn-danger" href="/home/index?nome={{nome}}" role="button">Cancelar</a>
                                 <button type="reset" class="btn btn-primary">Limpar</button>
                                 <button type="submit" class="btn btn-success">Avançar</button>
                                 <br>
-                                <label for="idFolio">ID:</label>
-                                <input type="text" id="idFolio" class="form-control" name="idFolio" value={{folios.idFolio}} required />
+                                <label for="idElemento">ID:</label>
+                                <input type="text" id="idElemento" class="form-control" name="idElemento" value={{elementos.idElemento}} required />
 
                                 <label for="descricao">Descrição:</label>
-                                <input type="text" id="descricao" class="form-control" name="descricao" value={{folios.descricao}} required />
+                                <input type="text" id="descricao" class="form-control" name="descricao" value={{elementos.descricao}} required />
                                 <label>Versão</label>
-                                {% if folios.versao == "Intrepretativa"%}
+                                {% if elementos.versao == "Intrepretativa"%}
                                     <p>
                                         Intrepretativa:
                                         <input checked type="radio" class="flat" name="versao" id="versao" value="intrepretativa" required />
@@ -71,7 +71,7 @@
                                     </p>
                                 {% endif %}
                                 <label> Sumário: </label>
-                                {% if folios.sumario == "Transcricao"%}
+                                {% if elementos.sumario == "Transcricao"%}
                                     <p>
                                         Transcrição:
                                         <input checked type="radio" class="flat" name="sumario" id="sumario" value="transcricao" required />
@@ -87,7 +87,7 @@
                                     </p>
                                 {% endif %}
                                 <label>Tipo:</label>
-                                {% if folios.tipo == "Frente"%}
+                                {% if elementos.tipo == "Frente"%}
                                     <p>
                                         Frente:
                                         <input checked type="radio" class="flat" name="tipo" id="tipo" value="frente" required />
@@ -102,9 +102,9 @@
                                         <input checked type="radio" class="flat" name="tipo" id="tipo" value="verso" />
                                     </p>
                                 {% endif %}
-                                {% if folios.observacao %}
+                                {% if elementos.observacao %}
                                     <label for="obs">Observações:</label>
-                                    <input type="text" id="obs" class="form-control" name="obs" value={{folios.observacao}} />
+                                    <input type="text" id="obs" class="form-control" name="obs" value={{elementos.observacao}} />
                                 {% else %}
                                     <label for="obs">Observações:</label>
                                     <input type="text" id="obs" class="form-control" name="obs"/>
@@ -113,7 +113,7 @@
                                 <label for="ficheiro">Adicionar Ficheiro de Texto:</label>
                                 <input type="file" id="ficheiro" class="form-control" name="ficheiro"/>
                                 <br>
-                                <label for="ficheiro">Adicionar Foto do Fólio:</label>
+                                <label for="ficheiro">Adicionar Foto do Elemento:</label>
                                 <input type="file" id="foto" class="form-control" name="foto"/>
                                 <br>
                                 <br>
@@ -127,8 +127,8 @@
                                 <button type="reset" class="btn btn-primary">Limpar</button>
                                 <button type="submit" class="btn btn-success">Avançar</button>
                                 <br>
-                                <label for="idFolio">ID:</label>
-                                <input type="text" id="idFolio" class="form-control" name="idFolio" required />
+                                <label for="idElemento">ID:</label>
+                                <input type="text" id="idElemento" class="form-control" name="idElemento" required />
 
                                 <label for="descricao">Descrição:</label>
                                 <input type="text" id="descricao" class="form-control" name="descricao" required />
@@ -160,7 +160,7 @@
                                 <label for="ficheiro">Adicionar Ficheiro de Texto:</label>
                                 <input type="file" id="ficheiro" class="form-control" name="ficheiro"/>
                                 <br>
-                                <label for="ficheiro">Adicionar Foto do Fólio:</label>
+                                <label for="ficheiro">Adicionar Foto do Elemento:</label>
                                 <input type="file" id="foto" class="form-control" name="foto"/>
                                 <br>
                                 <br>

@@ -165,8 +165,8 @@ export default {
         else if(this.ajuda == 'perfil'){
             this.help = 'Esta é a ajuda do perfil'
         }
-        else if(this.ajuda == 'folios'){
-            this.help = 'Esta é a ajuda dos fólios'
+        else if(this.ajuda == 'elementos'){
+            this.help = 'Esta é a ajuda dos elementos'
         }
         else if(this.ajuda == 'about'){
             this.help = 'Esta é a ajuda da about page'

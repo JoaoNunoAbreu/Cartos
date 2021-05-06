@@ -9,7 +9,7 @@
                         <v-card class="text-center ml-10 mr-5">
                             <v-card-text>
                                 <h4><v-icon class="mr-2">mdi-folder-open</v-icon>{{$t('hAdmin.f')}}</h4>
-                                <h2 style="color:blue"><b>{{nFolios}}</b></h2>
+                                <h2 style="color:blue"><b>{{nElementos}}</b></h2>
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -62,7 +62,7 @@
             </v-toolbar>
         </div>
         <div class="mt-12">
-            <h3 class="ml-10 mt-6">{{"Foram inseridos " + percent + "% dos fólios na última semana"}}</h3>
+            <h3 class="ml-10 mt-6">{{"Foram inseridos " + percent + "% dos elementos na última semana"}}</h3>
             <v-row>
                 <v-col>
                     <v-card color="#2A3F54" dark class="text-center ml-10 mt-6 mr-10">
@@ -95,7 +95,7 @@ import NavDraw from '../components/navDraw.vue'
 export default {
     data(){
         return{
-            nFolios:0,
+            nElementos:0,
             nDocs:0,
             nInds:0,
             nTags:0,
@@ -138,26 +138,26 @@ export default {
         })
 
 
-        //Fólios
-        await axios.get(`https://tommi2.di.uminho.pt/api/folios/folios?nome=${this.$store.state.user._id}`,{headers:{
+        //Elementos
+        await axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
             Authorization:`Bearer: ${this.$store.state.jwt}`
             }})
             .then(response => {
-                this.nFolios = response.data.folios.length
-                for(let i = 0; i<response.data.folios.length; i++){
-                    let data = response.data.folios[i].data
+                this.nElementos = response.data.elementos.length
+                for(let i = 0; i<response.data.elementos.length; i++){
+                    let data = response.data.elementos[i].data
                     let dataArray = data.split(/[\s-:]+/)
                     let comparableData = dataArray[1] + '/' + dataArray[2] + '/' + dataArray[0]
                     this.value.push(comparableData)
                 }
                 //para ja nao ha mais documentos?
-                this.nDocs = response.data.folios.length
+                this.nDocs = response.data.elementos.length
             }).catch(e => {
                 this.errors.push(e)
         })
         await this.contains()
         //Tags
-        axios.get(`https://tommi2.di.uminho.pt/api/folios/tags?nome=${this.$store.state.user._id}`,{headers:{
+        axios.get(`https://tommi2.di.uminho.pt/api/elementos/tags?nome=${this.$store.state.user._id}`,{headers:{
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
         .then(response => {
@@ -166,7 +166,7 @@ export default {
             this.errors.push(e)
         })
         //Índices
-        axios.get(`https://tommi2.di.uminho.pt/api/folios/index?nome=${this.$store.state.user._id}`,{headers:{
+        axios.get(`https://tommi2.di.uminho.pt/api/elementos/index?nome=${this.$store.state.user._id}`,{headers:{
           'Content-Type': 'multipart/form-data',
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
@@ -186,7 +186,7 @@ export default {
             for(let i = 0;i<this.labels.length;i++){
                 this.number[i] = this.getOccurrence(this.value,this.labels[i])
             }
-            this.percent = ((this.number.reduce((a, b) => a + b, 0)/this.nFolios)*100).toPrecision(4)
+            this.percent = ((this.number.reduce((a, b) => a + b, 0)/this.nElementos)*100).toPrecision(4)
             this.condition = true
         },
         getOccurrence: function(array, value) {

@@ -3,7 +3,7 @@
     <div class="home">
       <Navbar/>
       <!-- cena da imagem -->
-      <PopupTommi />
+      <PopupCartos />
       
       <div class="text-center"> 
         <!-- Para ficar igual ao login -->
@@ -131,121 +131,77 @@
           </v-row>
         </v-container>
 
-
-          <!--
-          <v-row align="center" justify="center">
-            <v-col cols="12" md="6">
-              <v-select required v-model="selectedFolio" :items="foliosNames" v-bind:label="$t('nav.folios')"></v-select>
-            </v-col>
+        <!-- Filtros -->
             
-            <v-col cols="12" md="3"> 
-              <p>{{ $t('nav.tipoDeTexto') }}:</p>
-              <v-radio-group v-model="tipo" :rules="rulesRequired($t('nav.tipoObrigatorio'))" required>
-                <v-radio v-bind:label="$t('nav.primeiroTipoTexto')" value="texto"></v-radio>
-                <v-radio v-bind:label="$t('nav.segundoTipoTexto')" value="contexto"></v-radio>
-              </v-radio-group>
-            </v-col>
-          </v-row>
-          --> 
-
           <v-container fluid>
-            <v-row>
-              <v-col cols="12" class="ma-0 pa-0">
-                <v-row
-                  align="start"
-                  justify="center"
-                >
-                  <v-col cols="12" md="3"> </v-col>
-                
-                    <v-radio-group class="change-font" v-model="tipo" row v-bind:label="$t('nav.tipoDeTexto')" :rules="rulesRequired($t('nav.tipoObrigatorio'))" required>
-                      <v-radio class="change-font" v-bind:label="$t('nav.primeiroTipoTexto')" value="texto"></v-radio>
-                      <v-radio class="change-font" v-bind:label="$t('nav.segundoTipoTexto')" value="contexto"></v-radio>
-                    </v-radio-group>
-                                
-                  <v-col cols="12" md="3"> </v-col>
-
-                </v-row>
+            <v-row align="start" justify="center">
+              <v-col cols="12" md="3"> 
+                <v-select
+                  class="change-font"
+                  required
+                  v-model="colecao"
+                  :items="colecaoSel"
+                  v-bind:label="$t('p1.col')">
+                </v-select>
               </v-col>
             </v-row>
-          </v-container>
-            
-          <v-container fluid>
-            <v-row>
-              <v-col class="ma-0 pa-0" cols="12">
-                <v-row
-                  align="start"
-                  justify="center"
+            <v-row align="start" justify="center">
+              <v-col cols="12" md="3"> 
+                <v-select
+                  class="change-font"
+                  required
+                  v-model="editora"
+                  :items="editoraSel"
+                  v-bind:label="$t('p1.edi')"
+                ></v-select>
+              </v-col>
+            </v-row>
+            <v-row align="start" justify="center">
+              <v-col cols="12" md="3"> 
+                <v-menu
+                  ref="menu"
+                  v-model="menu"
+                  :close-on-content-click="false"
+                  :return-value.sync="date"
+                  transition="scale-transition"
+                  offset-y
+                  min-width="auto"
                 >
-                  <v-col cols="12" md="3"> </v-col>
-                  
-                    <v-radio-group class="change-font" v-model="versao" row  v-bind:label="$t('nav.versaoTexto')" :rules="rulesRequired($t('nav.tipoObrigatorio'))" required>
-                       <v-radio class="change-font" v-bind:label="$t('nav.primeiraVersaoTexto')" value="todas"></v-radio>
-                       <v-radio class="change-font" v-bind:label="$t('nav.segundaVersaoTexto')" value="interpretativa"></v-radio>
-                       <v-radio class="change-font" v-bind:label="$t('nav.terceiraVersaoTexto')" value="semidiplomática"></v-radio>
-                    </v-radio-group>
-           
-              <v-col cols="12" md="3"> </v-col>
-
-                </v-row>
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-text-field
+                      v-model="date"
+                      label="Picker in menu"
+                      prepend-icon="mdi-calendar"
+                      readonly
+                      v-bind="attrs"
+                      v-on="on"
+                    ></v-text-field>
+                  </template>
+                  <v-date-picker
+                    v-model="date"
+                    no-title
+                    scrollable
+                  >
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      text
+                      color="primary"
+                      @click="menu = false"
+                    >
+                      Cancel
+                    </v-btn>
+                    <v-btn
+                      text
+                      color="primary"
+                      @click="$refs.menu.save(date)"
+                    >
+                      OK
+                    </v-btn>
+                  </v-date-picker>
+                </v-menu>
               </v-col>
             </v-row>
           </v-container> 
-
-          
-          <v-container fluid>
-            <v-row>
-              <v-col class="ma-0 pa-0" cols="12">
-                <v-row
-                  align="start"
-                  justify="center"
-                >
-                  <v-col cols="12" md="3"> </v-col>
-                  
-                    <v-col cols="12" md="2">
-                      <v-select class="change-font" required v-model="selectedFolio" :items="foliosNames" v-bind:label="$t('nav.folios')"></v-select>
-                    </v-col>
-                  
-                  <v-col cols="12" md="3"> </v-col>
-
-                </v-row>
-              </v-col>
-            </v-row>
-          </v-container>
-
-
-          <v-container fluid>
-            <v-row>
-              <v-col class="ma-0 pa-0" cols="12">
-                <v-row
-                  align="start"
-                  justify="center"
-                >
-                  <v-col cols="12" md="1"> </v-col>
-                  
-                  <v-radio-group class="change-font" v-model="resultado" row v-bind:label="$t('nav.tipoResultado')" :rules="rulesRequired($t('nav.tipoObrigatorio'))" required> 
-                    <v-radio class="change-font" v-bind:label="$t('nav.primeiroResultado')" value="periodo"></v-radio>  
-                    <v-radio class="change-font" v-bind:label="$t('nav.segundoResultado')" value="linha"></v-radio> 
-                    <v-radio v-bind:label="$t('nav.terceiroResultado')" value="npalavras" class="change-font"></v-radio> 
-                    
-                    <v-text-field 
-                        outlined
-                        v-bind:suffix= "$t('nav.palavras')"
-                        type = "number"
-                        :disabled= "resultado != 'npalavras'"
-                        dense 
-                        v-model="npalavras" 
-                        :rules="rulePalavras($t('nav.obrigacaoNumero'))" 
-                        required class="change-font" 
-                        height="20" 
-                    ></v-text-field>
-                                 
-                  </v-radio-group>      
-
-                </v-row>
-              </v-col>
-            </v-row>
-          </v-container>
-
 
             <!-- o v-bind:label, tive de fazer assim para conseguir traduzir o interior do campo -->
             <!--  <v-btn @click="reset">clear</v-btn> /-->
@@ -272,106 +228,67 @@
 <script>
 import axios from "axios"; 
 import Navbar from '../components/Navbar';
-import PopupTommi from '../components/PopupTommi'
+import PopupCartos from '../components/PopupCartos'
 import Footer from '../components/Footer'
 
 export default {
   name: "Home",
-  components: { PopupTommi, Navbar, Footer },
+  components: { PopupCartos, Navbar, Footer },
   data() {
     return {
       pesquisa: "", 
       dialog: false,
-      foliosNames: [],
-      error: "",
-      // não estará a mais aqui?
-      inputRule: [v => v.length > 0 || "Este campo não pode estar vazio"],
-      selectedFolio: "Todos",
-      tipo: "texto",
-      versao: "todas", 
-      npalavras: "",
-      resultado: "periodo", 
-      pesquisas: [], 
-      show: false,
+      colecao: "",
+      colecaoSel: [],
+      editora: "", 
+      editoraSel: [],
       url: process.env.VUE_APP_URL,
     };
   }, 
 
-  mounted: function() {
-    axios
-      .get(url+"/analise/foliosnames")
-      .then(dados => {
-        var objects = dados.data;
-        objects.map(f => this.foliosNames.push(f._id));
-        this.foliosNames.unshift("Todos");
-        //console.log(this.foliosNames); 
-        if(localStorage.getItem('pesquisas')){ 
-         //console.log("fiz get da pesquisa");
-         this.pesquisas = JSON.parse(localStorage.getItem('pesquisas'));  
-         this.selectedFolio = localStorage.getItem('selectedFolio');
-         this.tipo = localStorage.getItem('tipo'); 
-         this.versao = localStorage.getItem('versao');
-         this.resultado = localStorage.getItem('resultado');
-         this.npalavras = localStorage.getItem('npalavras');
+ 
+  created() {
+    axios.get(this.url+`/elementos/editoras`,
+        {
+          headers: {
+            Authorization: `Bearer: ${this.$store.state.jwt}`,
+          },
         }
+      )
+      .then((response) => {
+        for (let i = 0; i < response.data.length; i++)
+          this.editoraSel.push(response.data[i].x.designacao)
       })
-      .catch(err => {
-        this.error = err.message;
+      .catch((e) => {
+        //console.log(e)
+        this.errors.push(e);
+      }),
+      axios.get(this.url+`/elementos/colecoes`,
+        {
+          headers: {
+            Authorization: `Bearer: ${this.$store.state.jwt}`,
+          },
+        }
+      )
+      .then((response) => {
+        for (let i = 0; i < response.data.length; i++)
+          this.colecaoSel.push(response.data[i].x.designacao)
+      })
+      .catch((e) => {
+        this.errors.push(e);
       });
-  }, 
+  },
   
   methods: { 
 
-    addPesquisa(){ 
-      this.pesquisas.unshift(this.pesquisa); 
-      // guardar items selecionados na pesquisa
-      localStorage.setItem('selectedFolio',this.selectedFolio); 
-      localStorage.setItem('tipo',this.tipo);
-      localStorage.setItem('versao',this.versao);  
-      localStorage.setItem('resultado',this.resultado);  
-      localStorage.setItem('npalavras',this.npalavras);
-      localStorage.setItem('pesquisas', JSON.stringify(this.pesquisas));
-      //console.log(this.pesquisas)
-      this.pesquisa = '';
-    }, 
-
     pesquisar() {
-      //aqui vamos ver os campos e conforme os campos fazer pedidos distintos à API e redirecionar para a pag de resultados
-      if (this.$refs.form.validate()) {
-        let params; 
-        if(this.resultado != "npalavras")  { 
-          params = {
-                pesquisa: this.pesquisa,
-                selectedFolio: this.selectedFolio, 
-                tipo: this.tipo, 
-                versao: this.versao, 
-                resultado: this.resultado 
-            }
-        } else { 
-            // quando escolhe x palavras
-            params = {
-                pesquisa: this.pesquisa,
-                selectedFolio: this.selectedFolio, 
-                tipo: this.tipo, 
-                versao: this.versao, 
-                resultado: this.resultado, 
-                npalavras: this.npalavras
-            }
-        } 
-        this.addPesquisa();
-        // chama a página dos resultados 
-        this.$router.push({
-            name: 'resultados',
-            params: params,
-            
-        });
-       
-      }
+     
+      
     }, 
     reset() {
       this.$refs.form.reset();
     }, 
-    
+     
     // função auxiliar que permite a tradução da obrigatoriedade dos campos
     rulesRequired(role) {
       return [value => !!value || role];

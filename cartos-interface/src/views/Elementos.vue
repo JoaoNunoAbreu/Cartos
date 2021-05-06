@@ -8,7 +8,7 @@
       <navDrawLeitor></navDrawLeitor>
     </div>
     <v-data-table
-      id="tabelaFolios"
+      id="tabelaElementos"
       :headers="headers"
       :items="elementos"
       :items-per-page="15"
@@ -67,17 +67,14 @@
           </v-tooltip>
 
           <v-dialog persistent v-model="dialog" max-width="500px">
-            <folioForm
+            <elementoForm
               :passedData="item"
               @emiteFecho="emiteFecho($event)"
-            ></folioForm>
+            ></elementoForm>
           </v-dialog>
         </v-toolbar>
       </template>
       <template v-slot:header.id="{ header }">
-        <label> {{ header.text }} </label>
-      </template>
-      <template v-slot:header.dominio="{ header }">
         <label> {{ header.text }} </label>
       </template>
       <template v-slot:header.colecao="{ header }">
@@ -97,7 +94,7 @@
       </template>
       <template v-slot:item.options="{ item }">
         <v-icon small class="mr-2" @click="editItem(item)"> mdi-eye </v-icon>
-        <v-icon small class="mr-2" @click="verFolioFoto(item)">
+        <v-icon small class="mr-2" @click="verElementoFoto(item)">
           mdi-camera
         </v-icon>
         <v-icon
@@ -114,7 +111,7 @@
     </v-data-table>
     <v-dialog v-model="picDialog" width="800px">
       <v-card>
-        <v-img v-bind:src="folioPic" contain aspect-ratio="1.5" />
+        <v-img v-bind:src="elementoPic" contain aspect-ratio="1.5" />
       </v-card>
       <v-tooltip bottom>
         <template v-slot:activator="{ on: tooltip }">
@@ -232,7 +229,7 @@ import axios from "axios";
 import Header from "../components/header.vue";
 import NavDraw from "../components/navDraw.vue";
 import navDrawLeitor from "../components/navDrawLeitor.vue";
-import FolioForm from "../components/folioForm.vue";
+import ElementoForm from "../components/elementoForm.vue";
 export default {
   data() {
     return {
@@ -242,10 +239,6 @@ export default {
           text: this.$t("fol.id"),
           align: "start",
           value: "id",
-        },
-        {
-          text: `${this.$t("fol.dom")}`,
-          value: "dominio",
         },
         {
           text: `${this.$t("fol.col")}`,
@@ -274,7 +267,7 @@ export default {
       ver: "ver",
       elementos: [],
       errors: [],
-      folioPic: "",
+      elementoPic: "",
       dialog: false,
       picDialog: false,
       noPicDialog: false,
@@ -293,7 +286,7 @@ export default {
     appHeader: Header,
     navDraw: NavDraw,
     navDrawLeitor: navDrawLeitor,
-    folioForm: FolioForm,
+    elementoForm: ElementoForm,
   },
   created() {
     axios
@@ -318,7 +311,7 @@ export default {
   methods: {
     printSection() {
       // Pass the element id here
-      this.$htmlToPaper("tabelaFolios");
+      this.$htmlToPaper("tabelaElementos");
     },
     editItem(item) {
       this.item = item;
@@ -330,10 +323,9 @@ export default {
     },
     deleteItem(item) {
       const index = this.elementos.indexOf(item);
-      //console.log('Index: ' + index + ' folioname: ' + this.folios[index]._id)
       axios
         .get(
-          `https://tommi2.di.uminho.pt/api/folios/apagar/` +
+          `https://tommi2.di.uminho.pt/api/elementos/apagar/` +
             this.elementos[index]._id +
             `?nome=${this.$store.state.user._id}`,
           {
@@ -343,24 +335,21 @@ export default {
           }
         )
         .then((response) => {
-          // JSON responses are automatically parsed.
-          //console.log(response.data)
           this.elementos = response.data;
           this.tempValue = {};
         })
         .catch((e) => {
-          //console.log(e)
           this.errors.push(e);
         });
     },
     emiteFecho: function () {
       this.dialog = false;
     },
-    verFolioFoto: function (item) {
+    verElementoFoto: function (item) {
       const index = this.elementos.indexOf(item);
       axios
         .get(
-          `https://tommi2.di.uminho.pt/api/folios/ver/${this.elementos[index]._id}/foto`,
+          `https://tommi2.di.uminho.pt/api/elementos/ver/${this.elementos[index]._id}/foto`,
           {
             responseType: "arraybuffer",
             headers: {
@@ -370,7 +359,7 @@ export default {
         )
         .then((response) => {
           var image = new Buffer(response.data, "binary").toString("base64");
-          this.folioPic = `data:${response.headers[
+          this.elementoPic = `data:${response.headers[
             "content-type"
           ].toLowerCase()};base64,${image}`;
           this.picDialog = true;

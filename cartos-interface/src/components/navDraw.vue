@@ -2,9 +2,9 @@
     <v-card>
         <v-navigation-drawer app
           clipped
+          v-if="true"
           permanent
-          :expand-on-hover="expandOnHover"
-          :mini-variant="miniVariant"
+          :mini-variant="false"
           color='#2A3F54'
           class="navBar"
         >
@@ -30,10 +30,7 @@
                 <v-list-item-title class="white--text">{{$t('navd.documents')}}</v-list-item-title>
               </template>
                   <v-list-item link to="/admin/elementos">
-                    <v-list-item-title class="white--text">{{$t('navd.folios')}}</v-list-item-title>
-                  </v-list-item>
-                  <v-list-item link to="/admin/compFolios">
-                    <v-list-item-title class="white--text">{{$t('navd.cf')}}</v-list-item-title>
+                    <v-list-item-title class="white--text">{{$t('navd.elementos')}}</v-list-item-title>
                   </v-list-item>
             </v-list-group>
             <v-list-group
@@ -231,14 +228,6 @@
             <div class="pa-2">
               <v-tooltip top> 
                 <template v-slot:activator="{ on }">
-                  <v-btn dark depressed min-width="60px" @click="fixNav()" v-on="on">
-                    <v-icon>mdi-axis-arrow-lock</v-icon>
-                  </v-btn>
-                </template>
-                <span>{{$t('navd.fixMenu')}}</span>
-              </v-tooltip>
-              <v-tooltip top> 
-                <template v-slot:activator="{ on }">
                   <v-btn dark depressed min-width="60px" @click="logout();" v-on="on">
                     <v-icon>mdi-power</v-icon>
                   </v-btn>
@@ -299,15 +288,15 @@ export default {
             // JSON responses are automatically parsed.
             //console.log(response.data)
             if (response.data.message === 'ok'){
-              axios.get(`https://tommi2.di.uminho.pt/api/folios/folios?nome=${this.$store.state.user._id}`,{headers:{
+              axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
                 Authorization:`Bearer: ${this.$store.state.jwt}`
               }})
               .then(response => {
-                  this.nDocs = response.data.folios.length
+                  this.nDocs = response.data.elementos.length
               }).catch(e => {
                   this.errors.push(e)
               })
-              axios.get(`https://tommi2.di.uminho.pt/api/folios/index?nome=${this.$store.state.user._id}`,{headers:{
+              axios.get(`https://tommi2.di.uminho.pt/api/elementos/index?nome=${this.$store.state.user._id}`,{headers:{
                 'Content-Type': 'multipart/form-data',
                 Authorization:`Bearer: ${this.$store.state.jwt}`
               }})
@@ -334,14 +323,6 @@ export default {
         this.$store.commit("guardaNomeUtilizador", "")
         this.$router.push( {path:`/admin/login`})
       },
-      fixNav: function(){
-        this.expandOnHover=!this.expandOnHover
-        this.miniVariant=!this.miniVariant
-        this.drawerOn=false
-        this.$nextTick(() =>
-          this.drawerOn = true
-        )
-      }
     }
 };
 </script>

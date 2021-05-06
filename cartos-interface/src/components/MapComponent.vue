@@ -22,7 +22,7 @@
       <v-card>
         <v-card-title class="headline">{{ place }}</v-card-title>
         <v-card-text>
-         Fólios
+         Elementos
         </v-card-text>
         <v-card-text>
          Propriétarios

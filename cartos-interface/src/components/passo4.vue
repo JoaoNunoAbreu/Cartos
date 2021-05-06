@@ -47,12 +47,12 @@ export default {
         }
     },
     props:{
-        folio:{
+        elemento:{
             type:Object
         }
     },
     watch:{
-        folio: {
+        elemento: {
             immediate: true,
             deep: true,
             handler(){
@@ -62,7 +62,7 @@ export default {
     },
     methods:{
         onUpdate(){
-            this.tags=this.folio.tags
+            this.tags=this.elemento.tags
         },
         reset(){
             this.$emit('cancela')

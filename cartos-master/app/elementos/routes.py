@@ -4,7 +4,7 @@
 from app.elementos import blueprint
 from flask import render_template, request, url_for, send_from_directory
 from flask_login import login_required
-from app import mongo, token_required, admin_required, photo_auth
+from app import mongo, token_required, admin_required, photo_auth, neo4j_db
 from os import path, remove, listdir
 from os.path import join, dirname, realpath
 from werkzeug.security import generate_password_hash
@@ -17,28 +17,19 @@ from flask_cors import CORS, cross_origin
 CORS(blueprint)
 #######
 
-#Neo4j
-from py2neo import Graph
-g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
-#g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
-#
-
-############################### FOLIOS #########################################
+############################### ELEMENTOS #########################################
 
 @blueprint.route('/elementos', methods=['GET'])
 @token_required
 #@login_required
 def route_template_elementos():
-    
-    ##folios = [doc for doc in mongo.db.folios.find()]
-    elementos = g.run('match (x:Elemento) return x')
+    elementos = neo4j_db.run('match (x:Elemento) return x')
   
     data = [ ]
     for elem in elementos:
-        #print(elem[0]['estado']) 
-        colecao = g.evaluate(f'match (e:Elemento)-[]->(c:Colecao) where e.id="{elem[0]["id"]}" return c.designacao')
-        editora = g.evaluate(f'match (e:Elemento)-[]->(c:Editora) where e.id="{elem[0]["id"]}" return c.designacao')
-        lingua = g.evaluate(f'match (e:Elemento)-[]->(c:Lingua) where e.id="{elem[0]["id"]}" return c.designacao')
+        colecao = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Colecao) where e.id="{elem[0]["id"]}" return c.designacao')
+        editora = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Editora) where e.id="{elem[0]["id"]}" return c.designacao')
+        lingua = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Lingua) where e.id="{elem[0]["id"]}" return c.designacao')
         data.append({
             "id":elem[0]['id'] ,
             "data_publicacao":elem[0]['data_publicacao'], 
@@ -46,38 +37,18 @@ def route_template_elementos():
             "editora":editora,
             "lingua":lingua
         }) 
-        
-    #nome = request.args.get('nome')
-    #print(f"Data = {data}")
     return json_util.dumps(data)
 
-@blueprint.route('/elementos/intrepretativa', methods=['GET'])
-@token_required
-#@login_required
-def route_template_folios_intrepretativa():
-    folios = mongo.db.folios.find({"versao":"intrepretativa"})
-    nome = request.args.get('nome')
-    return render_template('folios.html',folios=folios,nome=nome,value='Intrepretativa')
+@blueprint.route('/editoras', methods=['GET'])
+def route_template_editoras():
+    editoras = neo4j_db.run('match (x:Editora) return x')
+    return json_util.dumps(editoras)
 
-@blueprint.route('/elementos/semidiplomatica')
-@token_required
-#@login_required
-def route_template_folios_semi_diplomatica():
-    folios = mongo.db.folios.find({"versao":"semi-diplomatica"})
-    nome = request.args.get('nome')
-    return render_template('folios.html',folios=folios,nome=nome,value='Semi-Diplomatica')
+@blueprint.route('/colecoes', methods=['GET'])
+def route_template_colecoes():
+    colecoes = neo4j_db.run('match (x:Colecao) return x')
+    return json_util.dumps(colecoes)
 
-"""
-@blueprint.route('/ver/<folio>')
-@token_required
-#@login_required
-def route_template_ver(folio):
-    nome = request.args.get('nome')
-    existe = mongo.db.folios.find_one({"_id":folio})
-    textoTags = existe["textoCTags"].split("\n")
-    textoSTags = existe["textoSTags"].split("\n")
-    return render_template('viewFolio.html', folio=existe,nome=nome,textoTags= textoTags,textoSTags= textoSTags)
-"""
 
 @blueprint.route('/ver/<folio>/foto', methods=['GET'])
 @token_required
@@ -98,7 +69,7 @@ def route_template_ver_foto(folio):
 def route_template_remover(folio):
     nome = request.args.get('nome')
     existe = mongo.db.folios.find_one({"_id":folio})
-    return render_template('removerFolio.html', folio=existe,nome=nome)
+    return render_template('removerElemento.html', folio=existe,nome=nome)
 
 @blueprint.route('/apagar/<folio>', methods=['GET'])
 @admin_required
@@ -215,14 +186,14 @@ def route_pesquisas():
     nome = request.args.get('nome')
     return json_util.dumps({'pesquisas': pesquisas, 'nome': nome})
 
-@blueprint.route('/compFolios/pesquisas', methods=['GET'])
+@blueprint.route('/compElementos/pesquisas', methods=['GET'])
 @admin_required
-def route_pesquisasCompFolios():
+def route_pesquisasCompElementos():
     nome = request.args.get('nome')
     pesquisas= [doc for doc in mongo.db.pesquisasCF.find({"username":nome})]
     return json_util.dumps({'pesquisas': pesquisas, 'nome': nome})
 
-@blueprint.route('/compFolios/post', methods=['POST'])
+@blueprint.route('/compElementos/post', methods=['POST'])
 @token_required
 #@login_required
 def route_pesquisasPost():

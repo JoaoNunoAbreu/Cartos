@@ -5,12 +5,12 @@
         "atividade": "State",
         "cor": "Color"
     },
-    "message": "Welcome to Tommi  - The Book of Properties of Tombo da Mitra.",
+    "message": "Welcome to Cartos - Hosting and Exploring System of Comic Books.",
     "navd": {
         "home": "Begin",
         "import": "Import",
         "documents": "Documents",
-        "folios": "Folios",
+        "elementos": "Elementos",
         "indexes": "Indexes",
         "tags": "Tags",
         "analysis": "Analysis",
@@ -23,7 +23,7 @@
         "about": "About",
         "credits": "Credits",
         "ib": "Database Indexing",
-        "cf": "Composing Folios",
+        "cf": "Composing Elementos",
         "etags": "Tag Editor",
         "eListaTags": "Tag List",
         "ebase": "Database Tagging",
@@ -47,7 +47,7 @@
         "barraPesquisa": "Search",
         "buttonPesquisa": "Search",
         "pesquisaNaoVazia": "This field cannot be empty",
-        "folios": "Folio(s)",
+        "elementos": "Elemento(s)",
         "tipoDeTexto": "Type",
         "primeiroTipoTexto": "Text",
         "segundoTipoTexto": "Context",
@@ -79,7 +79,7 @@
         "textoTermos": "Terms text",
         "textoPriv": "Privacy text",
         "buttonAjuda": "Help",
-        "folioAnaliseHeadline": "Hosting and Exploring System of Comic Books",
+        "elementoAnaliseHeadline": "Hosting and Exploring System of Comic Books",
         "tituloProjeto": "Hosting and Exploring System of Comic Books",
         "imprimir": "Print",
         "primeiroPagina": "First",
@@ -93,7 +93,7 @@
         "exit": "Exit"
     },
     "ab": {
-        "question": "What is Tommi?"
+        "question": "What is Cartos?"
     },
     "def": {
         "title": "Settings",
@@ -126,7 +126,7 @@
         "title": "Index Dictionary",
         "pal": "Word",
         "oco": "Occurrences",
-        "fol": "Folios",
+        "fol": "Elementos",
         "opt": "Options"
     },
     "login": {
@@ -177,7 +177,7 @@
         "title": "Tag dictionary",
         "tag": "Tag",
         "oco": "Occurrences",
-        "fol": "Folios",
+        "fol": "Elementos",
         "opt": "Options"
     },
     "users": {
@@ -202,7 +202,7 @@
         "nao": "No"
     },
     "folForm": {
-        "visFol": "View Folios",
+        "visFol": "View Elementos",
         "id": "Identifier",
         "ver": "Version",
         "tComTags": "Text with tags",
@@ -225,7 +225,7 @@
         "close": "Close"
     },
     "p1": {
-        "ins": "Insert folio",
+        "ins": "Insert elemento",
         "id": "Identifier",
         "ver": "Version",
         "int": "Interpretative",
@@ -261,7 +261,7 @@
         "reset": "Reset"
     },
     "p6": {
-        "nfolios": "Number of folios",
+        "nelementos": "Number of elementos",
         "nlinhas": "Number of lines",
         "ntags": "Number of tags",
         "nindices": "Number of indexes"

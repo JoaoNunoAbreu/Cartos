@@ -1,7 +1,7 @@
 <template>
   <v-container fill-height>
     <v-row align="center" justify="center">
-      <p>Aguarde o processamento dos Fólios</p>
+      <p>Aguarde o processamento dos Elementos</p>
       <v-col cols="12">
         <div style="min-height: 500px;">
           <v-progress-linear indeterminate color="blue darken-2" ></v-progress-linear>

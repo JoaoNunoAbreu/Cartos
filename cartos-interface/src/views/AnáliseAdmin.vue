@@ -7,7 +7,7 @@
       <div v-else >
           <navDrawLeitor></navDrawLeitor>
       </div>
-      <PopupTommi />
+      <PopupCartos />
       
         <div class="text-center"> 
         <!-- Para ficar igual ao login -->
@@ -134,24 +134,6 @@
             </v-col>
           </v-row>
         </v-container>
-
-
-          <!--
-          <v-row align="center" justify="center">
-            <v-col cols="12" md="6">
-              <v-select required v-model="selectedFolio" :items="foliosNames" v-bind:label="$t('nav.folios')"></v-select>
-            </v-col>
-            
-            <v-col cols="12" md="3"> 
-              <p>{{ $t('nav.tipoDeTexto') }}:</p>
-              <v-radio-group v-model="tipo" :rules="rulesRequired($t('nav.tipoObrigatorio'))" required>
-                <v-radio v-bind:label="$t('nav.primeiroTipoTexto')" value="texto"></v-radio>
-                <v-radio v-bind:label="$t('nav.segundoTipoTexto')" value="contexto"></v-radio>
-              </v-radio-group>
-            </v-col>
-          </v-row>
-          --> 
-
           <v-container fluid>
             <v-row>
               <v-col cols="12" class="ma-0 pa-0">
@@ -206,7 +188,7 @@
                   <v-col cols="12" md="3"> </v-col>
                   
                     <v-col cols="12" md="2">
-                      <v-select class="change-font" required v-model="selectedFolio" :items="foliosNames" v-bind:label="$t('nav.folios')"></v-select>
+                      <v-select class="change-font" required v-model="selectedElemento" :items="elementosNames" v-bind:label="$t('nav.elementos')"></v-select>
                     </v-col>
                   
                   <v-col cols="12" md="3"> </v-col>
@@ -278,25 +260,25 @@ import axios from "axios";
 import NavDraw from '../components/navDraw.vue'
 import Header from '../components/header.vue'
 import navDrawLeitor from '../components/navDrawLeitor.vue'
-import PopupTommi from '../components/PopupTommi'
+import PopupCartos from '../components/PopupCartos'
 
 export default {
   name: "Home",
   components: { 
     'navDraw':NavDraw,
     'appHeader': Header,
-    'PopupTommi':PopupTommi,
+    'PopupCartos':PopupCartos,
     'navDrawLeitor':navDrawLeitor
   },
   data() {
     return {
       pesquisa: "", 
       dialog: false,
-      foliosNames: [],
+      elementosNames: [],
       error: "",
       // não estará a mais aqui?
       inputRule: [v => v.length > 0 || "Este campo não pode estar vazio"],
-      selectedFolio: "Todos",
+      selectedElemento: "Todos",
       tipo: "texto",
       versao: "todas", 
       npalavras: "",
@@ -308,16 +290,14 @@ export default {
 
   mounted: function() {
     axios
-      .get("https://tommi2.di.uminho.pt/api/analise/foliosnames")
+      .get("https://tommi2.di.uminho.pt/api/analise/elementosnames")
       .then(dados => {
         var objects = dados.data;
-        objects.map(f => this.foliosNames.push(f._id));
-        this.foliosNames.unshift("Todos");
-        //console.log(this.foliosNames); 
+        objects.map(f => this.elementosNames.push(f._id));
+        this.elementosNames.unshift("Todos");
         if(localStorage.getItem('pesquisas')){ 
-         //console.log("fiz get da pesquisa");
          this.pesquisas = JSON.parse(localStorage.getItem('pesquisas'));  
-         this.selectedFolio = localStorage.getItem('selectedFolio');
+         this.selectedElemento = localStorage.getItem('selectedElemento');
          this.tipo = localStorage.getItem('tipo'); 
          this.versao = localStorage.getItem('versao');
          this.resultado = localStorage.getItem('resultado');
@@ -334,7 +314,7 @@ export default {
     addPesquisa(){ 
       this.pesquisas.unshift(this.pesquisa); 
       // guardar items selecionados na pesquisa
-      localStorage.setItem('selectedFolio',this.selectedFolio); 
+      localStorage.setItem('selectedElemento',this.selectedElemento); 
       localStorage.setItem('tipo',this.tipo);
       localStorage.setItem('versao',this.versao);  
       localStorage.setItem('resultado',this.resultado);  
@@ -351,7 +331,7 @@ export default {
         if(this.resultado != "npalavras")  { 
           params = {
                 pesquisa: this.pesquisa,
-                selectedFolio: this.selectedFolio, 
+                selectedElemento: this.selectedElemento, 
                 tipo: this.tipo, 
                 versao: this.versao, 
                 resultado: this.resultado 
@@ -360,7 +340,7 @@ export default {
             // quando escolhe x palavras
             params = {
                 pesquisa: this.pesquisa,
-                selectedFolio: this.selectedFolio, 
+                selectedElemento: this.selectedElemento, 
                 tipo: this.tipo, 
                 versao: this.versao, 
                 resultado: this.resultado, 

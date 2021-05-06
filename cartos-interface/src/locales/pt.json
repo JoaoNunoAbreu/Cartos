@@ -10,13 +10,13 @@
         "ver": "Ver",
         "anotar":"Anotar"
     },
-    "message": "Bem-vindo ao sistema Tommi - O Livro das Propriedades do Tombo da Mitra.",
+    "message": "Bem-vindo ao sistema Cartos - Sistema de Acolhimento e Exploração de Livros de Banda Desenhada.",
     "navd": {
         "home": "Início",
         "import": "Importação",
         "documents": "Elementos ",
         "index":"Indexação",
-        "folios": "Gestão de Elementos",
+        "elementos": "Gestão de Elementos",
         "indexes": "Gestor de Índices",
         "tags": "Lista de etiquetas",
         "analysis": "Análise",
@@ -40,8 +40,8 @@
         "ibsuccess":"Operação realizada com sucesso.",
         "ibnDocs":"O número de documentos inseridos é de",
         "ibnInds":"O número de índices inseridos é de",
-        "cf": "Composição de Fólios",
-        "etags": "Anotação de fólios",
+        "cf": "Composição de Elementos",
+        "etags": "Anotação de elementos",
         "eListaTags": "Dicionário de etiquetas",
         "ebase": "Re-Anotação da Base",
         "estatisticas": "Pesquisas Realizadas",
@@ -72,7 +72,7 @@
         "barraPesquisa" : "Pesquisa", 
         "buttonPesquisa" : "Pesquisa", 
         "pesquisaNaoVazia" : "Este campo não pode estar vazio", 
-        "folios" : "Fólio(s)",
+        "elementos" : "Elemento(s)",
         "tipoDeTexto" : "Tipo:", 
         "primeiroTipoTexto" : "Texto", 
         "segundoTipoTexto" : "Contexto", 
@@ -104,7 +104,7 @@
         "textoTermos" : "\n Texto termos", 
         "textoPriv" : "\n Texto privacidade",
         "buttonAjuda" : "Ajuda", 
-        "folioAnaliseHeadline" : "Sistema de Acolhimento e Exploração de Livros de Banda Desenhada",
+        "elementoAnaliseHeadline" : "Sistema de Acolhimento e Exploração de Livros de Banda Desenhada",
         "tituloProjeto" : "Sistema de Acolhimento e Exploração de Livros de Banda Desenhada",
         "imprimir" : "Imprimir", 
         "primeiroPagina" : "Primeira", 
@@ -115,8 +115,8 @@
         "LinguaEN" : "English Language", 
         "LinguaES" : "Idioma Español",
         "Sair" : "Fechar",
-        "SistemaTommiHeader" : "Sistema Tommi", 
-        "SistemaTommiExpli" : "\n Sistema Tommi Informação",
+        "SistemaCartosHeader" : "Sistema Cartos", 
+        "SistemaCartosExpli" : "\n Sistema Cartos Informação",
         "ResultadosAnalise" : "Resultados da Pesquisa Realizada",
         "Parametros" : "Pârametros:", 
         "resultadosEm" : "resultados em", 
@@ -129,7 +129,7 @@
         "exit": "Sair"
     },
     "ab": {
-        "question": "O que é o sistema Tommi?"
+        "question": "O que é o sistema Cartos?"
     },
     "def": {
         "title": "Definições",
@@ -162,13 +162,13 @@
         "passo": "Inserção de Elementos",
         "or":"ou",
         "seq":"Sequência de carateres proibida detetada no pedido.",
-        "new":"Já existe um fólio com esse identificador, escolha outro."
+        "new":"Já existe um elemento com esse identificador, escolha outro."
     },
     "ind": {
         "title": "Dicionário de índices",
         "pal": "Palavra",
         "oco": "Ocorrências",
-        "fol": "Fólios",
+        "fol": "Elementos",
         "opt": "Opções"
     },
     "login": {
@@ -230,7 +230,7 @@
         "title": "Dicionário de etiquetas",
         "tag": "Etiqueta",
         "oco": "Ocorrências",
-        "fol": "Fólios",
+        "fol": "Elementos",
         "opt": "Opções"
     },
     "users": {
@@ -257,7 +257,7 @@
         "nao": "Não"
     },
     "folForm": {
-        "visFol": "Visualizar fólios",
+        "visFol": "Visualizar elementos",
         "id": "Identificador",
         "ver": "Versão",
         "tComTags": "Texto com etiquetas",
@@ -337,16 +337,16 @@
     },
     "cf":{
         "seeHist":"Ver Histórico de Pesquisas",
-        "help":"Ajuda da Composição de Fólios",
-        "f":"Fólio",
-        "of":"O Fólio",
+        "help":"Ajuda da Composição de Elementos",
+        "f":"Elemento",
+        "of":"O Elemento",
         "nArmaz":"não se encontra armazenado",
         "hp":"Histórico de Pesquisas",
         "p":"Pesquisa",
         "feita":"feita em"
     },
     "hAdmin":{
-        "f":"Fólios",
+        "f":"Elementos",
         "doc":"Documentos",
         "ind":"Índices",
         "tag":"Etiquetas",
@@ -356,7 +356,7 @@
     },
     "pr":{
         "pesq":"Pesquisas",
-        "fol":"Folio",
+        "fol":"Elemento",
         "ver":"Versão",
         "res":"Resultado",
         "d":"Data",

@@ -48,12 +48,12 @@ export default {
         }
     },
     props:{
-        folio:{
+        elemento:{
             type:Object
         }
     },
     watch:{
-        folio: {
+        elemento: {
             immediate: true,
             deep: true,
             handler(){
@@ -63,7 +63,7 @@ export default {
     },
     methods:{
         onUpdate(){
-            this.indices=this.folio.list
+            this.indices=this.elemento.list
         },
         reset(){
             this.$emit('cancela')

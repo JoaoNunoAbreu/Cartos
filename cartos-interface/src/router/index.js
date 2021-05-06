@@ -125,8 +125,8 @@ const routes = [
       },
       {
         path: 'tagging',
-        name: 'ListaFolios',
-        component: () => import('../views/tagging/ListaFolios.vue'),
+        name: 'ListaElementos',
+        component: () => import('../views/tagging/ListaElementos.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
             next(`/login`)
@@ -160,9 +160,9 @@ const routes = [
         }
       },
       {
-        path: 'tagging/folioAnotado/ver/:id',
+        path: 'tagging/elementoAnotado/ver/:id',
         name: 'Editor',
-        component: () => import('../views/tagging/VerFolio.vue'),
+        component: () => import('../views/tagging/VerElemento.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
             next(`/login`)
@@ -172,7 +172,7 @@ const routes = [
         }
       },
       {
-        path: 'tagging/folioAtualizado/ver/:id',
+        path: 'tagging/elementoAtualizado/ver/:id',
         name: 'Editor',
         component: () => import('../views/tagging/VerAtualizado.vue'),
         beforeEnter (to, from, next) {
@@ -329,9 +329,9 @@ const routes = [
         }
       },
       {
-        path: 'compFolios',
-        name: 'CompFolios',
-        component: () => import('../views/CompFolios.vue'),
+        path: 'compElementos',
+        name: 'CompElementos',
+        component: () => import('../views/CompElementos.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
             next(`/login`)

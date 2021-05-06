@@ -2,6 +2,6 @@
 import sys
 import logging
 logging.basicConfig(stream=sys.stderr)
-sys.path.insert(0,"/var/www/tommi/")
+sys.path.insert(0,"/var/www/cartos/")
 
-from tommi import app as application
+from cartos import app as application

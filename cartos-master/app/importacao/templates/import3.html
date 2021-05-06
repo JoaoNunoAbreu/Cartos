@@ -1,6 +1,6 @@
 {% extends "base_site.html" %}
 
-{% block title %} Integração de Folios {% endblock title %}
+{% block title %} Integração de Elementos {% endblock title %}
 
 {% block stylesheets %}
 {{ super() }}
@@ -26,7 +26,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Integração de Folios - Visualização da Foto</h2>
+                        <h2>Integração de Elementos - Visualização da Foto</h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -35,7 +35,7 @@
                             <a class="btn btn-warning" href="/import/passo2/?nome={{nome}}" role="button">Anterior</a>
                             <a class="btn btn-success" href="/import/passo4/?nome={{nome}}" role="button">Avançar</a>
                             <br>
-                            <img class="img-responsive center-block" style="margin:0 auto" src="../../folios/static/pics/{{foto}}" alt="Avatar" title="Fólio" />
+                            <img class="img-responsive center-block" style="margin:0 auto" src="../../elementos/static/pics/{{foto}}" alt="Avatar" title="Elemento" />
                             <br>
                             <br>
                             <a class="btn btn-danger" href="/import/cancela?nome={{nome}}" role="button">Cancelar</a>

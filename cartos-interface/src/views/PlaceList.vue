@@ -1,5 +1,5 @@
 <template>
-    <div id="folios">
+    <div id="elementos">
       <appHeader ></appHeader>
       <div v-if="this.$store.state.user.tipo === 'Admin'" >
         <navDraw></navDraw>
@@ -26,22 +26,18 @@ export default {
         'placeListComponent': placeListComponent
     },
     created() {
-        axios.get(`https://tommi2.di.uminho.pt/api/folios/folios?nome=admin`,{headers:{
+        axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=admin`,{headers:{
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
         .then(response => {
-            // JSON responses are automatically parsed.
-            //console.log(response.data)
-            this.folios = response.data.folios
+            this.elementos = response.data.elementos
         }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
     }
 }
 </script>
 <style scoped>
-    /* .tommitable .v-data-table .table{ */
    .v-data-table /deep/ th{
         background-color:#4b779e;
     }
@@ -52,10 +48,10 @@ export default {
     .v-data-table /deep/ tr:nth-child(even){
         background-color: lightgray;
     }
-    #folios *{
+    #elementos *{
             box-sizing: border-box;
     }
-    #folios{
+    #elementos{
             margin: 20px auto;
             max-width: 1100px;
             margin-bottom: 80px;

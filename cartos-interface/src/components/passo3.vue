@@ -35,12 +35,12 @@ export default {
         }
     },
     props:{
-        folio: {
+        elemento: {
             type: Object
         }
     },
     watch:{
-        folio: {
+        elemento: {
             immediate: true,
             deep: true,
             handler(){
@@ -50,8 +50,8 @@ export default {
     },
     methods:{
         onUpdate(){
-            if (this.folio.foto.size > 0){
-                const file = this.folio.foto;
+            if (this.elemento.foto.size > 0){
+                const file = this.elemento.foto;
                 this.foto = URL.createObjectURL(file)
             }
             else this.foto = null

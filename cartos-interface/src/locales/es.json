@@ -5,12 +5,12 @@
         "atividade": "Estado",
         "cor": "Color"
     },
-    "message": "Bienvenido al sistema Tommi: El Libro de Propiedades de Tombo da Mitra",
+    "message": "Bienvenido al sistema Cartos: Sistema de Recepción y Exploración de Cómics",
     "navd": {
         "home": "Comienzo",
         "import": "Importar",
         "documents": "Documentos",
-        "folios": "Gestión de Elementos",
+        "elementos": "Gestión de Elementos",
         "indexes": "Índices",
         "tags": "Etiquetas",
         "analysis": "Analizar",
@@ -23,7 +23,7 @@
         "about": "Acerca de",
         "credits": "Créditos",
         "ib": "Indexación de la Base",
-        "cf": "Composición de Folios",
+        "cf": "Composición de Elementos",
         "etags": "Editor de Etiquetas",
         "eListaTags": "Lista de etiquetas",
         "ebase": "Etiquetación de la Base",
@@ -47,7 +47,7 @@
         "barraPesquisa": "Buscar",
         "buttonPesquisa": "Buscar",
         "pesquisaNaoVazia": "Este campo no puede estar vacío",
-        "folios": "Folio(s)",
+        "elementos": "Elemento(s)",
         "tipoDeTexto": "Tipo",
         "primeiroTipoTexto": "Texto",
         "segundoTipoTexto": "Contexto",
@@ -79,7 +79,7 @@
         "textoTermos": "Texto termos",
         "textoPriv": "Texto privacidade",
         "buttonAjuda": "Ajuda",
-        "folioAnaliseHeadline": "Sistema de Recepción y Exploración de Cómics",
+        "elementoAnaliseHeadline": "Sistema de Recepción y Exploración de Cómics",
         "tituloProjeto": "Sistema de Recepción y Exploración de Cómics",
         "imprimir": "Imprimir",
         "primeiroPagina": "Primeira",
@@ -93,7 +93,7 @@
         "exit": "Salir"
     },
     "ab": {
-        "question": "O que é o sistema Tommi?"
+        "question": "¿Que es el sistema Cartos?"
     },
     "def": {
         "title": "Definiciones",
@@ -114,7 +114,7 @@
         "lin": "Idioma",
         "versao": "Versión",
         "opt": "Opciones",
-        "insert": "Insertar Folio",
+        "insert": "Insertar Elemento",
         "print": "Imprimir o exportar registros"
     },
     "imp": {
@@ -124,7 +124,7 @@
         "title": "Diccionario de índices",
         "pal": "Palabra",
         "oco": "Ocorrencias",
-        "fol": "Folios",
+        "fol": "Elementos",
         "opt": "Opciones"
     },
     "login": {
@@ -175,7 +175,7 @@
         "title": "Diccionario de etiquetas",
         "tag": "Etiqueta",
         "oco": "Ocorrencias",
-        "fol": "Folios",
+        "fol": "Elementos",
         "opt": "Opciones"
     },
     "users": {
@@ -200,7 +200,7 @@
         "nao": "No"
     },
     "folForm": {
-        "visFol": "Ver fólios",
+        "visFol": "Ver elementos",
         "id": "Identificador",
         "ver": "Versión",
         "tComTags": "Texto com etiquetas",
@@ -223,7 +223,7 @@
         "close": "Salir"
     },
     "p1": {
-        "ins": "Insertar folio",
+        "ins": "Insertar elemento",
         "id": "Identificador",
         "ver": "Versión",
         "int": "Interpretativo",
@@ -259,7 +259,7 @@
         "reset": "Restablecer"
     },
     "p6": {
-        "nfolios": "Número de folios",
+        "nelementos": "Número de elementos",
         "nlinhas": "Número de líneas",
         "ntags": "Número de etiquetas",
         "nindices": "Número de índices"

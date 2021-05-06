@@ -40,7 +40,7 @@
             <template v-slot:header.longitude="{ header }">
                 <label> {{header.text}} </label>
             </template>
-            <template v-slot:header.nFolios="{ header }">
+            <template v-slot:header.nElementos="{ header }">
                 <label> {{header.text}} </label>
             </template>
             <template v-slot:header.opcao="{ header }">
@@ -80,7 +80,7 @@ export default {
         },
         { text: 'Latitude', value: 'latitude' },
         { text: 'Longitude', value: 'longitude' },
-        { text: 'NFólios', value: 'nFolios' },
+        { text: 'NElementos', value: 'nElementos' },
         { text: 'Opções', sortable: false, value: 'opcao' }
       ],
       places: [],
@@ -135,10 +135,10 @@ export default {
     .v-data-table /deep/ tr:nth-child(even){
         background-color: lightgray;
     }
-    #folios *{
+    #elementos *{
             box-sizing: border-box;
     }
-    #folios{
+    #elementos{
             margin: 20px auto;
             max-width: 1100px;
             margin-bottom: 80px;

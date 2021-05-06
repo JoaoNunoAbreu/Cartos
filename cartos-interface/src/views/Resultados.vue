@@ -27,7 +27,7 @@
           
           <h3 class="font-weight-light change-font">
             {{ $t('nav.Parametros') }}
-            <span class="font-weight-black change-font">{{this.$route.params.selectedFolio}}, {{this.$route.params.tipo}}, {{this.$route.params.versao}}, {{this.$route.params.resultado}}</span>
+            <span class="font-weight-black change-font">{{this.$route.params.selectedElemento}}, {{this.$route.params.tipo}}, {{this.$route.params.versao}}, {{this.$route.params.resultado}}</span>
           </h3>  
           
           <h5 class="change-font blue--text text--darken-4">
@@ -125,19 +125,19 @@
         </div>
         
         <v-card text class="pa-3 change-font">
-          <!-- Dá warning aqui pq pode haver vários folios com a mesma key que é o id do folio --> 
+          <!-- Dá warning aqui pq pode haver vários elementos com a mesma key que é o id do elemento --> 
           <!-- Portanto, ao fazer o indice mais o valor da id como chave então significa que não dá problemas pq resulta chave unica -->
-          <div v-for="(item,index) in pageOfItems" v-bind:key="item.idfolio + index">
+          <div v-for="(item,index) in pageOfItems" v-bind:key="item.idelemento + index">
             <!-- se o item.periodo existe, ou seja, foi feita pesquisa por periodo inclui o periodo -->
             <h3 class="font-weight-black change-font" v-if="item.periodo">
-              <a class="change-font" @click.stop="showFolio(item.idfolio)">{{ item.idfolio }}</a>
+              <a class="change-font" @click.stop="showElemento(item.idelemento)">{{ item.idelemento }}</a>
               &#x25CF;
               {{ $t('nav.resultadoLinha') }} {{ item.linha}} &#x25CF; {{ $t('nav.resultadoPeriodo') }} {{ item.periodo }}
             </h3>            
 
             <!-- caso contrário, se é feita pesquisa por linha não inclui o periodo -->
             <h3 class="font-weight-black change-font" v-else>
-              <a class="change-font" @click.stop="showFolio(item.idfolio)">{{ item.idfolio }}</a>
+              <a class="change-font" @click.stop="showElemento(item.idelemento)">{{ item.idelemento }}</a>
               &#x25CF;
               {{ $t('nav.resultadoLinha') }} {{ item.linha}} 
             </h3> 
@@ -154,11 +154,11 @@
       </v-col>
     </v-row>
     <!-- tem de estar persistent para fazer clean do array conta -->
-    <v-dialog v-model="dialogFolio" @keydown.esc="dialogFolio = !dialogFolio; conta=[]" persistent scrollable max-width="800px">
-      <v-card v-if="conta != null && dialogFolio">
-        <v-card-title class="headline change-font" v-if="conta.length <= 1"> <span class="change-font">{{ $t('nav.folioAnaliseHeadline') }}</span>  <p> <small class="change-font">{{ this.folioAtual }},</small> <small v-for="(count,idx) in conta" :key="idx" class="keep-spaces change-font"> {{count.key}} {{$t('nav.com')}} {{count.value}} {{$t('nav.occur1')}} </small> </p> </v-card-title>
-        <!-- só para acrescentar separador entre as palavaras (+1 palavra no folio) -->
-        <v-card-title class="headline change-font" v-else> <span class="change-font"> {{ $t('nav.folioAnaliseHeadline') }} </span> <p> <small class="change-font">{{ this.folioAtual }}</small> <small v-for="(countElse,idx) in conta" :key="idx" class="keep-spaces change-font">, {{countElse.key}} {{$t('nav.com')}} {{countElse.value}} {{$t('nav.occur2')}}</small> </p> </v-card-title>
+    <v-dialog v-model="dialogElemento" @keydown.esc="dialogElemento = !dialogElemento; conta=[]" persistent scrollable max-width="800px">
+      <v-card v-if="conta != null && dialogElemento">
+        <v-card-title class="headline change-font" v-if="conta.length <= 1"> <span class="change-font">{{ $t('nav.elementoAnaliseHeadline') }}</span>  <p> <small class="change-font">{{ this.elementoAtual }},</small> <small v-for="(count,idx) in conta" :key="idx" class="keep-spaces change-font"> {{count.key}} {{$t('nav.com')}} {{count.value}} {{$t('nav.occur1')}} </small> </p> </v-card-title>
+        <!-- só para acrescentar separador entre as palavaras (+1 palavra no elemento) -->
+        <v-card-title class="headline change-font" v-else> <span class="change-font"> {{ $t('nav.elementoAnaliseHeadline') }} </span> <p> <small class="change-font">{{ this.elementoAtual }}</small> <small v-for="(countElse,idx) in conta" :key="idx" class="keep-spaces change-font">, {{countElse.key}} {{$t('nav.com')}} {{countElse.value}} {{$t('nav.occur2')}}</small> </p> </v-card-title>
 
          <v-divider
         horizontal
@@ -169,11 +169,11 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <!--
-          <v-btn depressed text class="grey--text change-font" @click="dialogFolio = !dialogFolio; conta=[]" >{{$t('nav.fechar')}}</v-btn>
+          <v-btn depressed text class="grey--text change-font" @click="dialogElemento = !dialogElemento; conta=[]" >{{$t('nav.fechar')}}</v-btn>
           --> 
           <v-tooltip bottom> 
             <template v-slot:activator="{ on }">
-                <v-btn depressed color="white" @click="dialogFolio = !dialogFolio; conta=[]" v-on="on">
+                <v-btn depressed color="white" @click="dialogElemento = !dialogElemento; conta=[]" v-on="on">
                   <v-icon large>mdi-door-open</v-icon>
                 </v-btn>
               </template>
@@ -202,8 +202,8 @@ export default {
       page: 1,
       resultados: null,
       dialog: false,
-      dialogFolio: false,
-      folioAtual: null,
+      dialogElemento: false,
+      elementoAtual: null,
       textoAtual: null,  
       pageOfItems: [],
       conta: [],  
@@ -344,14 +344,14 @@ export default {
       this.$htmlToPaper('imprimeMain');
     },
 
-    showFolio(idfolio) {
-      this.folioAtual = idfolio;
+    showElemento(idelemento) {
+      this.elementoAtual = idelemento;
       var result = []; 
       var tam = 0;
       axios
-        .get("https://tommi2.di.uminho.pt/api/analise/folio/" + idfolio)
+        .get("https://tommi2.di.uminho.pt/api/analise/elemento/" + idelemento)
         .then(dados => {
-          // se a pesquisa não começa por aspas não a vai partir para substituir a frase toda no folio
+          // se a pesquisa não começa por aspas não a vai partir para substituir a frase toda no elemento
           
           if(this.pesquisa.startsWith("+Tag")){ 
           
@@ -376,7 +376,7 @@ export default {
               });
             } 
 
-            this.dialogFolio = true;
+            this.dialogElemento = true;
                   
 
         } else if (this.pesquisa.startsWith('"') && this.pesquisa.endsWith('"')) {
@@ -410,7 +410,7 @@ export default {
                 });
               } 
 
-              this.dialogFolio = true;
+              this.dialogElemento = true;
             }
           } else {
             // se não começa por aspas parte o resultado em partes...
@@ -432,7 +432,7 @@ export default {
 
             // percorre a pesquisa efetuada
             for (i = 0; i < result.length; i++) {
-              // se encontra o mais, retira e coloca no texto do folio o resultado do que está à frente do + a negrito
+              // se encontra o mais, retira e coloca no texto do elemento o resultado do que está à frente do + a negrito
               //console.log(result[i]);
               if (result[i].startsWith("+")) {
                 var s2 = result[i].substr(1);
@@ -452,7 +452,7 @@ export default {
                     });
                   } 
 
-                  this.dialogFolio = true;
+                  this.dialogElemento = true;
                 }
               }
               // caso contrário se não tem mais nem menos então é uma pesquisa normal
@@ -462,7 +462,7 @@ export default {
               ) {
 
                 
-                /* Tirei isto e deu bem quando consulta folio com texto normal, antes não dava
+                /* Tirei isto e deu bem quando consulta elemento com texto normal, antes não dava
                 
                 dados.data.textoSTags = dados.data.textoSTags.replace(
                  new RegExp('<.*>', "g"),
@@ -492,7 +492,7 @@ export default {
                     });
                   } 
 
-                  this.dialogFolio = true; 
+                  this.dialogElemento = true; 
                 }
               }
             } 

@@ -4,7 +4,7 @@
 from app.home import blueprint
 from flask import render_template,request
 from flask_login import login_required
-from app import dadosFolio
+from app import dadosElemento
 import os
 from app import mongo, token_required
 

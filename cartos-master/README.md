@@ -1,10 +1,10 @@
-# tommi
+# Cartos
 
-Respositório do Tommi - Partilha com os grupos do LEI.
+Respositório do Cartos - Partilha com os grupos do LEI.
 
-Run Tommi:
+Run Cartos:
 
-Para correr tommi em localhost, fazer:
+Para correr Cartos em localhost, fazer:
 
 If first time:
 
@@ -12,12 +12,12 @@ If first time:
 - install pip
 - pip install -r requirements.txt
 - Start Mongo
-- export FLASK_APP=tommi.py ; flask run
+- export FLASK_APP=cartos.py ; flask run
 
 else:
 
 - Start Mongo
-- export FLASK_APP=tommi.py ; flask run
+- export FLASK_APP=cartos.py ; flask run
 
 ## Erros
 

@@ -43,12 +43,12 @@ export default {
         }
     },
     props:{
-        folio: {
+        elemento: {
             type: Object
         }
     },
     watch:{
-        folio: {
+        elemento: {
             immediate: true,
             deep: true,
             handler(){
@@ -58,8 +58,8 @@ export default {
     },
     methods:{
         onUpdate(){
-            this.textoTags=this.folio.textoTags
-            this.textoSTags=this.folio.textoSTags
+            this.textoTags=this.elemento.textoTags
+            this.textoSTags=this.elemento.textoSTags
         },
         reset(){
             this.$emit('cancela')

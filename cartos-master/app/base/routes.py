@@ -10,11 +10,9 @@ from flask_login import (
     logout_user
 )
 from flask_pymongo import PyMongo
-from app import login_manager, create_app, token_required
+from app import login_manager, create_app, token_required,neo4j_db
 from app.base import blueprint
-#from app.base.forms import LoginForm, CreateAccountForm
 from app import mongo
-#from app.base.models import User
 import re
 
 ###### este é meu
@@ -25,12 +23,6 @@ from datetime import datetime, timedelta
 import jwt
 CORS(blueprint)
 #######
-
-#Neo4j
-from py2neo import Graph
-g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='neo4j')
-#g = Graph("bolt://localhost:7687",password='cartos', user='neo4j') 
-#
 
 @blueprint.route('/')
 def route_default():
@@ -100,7 +92,7 @@ def procuraTextoTodos(palavra, versao, resultado,npalavras):
     return resultados
    
 
-def procuraTextoFolio(palavra,versao,folio,resultado,npalavras):
+def procuraTextoElemento(palavra,versao,folio,resultado,npalavras):
     resultados = []
     if(folio['versao'] == versao or versao == 'todas'):
         if(resultado == 'periodo'):
@@ -159,7 +151,7 @@ def procuraTexto(palavra, versao, idfolio, resultado,npalavras):
         resultados = procuraTextoTodos(palavra,versao,resultado,npalavras)
     else:
         folio = mongo.db.folios.find_one({"_id":idfolio})
-        resultados = procuraTextoFolio(palavra,versao,folio,resultado,npalavras)
+        resultados = procuraTextoElemento(palavra,versao,folio,resultado,npalavras)
     return(resultados)
 
 
@@ -182,7 +174,7 @@ def procuraTagTodos(palavra):
 
         
 
-def procuraTag(palavra,idFolio):
+def procuraTag(palavra,idElemento):
     resultados = []
     resultados = procuraTagTodos(palavra)
     return resultados
@@ -220,11 +212,11 @@ def login():
     _id = request.form.get('id')
     print(f"_id: {_id}")
     password = request.form.get('password')
-    user = g.evaluate('match (x:User) where x._id=$v return x',v=_id)
+    user = neo4j_db.evaluate('match (x:User) where x._id=$v return x',v=_id)
     print(f"user: {user}")
 
     if user and check_password_hash(user["password"], password):
-        users= g.evaluate('match (x:User) return x')
+        users= neo4j_db.evaluate('match (x:User) return x')
         nome = request.args.get('nome')
 
         token = jwt.encode({

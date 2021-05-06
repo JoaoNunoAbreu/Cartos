@@ -16,7 +16,7 @@ import jwt
 
 login_manager = LoginManager()
 mongo = PyMongo()
-dadosFolio = {}
+dadosElemento = {}
 indexList = []
 tags = []
 
