@@ -1,0 +1,7 @@
+tenant
+	- rent history na mesma casa
+	- rent history intersecao de datas
+
+landlord
+	- rent history entre casa e tenant (valid dono casa)
+	- valida se data do inicio rent history é menor ou igual do que a atual

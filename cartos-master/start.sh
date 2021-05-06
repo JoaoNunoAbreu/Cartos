@@ -2,6 +2,6 @@
 
 killall flask
 export FLASK_APP=tommi.py
-SUCCESS=$(nohup flask run > logs/accesslog.txt) 
+SUCCESS=$(flask run --host=localhost --port=16002) 
 echo $SUCCESS
 exit 0

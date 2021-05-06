@@ -2,7 +2,6 @@
     <v-card>
         <v-navigation-drawer app
           clipped
-          v-if="drawerOn"
           permanent
           :expand-on-hover="expandOnHover"
           :mini-variant="miniVariant"

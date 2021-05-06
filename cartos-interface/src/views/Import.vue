@@ -280,7 +280,7 @@
 
                 
 
-                axios.post(url+`/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
+                axios.post(this.url+`/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
                     'Content-Type': 'multipart/form-data',
                     Authorization:`Bearer: ${this.$store.state.jwt}`
                 }})

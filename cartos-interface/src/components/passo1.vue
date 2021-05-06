@@ -83,7 +83,7 @@
                     v-model="capa"
                     @change="previewImage">
                   </v-file-input>
-                  <v-img :src="url" contain></v-img>
+                  <v-img :src="this.url" contain></v-img>
                 </div>
               </div>
               <div class="p-container">

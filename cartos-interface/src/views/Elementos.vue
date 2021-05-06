@@ -298,7 +298,7 @@ export default {
   created() {
     axios
       .get(
-        url+`/elementos/elementos?nome=${this.$store.state.user._id}`,
+        this.url+`/elementos/elementos?nome=${this.$store.state.user._id}`,
         {
           headers: {
             Authorization: `Bearer: ${this.$store.state.jwt}`,

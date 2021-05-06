@@ -26,7 +26,7 @@ g = Graph("http://ssh.tommi2.di.uminho.pt:7474/",password='cartosneo4j', user='n
 ############################### FOLIOS #########################################
 
 @blueprint.route('/elementos', methods=['GET'])
-#@token_required
+@token_required
 #@login_required
 def route_template_elementos():
     
@@ -49,7 +49,7 @@ def route_template_elementos():
         
     #nome = request.args.get('nome')
     #print(f"Data = {data}")
-    return json_util.dumps({data:data})
+    return json_util.dumps(data)
 
 @blueprint.route('/elementos/intrepretativa', methods=['GET'])
 @token_required
