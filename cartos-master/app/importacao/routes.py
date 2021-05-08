@@ -132,6 +132,27 @@ class Aux:
         )'
         neo4j_db.run(q)
 
+    def create_node(nodo,designacao):
+        num_id = int(neo4j_db.evaluate(f'match(n:{nodo}) return count(n)')) + 1
+
+        if(nodo == "Autor"):
+            nome = "autor_default"
+            nacionalidade = "nacionalidade_default"
+
+            neo4j_db.run(f'CREATE (n:{nodo}\
+                {{\
+                    id: {num_id},\
+                    nome : "{nome}"\
+                    nacionalidade : "{nacionalidade}"\
+                }}\
+            )')
+        else:
+            neo4j_db.run(f'CREATE (n:{nodo}\
+                {{\
+                    id: {num_id},\
+                    designacao : "{designacao}"\
+                }}\
+            )')
 
     def create_relationship(node1,node2,first_id,second_desig,relationship):
         q = f'\
@@ -140,6 +161,10 @@ class Aux:
             CREATE (n1)-[r:{relationship}]->(n2) \
             RETURN r'
         neo4j_db.run(q)
+    
+    def checkIfNodeExists(node,designacao):
+        q = f'match(n:{node}) where n.designacao="{designacao}" return count(n)'
+        return int(neo4j_db.evaluate(q)) == 1
 
     def save_element(elem_id,titulo,colecao,numero,serie,lingua,paginas,size,personagens,estado,editora,dataPub,tipo,capaPath,filePath):
         elem_id = elem_id
@@ -166,6 +191,16 @@ class Aux:
         # -----------------------------------
 
         Aux.create_element(elem_id,titulo,numero,serie,nr_paginas,tamanho,personagens,estado,data_publicacao,capa,texto,observacoes)
+
+        if(Aux.checkIfNodeExists("Tipo",tipo) == False):
+            Aux.create_node("Tipo",tipo)
+        if(Aux.checkIfNodeExists("Editora",editora) == False):
+            Aux.create_node("Editora",editora)
+        if(Aux.checkIfNodeExists("Lingua",lingua) == False):
+            Aux.create_node("Lingua",lingua)
+        if(Aux.checkIfNodeExists("Colecao",colecao) == False):
+            Aux.create_node("Colecao",colecao)
+
         Aux.create_relationship("Elemento","Tipo",elem_id,tipo,"é")
         Aux.create_relationship("Elemento","Editora",elem_id,editora,"publicado")
         Aux.create_relationship("Elemento","Lingua",elem_id,lingua,"escrito")

@@ -69,6 +69,7 @@ export default {
             .then(response => {
                 var image = new Buffer(response.data, 'binary').toString('base64')
                 this.capa = `data:${response.headers['content-type'].toLowerCase()};base64,${image}`
+                console.log(this.capa)
             })
             .catch(err => {
                 console.log(err.message)
@@ -79,13 +80,15 @@ export default {
                 responseType:'arraybuffer'
             })
             .then(response => {
-                var image = new Buffer(response.data, 'binary').toString('base64')
-                this.ficheiro = `data:${response.headers['content-type'].toLowerCase()};base64,${image}`
+                var pdf = new Buffer(response.data, 'binary').toString('base64')
+                this.ficheiro = `data:${response.headers['content-type'].toLowerCase()};base64,${pdf}`
+                
             })
             .catch(err => {
                 console.log(err.message);
                 this.error = err.message;
             })
+            
 
     }
 }

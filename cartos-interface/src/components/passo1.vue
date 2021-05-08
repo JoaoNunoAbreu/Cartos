@@ -417,7 +417,6 @@ export default {
     },
     submeter() {
       this.skip = 1;
-      //console.log(this.skip)
       this.$emit("submeterElemento", this);
     },
     previewImage: function() {

@@ -5,6 +5,7 @@ from app import mongo,neo4j_db
 
 from bson.json_util import dumps
 from bson.json_util import loads 
+from datetime import datetime
 
 from flask_cors import CORS, cross_origin
 CORS(blueprint)
@@ -28,15 +29,31 @@ def pesquisaresultados():
     palavra = request.args.get('pesquisa') 
     colecao = request.args.get('colecao') 
     editora = request.args.get('editora')
+    data = request.args.get('date')
+    datetimeobject = datetime.strptime(data,'%Y-%m-%d')
+    newformat = datetimeobject.strftime('%d/%m/%Y')
 
-   # if colecao == "Todas" :
-    #    if (editora == "Todas"): # col="todas" & edi="todas" 
-    res_pesquisa =  neo4j_db.run(f'match (e:Elemento) where e.titulo contains "{palavra}" return e')
-     #   else: # col="todas" & edi="&edi" 
-           # res_pesquisa = procuraTextoElemento(palavra,versao,selectedElemento,resultado,npalavras)
-    #elif editora == "Todas" :
-    #    res_pesquisa=
-    #else : 
+    if colecao != "Todas" :
+        if (editora != "Todas"): # col="todas" & edi="todas" 
+            if (newformat):
+                res_pesquisa = neo4j_db.run(f'match (edi:Editora)<-[:publicado]-(e:Elemento)-[:integra]->(c:Colecao) where (e.titulo contains "{palavra}" and c.designacao="{colecao}" and e.data_publicacao="{data}" and edi.designacao="{editora}") return e')
+            else: 
+                res_pesquisa = neo4j_db.run(f'match (edi:Editora)<-[:publicado]-(e:Elemento)-[:integra]->(c:Colecao) where (e.titulo contains "{palavra}" and c.designacao="{colecao}" and  edi.designacao="{editora}") return e')
+        elif (newformat):
+            res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:integra]->(c:Colecao) where (e.titulo contains "{palavra}" and c.designacao="{colecao}" and e.data_publicacao="{data}"')
+        else:
+            res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:integra]->(c:Colecao) where (e.titulo contains "{palavra}" and c.designacao="{colecao}") return e')
+    elif (editora != "Todas"):
+        if (newformat):
+            res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:publicado]->(edi:Editora) where (e.titulo contains "{palavra}" and edi.designacao="{editora}" and e.data_publicacao="{data}") return e')
+        else: 
+            res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:publicado]->(edi:Editora) where (e.titulo contains "{palavra}" and edi.designacao="{editora}") return e')
+    elif (newformat):
+        res_pesquisa = neo4j_db.run(f'match (e:Elemento) where (e.titulo contains "{palavra}" and e.data_publicacao="{data}") return e')
+    else:
+        res_pesquisa = neo4j_db.run(f'match (e:Elemento) where e.titulo contains "{palavra}" return e')
+
+
     return jsonify(loads(dumps(res_pesquisa)))
 
 # split com o operador '+'

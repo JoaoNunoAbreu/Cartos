@@ -64,7 +64,7 @@ def route_template_tipo():
 #@token_required
 #@login_required
 def route_template_ver_foto(elemento):
-    f = elemento + ".png"
+    f = "RP" + ".png"
     pathPhoto = join(dirname(realpath(__file__)), 'static/pics/')
     pathCheck = join(pathPhoto, f)
     if path.exists(pathCheck) :
@@ -74,16 +74,16 @@ def route_template_ver_foto(elemento):
 
 
 @blueprint.route('/ver/<elemento>/ficheiro', methods=['GET'])
-#@token_required
-#@login_required
 def route_template_ver_ficheiro(elemento):
+    pathC = join(dirname(realpath(__file__)), 'static/doc/')
     f = elemento + ".pdf"
-    pathFile = join(dirname(realpath(__file__)), 'static/doc/')
-    pathCheck = join(pathFile, f)
-    if path.exists(pathCheck) :
-        return send_from_directory(pathFile, f, mimetype='application/pdf')
-    else:
-        return send_from_directory(pathFile, "default", mimetype='application/pdf')
+    print (pathC)
+    if path.exists(pathC) :    
+        return send_from_directory(pathC, f ,mimetype='application/pdf')
+    else :
+        return send_from_directory(pathC, "blank.pdf",mimetype='application/pdf')
+
+
 
 @blueprint.route('/remover/<folio>')
 @admin_required

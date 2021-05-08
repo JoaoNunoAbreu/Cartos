@@ -200,6 +200,7 @@ export default {
 
         for(let i=0; i<dados.data.length;i++)
           this.resultados.push(dados.data[i].e)
+        console.log(this.resultados);
       })
       .catch(err => {
         console.log(err.message)
