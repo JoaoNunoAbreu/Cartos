@@ -110,7 +110,7 @@
         "dom": "Dominio",
         "col": "Colección",
         "edi": "Compañia de Publicidad",
-        "data": "Fecha",
+        "data": "Fecha de creación",
         "lin": "Idioma",
         "versao": "Versión",
         "opt": "Opciones",
@@ -199,15 +199,15 @@
         "sim": "Si",
         "nao": "No"
     },
-    "folForm": {
+    "elemForm": {
         "visFol": "Ver elementos",
         "id": "Identificador",
-        "ver": "Versión",
+        "colecao": "Colección",
+        "editora": "Compañia de Publicidad",
+        "dataPub": "Fecha de creación",
+        "lingua": "Idioma",
         "tComTags": "Texto com etiquetas",
-        "tSemTags": "Texto sin etiquetas",
-        "tipo": "Tipo",
-        "desc": "Descripción",
-        "sum": "Resumen"
+        "tSemTags": "Texto sin etiquetas"
     },
     "header": {
         "mudLing": "Cambiar idioma del sistema",

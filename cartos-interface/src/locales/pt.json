@@ -62,6 +62,7 @@
         "close":"Fecho",
         "fixMenu":"Fixar o menu de navegação lateral",
         "exit":"Sair da aplicação",
+        "leave":"Sair",
         "se":"Procura",
         "tituloProjeto" : "Sistema de Acolhimento e Exploração de Livros de Banda Desenhada"
     },
@@ -155,7 +156,13 @@
         "insert": "Inserção de elemento",
         "print":"Imprimir ou exportar registos",
         "elim":"Tem a certeza que deseja eliminar este elemento?",
-        "noPicText":"Este elemento não possui fotografia."
+        "noPicText":"Este elemento não possui fotografia.",
+        "conf": "Confirmação",
+        "aviso": "Aviso",
+        "erro": "Erro",
+        "info": "Informação",
+        "imp": "Elemento inserido com sucesso! "
+
     },
     "imp": {
         "back":"Voltar ao passo anterior",
@@ -256,15 +263,15 @@
         "sim": "Sim",
         "nao": "Não"
     },
-    "folForm": {
+    "elemForm": {
         "visFol": "Visualizar elementos",
         "id": "Identificador",
-        "ver": "Versão",
+        "colecao": "Coleção",
+        "editora": "Editora",
+        "dataPub": "Data de publicação",
+        "lingua": "Língua",
         "tComTags": "Texto com etiquetas",
-        "tSemTags": "Texto sem etiquetas",
-        "tipo": "Tipo",
-        "desc": "Descrição",
-        "sum": "Sumário"
+        "tSemTags": "Texto sem etiquetas"
     },
     "header": {
         "mudLing": "Mudar língua do sistema",
@@ -313,11 +320,17 @@
         "file": "Ficheiro",
         "tfile": "Ficheiro de texto",
         "reset": "Repôr formulário por omissão",
-        "save": "Salvar",
+        "save": "Guardar",
         "sub": "Submeter",
         "ajuda": "Texto de ajuda",
         "leave": "Sair da inserção",
-        "acept": "Aceitar Pedido"
+        "acept": "Aceitar Pedido",
+        "string": "String",
+        "inteiro": "Int",
+        "data": "Data",
+        "listaP": "Lista de Personagens"
+
+
     },
     "pForm": {
         "aU": "Adicionar utilizadores",
@@ -351,10 +364,7 @@
     },
     "hAdmin":{
         "f":"Elementos",
-        "doc":"Documentos",
-        "ind":"Índices",
-        "tag":"Etiquetas",
-        "pal":"Palavras",
+        "col":"Coleções",
         "users":"Utilizadores",
         "ins":"Inserção de Elementos"
     },
@@ -385,5 +395,8 @@
         "rel":"Relatório Técnico",
         "diss":"Dissertação",
         "help":"Ajuda da Documentação"
+    },
+    "popUps":{
+        "conf": "Confirmação"
     }
 }

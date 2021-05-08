@@ -24,9 +24,8 @@ UPLOAD_FOLDER = './static/pics/'
 #@token_required
 #@login_required
 def route_users():
-    users= [doc for doc in mongo.db.users.find()]
-    nome = request.args.get('nome')
-    return json_util.dumps({'users': users, 'nome': nome})
+    users = neo4j_db.run('match (x:User) return x')
+    return json_util.dumps(users)
 
 
 @blueprint.route('/adicionar')

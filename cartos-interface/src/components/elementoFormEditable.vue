@@ -261,7 +261,8 @@
                       to="/admin/elementos"
                       v-on="{ ...tooltip }"
                       color="#26B99A"
-                      class="white--text mr-3"   
+                      class="white--text mr-3"
+                      @click="emiteFecho($event)"   
                       ><v-icon>mdi-door-open</v-icon></v-btn
                     >
                   </template>
@@ -284,7 +285,7 @@
 </template>
 <script>
 import axios from "axios"; 
-import infoPopup from '../components/InfoPopup'
+import infoPopup from '../components/AlertPopup'
 export default {
   data() {
     return {
@@ -337,22 +338,18 @@ export default {
       type: Object,
     },
   },
+  watch:{
+    elemento: {
+        immediate: true,
+        deep: true,
+        handler(){
+            this.onUpdate()
+        }
+    }
+  },
   created() {
-    this.id = this.elemento.id;
-    this.titulo = this.elemento.titulo;
-    this.colecao = this.elemento.colecao;
-    this.numero = this.elemento.numero;
-    this.serie = this.elemento.serie;
-    this.lingua = this.elemento.lingua;
-    this.paginas = this.elemento.paginas;
-    this.size = this.elemento.size;
-    this.personagens = this.elemento.personagens;
-    this.estado = this.elemento.estado;
-    this.editora = this.elemento.editora;
-    this.dataPub = this.elemento.dataPub;
-    this.ficheiro = this.elemento.ficheiro;
-    this.tipo = this.elemento.tipo;
-    this.capa= this.elemento.capa;
+
+    this.onUpdate()
 
     axios.get(this.url+`/elementos/editoras`,{
       headers: {
@@ -409,6 +406,23 @@ export default {
 
   },
   methods: {
+    onUpdate(){
+      this.id = this.elemento.id;
+      this.titulo = this.elemento.titulo;
+      this.colecao = this.elemento.colecao;
+      this.numero = this.elemento.numero;
+      this.serie = this.elemento.serie;
+      this.lingua = this.elemento.lingua;
+      this.paginas = this.elemento.nr_paginas;
+      this.size = this.elemento.tamanho;
+      this.personagens = this.elemento.personagens;
+      this.estado = this.elemento.estado;
+      this.editora = this.elemento.editora;
+      this.dataPub = this.elemento.data_publicacao;
+      this.ficheiro = this.elemento.ficheiro;
+      this.tipo = this.elemento.tipo;
+      this.capa = this.elemento.capa;
+    },
     reset() {
       //needs work for more resets
       this.$refs.form.reset();
@@ -446,7 +460,6 @@ export default {
           this.colecao = ""
         }
       }
-
       if(tipo == "editora"){
         if(this.editora == "Outra"){
           this.counterEditora = 1;
@@ -494,8 +507,8 @@ export default {
       }
     },
     emiteFecho: function () {
-        this.submitDialog = false;
-      }
+      this.$emit('emiteFecho')
+    }
   },
   computed: {
     disableButton() {

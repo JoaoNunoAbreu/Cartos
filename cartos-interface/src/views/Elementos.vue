@@ -72,6 +72,14 @@
               @emiteFecho="emiteFecho($event)"
             ></elementoForm>
           </v-dialog>
+
+          <v-dialog persistent v-model="dialogEdit" max-width="1000px">
+            <elementoFormEditable
+              :elemento="item"
+              @emiteFecho="emiteFecho($event)"
+            ></elementoFormEditable>
+          </v-dialog>
+
         </v-toolbar>
       </template>
       <template v-slot:header.id="{ header }">
@@ -93,10 +101,8 @@
         <label> {{ header.text }} </label>
       </template>
       <template v-slot:item.options="{ item }">
-        <v-icon small class="mr-2" @click="editItem(item)"> mdi-eye </v-icon>
-        <v-icon small class="mr-2" @click="verElementoFoto(item)">
-          mdi-camera
-        </v-icon>
+        <v-icon small class="mr-2" @click="viewItem(item)"> mdi-eye </v-icon>
+        <v-icon small class="mr-2" @click="editItem(item)"> mdi-pencil </v-icon>
         <v-icon
           v-if="$store.state.user.tipo === 'Admin'"
           small
@@ -168,20 +174,20 @@
       </v-card>
     </v-dialog>
     <v-dialog v-model="deleteDialog" scrollable width="500" persistent>
-      <v-card>
+       <v-card>
         <v-toolbar color="#2A3F54" dark>
-          <h2>{{ $t("fol.title") }}</h2>
+          <h2>{{ $t("fol.conf") }}</h2>
         </v-toolbar>
         <v-row>
           <v-col
             style="
               margin-left: 1cm;
               margin-right: 1cm;
-              max-width: 20px;
-              margin-top: 15px;
+              max-width: 40px;
+              margin-top: 20px;
             "
           >
-            <v-icon x-large color="#9e8f4b" dark>mdi-message-alert</v-icon>
+            <v-icon x-large color="#3399ff" dark>mdi-help-circle</v-icon>
           </v-col>
           <v-col>
             <v-card-text>
@@ -195,14 +201,14 @@
           <v-tooltip bottom>
             <template v-slot:activator="{ on: tooltip }">
               <v-btn
-                class="mr-5"
                 @click="
                   deleteDialog = false;
                   deleteItem(tempValue);
                 "
                 v-on="{ ...tooltip }"
-              >
-                <v-icon>mdi-check</v-icon>
+                color="#cc0000"
+                class="white--text mr-3" >
+                <v-icon>mdi-delete</v-icon>
               </v-btn>
             </template>
             <span>
@@ -211,8 +217,9 @@
           </v-tooltip>
           <v-tooltip bottom>
             <template v-slot:activator="{ on: tooltip }">
-              <v-btn @click="deleteDialog = false" v-on="{ ...tooltip }">
-                <v-icon>mdi-exit-to-app</v-icon>
+              <v-btn @click="deleteDialog = false" v-on="{ ...tooltip }" color="#26B99A"
+                      class="white--text mr-3"  >
+                <v-icon>mdi-door-open</v-icon>
               </v-btn>
             </template>
             <span>
@@ -230,6 +237,8 @@ import Header from "../components/header.vue";
 import NavDraw from "../components/navDraw.vue";
 import navDrawLeitor from "../components/navDrawLeitor.vue";
 import ElementoForm from "../components/elementoForm.vue";
+import ElementoFormEditable from "../components/elementoFormEditable.vue";
+
 export default {
   data() {
     return {
@@ -269,24 +278,28 @@ export default {
       errors: [],
       elementoPic: "",
       dialog: false,
+      dialogEdit: false,
       picDialog: false,
       noPicDialog: false,
       deleteDialog: false,
       tempValue: "",
       item: {},
-      
     };
   },
   watch: {
     dialog(val) {
       val || this.close();
     },
+    dialogEdit(val) {
+      val || this.closeEdit();
+    }
   },
   components: {
     appHeader: Header,
     navDraw: NavDraw,
     navDrawLeitor: navDrawLeitor,
     elementoForm: ElementoForm,
+    elementoFormEditable: ElementoFormEditable,
   },
   created() {
     axios
@@ -310,15 +323,22 @@ export default {
   },
   methods: {
     printSection() {
-      // Pass the element id here
       this.$htmlToPaper("tabelaElementos");
     },
-    editItem(item) {
+    viewItem(item) {
       this.item = item;
       this.dialog = true;
     },
+    editItem(item) {
+      this.item = item;
+      this.dialogEdit = true;
+    },
     close() {
       this.dialog = false;
+      this.item = {};
+    },
+    closeEdit() {
+      this.dialogEdit = false;
       this.item = {};
     },
     deleteItem(item) {
@@ -326,7 +346,7 @@ export default {
       axios
         .get(
           `https://tommi2.di.uminho.pt/api/elementos/apagar/` +
-            this.elementos[index]._id +
+            this.elementos[index].id +
             `?nome=${this.$store.state.user._id}`,
           {
             headers: {
@@ -344,12 +364,13 @@ export default {
     },
     emiteFecho: function () {
       this.dialog = false;
+      this.dialogEdit = false;
     },
     verElementoFoto: function (item) {
       const index = this.elementos.indexOf(item);
       axios
         .get(
-          `https://tommi2.di.uminho.pt/api/elementos/ver/${this.elementos[index]._id}/foto`,
+          `https://tommi2.di.uminho.pt/api/elementos/ver/${this.elementos[index].id}/foto`,
           {
             responseType: "arraybuffer",
             headers: {

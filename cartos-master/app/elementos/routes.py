@@ -30,12 +30,24 @@ def route_template_elementos():
         colecao = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Colecao) where e.id="{elem[0]["id"]}" return c.designacao')
         editora = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Editora) where e.id="{elem[0]["id"]}" return c.designacao')
         lingua = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Lingua) where e.id="{elem[0]["id"]}" return c.designacao')
+        tipo = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Tipo) where e.id="{elem[0]["id"]}" return c.designacao')
         data.append({
             "id":elem[0]['id'] ,
-            "data_publicacao":elem[0]['data_publicacao'], 
+            "titulo":elem[0]['titulo'] ,
+            "capa": elem[0]['capa'],
+            "estado": elem[0]['estado'],
+            "numero": elem[0]['numero'],
+            "nr_paginas": elem[0]['nr_paginas'],
+            "texto": elem[0]['texto'],
+            "observacoes": elem[0]['observacoes'],
+            "tamanho": elem[0]['tamanho'],
+            "personagens": elem[0]['personagens'],
+            "serie": elem[0]['serie'],
+            "data_publicacao":elem[0]['data_publicacao'],
             "colecao":colecao,
             "editora":editora,
-            "lingua":lingua
+            "lingua":lingua,
+            "tipo": tipo
         }) 
     return json_util.dumps(data)
 
@@ -77,7 +89,6 @@ def route_template_ver_foto(elemento):
 def route_template_ver_ficheiro(elemento):
     pathC = join(dirname(realpath(__file__)), 'static/doc/')
     f = elemento + ".pdf"
-    print (pathC)
     if path.exists(pathC) :    
         return send_from_directory(pathC, f ,mimetype='application/pdf')
     else :
@@ -93,72 +104,42 @@ def route_template_remover(folio):
     existe = mongo.db.folios.find_one({"_id":folio})
     return render_template('removerElemento.html', folio=existe,nome=nome)
 
-@blueprint.route('/apagar/<folio>', methods=['GET'])
+@blueprint.route('/apagar/<elemento>', methods=['GET'])
 @admin_required
 #@login_required
-def route_template_apagar(folio):
-    indices = mongo.db.indexacao.find()
-    for indice in indices:
-        if(folio in indice['ref']):
-            if(len(indice['ref']) == 1):
-                mongo.db.indexacao.remove({"_id":indice['_id']})
-            else:
-                indice['ref'].remove(folio)
-                array = indice['ref']
-                ocorrencias = indice['ocorrencias']
-                index = 0
-                for oco in ocorrencias:
-                    for key in oco:
-                        if(key == folio):
-                            tamanho = len(oco[key])
-                            index_remove = index
-                            lista = ocorrencias.pop(index_remove)
-                            valor = indice['n_ocorrencias'] - tamanho
-                            mongo.db.indexacao.remove({"_id":indice['_id']})
-                            novo = {
-                                "_id":indice['_id'],
-                                "ocorrencias": lista,
-                                "ref":array,
-                                "n_ocorrencias":valor
-                            }   
-                            mongo.db.indexacao.insert(novo)
-    tags = mongo.db.tags.find()
-    for tag in tags:
-        if(folio in tag['ref']):
-            if(len(tag['ref']) == 1):
-                mongo.db.tags.remove({"_id":tag['_id']})
-            else:
-                tag['ref'].remove(folio)
-                array = tag['ref']
-                ocorrencias = tag['conteudoTag']
-                index = 0
-                for oco in ocorrencias:
-                    for key in oco:
-                        if(key == folio):
-                            tamanho = len(oco[key])
-                            index_remove = index
-                            lista = ocorrencias.pop(index_remove)
-                            valor = tag['n_ocorrencias'] - tamanho
-                            mongo.db.tags.remove({"_id":tag['_id']})
-                            novo = {
-                                "_id":tag['_id'],
-                                "conteudoTag": lista,
-                                "ref":array,
-                                "n_ocorrencias":valor
-                            }
-                            mongo.db.tags.insert(novo)
-    removeu = mongo.db.folios.remove({"_id":folio})
-    folio_filename = str(folio) + ".txt"
-    foto_filename = str(folio)
-    remove_path = join(dirname(realpath(__file__)), 'static/doc/', folio_filename)
+def route_template_apagar(elemento):
+
+    q = f'MATCH (n:Elemento)-[r]-() where n.id="{elemento}" DELETE r'
+    neo4j_db.run(q)
+
+    q = f'MATCH (n:Elemento) WHERE n.id = "{elemento}" DELETE n'
+    neo4j_db.run(q)
+
+    elemento_filename = str(elemento) + ".pdf"
+    foto_filename = str(elemento)
+    remove_path = join(dirname(realpath(__file__)), 'static/doc/', elemento_filename)
     if path.exists(remove_path):
         remove(remove_path)
     foto_remove_path = join(dirname(realpath(__file__)), 'static/pics/', foto_filename)
     if path.exists(foto_remove_path):
         remove(foto_remove_path) 
-    nome = request.args.get('nome')
-    folios = [doc for doc in mongo.db.folios.find()]
-    return json_util.dumps({'folios': folios, 'nome': nome})
+
+    # -----------------------------
+
+    elementos = neo4j_db.run('match (x:Elemento) return x')
+    data = []
+    for elem in elementos:
+        colecao = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Colecao) where e.id="{elem[0]["id"]}" return c.designacao')
+        editora = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Editora) where e.id="{elem[0]["id"]}" return c.designacao')
+        lingua = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Lingua) where e.id="{elem[0]["id"]}" return c.designacao')
+        data.append({
+            "id":elem[0]['id'] ,
+            "data_publicacao":elem[0]['data_publicacao'], 
+            "colecao":colecao,
+            "editora":editora,
+            "lingua":lingua
+        }) 
+    return json_util.dumps(data)
 
 
 ############################### INDICES #########################################

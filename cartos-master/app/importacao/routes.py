@@ -177,7 +177,7 @@ class Aux:
         estado = estado
         data_publicacao = dataPub
         capa = capaPath
-        texto = ""
+        texto = elem_id + ".pdf"
         observacoes = ""
 
         # ------------ New Nodes ------------

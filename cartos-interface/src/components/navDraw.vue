@@ -64,9 +64,6 @@
               <v-list-item link to="/admin/uAtivos">
                 <v-list-item-title class="white--text">{{$t('navd.uativo')}}</v-list-item-title>
               </v-list-item>
-              <v-list-item link to="/admin/pedidos">
-                <v-list-item-title class="white--text">{{$t('navd.puser')}}</v-list-item-title>
-              </v-list-item>
               <v-list-item link to="/admin/histAcesso">
                 <v-list-item-title class="white--text">{{$t('navd.hacesso')}}</v-list-item-title>
               </v-list-item>

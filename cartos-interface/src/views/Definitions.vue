@@ -199,16 +199,13 @@ export default {
         this.dialog=false
         this.onUpdate()
       },
-      emiteFecho:function(){
+      emiteFecho: function(){
         this.dialog=false
       },
-      editItem (item, value) {
+      editItem(item, value) {
         this.editedIndex = this.definitions.indexOf(item)
         this.editedItem = Object.assign({}, item)
-        this.value=value
-        //console.log("AAAAAAAAAAAAA")
-        //console.log(this.value)
-        //console.log(this.editedItem)
+        this.value = value
         this.dialog = true
       },
       close () {

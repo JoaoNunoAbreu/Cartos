@@ -15,43 +15,16 @@
                     </v-col>
                     <v-divider vertical></v-divider>
                     <v-col>
-                        <v-card class="text-center ml-5 mr-5">
+                        <v-card class="text-center ml-10 mr-5">
                             <v-card-text>
-                                <h4><v-icon class="mr-2">mdi-folder-open</v-icon>{{$t('hAdmin.doc')}}</h4>
-                                <h2 style="color:blue"><b>{{nDocs}}</b></h2>
+                                <h4><v-icon class="mr-2">mdi-folder-open</v-icon>{{$t('hAdmin.col')}}</h4>
+                                <h2 style="color:blue"><b>{{nColecoes}}</b></h2>
                             </v-card-text>
                         </v-card>
                     </v-col>
                     <v-divider vertical></v-divider>
                     <v-col>
-                        <v-card class="text-center ml-5 mr-5">
-                            <v-card-text>
-                                <h4><v-icon class="mr-2">mdi-format-list-bulleted-square</v-icon>{{$t('hAdmin.ind')}}</h4>
-                                <h2 style="color:green"><b>{{nInds}}</b></h2>
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                    <v-divider vertical></v-divider>
-                    <v-col>
-                        <v-card class="text-center ml-5 mr-5">
-                            <v-card-text>
-                                <h4><v-icon class="mr-2">mdi-note-multiple</v-icon>{{$t('hAdmin.tag')}}</h4>
-                                <h2 style="color:green"><b>{{nTags}}</b></h2>
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                    <v-divider vertical></v-divider>
-                    <v-col>
-                        <v-card class="text-center ml-5 mr-5">
-                            <v-card-text>
-                                <h4><v-icon class="mr-2">mdi-format-list-bulleted-square</v-icon>{{$t('hAdmin.pal')}}</h4>
-                                <h2 style="color:green"><b>{{nPals}}</b></h2>
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                    <v-divider vertical></v-divider>
-                    <v-col>
-                        <v-card class="text-center ml-5 mr-5">
+                        <v-card class="text-center ml-10 mr-5">
                             <v-card-text>
                                 <h4><v-icon class="mr-2">mdi-account-multiple</v-icon>{{$t('hAdmin.users')}}</h4>
                                 <h2 style="color:blue"><b>{{nUsers}}</b></h2>
@@ -61,6 +34,7 @@
                 </v-row>
             </v-toolbar>
         </div>
+        <!--
         <div class="mt-12">
             <h3 class="ml-10 mt-6">{{"Foram inseridos " + percent + "% dos elementos na última semana"}}</h3>
             <v-row>
@@ -85,6 +59,7 @@
                 </v-col>
             </v-row>
         </div>
+        -->
     </div>
 </template>
 <script>
@@ -96,10 +71,7 @@ export default {
     data(){
         return{
             nElementos:0,
-            nDocs:0,
-            nInds:0,
-            nTags:0,
-            nPals:0,
+            nColecoes:0,
             nUsers:0,
             value:[],
             labels:[],
@@ -132,54 +104,33 @@ export default {
         //Users
         axios.get(`https://tommi2.di.uminho.pt/api/users/users?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
-            this.nUsers = response.data.users.length
+            this.nUsers = response.data.length
+            console.log(response.data)
         }).catch(e => {
             this.errors.push(e)
         })
 
 
         //Elementos
-        await axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
+        axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
             Authorization:`Bearer: ${this.$store.state.jwt}`
             }})
             .then(response => {
-                this.nElementos = response.data.elementos.length
-                for(let i = 0; i<response.data.elementos.length; i++){
-                    let data = response.data.elementos[i].data
-                    let dataArray = data.split(/[\s-:]+/)
-                    let comparableData = dataArray[1] + '/' + dataArray[2] + '/' + dataArray[0]
-                    this.value.push(comparableData)
-                }
-                //para ja nao ha mais documentos?
-                this.nDocs = response.data.elementos.length
+                this.nElementos = response.data.length
+            }).catch(e => {
+                this.errors.push(e)
+        }),
+
+        //Coleções
+        axios.get(`https://tommi2.di.uminho.pt/api/elementos/colecoes`,{headers:{
+            Authorization:`Bearer: ${this.$store.state.jwt}`
+            }})
+            .then(response => {
+                this.nColecoes = response.data.length
             }).catch(e => {
                 this.errors.push(e)
         })
-        await this.contains()
-        //Tags
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/tags?nome=${this.$store.state.user._id}`,{headers:{
-          Authorization:`Bearer: ${this.$store.state.jwt}`
-        }})
-        .then(response => {
-            this.nTags = response.data.tags.length
-        }).catch(e => {
-            this.errors.push(e)
-        })
-        //Índices
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/index?nome=${this.$store.state.user._id}`,{headers:{
-          'Content-Type': 'multipart/form-data',
-          Authorization:`Bearer: ${this.$store.state.jwt}`
-        }})
-        .then(response => {
-            this.nInds = response.data.indexs.length
-            let total = 0
-            for(let i = 0; i<response.data.indexs.length;i++){
-                total +=response.data.indexs[i].n_ocorrencias
-            }
-            this.nPals = total
-        }).catch(e => {
-            this.errors.push(e)
-        })
+
     },
     methods:{
         contains: function(){

@@ -201,15 +201,15 @@
         "sim": "Yes",
         "nao": "No"
     },
-    "folForm": {
+    "elemForm": {
         "visFol": "View Elementos",
         "id": "Identifier",
-        "ver": "Version",
+        "colecao": "Collection",
+        "editora": "Publishing Company",
+        "dataPub": "Date",
+        "lingua": "Language",
         "tComTags": "Text with tags",
-        "tSemTags": "Text without tags",
-        "tipo": "Type",
-        "desc": "Description",
-        "sum": "Summary"
+        "tSemTags": "Text without tags"
     },
     "header": {
         "mudLing": "Change system language",

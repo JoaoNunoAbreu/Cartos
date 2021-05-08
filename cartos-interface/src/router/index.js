@@ -276,22 +276,6 @@ const routes = [
         }
       },
       {
-        path: 'pedidos',
-        name: 'Pedidos',
-        component: () => import('../views/PedidosAcesso.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          }
-          else if (!store.getters.isAdmin) {
-            next(`/homeAdmin`)
-          }
-          else {
-            next()
-          }
-        }
-      },
-      {
         path: 'analise',
         name: 'Analise',
         component: () => import('../views/AnáliseAdmin.vue'),

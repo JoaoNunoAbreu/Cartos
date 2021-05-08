@@ -275,6 +275,7 @@
                 .then(() => {
                     this.model = 0
                     this.$router.push( {path:`/admin/elementos`})
+                    
                 }).catch(e => {
                     console.log("ERRO = " + e)
                     this.errors.push(e)

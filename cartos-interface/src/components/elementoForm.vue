@@ -5,7 +5,7 @@
           <h1>{{$t('fol.title')}}</h1>
         </v-toolbar>
         <v-card-title>
-          <h3>{{$t('folForm.visFol')}}</h3>
+          <h3>{{$t('elemForm.visFol')}}</h3>
         </v-card-title>
         <v-card-actions>
           <v-form ref="form" method="post" enctype="multipart/form-data">
@@ -14,42 +14,42 @@
                     <template v-slot:default>
                         <tbody>
                             <tr>
-                                <td class="text-left"><b>{{$t('folForm.id')}}</b></td>
+                                <td class="text-left"><b>{{$t('elemForm.id')}}</b></td>
                                 <td>
                                     <v-layout class="ml-12">
-                                        {{elemento.idElemento}}
+                                        {{elemento.id}}
                                     </v-layout>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-left"><b>{{$t('folForm.ver')}}</b></td>
+                                <td class="text-left"><b>{{$t('elemForm.colecao')}}</b></td>
                                 <td>
                                     <v-layout class="ml-12">
-                                        {{elemento.versao}}
+                                        {{elemento.colecao}}
                                     </v-layout>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-left"><b>{{$t('folForm.tipo')}}</b></td>
+                                <td class="text-left"><b>{{$t('elemForm.editora')}}</b></td>
                                 <td>
                                     <v-layout class="ml-12">
-                                        {{elemento.tipo}}
+                                        {{elemento.editora}}
                                     </v-layout>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-left"><b>{{$t('folForm.desc')}}</b></td>
+                                <td class="text-left"><b>{{$t('elemForm.dataPub')}}</b></td>
                                 <td>
                                     <v-layout class="ml-12">
-                                        {{elemento.descricao}}
+                                        {{elemento.dataPub}}
                                     </v-layout>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-left"><b>{{$t('folForm.sum')}}</b></td>
+                                <td class="text-left"><b>{{$t('elemForm.lingua')}}</b></td>
                                 <td>
                                     <v-layout class="ml-12">
-                                        {{elemento.sumario}}
+                                        {{elemento.lingua}}
                                     </v-layout>
                                 </td>
                             </tr>
@@ -64,13 +64,13 @@
                             <v-btn v-on="{...on, ...tooltip}" class="mr-10 ml-5"><v-icon>mdi-text-box-search</v-icon></v-btn>
                         </template>
                         <span>
-                            {{$t('folForm.tComTags')}}
+                            {{$t('elemForm.tComTags')}}
                         </span>
                       </v-tooltip>
                     </template>
                     <v-card height="100%" width="100%">
                         <v-card-title>
-                            <h1>{{$t('folForm.tComTags')}}</h1>
+                            <h1>{{$t('elemForm.tComTags')}}</h1>
                             <div class="spacer"></div>
                             <v-btn @click="dialog1 = false" color="#c9302c" class="white--text">{{$t('indForm.close')}}</v-btn>
                         </v-card-title>
@@ -87,13 +87,13 @@
                               <v-btn v-on="{...on, ...tooltip}"><v-icon>mdi-text-box</v-icon></v-btn>
                           </template>
                           <span>
-                              {{$t('folForm.tSemTags')}}
+                              {{$t('elemForm.tSemTags')}}
                           </span>
                         </v-tooltip>
                       </template>
                       <v-card height="100%" width="100%">
                           <v-card-title>
-                              <h1>{{$t('folForm.tSemTags')}}</h1>
+                              <h1>{{$t('elemForm.tSemTags')}}</h1>
                               <div class="spacer"></div>
                               <v-btn @click="dialog2 = false" color="#c9302c" class="white--text">{{$t('indForm.close')}}</v-btn>
                           </v-card-title>
@@ -127,14 +127,21 @@ export default {
   data(){
     return{
       elemento:{
-        idElemento:"",
-        versao:"",
-        textoCTags:"",
-        textoSTags:"",
-        tipo:"",
-        data:"",
-        descricao:"",
-        sumario:""
+        id: "",
+        titulo: "",
+        colecao: "",
+        numero: "",
+        serie: "",
+        lingua: "",
+        paginas: "",
+        size: "",
+        personagens: "",
+        estado: "",
+        editora: "",
+        dataPub: "",
+        ficheiro: null,
+        tipo: "",
+        capa: null,
       },
       dialog1:false,
       dialog2:false
@@ -147,17 +154,21 @@ export default {
   },
   methods: {
     onUpdate(){
-      this.elemento.idElemento = this.passedData._id
-      this.elemento.versao = this.passedData.versao
-      this.elemento.textoCTags = this.passedData.textoCTags
-      this.elemento.textoSTags = this.passedData.textoSTags
-      this.elemento.tipo = this.passedData.tipo
-      this.elemento.data = this.passedData.data
-      this.elemento.descricao = this.passedData.descricao
-      this.elemento.sumario = this.passedData.sumario
-    },
-    atualizarInfo(){
-      this.$emit('atualizarInfo')
+      this.elemento.id = this.passedData.id;
+      this.elemento.titulo = this.passedData.titulo;
+      this.elemento.colecao = this.passedData.colecao;
+      this.elemento.numero = this.passedData.numero;
+      this.elemento.serie = this.passedData.serie;
+      this.elemento.lingua = this.passedData.lingua;
+      this.elemento.paginas = this.passedData.paginas;
+      this.elemento.size = this.passedData.size;
+      this.elemento.personagens = this.passedData.personagens;
+      this.elemento.estado = this.passedData.estado;
+      this.elemento.editora = this.passedData.editora;
+      this.elemento.dataPub = this.passedData.data_publicacao;
+      this.elemento.ficheiro = this.passedData.ficheiro;
+      this.elemento.tipo = this.passedData.tipo;
+      this.elemento.capa = this.passedData.capa;
     },
     emiteFecho(){
       this.$emit('emiteFecho')
