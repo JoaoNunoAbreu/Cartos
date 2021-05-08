@@ -23,13 +23,14 @@
                   </v-text-field>
                   <div class="p-container">
                     <div class="child">
-                      <v-select
-                        class="change-font"
-                        required
-                        v-model="colecao"
-                        :items="colecaoSel"
-                        v-bind:label="$t('p1.col')">
-                      </v-select>
+                       <v-select class="change-font" v-if="colecao!=='Outra' && (counterCol == 0 || counterCol == 2)"
+                          required
+                          v-model="colecao"
+                          :items="colecaoSel"
+                          @input="disableDropdown('col')"
+                          v-bind:label="$t('p1.col')">
+                        </v-select>
+                        <v-text-field v-else :label="$t('p1.col2')" @input="handleInput('col')" v-model="colecao"></v-text-field>
                     </div>
                     <div class="child">
                       <v-text-field
@@ -48,13 +49,14 @@
                       ></v-text-field>
                     </div>
                     <div class="child">
-                      <v-select
-                        class="change-font"
-                        required
-                        v-model="lingua"
-                        :items="linguaSel"
-                        v-bind:label="$t('p1.lin')"
-                      ></v-select>
+                      <v-select class="change-font" v-if="lingua!=='Outra' && (counterLingua == 0 || counterLingua == 2)"
+                          required
+                          v-model="lingua"
+                          :items="linguaSel"
+                          @input="disableDropdown('lingua')"
+                          v-bind:label="$t('p1.lin')">
+                        </v-select>
+                        <v-text-field v-else :label="$t('p1.lin2')" @input="handleInput('lingua')" v-model="lingua"></v-text-field>
                     </div>
                   </div>
                   <div class="p-container">
@@ -104,13 +106,14 @@
               </div>
               <div class="p-container">
                 <div class="child">
-                  <v-select
-                    class="change-font"
+                  <v-select class="change-font" v-if="editora!=='Outra' && (counterEditora == 0 || counterEditora == 2)"
                     required
                     v-model="editora"
                     :items="editoraSel"
-                    v-bind:label="$t('p1.edi')"
-                  ></v-select>
+                    @input="disableDropdown('editora')"
+                    v-bind:label="$t('p1.edi')">
+                  </v-select>
+                  <v-text-field v-else :label="$t('p1.edi2')" @input="handleInput('editora')" v-model="editora"></v-text-field>                  
                 </div>
                 <div class="child">
                   <v-text-field
@@ -133,13 +136,14 @@
                   </v-row>
                 </div>
                 <div class="child">
-                  <v-select
-                    class="change-font"
+                  <v-select class="change-font" v-if="tipo!=='Outra' && (counterTipo == 0 || counterTipo == 2)"
                     required
                     v-model="tipo"
                     :items="tipoSel"
-                    v-bind:label="$t('p1.tipo')"
-                  ></v-select>
+                    @input="disableDropdown('tipo')"
+                    v-bind:label="$t('p1.tipo')">
+                  </v-select>
+                  <v-text-field v-else :label="$t('p1.tipo2')" @input="handleInput('tipo')" v-model="tipo"></v-text-field>                  
                 </div>
               </div>
             </v-container>
@@ -263,10 +267,7 @@
   </div>
 </template>
 <script>
-//depois usar para estabelecer as rules dos campos do form
-//import { required, email, max } from 'vee-validate/dist/rules'
-//import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
-// @ is an alias to /src
+import axios from "axios"; 
 
 export default {
   data() {
@@ -286,9 +287,13 @@ export default {
       ficheiro: null,
       tipo: "",
       capa: null,
-      url:"",
+      url: process.env.VUE_APP_URL,
       saveClick: false,
       dialog:false, 
+      counterCol:0,
+      counterEditora:0,
+      counterTipo:0,
+      counterLingua:0,
       rules: {
         inicioNome: (value) =>
           value.startsWith("RPT") ||
@@ -304,10 +309,10 @@ export default {
           return pattern.test(value) || 'A data deve ter o formato : DD/MM/AAAA'
         }
       },
-      colecaoSel: ["C1", "C2","C3"],
-      linguaSel: ["Português", "Inglês", "Espanhol"],
-      editoraSel:["Porto Editora","Porto Editora 2","Porto Editora 3"],
-      tipoSel:["Tipo1","Tipo2","Tipo3"]
+      colecaoSel: [],
+      linguaSel: [],
+      editoraSel:[],
+      tipoSel:[]
     };
   },
   props: {
@@ -331,6 +336,60 @@ export default {
     this.ficheiro = this.elemento.ficheiro;
     this.tipo = this.elemento.tipo;
     this.capa= this.elemento.capa;
+
+    axios.get(this.url+`/elementos/editoras`,{
+      headers: {
+        Authorization: `Bearer: ${this.$store.state.jwt}`,
+      },
+    })
+    .then((response) => {
+      for (let i = 0; i < response.data.length; i++)
+        this.editoraSel.push(response.data[i].x.designacao)
+      this.editoraSel.push("Outra")
+    })
+    .catch((e) => {
+      this.errors.push(e);
+    }),
+    axios.get(this.url+`/elementos/colecoes`,{
+      headers: {
+        Authorization: `Bearer: ${this.$store.state.jwt}`,
+      },  
+    })
+    .then((response) => {
+      for (let i = 0; i < response.data.length; i++)
+        this.colecaoSel.push(response.data[i].x.designacao)
+      this.colecaoSel.push("Outra")
+    })
+    .catch((e) => {
+      this.errors.push(e);
+    }),
+    axios.get(this.url+`/elementos/linguas`,{
+      headers: {
+        Authorization: `Bearer: ${this.$store.state.jwt}`,
+      },  
+    })
+    .then((response) => {
+      for (let i = 0; i < response.data.length; i++)
+        this.linguaSel.push(response.data[i].x.designacao)
+      this.linguaSel.push("Outra")
+    })
+    .catch((e) => {
+      this.errors.push(e);
+    }),
+    axios.get(this.url+`/elementos/tipos`,{
+      headers: {
+        Authorization: `Bearer: ${this.$store.state.jwt}`,
+      },  
+    })
+    .then((response) => {
+      for (let i = 0; i < response.data.length; i++)
+        this.tipoSel.push(response.data[i].x.designacao)
+      this.tipoSel.push("Outra")
+    })
+    .catch((e) => {
+      this.errors.push(e);
+    });
+
   },
   methods: {
     reset() {
@@ -363,12 +422,61 @@ export default {
     },
     previewImage: function() {
       this.url= URL.createObjectURL(this.capa)
-    }
+    },
+    disableDropdown(tipo){
+      if(tipo == "col"){
+        if(this.colecao == "Outra"){
+          this.counterCol = 1;
+          this.colecao = ""
+        }
+      }
 
-    /*
-    atualizarInfo(){
-      this.$emit('atualizarInfoPasso1','skip')
-    }*/
+      if(tipo == "editora"){
+        if(this.editora == "Outra"){
+          this.counterEditora = 1;
+          this.editora = ""
+        }
+      }
+
+      if(tipo == "tipo"){
+        if(this.tipo == "Outra"){
+          this.counterTipo = 1;
+          this.tipo = ""
+        }
+      }
+
+      if(tipo == "lingua"){
+        if(this.lingua == "Outra"){
+          this.counterLingua = 1;
+          this.lingua = ""
+        }
+      }
+    },
+    handleInput(tipo){
+      if(tipo == "col"){
+        if(this.colecao.length == 0){
+          this.counterCol++;
+        }
+      }
+
+      if(tipo == "editora"){
+        if(this.editora.length == 0){
+          this.counterEditora++;
+        }
+      }
+
+      if(tipo == "tipo"){
+        if(this.tipo.length == 0){
+          this.counterTipo++;
+        }
+      }
+
+      if(tipo == "lingua"){
+        if(this.lingua.length == 0){
+          this.counterLingua++;
+        }
+      }
+    }
   },
   computed: {
     disableButton() {

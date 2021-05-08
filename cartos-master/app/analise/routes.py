@@ -1,7 +1,7 @@
 from flask import jsonify, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from app.analise import blueprint
-from app import mongo
+from app import mongo,neo4j_db
 
 from bson.json_util import dumps
 from bson.json_util import loads 
@@ -26,20 +26,17 @@ def showfolios(folio):
 @blueprint.route('/pesquisa', methods=['GET'])
 def pesquisaresultados():
     palavra = request.args.get('pesquisa') 
-    selectedElemento = request.args.get('selectedElemento') 
-    tipo = request.args.get('tipo')
-    versao = request.args.get('versao')
-    resultado = request.args.get('resultado') 
-    npalavras = 0
-    # se especificou num de palavras
-    if resultado == "npalavras": 
-        npalavras = request.args.get('npalavras')
-    
-    if selectedElemento == "Todos": 
-        res_pesquisa = procuraTextoTodos(palavra,versao, resultado,selectedElemento,npalavras) 
-    else: 
-        res_pesquisa = procuraTextoElemento(palavra,versao,selectedElemento,resultado,npalavras)
-    
+    colecao = request.args.get('colecao') 
+    editora = request.args.get('editora')
+
+   # if colecao == "Todas" :
+    #    if (editora == "Todas"): # col="todas" & edi="todas" 
+    res_pesquisa =  neo4j_db.run(f'match (e:Elemento) where e.titulo contains "{palavra}" return e')
+     #   else: # col="todas" & edi="&edi" 
+           # res_pesquisa = procuraTextoElemento(palavra,versao,selectedElemento,resultado,npalavras)
+    #elif editora == "Todas" :
+    #    res_pesquisa=
+    #else : 
     return jsonify(loads(dumps(res_pesquisa)))
 
 # split com o operador '+'

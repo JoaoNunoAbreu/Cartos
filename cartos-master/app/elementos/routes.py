@@ -49,19 +49,41 @@ def route_template_colecoes():
     colecoes = neo4j_db.run('match (x:Colecao) return x')
     return json_util.dumps(colecoes)
 
+@blueprint.route('/linguas', methods=['GET'])
+def route_template_linguas():
+    linguas = neo4j_db.run('match (x:Lingua) return x')
+    return json_util.dumps(linguas)
 
-@blueprint.route('/ver/<folio>/foto', methods=['GET'])
-@token_required
+@blueprint.route('/tipos', methods=['GET'])
+def route_template_tipo():
+    tipos = neo4j_db.run('match (x:Tipo) return x')
+    return json_util.dumps(tipos)
+
+
+@blueprint.route('/ver/<elemento>/foto', methods=['GET'])
+#@token_required
 #@login_required
-def route_template_ver_foto(folio):
-    f=folio + ".png"
-    print(f)
+def route_template_ver_foto(elemento):
+    f = elemento + ".png"
     pathPhoto = join(dirname(realpath(__file__)), 'static/pics/')
     pathCheck = join(pathPhoto, f)
     if path.exists(pathCheck) :
         return send_from_directory(pathPhoto, f, mimetype='image/png')
     else :
         return send_from_directory(pathPhoto, "default", mimetype='image/png')
+
+
+@blueprint.route('/ver/<elemento>/ficheiro', methods=['GET'])
+#@token_required
+#@login_required
+def route_template_ver_ficheiro(elemento):
+    f = elemento + ".pdf"
+    pathFile = join(dirname(realpath(__file__)), 'static/doc/')
+    pathCheck = join(pathFile, f)
+    if path.exists(pathCheck) :
+        return send_from_directory(pathFile, f, mimetype='application/pdf')
+    else:
+        return send_from_directory(pathFile, "default", mimetype='application/pdf')
 
 @blueprint.route('/remover/<folio>')
 @admin_required

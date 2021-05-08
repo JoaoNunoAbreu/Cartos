@@ -114,7 +114,7 @@
                           
                           <v-tooltip bottom> 
                             <template v-slot:activator="{ on }">
-                                <v-btn depressed color="#26B99A" @click="dialog=false" v-on="on">
+                                <v-btn depressed color="#26B99A" class="white--text mr-3" @click="dialog=false" v-on="on">
                                   <v-icon large>mdi-door-open</v-icon>
                                 </v-btn>
                               </template>
@@ -241,16 +241,19 @@ export default {
     return {
       pesquisa: "", 
       dialog: false,
-      colecao: "",
+      colecao: "Todas",
       colecaoSel: [],
-      editora: "", 
+      editora: "Todas", 
       editoraSel: [],
+      menu: false,
+      date: null,
+      pesquisas:[],
       url: process.env.VUE_APP_URL,
     };
   }, 
 
   created() {
-    axios.get(this.url+`/elementos/editoras`,
+      axios.get(this.url+`/elementos/editoras`,
         {
           headers: {
             Authorization: `Bearer: ${this.$store.state.jwt}`,
@@ -290,7 +293,8 @@ export default {
       let params = {
                 pesquisa: this.pesquisa,
                 colecao: this.colecao, 
-                editora: this.editora
+                editora: this.editora,
+                date: this.date
             }
       this.$router.push({
             name: 'resultados',
