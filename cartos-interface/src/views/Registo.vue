@@ -158,7 +158,7 @@ export default {
             formData.append('curriculo',this.pedido.curriculo)
             formData.append('obs',this.pedido.observacoes)
 
-        axios.post(url+'/users/pedidos/registar',formData,{
+        axios.post(this.url+'/users/pedidos/registar',formData,{
           headers: {
             'Content-Type': 'multipart/form-data'    
           }

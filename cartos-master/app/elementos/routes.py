@@ -51,6 +51,35 @@ def route_template_elementos():
         }) 
     return json_util.dumps(data)
 
+@blueprint.route('/<elemento>', methods=['GET'])
+def route_template_elemento(elemento):
+    
+    el = neo4j_db.evaluate(f'match (x:Elemento) where x.id="{elemento}" return x')
+    data = [ ]
+    colecao = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Colecao) where e.id="{el["id"]}" return c.designacao')
+    editora = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Editora) where e.id="{el["id"]}" return c.designacao')
+    lingua = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Lingua) where e.id="{el["id"]}" return c.designacao')
+    tipo = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Tipo) where e.id="{el["id"]}" return c.designacao')
+    data.append({
+        "id":el['id'] ,
+        "titulo":el['titulo'] ,
+        "capa": el['capa'],
+        "estado": el['estado'],
+        "numero": el['numero'],
+        "nr_paginas": el['nr_paginas'],
+        "texto": el['texto'],
+        "observacoes": el['observacoes'],
+        "tamanho": el['tamanho'],
+        "personagens": el['personagens'],
+        "serie": el['serie'],
+        "data_publicacao":el['data_publicacao'],
+        "colecao":colecao,
+        "editora":editora,
+        "lingua":lingua,
+        "tipo": tipo
+    })
+    return json_util.dumps(data)
+
 @blueprint.route('/editoras', methods=['GET'])
 def route_template_editoras():
     editoras = neo4j_db.run('match (x:Editora) return x')

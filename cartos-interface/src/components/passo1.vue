@@ -191,9 +191,7 @@
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on: tooltip }">
                     <v-btn
-                      ref="submit"
-                      @click="submeter();"
-                      :disabled="disableButton"
+                      @click="bimport()"
                       class="mr-5"
                       v-on="{ ...tooltip }"
                       ><v-icon>mdi-exit-to-app</v-icon></v-btn
@@ -280,6 +278,54 @@
         @emiteFecho="emiteFecho($event)"
       ></infoPopup>
     </v-dialog>
+    <v-dialog persistent v-model="dialogImp" 
+          @keydown.esc="dialogImp = false" 
+          scrollable 
+          width="500"
+          >
+                  <v-card class="mx-auto">
+                    <v-toolbar color="#2A3F54" dark>
+                      <h3 class="mx-auto">{{ $t("navd.importAjuda") }}</h3>
+                    </v-toolbar>
+                    <v-divider class="mx-4" horizontal></v-divider>
+                      <div class="mx-auto" style="width: 200px">
+                        <v-select class="change-font" 
+                            required
+                            v-model="idImport"
+                            :items="elemImport"
+                            v-bind:label="$t('p1.id')">
+                        </v-select>
+                      </div>
+                      <v-card class="mx-auto" outlined color="transparent">
+                        <v-tooltip bottom>
+                          <template v-slot:activator="{ on: tooltip }">
+                            <v-btn
+                            ref="submit"
+                            class="orange white--text mr-4 mb-3"
+                            @click="saveImp()"
+                            v-on="{ ...tooltip }"
+                            ><v-icon>mdi-checkbox-marked-outline</v-icon></v-btn
+                            >
+                          </template>
+                          <span>
+                            {{ $t("p1.save") }}
+                          </span>
+                        </v-tooltip>
+                        <v-tooltip bottom>
+                          <template v-slot:activator="{ on:tooltip }">
+                            <v-btn
+                              class="white--text mb-3"
+                              color="#26B99A"
+                              @click="dialogImp = false"
+                              v-on="{...tooltip}">
+                              <v-icon>mdi-door-open</v-icon>
+                            </v-btn>
+                          </template>
+                          <span>{{ $t("nav.Sair") }}</span>
+                        </v-tooltip>
+                    </v-card>
+                  </v-card>
+    </v-dialog>
   </div>
 </template>
 <script>
@@ -329,7 +375,10 @@ export default {
       linguaSel: [],
       editoraSel:[],
       tipoSel:[],
-      submitDialog:false
+      submitDialog:false,
+      dialogImp:false,
+      elemImport: [],
+      idImport: "",
     };
   },
   props: {
@@ -405,7 +454,22 @@ export default {
     })
     .catch((e) => {
       this.errors.push(e);
+    }),
+    //Elementos
+    axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
+            Authorization:`Bearer: ${this.$store.state.jwt}`
+            }})
+            .then(response => {
+              for(let i=0 ; i<response.data.length; i++)
+                this.elemImport.push(response.data[i].id)
+
+              console.log(this.elemImport);
+
+            }).catch(e => {
+                this.errors.push(e)
     });
+
+
 
   },
   methods: {
@@ -431,6 +495,10 @@ export default {
     save() {
       this.saveClick=true;
       this.$emit("atualizaElemento", this);
+    },
+    bimport() {
+      this.dialogImp =true;
+      console.log("OLA")
     },
     submeter() {
       this.skip = 1;
@@ -495,7 +563,37 @@ export default {
     },
     emiteFecho: function () {
         this.submitDialog = false;
-      }
+    },
+    saveImp(){
+      axios.get(this.url+"/elementos/"+this.idImport,{
+        headers: {
+          Authorization: `Bearer: ${this.$store.state.jwt}`,
+        },  
+      })
+      .then((response) => {
+        let elementoImportado = response.data[0];
+        this.id = elementoImportado.id
+        this.titulo = elementoImportado.titulo
+        this.colecao = elementoImportado.colecao
+        this.numero = elementoImportado.numero
+        this.serie = elementoImportado.serie
+        this.lingua = elementoImportado.lingua
+        this.paginas = elementoImportado.nr_paginas
+        this.size = elementoImportado.tamanho
+        this.personagens = elementoImportado.personagens
+        this.estado = elementoImportado.estado
+        this.editora = elementoImportado.editora
+        this.dataPub = elementoImportado.data_publicacao
+        this.ficheiro = elementoImportado.ficheiro
+        this.tipo = elementoImportado.tipo
+        this.capa = elementoImportado.capa
+        
+        this.dialogImp=false;
+      })
+      .catch((e) => {
+        this.errors.push(e);
+      })
+    }
   },
   computed: {
     disableButton() {
