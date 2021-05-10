@@ -73,7 +73,7 @@
             ></elementoForm>
           </v-dialog>
 
-          <v-dialog persistent v-model="dialogEdit" max-width="1000px">
+          <v-dialog persistent v-model="dialogEdit" max-width="800px">
             <elementoFormEditable
               :elemento="item"
               @emiteFecho="emiteFecho($event)"
@@ -302,26 +302,29 @@ export default {
     elementoFormEditable: ElementoFormEditable,
   },
   created() {
-    axios
-      .get(
-        this.url+`/elementos/elementos?nome=${this.$store.state.user._id}`,
-        {
-          headers: {
-            Authorization: `Bearer: ${this.$store.state.jwt}`,
-          },
-        }
-      )
-      .then((response) => {
-        // JSON responses are automatically parsed.
-        console.log(response.data)
-        this.elementos = response.data;
-      })
-      .catch((e) => {
-        //console.log(e)
-        this.errors.push(e);
-      });
+    this.getElementos();
   },
   methods: {
+    getElementos(){
+      axios
+        .get(
+          this.url+`/elementos/elementos?nome=${this.$store.state.user._id}`,
+          {
+            headers: {
+              Authorization: `Bearer: ${this.$store.state.jwt}`,
+            },
+          }
+        )
+        .then((response) => {
+          // JSON responses are automatically parsed.
+          console.log(response.data)
+          this.elementos = response.data;
+        })
+        .catch((e) => {
+          //console.log(e)
+          this.errors.push(e);
+        });
+    },
     printSection() {
       this.$htmlToPaper("tabelaElementos");
     },
@@ -365,6 +368,7 @@ export default {
     emiteFecho: function () {
       this.dialog = false;
       this.dialogEdit = false;
+      this.getElementos();
     },
     verElementoFoto: function (item) {
       const index = this.elementos.indexOf(item);
@@ -387,7 +391,6 @@ export default {
         })
         .catch((e) => {
           this.noPicDialog = true;
-          //console.log(e)
           this.errors.push(e);
         });
     },

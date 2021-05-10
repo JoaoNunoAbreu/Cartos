@@ -15,7 +15,7 @@
                     :placeholder="$t('p1.string')"
                     v-model="id"
                     :rules="[rules.inicioNome, rules.tresDigitos, rules.seiscar]"
-                    required>
+                    :disabled="true">
                   </v-text-field>
                   <v-text-field
                     :label="$t('p1.tit')"
@@ -165,6 +165,7 @@
                     <v-btn
                       ref="submit"
                       class="orange white--text mr-3"
+                      :disabled="disableButton"
                       @click="save();submitDialog=true"
                       v-on="{ ...tooltip }"
                       ><v-icon>mdi-checkbox-marked-outline</v-icon></v-btn
@@ -186,21 +187,6 @@
                   </template>
                   <span>
                     {{ $t("p1.reset") }}
-                  </span>
-                </v-tooltip>
-                <v-tooltip bottom>
-                  <template v-slot:activator="{ on: tooltip }">
-                    <v-btn
-                      ref="submit"
-                      @click="submeter();"
-                      :disabled="disableButton"
-                      class="mr-5"
-                      v-on="{ ...tooltip }"
-                      ><v-icon>mdi-exit-to-app</v-icon></v-btn
-                    >
-                  </template>
-                  <span>
-                    {{ $t("p1.sub") }}
                   </span>
                 </v-tooltip>
                 <v-spacer></v-spacer>
@@ -285,7 +271,7 @@
 </template>
 <script>
 import axios from "axios"; 
-import infoPopup from '../components/AlertPopup'
+import infoPopup from '../components/InfoPopup'
 export default {
   data() {
     return {
@@ -305,7 +291,6 @@ export default {
       tipo: "",
       capa: null,
       url: process.env.VUE_APP_URL,
-      saveClick: false,
       dialog:false, 
       counterCol:0,
       counterEditora:0,
@@ -443,12 +428,34 @@ export default {
       (this.capa=null)
       },
     save() {
-      this.saveClick=true;
-      this.$emit("atualizaElemento", this);
-    },
-    submeter() {
-      this.skip = 1;
-      this.$emit("submeterElemento", this);
+      let formData = new FormData()
+      formData.append('id',this.id)
+      formData.append('titulo',this.titulo)
+      formData.append('colecao',this.colecao)
+      formData.append('numero',this.numero)
+      formData.append('serie',this.serie)
+      formData.append('lingua',this.lingua)
+      formData.append('paginas',this.paginas)
+      formData.append('size',this.size)
+      formData.append('personagens',this.personagens)
+      formData.append('estado',this.estado)
+      formData.append('editora',this.editora)
+      formData.append('dataPub',this.dataPub)
+      formData.append('ficheiro',this.ficheiro)
+      formData.append('capa',this.capa)
+      formData.append('tipo',this.tipo)
+
+      axios.post(this.url+`/import/editElement/?nome=${this.$store.state.user._id}`,formData,{headers:{
+          'Content-Type': 'multipart/form-data',
+          Authorization:`Bearer: ${this.$store.state.jwt}`
+      }})
+      .then(() => {
+          this.model = 0
+          this.$router.push( {path:`/admin/elementos`})
+      }).catch(e => {
+          console.log("ERRO = " + e)
+          this.errors.push(e)
+      })
     },
     previewImage: function() {
       this.url= URL.createObjectURL(this.capa)
@@ -526,8 +533,7 @@ export default {
         this.editora &&
         this.dataPub.length > 0 &&
         this.ficheiro  &&
-        this.tipo &&
-        this.saveClick
+        this.tipo
       )
         return false;
       else return true;

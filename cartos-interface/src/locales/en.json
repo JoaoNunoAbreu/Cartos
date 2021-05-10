@@ -227,6 +227,7 @@
     "p1": {
         "ins": "Insert elemento",
         "id": "Identifier",
+        "import": "Import",
         "ver": "Version",
         "int": "Interpretative",
         "sd": "Semi-diplomatic",

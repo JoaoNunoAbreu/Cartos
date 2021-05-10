@@ -200,55 +200,7 @@
                 this.info.ficheiro = elemento.ficheiro
                 this.info.capa = elemento.capa
                 this.info.tipo = elemento.tipo
-
-                //console.log('FILE1: ' + this.info.ficheiro)
-
-                /* let formData = new FormData()
-
-                formData.append('id',this.info.id)
-                formData.append('titulo',this.info.titulo)
-                formData.append('colecao',this.info.colecao)
-                formData.append('numero',this.info.numero)
-                formData.append('serie',this.info.serie)
-                formData.append('lingua',this.info.lingua)
-                formData.append('paginas',this.info.paginas)
-                formData.append('size',this.info.size)
-                formData.append('personagens',this.info.personagens)
-                formData.append('estado',this.info.estado)
-                formData.append('editora',this.info.editora)
-                formData.append('dataPub',this.info.dataPub)
-                formData.append('ficheiro',this.info.ficheiro)
-                formData.append('tipo',this.info.tipo)
-            
-                axios.post(`https://tommi2.di.uminho.pt/api/import/passo1/?nome=${this.$store.state.user._id}`,formData,{
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    Authorization: `Bearer: ${this.$store.state.jwt}`       
-                }
-                }).then(data => {
-                    //if elemento ok 
-                    if( data.data.message == 'não existe'){
-                        //console.log("O elemento NÂO EXISTE")
-                        //passos 2, 4, e 5?
-                        this.info.textoTags=data.data.textoTags
-                        this.info.textoSTags=data.data.textoSTags
-                        this.info.tags=data.data.tags
-                        this.info.list=data.data.list
-                        this.passo6info=data.data.passo6
-                        if(elemento.skip == 1){
-                            this.model = 5
-                        }else{
-                            this.next()
-                        }
-                    }
-                    //elemento not ok
-                    else {
-                        this.failureDialog = true
-                    }
-                }) .catch(() => {
-                    this.fotoErro = true
-                }) */
-
+                this.submeterElemento();
             },
             submeterElemento(){
                 let formData = new FormData()

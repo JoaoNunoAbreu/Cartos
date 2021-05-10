@@ -123,16 +123,6 @@ def route_template_ver_ficheiro(elemento):
     else :
         return send_from_directory(pathC, "blank.pdf",mimetype='application/pdf')
 
-
-
-@blueprint.route('/remover/<folio>')
-@admin_required
-#@login_required
-def route_template_remover(folio):
-    nome = request.args.get('nome')
-    existe = mongo.db.folios.find_one({"_id":folio})
-    return render_template('removerElemento.html', folio=existe,nome=nome)
-
 @blueprint.route('/apagar/<elemento>', methods=['GET'])
 @admin_required
 #@login_required
@@ -170,51 +160,12 @@ def route_template_apagar(elemento):
         }) 
     return json_util.dumps(data)
 
-
-############################### INDICES #########################################
-
-@blueprint.route('/index', methods=['GET'])
-@token_required
-#@login_required
-def route_template_index():
-    nome = request.args.get('nome')
-    index = mongo.db.indexacao.find()
-    return json_util.dumps({'indexs':index, 'nome':nome})
-
-@blueprint.route('/index/ver/<indice>', methods=['GET'])
-@token_required
-#@login_required
-def route_template_index_ver(indice):
-    nome = request.args.get('nome')
-    existe = mongo.db.indexacao.find_one({"_id":indice})
-    print(existe)
-    return render_template('viewIndex.html', index=existe,nome=nome)
-
-
-############################### Tags #########################################
-
-@blueprint.route('/tags', methods=['GET'])
-@token_required
-#@login_required
-def route_template_tags():
-    tags = mongo.db.tags.find()
-    nome = request.args.get('nome')
-    return json_util.dumps({'tags':tags, 'nome':nome})
-
-@blueprint.route('/tags/ver/<tag>', methods=['GET'])
-@token_required
-#@login_required
-def route_template_tag_ver(tag):
-    nome = request.args.get('nome')
-    existe = mongo.db.tags.find_one({"_id":tag})
-    return render_template('viewTag.html', tag=existe,nome=nome)
-
 ############################### Pesquisas ###################################
 
 @blueprint.route('/pesquisas', methods=['GET'])
 @admin_required
 def route_pesquisas():
-    pesquisas= [doc for doc in mongo.db.pesquisas.find()]
+    pesquisas = [doc for doc in mongo.db.pesquisas.find()]
     nome = request.args.get('nome')
     return json_util.dumps({'pesquisas': pesquisas, 'nome': nome})
 
