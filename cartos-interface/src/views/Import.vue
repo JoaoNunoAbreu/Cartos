@@ -184,7 +184,6 @@
                 });
             },
             atualizaElemento(elemento){
-                console.log("atualizaElemento, elemento = " + JSON.stringify(elemento.id))
                 this.info.id = elemento.id
                 this.info.titulo = elemento.titulo
                 this.info.colecao = elemento.colecao
@@ -226,7 +225,6 @@
                 }})
                 .then(() => {
                     this.model = 0
-                    this.$router.push( {path:`/admin/elementos`})
                     
                 }).catch(e => {
                     console.log("ERRO = " + e)

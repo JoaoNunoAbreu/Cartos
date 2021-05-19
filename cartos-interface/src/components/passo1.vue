@@ -3,13 +3,14 @@
     <v-sheet color="grey lighten-4" tile>
       <v-row class="fill-height ml-10" align="center" justify="center">
         <v-col class="text-left">
-          <v-form ref="form" method="post" enctype="multipart/form-data">
+          <v-form ref="form" method="post" enctype="multipart/form-data" v-model="valid" lazy-validation>
             <v-container>
               <div class="p-container">
                 <div class="child-right">
                   <v-text-field
                     :label="$t('p1.id')"
                     :maxlength="maxId"
+                    :counter="maxId"
                     :placeholder="$t('p1.string')"
                     v-model="id"
                     :rules="[
@@ -22,16 +23,14 @@
                   >
                   </v-text-field>
                   <v-text-field
-                        :label="$t('p1.tit')"
-                        :placeholder="$t('p1.string')"
-                        :maxlength="maxChars"
-                        v-model="titulo"
-                        @focus="show_titulo = 'block'; disableOthers('show_titulo')"
-                        required
+                    :label="$t('p1.tit')"
+                    :placeholder="$t('p1.string')"
+                    :maxlength="maxChars"
+                    :counter="maxChars"
+                    v-model="titulo"
+                    required
                   >
                   </v-text-field>
-                  <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_titulo" class="inputChar" v-text="(maxChars - titulo.length)"></div>
-                  
                   <div class="p-container">
                     <div class="child">
                       <v-select
@@ -44,6 +43,7 @@
                         v-model="colecao"
                         :items="colecaoSel"
                         :maxlength="maxChars"
+                        :counter="maxChars"
                         @input="disableDropdown('col')"
                         v-bind:label="$t('p1.col')"
                       >
@@ -54,10 +54,9 @@
                         :placeholder="$t('p1.string')"
                         @input="handleInput('col')"
                         :maxlength="maxChars"
+                        :counter="maxChars"
                         v-model="colecao"
-                        @focus="show_colecao = 'block'; disableOthers('show_colecao')"
                       ></v-text-field>
-                      <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_colecao"  class="inputChar" v-text="(maxChars - colecao.length)"></div>
                     </div>
                     <div class="child">
                       <v-text-field
@@ -65,10 +64,9 @@
                         :placeholder="$t('p1.string')"
                         v-model="numero"
                         :maxlength="maxChars"
+                        :counter="maxChars"
                         required
-                        @focus="show_numero = 'block'; disableOthers('show_numero')"
                       ></v-text-field>
-                      <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_numero"  class="inputChar" v-text="(maxChars - numero.length)"></div>
                     </div>
                   </div>
                   <div class="p-container">
@@ -78,10 +76,9 @@
                         :placeholder="$t('p1.string')"
                         v-model="serie"
                         :maxlength="maxChars"
+                        :counter="maxChars"
                         required
-                        @focus="show_serie = 'block'; disableOthers('show_serie')"
                       ></v-text-field>
-                      <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_serie"  class="inputChar" v-text="(maxChars - serie.length)"></div>
                     </div>
                     <div class="child">
                       <v-select
@@ -93,6 +90,8 @@
                         required
                         v-model="lingua"
                         :items="linguaSel"
+                        :maxlength="maxChars"
+                        :counter="maxChars"
                         @input="disableDropdown('lingua')"
                         v-bind:label="$t('p1.lin')"
                       >
@@ -102,11 +101,10 @@
                         :placeholder="$t('p1.string')"
                         :label="$t('p1.lin2')"
                         :maxlength="maxChars"
+                        :counter="maxChars"
                         @input="handleInput('lingua')"
                         v-model="lingua"
-                        @focus="show_lingua = 'block'; disableOthers('show_lingua')"
                       ></v-text-field>
-                      <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_lingua"  class="inputChar" v-text="(maxChars - lingua.length)"></div>
                     </div>
                   </div>
                   <div class="p-container">
@@ -116,6 +114,7 @@
                         :placeholder="$t('p1.inteiro')"
                         v-model="paginas"
                         :maxlength="maxNum"
+                        :counter="maxNum"
                         required
                       ></v-text-field>
                     </div>
@@ -125,24 +124,39 @@
                         :placeholder="$t('p1.string')"
                         v-model="size"
                         :maxlength="maxChars"
+                        :counter="maxChars"
                         required
-                        @focus="show_size = 'block'; disableOthers('show_size')"
                       ></v-text-field>
-                      <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_size"  class="inputChar" v-text="(maxChars - size.length)"></div>
                     </div>
                   </div>
                 </div>
                 <div class="child-left">
-                  <label>{{ $t("p1.foto") }}:</label>
+                  <label>{{ $t("p1.ACapa") }}:</label>
                   <v-file-input
                     show-size
-                    accept="image/jpg, image/jpeg, image/png,video/*"
-                    :label="$t('p1.file')"
+                    accept="image/jpg, image/jpeg, image/png"
+                    :label="$t('p1.capa')"
                     v-model="capa"
+                    @click:clear="urlCapa=''"
                     @change="previewImage"
                   >
                   </v-file-input>
-                  <v-img :src="this.url" contain></v-img>
+                  <v-img v-if="hasImg==true" width="200" height="200" :src="this.urlCapa" contain></v-img>
+                </div>
+                <div class="child-left">
+                  <label>{{ $t("p1.Avideo") }}:</label>
+                  <v-file-input
+                    show-size
+                    accept="video/*"
+                    :label="$t('p1.Video')"
+                    v-model="video"
+                    @click:clear="urlVideo=''"
+                    @change="previewVideo"
+                  >
+                  </v-file-input>
+                  <div v-if="hasVideo==true">
+                    <video width="200" :src="this.urlVideo" controls preload contain></video>
+                  </div>
                 </div>
               </div>
               <div class="p-container">
@@ -152,10 +166,9 @@
                     :placeholder="$t('p1.string')"
                     v-model="personagens"
                     :maxlength="maxPersChars"
+                    :counter="maxPersChars"
                     required
-                    @focus="show_personagens = 'block'; disableOthers('show_personagens')"
                   ></v-text-field>
-                  <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_personagens"  class="inputChar" v-text="(maxPersChars - personagens.length)"></div>
                 </div>
                 <div class="child">
                   <v-text-field
@@ -163,10 +176,9 @@
                     :placeholder="$t('p1.string')"
                     v-model="estado"
                     :maxlength="maxChars"
+                    :counter="maxChars"
                     required
-                    @focus="show_estado = 'block'; disableOthers('show_estado')"
                   ></v-text-field>
-                  <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_estado"  class="inputChar" v-text="(maxChars - estado.length)"></div>
                 </div>
               </div>
               <div class="p-container">
@@ -180,6 +192,8 @@
                     required
                     v-model="editora"
                     :items="editoraSel"
+                    :maxlength="maxChars"
+                    :counter="maxChars"
                     @input="disableDropdown('editora')"
                     v-bind:label="$t('p1.edi')"
                   >
@@ -189,18 +203,18 @@
                     :label="$t('p1.edi2')"
                     :placeholder="$t('p1.string')"
                     :maxlength="maxChars"
+                    :counter="maxChars"
                     @input="handleInput('editora')"
                     v-model="editora"
-                    @focus="show_editora = 'block'; disableOthers('show_editora')"
                   ></v-text-field>
-                  <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_editora"  class="inputChar" v-text="(maxChars - editora.length)"></div>
                 </div>
                 <div class="child">
                   <v-text-field
                     :label="$t('p1.dataP')"
                     v-model="dataPub"
                     :placeholder="$t('p1.data')"
-                    :maxlength="maxChars"
+                    :maxlength="maxDate"
+                    :counter="maxDate"
                     :rules="[rules.dataRule]"
                     required
                   ></v-text-field>
@@ -228,6 +242,8 @@
                     required
                     v-model="tipo"
                     :items="tipoSel"
+                    :maxlength="maxChars"
+                    :counter="maxChars"
                     @input="disableDropdown('tipo')"
                     v-bind:label="$t('p1.tipo')"
                   >
@@ -238,10 +254,9 @@
                     :placeholder="$t('p1.string')"
                     @input="handleInput('tipo')"
                     :maxlength="maxChars"
+                    :counter="maxChars"
                     v-model="tipo"
-                    @focus="show_tipo = 'block'; disableOthers('show_tipo')"
                   ></v-text-field>
-                  <div :style="'padding-top: -22px; margin-top: -22px; display: ' + show_tipo" class="inputChar" v-text="(maxChars - tipo.length)"></div>
                 </div>
               </div>
             </v-container>
@@ -420,6 +435,7 @@
   </div>
 </template>
 <script>
+
 import axios from "axios";
 import infoPopup from "../components/InfoPopup";
 export default {
@@ -440,6 +456,9 @@ export default {
       ficheiro: null,
       tipo: "",
       capa: null,
+      video: null,
+      urlCapa: "",
+      urlVideo: "",
       url: process.env.VUE_APP_URL,
       dialog: false,
       counterCol: 0,
@@ -447,16 +466,9 @@ export default {
       counterTipo: 0,
       counterLingua: 0,
       elemImport: [],
-      show_titulo: "none",
-      show_colecao: "none",
-      show_numero: "none",
-      show_serie: "none",
-      show_lingua: "none",
-      show_size: "none",
-      show_personagens: "none",
-      show_estado: "none",
-      show_editora: "none",
-      show_tipo: "none",
+      hasImg: false,
+      hasVideo: false,
+      valid: true,
       rules: {
         inicioNome: (value) =>
           value.startsWith("RPT") ||
@@ -465,7 +477,8 @@ export default {
           value.replace(/[^0-9]/g, "").length == 3 ||
           "O nome do Elemento tem de ter 3 dígitos",
         idRepetidos: (value) =>
-          !this.elemImport.includes(value) || "Identificador já está a ser utilizado",
+          !this.elemImport.includes(value) ||
+          "Identificador já está a ser utilizado",
         seiscar: (value) =>
           value.length == 6 || "O nome do Elemento tem de ter 6 caracteres",
         dataRule: (value) => {
@@ -483,9 +496,10 @@ export default {
       dialogImp: false,
       idImport: "",
       maxId: 6,
-      maxChars: 20,
+      maxChars: 100,
       maxNum: 3,
-      maxPersChars: 100
+      maxDate: 10,
+      maxPersChars: 200,
     };
   },
   props: {
@@ -509,6 +523,7 @@ export default {
     this.ficheiro = this.elemento.ficheiro;
     this.tipo = this.elemento.tipo;
     this.capa = this.elemento.capa;
+    this.video = this.elemento.video;
 
     axios
       .get(this.url + `/elementos/editoras`, {
@@ -604,7 +619,9 @@ export default {
         (this.dataPub = ""),
         (this.ficheiro = null),
         (this.tipo = ""),
-        (this.capa = null);
+        (this.capa = null),
+        (this.video = null);
+
     },
     save() {
       this.$emit("atualizaElemento", this);
@@ -617,19 +634,24 @@ export default {
       this.$emit("submeterElemento", this);
     },
     previewImage: function () {
-      this.url = URL.createObjectURL(this.capa);
+      this.urlCapa = URL.createObjectURL(this.capa);
+      if(this.capa.length == 0 ){
+        this.hasImg=false;
+      }
+      else{
+        this.hasImg=true;
+      }
     },
-    disableOthers(show){
-      if(show != "show_titulo") this.show_titulo = "none";
-      if(show != "show_colecao") this.show_colecao = "none"
-      if(show != "show_numero") this.show_numero = "none"
-      if(show != "show_serie") this.show_serie = "none"
-      if(show != "show_lingua") this.show_lingua = "none"
-      if(show != "show_size") this.show_size = "none"
-      if(show != "show_personagens") this.show_personagens = "none"
-      if(show != "show_estado") this.show_estado = "none"
-      if(show != "show_editora") this.show_editora = "none"
-      if(show != "show_tipo") this.show_tipo = "none"
+    previewVideo: function () {
+      this.urlVideo = URL.createObjectURL(this.video);
+      if(this.video.length == 0 ){
+        this.hasVideo=false;
+      }
+      else{
+        this.hasVideo=true;
+      }
+      
+      
     },
     disableDropdown(tipo) {
       if (tipo == "col") {
@@ -687,6 +709,7 @@ export default {
     },
     emiteFecho: function () {
       this.submitDialog = false;
+      this.$router.push( {path:`/admin/elementos`})
     },
     saveImp() {
       axios
@@ -697,7 +720,6 @@ export default {
         })
         .then((response) => {
           let elementoImportado = response.data[0];
-          this.id = elementoImportado.id;
           this.titulo = elementoImportado.titulo;
           this.colecao = elementoImportado.colecao;
           this.numero = elementoImportado.numero;
@@ -709,17 +731,15 @@ export default {
           this.estado = elementoImportado.estado;
           this.editora = elementoImportado.editora;
           this.dataPub = elementoImportado.data_publicacao;
-          this.ficheiro = elementoImportado.ficheiro;
           this.tipo = elementoImportado.tipo;
-          this.capa = elementoImportado.capa;
 
           this.dialogImp = false;
         })
         .catch((e) => {
           this.errors.push(e);
         });
+    }
     },
-  },
   computed: {
     disableButton() {
       if (
@@ -736,7 +756,8 @@ export default {
         this.editora &&
         this.dataPub.length > 0 &&
         this.ficheiro &&
-        this.tipo
+        this.tipo &&
+        this.valid
       )
         return false;
       else return true;
@@ -780,5 +801,4 @@ img.preview {
   border: 1px solid #ddd;
   padding: 5px;
 }
-
 </style>

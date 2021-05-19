@@ -64,7 +64,6 @@
         "palavras": "palabras",
         "obrigacaoNumero": "El número de palabras debe ser mayor que cero",
         "resultadoPara": "Resultado para",
-        "resultadoLinha": "Línea",
         "resultadoPeriodo": "Período",
         "creditos": "Créditos",
         "sabermais": "Saber mas",
@@ -252,6 +251,7 @@
         "sub": "Enviar",
         "skip": "Saltar",
         "ajuda": "Texto de ayuda",
+        "apagar":"Eliminar",
         "leave": "Quitar la inserción"
     },
     "p2": {

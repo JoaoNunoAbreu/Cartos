@@ -30,8 +30,10 @@ def pesquisaresultados():
     colecao = request.args.get('colecao') 
     editora = request.args.get('editora')
     data = request.args.get('date')
-    datetimeobject = datetime.strptime(data,'%Y-%m-%d')
-    newformat = datetimeobject.strftime('%d/%m/%Y')
+    newformat = None
+    if(data):
+        datetimeobject = datetime.strptime(data,'%Y-%m-%d')
+        newformat = datetimeobject.strftime('%d/%m/%Y')
 
     if colecao != "Todas" :
         if (editora != "Todas"): # col="todas" & edi="todas" 

@@ -8,7 +8,7 @@
       <div class="text-center"> 
         <!-- Para ficar igual ao login -->
         <h2 class="change-font black--text"> {{ $t('nav.tituloProjeto') }}</h2>  
-        <h5 class="change-font black--text"> {{ $t('nav.sistemaPesquisa') }} </h5>
+        <h5 class="change-font black--text mt-5"> {{ $t('nav.sistemaPesquisa') }} </h5>
       </div>
       
       <!-- Só para afastar 2 centrimetro o titulo da pesquisa -->
@@ -159,7 +159,7 @@
                 ></v-select>
               </v-col>
             </v-row>
-            <v-row align="start" justify="center">
+            <v-row align="start" justify="center" class="mb-3">
               <v-col cols="12" md="3"> 
                 <v-menu
                   ref="menu"
@@ -210,20 +210,6 @@
             <!--  <v-btn @click="reset">clear</v-btn> /-->
         </v-form>
       </v-container>
-
-      <!-- Só para afastar 1 centrimetro o titulo da pesquisa -->
-       <v-container fluid>
-            <v-row>
-              <v-col cols="12">
-                <v-row
-                  align="start"
-                  justify="center"
-                >
-            <v-col cols="12" md="2"> </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-       </v-container>
       <Footer/>
     </div>
 </template>

@@ -120,7 +120,6 @@ export default {
     },
     methods:{
         logout: function(){
-            //console.log("destroy token here")
             this.$store.commit("guardaTokenUtilizador", "")
             this.$store.commit("guardaNomeUtilizador", "")
             this.$router.push( {path:`/admin/login`})
@@ -180,7 +179,6 @@ export default {
         else if(this.ajuda == 'pedidos'){
             this.help = 'Esta é a ajuda dos pedidos de acesso'
         }
-        //console.log('HELP: ' + this.help)
     }
 };
 </script>
@@ -191,9 +189,5 @@ export default {
 }
 .spacer{
     flex-grow: 1;
-}
-h1{
-    color:white;
-    text-align:center;
 }
 </style>

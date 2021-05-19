@@ -64,7 +64,6 @@
         "palavras": "words",
         "obrigacaoNumero": "The number of words must be greater than zero",
         "resultadoPara": "Result for",
-        "resultadoLinha": "Line",
         "resultadoPeriodo": "Period",
         "creditos": "Credits",
         "sabermais": "About",
@@ -247,6 +246,10 @@
         "rev": "Revision",
         "obs": "Notes",
         "foto": "Add photo",
+        "ACapa": "Add Cover",
+        "capa":"Cover",
+        "Avideo":"Add Video",
+        "Video":"Video",
         "f": "Photo",
         "file": "File",
         "tfile": "Text file",
@@ -254,6 +257,7 @@
         "sub": "Submit",
         "skip": "Skip",
         "ajuda": "Help text",
+        "apagar":"Delete",
         "leave": "Exit insertion"
     },
     "p2": {

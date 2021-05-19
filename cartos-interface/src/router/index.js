@@ -290,7 +290,7 @@ const routes = [
       {
         path: 'resultados',
         name: 'AdminResultados',
-        component: () => import('../views/ResultadoAdmin.vue'),
+        component: () => import('../views/ResultadosAdmin.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
             next(`/login`)

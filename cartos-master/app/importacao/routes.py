@@ -43,7 +43,14 @@ def route_template_passo6():
             capa.filename = request.form.get('id')
             upload_path = join(dirname(realpath(__file__)),'..' ,'elementos/static/pics/')
             capa.save(upload_path + capa.filename + extension)
-
+    if 'video' in request.files:
+        video = request.files['video']
+        extension=os.path.splitext(video.filename)[1];
+        if video.filename != '':
+            video.filename = request.form.get('id')
+            upload_path = join(dirname(realpath(__file__)),'..' ,'elementos/static/pics/')
+            video.save(upload_path + video.filename + extension)
+    
     aux = Aux
     aux.save_element(request.form['id'],request.form['titulo'],request.form['colecao'],request.form['numero'],request.form['serie'],request.form['lingua'],\
                 request.form['paginas'],request.form['size'],request.form['personagens'],request.form['estado'],request.form['editora'],request.form['dataPub'],\

@@ -105,7 +105,7 @@ def route_template_tipo():
 #@token_required
 #@login_required
 def route_template_ver_foto(elemento):
-    f = "RP" + ".png"
+    f = elemento + ".png"
     pathPhoto = join(dirname(realpath(__file__)), 'static/pics/')
     pathCheck = join(pathPhoto, f)
     if path.exists(pathCheck) :

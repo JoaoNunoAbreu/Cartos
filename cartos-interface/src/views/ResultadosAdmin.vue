@@ -1,77 +1,55 @@
 <template>
-  <div class="home">
-      <Navbar/>
-      <!-- cena da imagem -->
-      <PopupCartos />
-      
-      <div class="text-center"> 
-        <!-- Para ficar igual ao login -->
-        <h2 class="change-font black--text"> {{ $t('nav.tituloProjeto') }}</h2>  
-        <h5 class="change-font black--text"> {{ $t('nav.sistemaPesquisa') }} </h5>
-      </div>
-      
-      <!-- Só para afastar 2 centrimetro o titulo da pesquisa -->
-       <v-container fluid>
-            <v-row>
-              <v-col cols="12">
-                <v-row
-                  align="start"
-                  justify="center"
-                >
-            <v-col cols="12" md="2"> </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-       </v-container>
-
-
-        <v-container fluid>
-            <v-row>
-              <v-col cols="12">
-                <v-row
-                  align="start"
-                  justify="center"
-                >
-            <v-col cols="12" md="2"> </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-       </v-container>
-        
-      <!-- end -->
-
-    <v-container>
-      <div id="imprimeMain" class="text-center">
+  <div>
+    <appHeader></appHeader>
+    <div v-if="this.$store.state.user.tipo === 'Admin'" >
+        <navDraw></navDraw>
+    </div>
+    <div v-else >
+        <navDrawLeitor></navDrawLeitor>
+    </div>
+    
+   <v-container>
+      <div id="imprimeMain">
         <v-row>
           <v-col col="12">
-            <div class="results" >
+            <div class="results">
+              <v-img
+                :src="require('../assets/cartos_logo.png')"
+                class="mx-auto"
+                contain
+                width="150px"
+              ></v-img>
+              <div id="myApplication">
+                <h2 class="change-font black--text">
+                  {{ $t("nav.tituloProjeto") }}
+                </h2>
 
-              <h3 class="font-weight-light change-font">
-                {{ $t("nav.ResultadosAnalise") }}
-              </h3>
+                <h3 class="font-weight-light change-font">
+                  {{ $t("nav.ResultadosAnalise") }}
+                </h3>
 
-              <h3 class="font-weight-light change-font">
-                {{ $t("nav.resultadoPara") }}
-                <span class="font-weight-black change-font">{{
-                  this.pesquisa
-                }}</span>
-              </h3>
+                <h3 class="font-weight-light change-font">
+                  {{ $t("nav.resultadoPara") }}
+                  <span class="font-weight-black change-font">{{
+                    this.pesquisa
+                  }}</span>
+                </h3>
 
-              <h3 class="font-weight-light change-font">
-                {{ $t("nav.Parametros") }}
-                <span class="font-weight-black change-font"
-                  >{{ this.$route.params.selectedElemento }},
-                  {{ this.$route.params.tipo }},
-                  {{ this.$route.params.versao }},
-                  {{ this.$route.params.resultado }}</span
-                >
-              </h3>
+                <h3 class="font-weight-light change-font">
+                  {{ $t("nav.Parametros") }}
+                  <span class="font-weight-black change-font"
+                    >{{ this.$route.params.selectedElemento }},
+                    {{ this.$route.params.tipo }},
+                    {{ this.$route.params.versao }},
+                    {{ this.$route.params.resultado }}</span
+                  >
+                </h3>
 
-              <h5 class="change-font blue--text text--darken-4">
-                {{ this.numResultados }} {{ $t("nav.resultadosEm") }}
-                {{ this.tempoFinal }} {{ $t("nav.milisegundos") }}
-              </h5>
-
+                <h5 class="change-font blue--text text--darken-4">
+                  {{ this.numResultados }} {{ $t("nav.resultadosEm") }}
+                  {{ this.tempoFinal }} {{ $t("nav.milisegundos") }}
+                </h5>
+              </div>
               <v-container fluid>
                 <v-row>
                   <v-row align="start" justify="end">
@@ -194,7 +172,6 @@
                 <p>{{ item.data_publicacao }}</p>
                 <br />
               </div>
-              <!--
               <v-dialog
                 v-model="dialogElemento"
                 @keydown.esc="
@@ -211,7 +188,7 @@
                     @emiteFecho="emiteFecho($event)"
                   ></resultado>
                 </v-card>
-              </v-dialog>-->
+              </v-dialog>
               <div class="card-footer text-center change-font">
                 <jw-pagination
                   v-if="resultados != null"
@@ -224,26 +201,17 @@
         </v-row>
         <!-- tem de estar persistent para fazer clean do array conta -->
       </div>
-      <v-dialog persistent v-model="dialogElemento" max-width="800px">
-            <elementoFormEditable
-              :elemento="elementoAtual"
-              :isDisabled="true"
-              :isDeleting="false"
-              @emiteFecho="emiteFecho($event)"
-            ></elementoFormEditable>
-      </v-dialog>
-    </v-container>
     <Footer />
+      </v-container>
   </div>
 </template>
-
 <script>
-import ElementoFormEditable from "../components/elementoFormEditable.vue";
 import axios from "axios";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import resultado from "../views/Resultado";
-import PopupCartos from '../components/PopupCartos'
+import NavDraw from '../components/navDraw.vue'
+import Header from '../components/header.vue'
+import navDrawLeitor from '../components/navDrawLeitor.vue'
 
 export default {
   data() {
@@ -263,11 +231,11 @@ export default {
     };
   },
   components: {
-    Navbar,
     Footer,
     resultado,
-    PopupCartos,
-    ElementoFormEditable
+    'navDraw':NavDraw,
+    'appHeader': Header,
+    'navDrawLeitor':navDrawLeitor
   },
   created() {
     var tempo_inic = performance.now();
@@ -314,8 +282,42 @@ export default {
   },
 };
 </script> 
+     
 
 <style scoped>
+.keep-spaces { white-space: pre-wrap; } 
+@media print {
+  body { 
+    overflow: auto;
+    height: auto; 
+  }
+  .page-break { display: block; page-break-before: always; }
+}
+
+.col-md-1 {
+    margin: 10px;
+    max-width: 53px;
+} 
+
+.v-application p {
+    margin-bottom: 1px;
+}
+</style>
+
+<style lang="stylus" scoped>
+.change-font {
+    font-family: "Arial";
+}
+</style>
+
+<style scoped>
+
+#myApplication {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
 .keep-spaces {
   white-space: pre-wrap;
 }
@@ -345,4 +347,3 @@ export default {
   font-family: 'Arial';
 }
 </style>
-

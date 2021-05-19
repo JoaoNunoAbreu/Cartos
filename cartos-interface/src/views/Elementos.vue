@@ -66,16 +66,29 @@
             </span>
           </v-tooltip>
 
-          <v-dialog persistent v-model="dialog" max-width="500px">
-            <elementoForm
-              :passedData="item"
+          <v-dialog persistent v-model="dialog" max-width="800px">
+            <elementoFormEditable
+              :elemento="item"
+              :isDisabled="true"
+              :isDeleting="false"
               @emiteFecho="emiteFecho($event)"
-            ></elementoForm>
+            ></elementoFormEditable>
           </v-dialog>
 
           <v-dialog persistent v-model="dialogEdit" max-width="800px">
             <elementoFormEditable
               :elemento="item"
+              :isDisabled="false"
+              :isDeleting="false"
+              @emiteFecho="emiteFecho($event)"
+            ></elementoFormEditable>
+          </v-dialog>
+
+          <v-dialog persistent v-model="dialogDelete" max-width="800px">
+            <elementoFormEditable
+              :elemento="item"
+              :isDisabled="true"
+              :isDeleting="true"
               @emiteFecho="emiteFecho($event)"
             ></elementoFormEditable>
           </v-dialog>
@@ -103,16 +116,7 @@
       <template v-slot:item.options="{ item }">
         <v-icon small class="mr-2" @click="viewItem(item)"> mdi-eye </v-icon>
         <v-icon small class="mr-2" @click="editItem(item)"> mdi-pencil </v-icon>
-        <v-icon
-          v-if="$store.state.user.tipo === 'Admin'"
-          small
-          @click="
-            deleteDialog = true;
-            tempValue = item;
-          "
-        >
-          mdi-trash-can
-        </v-icon>
+        <v-icon v-if="$store.state.user.tipo === 'Admin'" small @click="deleteItem(item)"> mdi-trash-can </v-icon>
       </template>
     </v-data-table>
     <v-dialog v-model="picDialog" width="800px">
@@ -173,62 +177,6 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <v-dialog v-model="deleteDialog" scrollable width="500" persistent>
-       <v-card>
-        <v-toolbar color="#2A3F54" dark>
-          <h2>{{ $t("fol.conf") }}</h2>
-        </v-toolbar>
-        <v-row>
-          <v-col
-            style="
-              margin-left: 1cm;
-              margin-right: 1cm;
-              max-width: 40px;
-              margin-top: 20px;
-            "
-          >
-            <v-icon x-large color="#3399ff" dark>mdi-help-circle</v-icon>
-          </v-col>
-          <v-col>
-            <v-card-text>
-              <h3>{{ $t("fol.elim") }}</h3>
-            </v-card-text>
-          </v-col>
-        </v-row>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on: tooltip }">
-              <v-btn
-                @click="
-                  deleteDialog = false;
-                  deleteItem(tempValue);
-                "
-                v-on="{ ...tooltip }"
-                color="#cc0000"
-                class="white--text mr-3" >
-                <v-icon>mdi-delete</v-icon>
-              </v-btn>
-            </template>
-            <span>
-              {{ $t("navd.confirm") }}
-            </span>
-          </v-tooltip>
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on: tooltip }">
-              <v-btn @click="deleteDialog = false" v-on="{ ...tooltip }" color="#26B99A"
-                      class="white--text mr-3"  >
-                <v-icon>mdi-door-open</v-icon>
-              </v-btn>
-            </template>
-            <span>
-              {{ $t("navd.nao") }}
-            </span>
-          </v-tooltip>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
   </div>
 </template>
 <script>
@@ -236,7 +184,6 @@ import axios from "axios";
 import Header from "../components/header.vue";
 import NavDraw from "../components/navDraw.vue";
 import navDrawLeitor from "../components/navDrawLeitor.vue";
-import ElementoForm from "../components/elementoForm.vue";
 import ElementoFormEditable from "../components/elementoFormEditable.vue";
 
 export default {
@@ -279,9 +226,9 @@ export default {
       elementoPic: "",
       dialog: false,
       dialogEdit: false,
+      dialogDelete: false,
       picDialog: false,
       noPicDialog: false,
-      deleteDialog: false,
       tempValue: "",
       item: {},
     };
@@ -292,13 +239,15 @@ export default {
     },
     dialogEdit(val) {
       val || this.closeEdit();
+    },
+    dialogDelete(val) {
+      val || this.closeDelete();
     }
   },
   components: {
     appHeader: Header,
     navDraw: NavDraw,
     navDrawLeitor: navDrawLeitor,
-    elementoForm: ElementoForm,
     elementoFormEditable: ElementoFormEditable,
   },
   created() {
@@ -316,12 +265,10 @@ export default {
           }
         )
         .then((response) => {
-          // JSON responses are automatically parsed.
-          console.log(response.data)
+          this.elementos = [];
           this.elementos = response.data;
         })
         .catch((e) => {
-          //console.log(e)
           this.errors.push(e);
         });
     },
@@ -336,6 +283,10 @@ export default {
       this.item = item;
       this.dialogEdit = true;
     },
+    deleteItem(item) {
+      this.item = item;
+      this.dialogDelete = true;
+    },
     close() {
       this.dialog = false;
       this.item = {};
@@ -344,30 +295,14 @@ export default {
       this.dialogEdit = false;
       this.item = {};
     },
-    deleteItem(item) {
-      const index = this.elementos.indexOf(item);
-      axios
-        .get(
-          `https://tommi2.di.uminho.pt/api/elementos/apagar/` +
-            this.elementos[index].id +
-            `?nome=${this.$store.state.user._id}`,
-          {
-            headers: {
-              Authorization: `Bearer: ${this.$store.state.jwt}`,
-            },
-          }
-        )
-        .then((response) => {
-          this.elementos = response.data;
-          this.tempValue = {};
-        })
-        .catch((e) => {
-          this.errors.push(e);
-        });
+    closeDelete() {
+      this.dialogDelete = false;
+      this.item = {};
     },
     emiteFecho: function () {
       this.dialog = false;
       this.dialogEdit = false;
+      this.dialogDelete = false;
       this.getElementos();
     },
     verElementoFoto: function (item) {
