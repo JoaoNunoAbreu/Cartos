@@ -47,7 +47,7 @@
             persistent
         >
             <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                     <h2>{{ $t('navd.cf') }}</h2>
                 </v-toolbar>
                 <v-row>
@@ -115,7 +115,7 @@
             width="500"
             persistent
         >
-            <v-toolbar color="#2A3F54" dark>
+            <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                 <h2>{{ $t('navd.cf') }}</h2>
             </v-toolbar>
             <v-card>
@@ -152,7 +152,7 @@
             persistent
         >
             <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h1>{{ $t('navd.cf') }}</h1>
                 </v-toolbar>
                 <v-row>

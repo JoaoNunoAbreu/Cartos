@@ -33,7 +33,7 @@
                 ></v-text-field>
                 <v-dialog persistent v-model="dialog" max-width="800px">
                     <template v-slot:activator="{ on }">
-                        <v-btn color="#2A3F54" dark class="mb-2" v-on="on" @click="editItem({}, 'adicionar')">
+                        <v-btn style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark class="mb-2" v-on="on" @click="editItem({}, 'adicionar')">
                             <v-icon>mdi-file-plus</v-icon>
                         </v-btn>
                     </template>
@@ -109,7 +109,7 @@
             persistent
         >
             <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                     <h2>{{$t('navd.docum')}}</h2>
                 </v-toolbar>
                 <v-row>
@@ -165,7 +165,7 @@
                     <v-spacer></v-spacer>
                     <v-tooltip bottom>
                     <template v-slot:activator="{ on: tooltip }">
-                        <v-btn color="#2A3F54" dark @click="noCVDialog = false" v-on="{ ...tooltip}">
+                        <v-btn style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark @click="noCVDialog = false" v-on="{ ...tooltip}">
                         <v-icon>mdi-exit-to-app</v-icon>
                         </v-btn>
                     </template>

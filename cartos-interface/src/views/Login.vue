@@ -4,7 +4,7 @@
       <v-img class="center" src="@/assets/cartos_logo.png" max-height="150px" max-width="150px" @click="popup = true"/>
       <v-dialog @keydown.esc="popup = false" v-model="popup" scrollable width="500">
         <v-card>
-          <v-toolbar color="#2A3F54" dark>
+          <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
             <h2>{{ $t('nav.sabermais') }}</h2>
           </v-toolbar>
 
@@ -84,7 +84,7 @@
       persistent
     >
       <v-card>
-        <v-toolbar color="#2A3F54" dark>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
           <h1>Login</h1>
         </v-toolbar>
         <v-row>
@@ -120,7 +120,7 @@
       persistent
     >
       <v-card height="100%" width="100%">
-        <v-toolbar color="#2A3F54" dark>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
           <h1>{{$t('reg.pag')}}</h1>
         </v-toolbar>
         <v-card-actions>
@@ -250,7 +250,7 @@
       persistent
     >
       <v-card>
-        <v-toolbar color="#2A3F54" dark>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
           <h1>Login</h1>
         </v-toolbar>
         <v-row>
@@ -281,7 +281,7 @@
     </v-dialog>
     <v-dialog @keydown.esc="failureDialog = false" v-model="failureDialog" scrollable width="500"> 
       <v-card>
-        <v-toolbar color="#2A3F54" dark>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
           <h2>{{$t('reg.pag')}}</h2>
         </v-toolbar>
         <v-divider

@@ -32,7 +32,7 @@
                     ></v-text-field>
                     <v-tooltip bottom>
                         <template v-slot:activator="{ on: tooltip }">
-                        <v-btn color="#2A3F54" dark class="mb-2" @click="dialog = true" v-on="{ ...tooltip}">
+                        <v-btn style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark class="mb-2" @click="dialog = true" v-on="{ ...tooltip}">
                             <v-icon>mdi-trash-can</v-icon>
                         </v-btn>
                         </template>
@@ -47,7 +47,7 @@
                         persistent
                     >
                         <v-card>
-                            <v-toolbar color="#2A3F54" dark>
+                            <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                                 <h1>{{$t('hist.haccess')}}</h1>
                             </v-toolbar>
                             <v-row>

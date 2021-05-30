@@ -1,0 +1,2586 @@
+
+> cartos@0.1.0 serve /home/cartos.di.uminho.pt/LEI/cartos-interface
+> vue-cli-service serve --port=16000
+
+ INFO  Starting development server...
+ ERROR  Failed to compile with 1 error10:22:31 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:24:29 PM
+
+ ERROR  Failed to compile with 1 error10:24:31 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  707:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:24:31 PM
+
+ ERROR  Failed to compile with 1 error10:24:32 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  707:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:25:48 PM
+
+ ERROR  Failed to compile with 1 error10:25:50 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  707:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:25:50 PM
+
+ ERROR  Failed to compile with 1 error10:25:51 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  707:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:25:58 PM
+
+ ERROR  Failed to compile with 1 error10:25:59 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  707:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:30:05 PM
+
+ ERROR  Failed to compile with 1 error10:30:06 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  707:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:30:28 PM
+
+ ERROR  Failed to compile with 1 error10:30:29 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  707:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:30:56 PM
+
+ ERROR  Failed to compile with 1 error10:30:58 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  707:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:30:58 PM
+
+ ERROR  Failed to compile with 1 error10:30:58 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  707:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:34:38 PM
+
+ ERROR  Failed to compile with 1 error10:34:40 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  705:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:35:02 PM
+
+ ERROR  Failed to compile with 1 error10:35:06 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:35:42 PM
+
+ ERROR  Failed to compile with 1 error10:35:43 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:35:58 PM
+
+ ERROR  Failed to compile with 1 error10:35:59 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:36:37 PM
+
+ ERROR  Failed to compile with 1 error10:36:38 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:36:42 PM
+
+ ERROR  Failed to compile with 1 error10:36:43 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:36:44 PM
+
+ ERROR  Failed to compile with 1 error10:36:45 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:36:45 PM
+
+ ERROR  Failed to compile with 1 error10:36:46 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:37:09 PM
+
+ ERROR  Failed to compile with 1 error10:37:10 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:37:10 PM
+
+ ERROR  Failed to compile with 1 error10:37:11 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:37:30 PM
+
+ ERROR  Failed to compile with 1 error10:37:30 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:37:31 PM
+
+ ERROR  Failed to compile with 1 error10:37:31 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:38:02 PM
+
+ ERROR  Failed to compile with 1 error10:38:03 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  706:37  error  'backTo' is not defined  no-undef
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:38:41 PM
+
+ ERROR  Failed to compile with 1 error10:38:43 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  707:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:38:43 PM
+
+ ERROR  Failed to compile with 1 error10:38:44 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  707:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:39:16 PM
+
+ ERROR  Failed to compile with 1 error10:39:17 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:39:29 PM
+
+ ERROR  Failed to compile with 1 error10:39:31 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:39:31 PM
+
+ ERROR  Failed to compile with 1 error10:39:31 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:42:11 PM
+
+ ERROR  Failed to compile with 1 error10:42:13 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:42:13 PM
+
+ ERROR  Failed to compile with 1 error10:42:14 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...10:42:24 PM
+
+ ERROR  Failed to compile with 1 error10:42:25 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:06:10 PM
+
+ ERROR  Failed to compile with 1 error11:06:11 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:07:23 PM
+
+ ERROR  Failed to compile with 1 error11:07:24 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:07:48 PM
+
+ ERROR  Failed to compile with 1 error11:07:48 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:08:23 PM
+
+ ERROR  Failed to compile with 1 error11:08:24 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:08:39 PM
+
+ ERROR  Failed to compile with 1 error11:08:40 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:08:42 PM
+
+ ERROR  Failed to compile with 1 error11:08:43 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:09:19 PM
+
+ ERROR  Failed to compile with 1 error11:09:20 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  613:43  error  'tthis' is not defined                                      no-undef
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 3 problems (3 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:09:38 PM
+
+ ERROR  Failed to compile with 1 error11:09:40 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:09:51 PM
+
+ ERROR  Failed to compile with 1 error11:09:52 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:09:52 PM
+
+ ERROR  Failed to compile with 1 error11:09:53 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:10:44 PM
+
+ ERROR  Failed to compile with 1 error11:10:45 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:10:53 PM
+
+ ERROR  Failed to compile with 1 error11:10:54 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  674:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  708:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:11:51 PM
+
+ ERROR  Failed to compile with 1 error11:11:52 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  675:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  709:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:12:06 PM
+
+ ERROR  Failed to compile with 1 error11:12:08 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  675:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  709:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:13:14 PM
+
+ ERROR  Failed to compile with 1 error11:13:16 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:13:19 PM
+
+ ERROR  Failed to compile with 1 error11:13:20 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  675:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  709:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:13:24 PM
+
+ ERROR  Failed to compile with 1 error11:13:25 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:15:13 PM
+
+ ERROR  Failed to compile with 1 error11:15:14 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:15:29 PM
+
+ ERROR  Failed to compile with 1 error11:15:31 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:15:47 PM
+
+ ERROR  Failed to compile with 1 error11:15:48 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:16:07 PM
+
+ ERROR  Failed to compile with 1 error11:16:08 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:16:20 PM
+
+ ERROR  Failed to compile with 1 error11:16:21 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:17:00 PM
+
+ ERROR  Failed to compile with 1 error11:17:01 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:29:49 PM
+
+ ERROR  Failed to compile with 1 error11:29:51 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:33:07 PM
+
+ ERROR  Failed to compile with 1 error11:33:08 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  676:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  710:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:33:26 PM
+
+ ERROR  Failed to compile with 1 error11:33:28 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  677:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  711:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:34:31 PM
+
+ ERROR  Failed to compile with 1 error11:34:33 PM
+
+ error  in ./src/components/elementoFormEditable.vue?vue&type=script&lang=js&
+
+Syntax Error: Unexpected token (613:2)
+
+  611 |         }),
+  612 |      
+> 613 |   },
+      |   ^
+  614 |   methods: {
+  615 |     onUpdate() {
+  616 |       this.id = this.elemento.id;
+
+
+ @ ./src/components/elementoFormEditable.vue?vue&type=script&lang=js& 1:0-289 1:305-308 1:310-596 1:310-596
+ @ ./src/components/elementoFormEditable.vue
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:34:41 PM
+
+ ERROR  Failed to compile with 1 error11:34:42 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  677:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  711:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:36:27 PM
+
+ ERROR  Failed to compile with 1 error11:36:28 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  662:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  696:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:36:28 PM
+
+ ERROR  Failed to compile with 1 error11:36:29 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  662:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  696:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:36:53 PM
+
+ ERROR  Failed to compile with 1 error11:36:54 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  662:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  696:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:36:54 PM
+
+ ERROR  Failed to compile with 1 error11:36:55 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  662:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  696:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:37:20 PM
+
+ ERROR  Failed to compile with 1 error11:37:21 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  649:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  683:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:38:03 PM
+
+ ERROR  Failed to compile with 1 error11:38:05 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  628:7   error  'getCapa' is not defined                                    no-undef
+  629:7   error  'getVideo' is not defined                                   no-undef
+  650:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  684:37  error  'backTo' is not defined                                     no-undef
+
+✖ 4 problems (4 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:38:44 PM
+
+ ERROR  Failed to compile with 1 error11:38:45 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  650:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  684:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:39:04 PM
+
+ ERROR  Failed to compile with 1 error11:39:05 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  650:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  684:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:39:58 PM
+
+ ERROR  Failed to compile with 1 error11:39:59 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  650:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  684:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:41:38 PM
+
+ ERROR  Failed to compile with 1 error11:41:39 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  650:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  684:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:41:48 PM
+
+ ERROR  Failed to compile with 1 error11:41:49 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  650:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  684:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:41:59 PM
+
+ ERROR  Failed to compile with 1 error11:42:00 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  650:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  684:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:56:36 PM
+
+ ERROR  Failed to compile with 1 error11:56:38 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  650:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  684:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...11:57:22 PM
+
+ ERROR  Failed to compile with 1 error11:57:23 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  650:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  684:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:00:35 AM
+
+ ERROR  Failed to compile with 1 error12:00:37 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  651:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  685:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:06:07 AM
+
+ ERROR  Failed to compile with 1 error12:06:09 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  651:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  685:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:10:45 AM
+
+ ERROR  Failed to compile with 1 error12:10:47 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  651:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  685:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:11:05 AM
+
+ ERROR  Failed to compile with 1 error12:11:06 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  651:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  685:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:11:24 AM
+
+ ERROR  Failed to compile with 1 error12:11:25 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  651:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  685:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:13:25 AM
+
+ ERROR  Failed to compile with 1 error12:13:26 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  651:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  685:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:14:05 AM
+
+ ERROR  Failed to compile with 1 error12:14:07 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  652:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  686:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:14:07 AM
+
+ ERROR  Failed to compile with 1 error12:14:08 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  652:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  686:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:15:19 AM
+
+ ERROR  Failed to compile with 1 error12:15:20 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  652:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  686:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:15:49 AM
+
+ ERROR  Failed to compile with 1 error12:15:50 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  652:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  686:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:15:50 AM
+
+ ERROR  Failed to compile with 1 error12:15:51 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  652:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  686:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:21:34 AM
+
+ ERROR  Failed to compile with 1 error12:21:36 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  652:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  686:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:24:33 AM
+
+ ERROR  Failed to compile with 1 error12:24:35 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  649:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  683:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:24:42 AM
+
+ ERROR  Failed to compile with 1 error12:24:43 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:24:45 AM
+
+ ERROR  Failed to compile with 1 error12:24:46 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  643:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  677:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:24:48 AM
+
+ ERROR  Failed to compile with 1 error12:24:49 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  643:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  677:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:26:12 AM
+
+ ERROR  Failed to compile with 1 error12:26:14 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  640:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  674:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:26:30 AM
+
+ ERROR  Failed to compile with 1 error12:26:31 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  643:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  677:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:26:31 AM
+
+ ERROR  Failed to compile with 1 error12:26:32 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  643:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  677:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:26:34 AM
+
+ ERROR  Failed to compile with 1 error12:26:35 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  642:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  676:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:27:55 AM
+
+ ERROR  Failed to compile with 1 error12:27:57 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  644:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  678:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:29:52 AM
+
+ ERROR  Failed to compile with 1 error12:29:53 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  644:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  678:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:30:36 AM
+
+ ERROR  Failed to compile with 1 error12:30:38 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  644:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  678:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:31:38 AM
+
+ ERROR  Failed to compile with 1 error12:31:40 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:32:16 AM
+
+ ERROR  Failed to compile with 1 error12:32:18 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:32:23 AM
+
+ ERROR  Failed to compile with 1 error12:32:24 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:33:19 AM
+
+ ERROR  Failed to compile with 1 error12:33:21 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  151:47  error  Parsing error: missing-whitespace-between-attributes        vue/no-parsing-error
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+
+✖ 3 problems (3 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:33:34 AM
+
+ ERROR  Failed to compile with 1 error12:33:36 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:34:15 AM
+
+ ERROR  Failed to compile with 1 error12:34:17 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+  781:20  error  'hasVideo' is not defined                                   no-undef
+
+✖ 3 problems (3 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:34:24 AM
+
+ ERROR  Failed to compile with 1 error12:34:25 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+  781:30  error  'hasVideo' is not defined                                   no-undef
+
+✖ 3 problems (3 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:34:54 AM
+
+ ERROR  Failed to compile with 1 error12:34:55 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:35:31 AM
+
+ ERROR  Failed to compile with 1 error12:35:32 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:35:47 AM
+
+ ERROR  Failed to compile with 1 error12:35:48 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  646:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  680:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:41:55 AM
+
+ ERROR  Failed to compile with 1 error12:41:58 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  655:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  689:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:43:15 AM
+
+ ERROR  Failed to compile with 1 error12:43:16 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:44:07 AM
+
+ ERROR  Failed to compile with 1 error12:44:09 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:44:59 AM
+
+ ERROR  Failed to compile with 1 error12:45:00 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:45:00 AM
+
+ ERROR  Failed to compile with 1 error12:45:01 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:45:03 AM
+
+ ERROR  Failed to compile with 1 error12:45:04 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:45:46 AM
+
+ ERROR  Failed to compile with 1 error12:45:47 AM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:43:46 PM
+
+ ERROR  Failed to compile with 1 error12:43:48 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:43:56 PM
+
+ ERROR  Failed to compile with 1 error12:43:57 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:44:13 PM
+
+ ERROR  Failed to compile with 1 error12:44:15 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:44:25 PM
+
+ ERROR  Failed to compile with 1 error12:44:26 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+
+ WAIT  Compiling...12:44:45 PM
+
+ ERROR  Failed to compile with 1 error12:44:46 PM
+
+ error  in ./src/components/elementoFormEditable.vue
+
+Module Error (from ./node_modules/eslint-loader/index.js):
+
+/home/cartos.di.uminho.pt/LEI/cartos-interface/src/components/elementoFormEditable.vue
+  656:9   error  Unexpected newline between function and ( of function call  no-unexpected-multiline
+  690:37  error  'backTo' is not defined                                     no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/Resultados.vue?vue&type=script&lang=js& 241:0-74 267:26-46
+ @ ./src/views/Resultados.vue?vue&type=script&lang=js&
+ @ ./src/views/Resultados.vue
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi (webpack)-dev-server/client?http://192.168.85.244:16000/sockjs-node (webpack)/hot/dev-server.js ./src/main.js
+

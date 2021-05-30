@@ -1,6 +1,6 @@
 <template>
       <v-card>
-        <v-toolbar color="#2A3F54" dark>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
           <h2>{{ $t("fol.aviso") }}</h2>
         </v-toolbar>
         <v-row>

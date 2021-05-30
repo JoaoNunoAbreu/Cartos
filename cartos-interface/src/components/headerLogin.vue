@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app color="#2A3F54">
+    <v-app-bar app style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);">
         <div class="spacer"></div>
         <v-tooltip bottom> 
             <template v-slot:activator="{ on }">

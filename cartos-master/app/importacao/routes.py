@@ -38,18 +38,16 @@ def route_template_passo6():
             ficheiro.save(path)
     if 'capa' in request.files:
         capa = request.files['capa']
-        extension=os.path.splitext(capa.filename)[1];
         if capa.filename != '':
             capa.filename = request.form.get('id')
             upload_path = join(dirname(realpath(__file__)),'..' ,'elementos/static/pics/')
-            capa.save(upload_path + capa.filename + extension)
+            capa.save(upload_path + capa.filename + ".png")
     if 'video' in request.files:
         video = request.files['video']
-        extension=os.path.splitext(video.filename)[1];
         if video.filename != '':
             video.filename = request.form.get('id')
             upload_path = join(dirname(realpath(__file__)),'..' ,'elementos/static/pics/')
-            video.save(upload_path + video.filename + extension)
+            video.save(upload_path + video.filename + ".mp4")
     
     aux = Aux
     aux.save_element(request.form['id'],request.form['titulo'],request.form['colecao'],request.form['numero'],request.form['serie'],request.form['lingua'],\

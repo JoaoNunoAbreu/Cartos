@@ -6,7 +6,7 @@
           permanent
           :expand-on-hover="expandOnHover"
           :mini-variant="miniVariant"
-          color='#2A3F54'
+          style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);"
           class="navBar"
         >
 
@@ -108,7 +108,7 @@
             </v-list-item>
             <v-dialog @keydown.esc="about = false" v-model="about" scrollable width="500">
               <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{ $t('nav.sabermais') }}</h2>
                 </v-toolbar>
                 <v-divider
@@ -142,7 +142,7 @@
             </v-list-item>
             <v-dialog @keydown.esc="credits = false"  v-model="credits" scrollable width="500">
               <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{ $t('nav.creditos') }}</h2>
                 </v-toolbar>
                 
@@ -177,7 +177,7 @@
             </v-list-item>
             <v-dialog @keydown.esc="terms = false" v-model="terms" scrollable  width="500">
               <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{ $t('nav.termos') }}</h2>
                 </v-toolbar>
 
@@ -212,7 +212,7 @@
             </v-list-item>
             <v-dialog @keydown.esc="priv = false" v-model="priv" scrollable width="500">
               <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{ $t('nav.privacidade') }}</h2>
                 </v-toolbar>
                 
@@ -308,7 +308,7 @@ export default {
 <style scoped>
 
 header{
-    background:#2A3F54;
+    background: linear-gradient(to top, #376a53 0%, #549d7c 100%);
     padding: 10px;
 }
 

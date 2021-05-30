@@ -1,7 +1,7 @@
 <template>
   <div id="registar">
       <v-card height="100%" width="100%">
-        <v-toolbar color="#2A3F54" dark>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
           <h1>{{$t('navd.pedidos')}}</h1>
         </v-toolbar>
         <v-card-title v-if= "value === 'adicionar'">
@@ -104,7 +104,7 @@
           </v-tooltip>
           <v-dialog @keydown.esc="dialogHelp = false"  v-model="dialogHelp" scrollable width="500">
             <v-card>
-              <v-toolbar color="#2A3F54" dark>
+              <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{$t('navd.pedidos')}}</h2>
               </v-toolbar>
               <v-row>

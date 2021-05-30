@@ -1,6 +1,6 @@
 <template>
   <div id="registar">
-    <v-toolbar color="#2A3F54" dark>
+    <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
       <h1>{{$t('navd.tags')}}</h1>
     </v-toolbar>
     <v-card v-if= "value === 'ver'">
@@ -153,7 +153,7 @@
           </v-tooltip>
           <v-dialog @keydown.esc="dialogHelp = false"  v-model="dialogHelp" scrollable width="500">
             <v-card>
-              <v-toolbar color="#2A3F54" dark>
+              <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{$t('navd.tags')}}</h2>
               </v-toolbar>
               <v-row>

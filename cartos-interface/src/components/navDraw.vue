@@ -5,15 +5,13 @@
           v-if="true"
           permanent
           :mini-variant="false"
-          color='#2A3F54'
-          class="navBar"
+          style="background: linear-gradient(to bottom, #376a53 50%, #549d7c 100%);"
         >
           <v-list
             nav
             dense
             dark
           >
-            <v-divider light></v-divider>
             <v-list-item link to="/admin/homeAdmin">
               <v-list-item-icon>
                 <v-icon>mdi-home</v-icon>
@@ -40,7 +38,7 @@
               no-action
             >
               <template v-slot:activator>
-                <v-list-item-title class="white--text">{{$t('navd.analysis')}}</v-list-item-title>
+                <v-list-item-title  color="#549D7C" class="white--text">{{$t('navd.analysis')}}</v-list-item-title>
               </template>
               <v-list-item link to="/admin/analise">
                 <v-list-item-title class="white--text">{{$t('nav.barraPesquisa')}}</v-list-item-title>
@@ -88,7 +86,7 @@
             </v-list-item>
             <v-dialog @keydown.esc="about = false" v-model="about" scrollable width="500">
               <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{ $t('nav.sabermais') }}</h2>
                 </v-toolbar>
 
@@ -123,7 +121,7 @@
             </v-list-item>
             <v-dialog @keydown.esc="credits = false"  v-model="credits" scrollable width="500">
               <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{ $t('nav.creditos') }}</h2>
                 </v-toolbar>
                 
@@ -158,7 +156,7 @@
             </v-list-item>
             <v-dialog @keydown.esc="terms = false" v-model="terms" scrollable  width="500">
               <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{ $t('nav.termos') }}</h2>
                 </v-toolbar>
 
@@ -193,7 +191,7 @@
             </v-list-item>
             <v-dialog @keydown.esc="priv = false" v-model="priv" scrollable width="500"> 
               <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{ $t('nav.privacidade') }}</h2>
                 </v-toolbar>
                 <v-divider
@@ -310,12 +308,10 @@ export default {
             }
 
         }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
       },
       logout: function(){
-        //console.log("destroy token here")
         this.$store.commit("guardaTokenUtilizador", "")
         this.$store.commit("guardaNomeUtilizador", "")
         this.$router.push( {path:`/admin/login`})
@@ -327,7 +323,6 @@ export default {
 <style scoped>
 
 header{
-    background:#2A3F54;
     padding: 10px;
 }
 

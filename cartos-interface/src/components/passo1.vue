@@ -326,7 +326,7 @@
                   width="500"
                 >
                   <v-card>
-                    <v-toolbar color="#2A3F54" dark>
+                    <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                       <h3>{{ $t("navd.importAjuda") }}</h3>
                     </v-toolbar>
                     <v-divider class="mx-4" horizontal></v-divider>
@@ -387,7 +387,7 @@
       width="500"
     >
       <v-card class="mx-auto">
-        <v-toolbar color="#2A3F54" dark>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
           <h3 class="mx-auto">{{ $t("navd.importAjuda") }}</h3>
         </v-toolbar>
         <v-divider class="mx-4" horizontal></v-divider>

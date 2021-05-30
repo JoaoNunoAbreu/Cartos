@@ -11,7 +11,7 @@
             <v-card>
                 <v-window v-model="model">
                     <v-window-item v-for="n in 1" :key="n">
-                        <v-toolbar dark flat color="#2A3F54">
+                        <v-toolbar dark flat style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);">
                             <h3 class="ml-5"> {{$t('imp.passo')}}</h3>
                         </v-toolbar>
                         <passo1 v-if="n == 1 && renderComponent" :elemento="info" :cancelado="cancelado" @atualizaElemento=atualizaElemento($event) @submeterElemento=submeterElemento() ></passo1>
@@ -41,7 +41,7 @@
                             persistent
                         >
                             <v-card>
-                                <v-toolbar color="#2A3F54" dark>
+                                <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                                     <h2>{{$t('reg.pag')}}</h2>
                                 </v-toolbar>
                                 <v-row>
@@ -77,7 +77,7 @@
         </v-sheet>
         <v-dialog @keydown.esc="failureDialog = false" v-model="failureDialog" scrollable width="500"> 
             <v-card>
-                <v-toolbar color="#2A3F54" dark>
+                <v-toolbar cstyle="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                 <h2>{{$t('reg.pag')}}</h2>
                 </v-toolbar>
                 <v-divider
@@ -138,6 +138,7 @@
                 dataPub: "",
                 ficheiro: null,
                 capa: null,
+                video:null,
                 tipo: "",
             },
             passo6info: {},
@@ -175,6 +176,7 @@
                 this.dataPub = ""
                 this.ficheiro = null
                 this.capa = null
+                this.video = null
                 this.tipo = ""
                 // ----------------------------
                 this.model = 0
@@ -198,6 +200,7 @@
                 this.info.dataPub = elemento.dataPub
                 this.info.ficheiro = elemento.ficheiro
                 this.info.capa = elemento.capa
+                this.info.video = elemento.video
                 this.info.tipo = elemento.tipo
                 this.submeterElemento();
             },
@@ -217,6 +220,7 @@
                 formData.append('dataPub',this.info.dataPub)
                 formData.append('ficheiro',this.info.ficheiro)
                 formData.append('capa',this.info.capa)
+                formData.append('video',this.info.video)
                 formData.append('tipo',this.info.tipo)
 
                 axios.post(this.url+`/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{

@@ -1,18 +1,7 @@
 <template>
   <nav>
-    <v-toolbar flat color='#2A3F54'>
-      <v-spacer></v-spacer> 
-      <!--
-      <div class="flag" @click="setLocale('pt')">
-        <img class="mx-2 mt-2" :src="require('../assets/portugal.png')" height="30"/> 
-      </div>
-      <div class="flag" @click="setLocale('en')">
-        <img class="mt-2" :src="require('../assets/uk.png')" height="30"/>
-      </div>
-      <div class="flag" @click="setLocale('es')">
-        <img class="mx-2 mt-2" :src="require('../assets/spain.png')" height="19"/> 
-      </div> 
-      -->
+    <v-toolbar flat style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);">
+      <v-spacer></v-spacer>
       <v-tooltip bottom> 
         <template v-slot:activator="{ on }">
         <v-btn text small class="white--text change-font" v-bind:class="{active: activeBtn === 'btn1' }" @click="setLocale('pt'); activeBtn = 'btn1'" v-on="on">PT</v-btn>

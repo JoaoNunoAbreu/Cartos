@@ -37,7 +37,7 @@
                 v-if="$store.state.user.tipo === 'Admin'"
                 link
                 to="/admin/import"
-                color="#2A3F54"
+                style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);"
                 dark
                 v-on="{ ...tooltip }"
                 class="mr-5"
@@ -53,7 +53,7 @@
             <template v-slot:activator="{ on: tooltip }">
               <v-btn
                 link
-                color="#2A3F54"
+                style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);"
                 dark
                 v-on="{ ...tooltip }"
                 @click="printSection"
@@ -65,33 +65,6 @@
               {{ $t("fol.print") }}
             </span>
           </v-tooltip>
-
-          <v-dialog persistent v-model="dialog" max-width="800px">
-            <elementoFormEditable
-              :elemento="item"
-              :isDisabled="true"
-              :isDeleting="false"
-              @emiteFecho="emiteFecho($event)"
-            ></elementoFormEditable>
-          </v-dialog>
-
-          <v-dialog persistent v-model="dialogEdit" max-width="800px">
-            <elementoFormEditable
-              :elemento="item"
-              :isDisabled="false"
-              :isDeleting="false"
-              @emiteFecho="emiteFecho($event)"
-            ></elementoFormEditable>
-          </v-dialog>
-
-          <v-dialog persistent v-model="dialogDelete" max-width="800px">
-            <elementoFormEditable
-              :elemento="item"
-              :isDisabled="true"
-              :isDeleting="true"
-              @emiteFecho="emiteFecho($event)"
-            ></elementoFormEditable>
-          </v-dialog>
 
         </v-toolbar>
       </template>
@@ -119,6 +92,32 @@
         <v-icon v-if="$store.state.user.tipo === 'Admin'" small @click="deleteItem(item)"> mdi-trash-can </v-icon>
       </template>
     </v-data-table>
+    <v-dialog persistent v-model="dialog" max-width="800px">
+            <elementoFormEditable
+              :elemento="item"
+              :isDisabled="true"
+              :isDeleting="false"
+              @emiteFecho="emiteFecho($event)"
+            ></elementoFormEditable>
+    </v-dialog>
+    <v-dialog persistent v-model="dialogEdit" max-width="800px">
+            <elementoFormEditable
+              :elemento="item"
+              :isDisabled="false"
+              :isDeleting="false"
+              @emiteFecho="emiteFecho($event)"
+            ></elementoFormEditable>
+    </v-dialog>
+
+    <v-dialog persistent v-model="dialogDelete" max-width="800px">
+            <elementoFormEditable
+              :elemento="item"
+              backTo="/admin/elementos"
+              :isDisabled="true"
+              :isDeleting="true"
+              @emiteFecho="emiteFecho($event)"
+            ></elementoFormEditable>
+    </v-dialog>
     <v-dialog v-model="picDialog" width="800px">
       <v-card>
         <v-img v-bind:src="elementoPic" contain aspect-ratio="1.5" />
@@ -141,7 +140,7 @@
     </v-dialog>
     <v-dialog v-model="noPicDialog" width="500px">
       <v-card>
-        <v-toolbar color="#2A3F54" dark>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
           <h2>{{ $t("fol.title") }}</h2>
         </v-toolbar>
         <v-row>
@@ -230,7 +229,7 @@ export default {
       picDialog: false,
       noPicDialog: false,
       tempValue: "",
-      item: {},
+      item: null,
     };
   },
   watch: {
@@ -345,10 +344,10 @@ export default {
 }
 /* .tommitable .v-data-table .table{ */
 .v-data-table /deep/ th {
-  background-color: #4b779e;
+  background: linear-gradient(to top, #376a53 0%, #549d7c 100%);
 }
 .v-data-table /deep/ tr {
-  color: #73879C;
+  color: black;
   font-size: 13px;
 }
 .v-data-table /deep/ tr:nth-child(even) {

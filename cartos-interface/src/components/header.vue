@@ -1,10 +1,10 @@
 <template>
-    <v-app-bar app color="#2A3F54" height="100" clipped-left>
+    <v-app-bar app style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" height="100" clipped-left>
         <v-list
             nav
             dense
             dark
-            color="#2A3F54"
+            style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);"
         >
             <v-list-item two-line class="px-0">
                 <v-list-item-avatar min-width="55px" tile class="ava" @click="about = true">
@@ -17,7 +17,7 @@
             </v-list-item>
             <v-dialog @keydown.esc="about = false" v-model="about" scrollable width="500">
                 <v-card>
-                    <v-toolbar color="#2A3F54" dark>
+                    <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                         <h2>{{ $t('nav.sabermais') }}</h2>
                     </v-toolbar>
                     <v-divider

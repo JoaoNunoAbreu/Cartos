@@ -227,6 +227,7 @@
       <v-dialog persistent v-model="dialogElemento" max-width="800px">
             <elementoFormEditable
               :elemento="elementoAtual"
+              backTo="/resultados"
               :isDisabled="true"
               :isDeleting="false"
               @emiteFecho="emiteFecho($event)"
@@ -242,7 +243,7 @@ import ElementoFormEditable from "../components/elementoFormEditable.vue";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import resultado from "../views/Resultado";
+
 import PopupCartos from '../components/PopupCartos'
 
 export default {
@@ -265,7 +266,6 @@ export default {
   components: {
     Navbar,
     Footer,
-    resultado,
     PopupCartos,
     ElementoFormEditable
   },

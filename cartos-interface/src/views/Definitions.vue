@@ -34,7 +34,7 @@
                 ></v-text-field>
                 <v-dialog persistent v-model="dialog" max-width="500px">
                     <template v-slot:activator="{ on }">
-                        <v-btn  v-if="$store.state.user.tipo === 'Admin'" color="#2A3F54" dark class="mb-2" v-on="on" @click="editItem({}, 'adicionar')"><v-icon>mdi-plus</v-icon></v-btn>
+                        <v-btn  v-if="$store.state.user.tipo === 'Admin'" style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark class="mb-2" v-on="on" @click="editItem({}, 'adicionar')"><v-icon>mdi-plus</v-icon></v-btn>
                     </template>
                     <definitionForm :value='value' :passedData='editedItem' @atualizarInfo=atualizarInfo($event) @emiteFecho=emiteFecho($event)></definitionForm>
                 </v-dialog>

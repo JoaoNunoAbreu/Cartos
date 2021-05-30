@@ -134,7 +134,8 @@
                   </div>
                 </div>
                 <div class="child-left">
-                  <label>{{ $t("p1.foto") }}:</label>
+                  <label v-if="hasCapa===true" >{{ $t("p1.capa") }}:</label>
+                  <!--
                   <v-file-input
                     :disabled="isDisabled"
                     show-size
@@ -145,6 +146,12 @@
                   >
                   </v-file-input>
                   <v-img :src="this.url" contain></v-img>
+                  -->
+                  <v-img v-if="hasCapa===true" v-bind:src="capa" contain max-width="100" />
+                  <label v-if="hasVideo===true">{{ $t("p1.Video") }}:</label>
+                  <div>
+                    <video v-if="hasVideo===true" width="200" :src="video" controls contain></video>
+                  </div>
                 </div>
               </div>
               <div class="p-container">
@@ -334,7 +341,7 @@
                   width="500"
                 >
                   <v-card>
-                    <v-toolbar color="#2A3F54" dark>
+                    <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                       <h3>{{ $t("navd.importAjuda") }}</h3>
                     </v-toolbar>
                     <v-divider class="mx-4" horizontal></v-divider>
@@ -367,7 +374,7 @@
                   <template v-slot:activator="{ on: tooltip }">
                     <v-btn
                       link
-                      to="/admin/elementos"
+                      :to="backTo"
                       v-on="{ ...tooltip }"
                       color="#26B99A"
                       class="white--text mr-3"
@@ -390,7 +397,7 @@
     </v-dialog>
     <v-dialog v-model="deleteDialog" scrollable width="500" persistent>
        <v-card>
-        <v-toolbar color="#2A3F54" dark>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
           <h2>{{ $t("fol.conf") }}</h2>
         </v-toolbar>
         <v-row>
@@ -468,6 +475,7 @@ export default {
       ficheiro: null,
       tipo: "",
       capa: null,
+      video: null,
       url: process.env.VUE_APP_URL,
       dialog: false,
       counterCol: 0,
@@ -497,6 +505,8 @@ export default {
       maxNum: 3,
       maxPersChars: 100,
       deleteDialog: false,
+      hasVideo: false,
+      hasCapa: false
     };
   },
   props: {
@@ -509,6 +519,9 @@ export default {
     isDeleting: {
       type: Boolean,
     },
+    backTo: {
+      type: String,
+    }
   },
   watch: {
     elemento: {
@@ -532,10 +545,16 @@ export default {
         this.onUpdate();
       },
     },
+    backTo: {
+      immediate: true,
+      deep: true,
+      handler() {
+        this.onUpdate();
+      },
+    }
   },
   created() {
-    this.onUpdate();
-
+    
     axios
       .get(this.url + `/elementos/editoras`, {
         headers: {
@@ -591,10 +610,14 @@ export default {
         })
         .catch((e) => {
           this.errors.push(e);
-        });
+        })
   },
   methods: {
     onUpdate() {
+      this.hasVideo=false;
+      this.hasCapa=false;
+      console.log("   UPDATE    ")
+      this.video=null;
       this.id = this.elemento.id;
       this.titulo = this.elemento.titulo;
       this.colecao = this.elemento.colecao;
@@ -607,9 +630,10 @@ export default {
       this.estado = this.elemento.estado;
       this.editora = this.elemento.editora;
       this.dataPub = this.elemento.data_publicacao;
-      this.ficheiro = this.elemento.ficheiro;
       this.tipo = this.elemento.tipo;
-      this.capa = this.elemento.capa;
+      this.getCapa(this.elemento.id);
+      this.getVideo(this.elemento.id);
+      
     },
     reset() {
       //needs work for more resets
@@ -628,7 +652,8 @@ export default {
         (this.dataPub = ""),
         (this.ficheiro = null),
         (this.tipo = ""),
-        (this.capa = null);
+        (this.capa = null),
+        (this.video = null);
     },
     save() {
       let formData = new FormData();
@@ -646,6 +671,7 @@ export default {
       formData.append("dataPub", this.dataPub);
       formData.append("ficheiro", this.ficheiro);
       formData.append("capa", this.capa);
+      formData.append("video", this.video);
       formData.append("tipo", this.tipo);
 
       axios
@@ -661,15 +687,12 @@ export default {
         )
         .then(() => {
           this.model = 0;
-          this.$router.push({ path: `/admin/elementos` });
+          this.$router.push({ path: this.backTo });
         })
         .catch((e) => {
-          console.log("ERRO = " + e);
+          //console.log("ERRO = " + e);
           this.errors.push(e);
         });
-    },
-    previewImage: function () {
-      this.url = URL.createObjectURL(this.capa);
     },
     disableDropdown(tipo) {
       if (tipo == "col") {
@@ -746,6 +769,45 @@ export default {
           this.errors.push(e);
         });
     },
+    getCapa(id){
+      console.log("hascapa :  "+ this.hasCapa)
+      axios
+        .get(this.url + `/elementos/ver/${id}/foto`, {
+          responseType: "arraybuffer",
+        })
+        .then((response) => {
+          this.hasCapa=true;
+          var image = new Buffer(response.data, "binary").toString("base64");
+          this.capa = `data:${response.headers[
+            "content-type"
+          ].toLowerCase()};base64,${image}`;
+          //console.log("resoponse:" + image)
+        })
+        .catch((err) => {
+          //console.log("resoponse:" + err)
+          this.hasCapa=false;
+          this.error = err.message;
+        })
+    },
+    getVideo(id){
+       console.log("video :"+this.hasVideo)
+      axios
+        .get(this.url + `/elementos/ver/${id}/video`, {
+          responseType: "arraybuffer",
+        })
+        .then((response) => {
+          this.hasVideo=true;
+          var vi = new Buffer(response.data, "binary").toString("base64");
+          this.video = `data:${response.headers[
+            "content-type"
+          ].toLowerCase()};base64,${vi}`;
+        })
+        .catch((err) => {
+          this.hasVideo=false;
+         
+          this.error = err.message;
+        });
+    }
   },
   computed: {
     disableButton() {

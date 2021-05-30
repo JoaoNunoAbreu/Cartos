@@ -109,10 +109,21 @@ def route_template_ver_foto(elemento):
     pathPhoto = join(dirname(realpath(__file__)), 'static/pics/')
     pathCheck = join(pathPhoto, f)
     if path.exists(pathCheck) :
-        return send_from_directory(pathPhoto, f, mimetype='image/png')
+        return send_from_directory(pathPhoto, f, mimetype='image/*')
     else :
         return send_from_directory(pathPhoto, "default", mimetype='image/png')
 
+@blueprint.route('/ver/<elemento>/video', methods=['GET'])
+#@token_required
+#@login_required
+def route_template_ver_video(elemento):
+    f = elemento + ".mp4"
+    pathVideo = join(dirname(realpath(__file__)), 'static/pics/')
+    pathCheck = join(pathVideo, f)
+    if path.exists(pathCheck) :
+        return send_from_directory(pathVideo, f, mimetype='video/mp4')
+    else :
+        return send_from_directory(pathVideo, "default", mimetype='videp/png')
 
 @blueprint.route('/ver/<elemento>/ficheiro', methods=['GET'])
 def route_template_ver_ficheiro(elemento):

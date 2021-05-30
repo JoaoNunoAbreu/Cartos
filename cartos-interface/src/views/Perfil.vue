@@ -14,7 +14,7 @@
                     <v-img v-bind:src="userPic" contain aspect-ratio="0.9"/>
                     <v-col>
                         <v-btn
-                            color="#2A3F54"
+                            style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);"
                             dark
                             depressed
                             @click="onButtonClick('uploaderpic')"
@@ -95,13 +95,13 @@
                     </v-simple-table>
                     <v-row>
                         <v-col>
-                            <v-btn color="#2A3F54" dark depressed @click="onUpdate()">
+                            <v-btn style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark depressed @click="onUpdate()">
                                 <v-icon>mdi-file-pdf</v-icon> {{$t('perfil.vercur')}}
                             </v-btn>
                         </v-col>
                         <v-col>
                             <v-btn
-                                color="#2A3F54"
+                                style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);"
                                 dark
                                 depressed
                                 @click="onButtonClick('uploadercv');"

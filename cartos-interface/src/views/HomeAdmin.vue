@@ -9,7 +9,7 @@
                         <v-card class="text-center ml-10 mr-5">
                             <v-card-text>
                                 <h4><v-icon class="mr-2">mdi-folder-open</v-icon>{{$t('hAdmin.f')}}</h4>
-                                <h2 style="color:blue"><b>{{nElementos}}</b></h2>
+                                <h2 style="color:#549d7c"><b>{{nElementos}}</b></h2>
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -18,7 +18,7 @@
                         <v-card class="text-center ml-10 mr-5">
                             <v-card-text>
                                 <h4><v-icon class="mr-2">mdi-folder-open</v-icon>{{$t('hAdmin.col')}}</h4>
-                                <h2 style="color:blue"><b>{{nColecoes}}</b></h2>
+                                <h2 style="color:#549d7c"><b>{{nColecoes}}</b></h2>
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -27,7 +27,7 @@
                         <v-card class="text-center ml-10 mr-5">
                             <v-card-text>
                                 <h4><v-icon class="mr-2">mdi-account-multiple</v-icon>{{$t('hAdmin.users')}}</h4>
-                                <h2 style="color:blue"><b>{{nUsers}}</b></h2>
+                                <h2 style="color:#549d7c"><b>{{nUsers}}</b></h2>
                             </v-card-text>
                         </v-card>
                     </v-col>
@@ -39,7 +39,7 @@
             <h3 class="ml-10 mt-6">{{"Foram inseridos " + percent + "% dos elementos na última semana"}}</h3>
             <v-row>
                 <v-col>
-                    <v-card color="#2A3F54" dark class="text-center ml-10 mt-6 mr-10">
+                    <v-card style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark class="text-center ml-10 mt-6 mr-10">
                         <v-card-text>
                             <h2>{{$t('hAdmin.ins')}}</h2>
                         </v-card-text>
@@ -150,10 +150,10 @@ export default {
 </script>
 <style scoped>
     .v-data-table /deep/ th{
-        background-color:#4b779e;
+        background-color:black;
     }
     .v-data-table /deep/ tr{
-        color: #73879C;
+        color: black;
         font-size: 13px;
     }
     .v-data-table /deep/ tr:nth-child(even){
