@@ -88,8 +88,8 @@ def token_required(f):
         try:
             token = auth_headers[1]
             data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
-            query = f'match (n:User) where n.id = "{data["sub"]}" return n'
-            user = neo4j_db.run(query)
+            query = f'match (n:User) where n._id = "{data["sub"]}" return n'
+            user = neo4j_db.evaluate(query)
             now = datetime.datetime.now()
             date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
             did = ObjectId()
@@ -127,16 +127,16 @@ def admin_required(f):
         try:
             token = auth_headers[1]
             data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
-            query = f'match (n:User) where n.id = "{data["sub"]}" AND n.tipo = "Admin" return n'
-            user = neo4j_db.run(query)
+            query = f'match (n:User) where n._id = "{data["sub"]}" AND n.tipo = "Admin" return n'
+            user = neo4j_db.evaluate(query)
             now = datetime.datetime.now()
-            date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
+            ''' date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
             did = ObjectId()
-            reqstring= request.method + ":" + request.url
+            reqstring= request.method + ":" + request.url '''
             if not user:
                 raise RuntimeError('User or Administrator not found')
-            mongo.db.activeUsers.find_one_and_update({"_id":data['sub']},{"$set":{"_id":data['sub'],"stamp":date}},upsert=True)
-            mongo.db.history.insert_one({"_id":did, "user":data['sub'], "stamp":date, "request":reqstring})
+            ''' mongo.db.activeUsers.find_one_and_update({"_id":data['sub']},{"$set":{"_id":data['sub'],"stamp":date}},upsert=True)
+            mongo.db.history.insert_one({"_id":did, "user":data['sub'], "stamp":date, "request":reqstring}) '''
             return f(*args, **kwargs)
         except jwt.ExpiredSignatureError:
             return jsonify(expired_msg), 401 # 401 is Unauthorized HTTP status code
@@ -152,7 +152,8 @@ def photo_auth(request, picName):
     token = auth_headers[1]
     #data = jwt.decode(token, current_app.config['SECRET_KEY'])
     data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
-    user = mongo.db.users.find_one({"_id":data['sub']})
+    query = f'match (n:User) where n._id = "{data["sub"]}" AND n.tipo = "Admin" return n'
+    user = neo4j_db.evaluate(query)
     if user:
         if user['tipo'] == 'Admin':
             return True

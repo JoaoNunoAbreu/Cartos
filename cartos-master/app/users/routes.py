@@ -286,21 +286,21 @@ def route_template_registar_pedido():
             foto = request.files['foto']
             if foto.filename != '':
                 foto.filename = username
-                upload_path = join(dirname(realpath(__file__)), 'static/picsPedidos/')
+                upload_path = join(dirname(realpath(__file__)), 'static/pics/')
                 foto.save(upload_path + foto.filename)
             else:
-                src = join(dirname(realpath(__file__)), 'static/picsPedidos/', username + ".png") 
-                upload_path = join(dirname(realpath(__file__)), 'static/picsPedidos/', username + ".png")
+                src = join(dirname(realpath(__file__)), 'static/pics/', username + ".png") 
+                upload_path = join(dirname(realpath(__file__)), 'static/pics/', username + ".png")
                 copyfile(src, upload_path)
         if 'curriculo' in request.files:
             curriculo = request.files['curriculo']
             if curriculo.filename != '':
                 curriculo.filename = username
-                upload_path2 = join(dirname(realpath(__file__)), 'static/curriculoPedidos/')
+                upload_path2 = join(dirname(realpath(__file__)), 'static/curriculo/')
                 curriculo.save(upload_path2 + curriculo.filename)
             else:
-                src = join(dirname(realpath(__file__)), 'static/curriculoPedidos/', username + ".pdf") 
-                upload_path2 = join(dirname(realpath(__file__)), 'static/curriculoPedidos/', username + ".pdf")
+                src = join(dirname(realpath(__file__)), 'static/curriculo/', username + ".pdf") 
+                upload_path2 = join(dirname(realpath(__file__)), 'static/curriculo/', username + ".pdf")
                 copyfile(src, upload_path)
         obs = request.form.get('obs')
         neo4j_db.run('CREATE (n:User{_id:$username,nome:$name,email:$email,password:$password,tipo:$tipo,universidade:$universidade,departamento:$departamento,data:$data,obs:$obs})',
