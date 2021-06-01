@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from flask import Flask, url_for, request, jsonify
+from flask import Flask, url_for, request, jsonify, Blueprint
 from flask_login import LoginManager
 from importlib import import_module
 from logging import basicConfig, DEBUG, getLogger, StreamHandler
@@ -22,6 +22,12 @@ tags = []
 
 
 #################
+@login_manager.user_loader
+def user_loader(email):
+    return None
+
+from flasgger import Swagger
+
 import os
 from dotenv import load_dotenv
 from py2neo import Graph
@@ -65,6 +71,8 @@ def create_app(config, selenium=False):
     register_extensions(app)
     register_blueprints(app)
     apply_themes(app)
+
+    swag = Swagger(app)
     return app
 
 
