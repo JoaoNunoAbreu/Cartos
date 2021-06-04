@@ -3,15 +3,15 @@
         <v-navigation-drawer app
           clipped
           v-if="true"
-          permanent
-          :mini-variant="false"
+          :mini-variant="drawer"
           style="background: linear-gradient(to bottom, #376a53 50%, #549d7c 100%);"
         >
           <v-list
             nav
             dense
             dark
-          >
+          ><v-app-bar-nav-icon  @click="drawer = !drawer"></v-app-bar-nav-icon>
+             
             <v-list-item link to="/admin/homeAdmin">
               <v-list-item-icon>
                 <v-icon>mdi-home</v-icon>
@@ -23,6 +23,7 @@
               prepend-icon="mdi-folder-open"
               :value="false"
               no-action
+              @click="drawer = !drawer && drawer"
             >
               <template v-slot:activator>
                 <v-list-item-title class="white--text">{{$t('navd.documents')}}</v-list-item-title>
@@ -36,6 +37,7 @@
               prepend-icon="mdi-format-list-bulleted-square"
               :value="false"
               no-action
+              @click="drawer = !drawer && drawer"
             >
               <template v-slot:activator>
                 <v-list-item-title  color="#549D7C" class="white--text">{{$t('navd.analysis')}}</v-list-item-title>
@@ -52,6 +54,7 @@
               prepend-icon="mdi-account-multiple"
               :value="false"
               no-action
+              @click="drawer = !drawer && drawer"
             >
               <template v-slot:activator>
                 <v-list-item-title class="white--text">{{$t('navd.users')}}</v-list-item-title>
@@ -257,6 +260,7 @@ export default {
             nInds:0,
             runningDialog:false
             // hover:false
+            ,drawer:false
         }
     },
     created(){
