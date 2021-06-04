@@ -216,7 +216,7 @@ export default {
                     var pdf = new Buffer(response.data, 'binary').toString('base64')
                     this.cv = `data:${response.headers['content-type'].toLowerCase()};base64,${pdf}`
                 }).catch(e => {
-                    this.errors.push(e)
+                    console.log(e)
                 })
         },
         onPicChanged(e) {
@@ -234,7 +234,7 @@ export default {
                     var image = new Buffer(response.data, 'binary').toString('base64')
                     this.userPic = `data:${response.headers['content-type'].toLowerCase()};base64,${image}`
                 }).catch(e => {
-                    this.errors.push(e)
+                    console.log(e)
                 })
         },
         onUpdate(){
@@ -250,7 +250,7 @@ export default {
                 this.cvDialog=true
             }).catch(e => {
                 //console.log(e)
-                this.errors.push(e)
+                console.log(e)
             })
         },
         pageshift(shift){
@@ -272,7 +272,7 @@ export default {
             var image = new Buffer(response.data, 'binary').toString('base64')
             this.userPic = `data:${response.headers['content-type'].toLowerCase()};base64,${image}`
         }).catch(e => {
-            this.errors.push(e)
+            console.log(e)
         })
     }
 }

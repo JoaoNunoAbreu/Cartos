@@ -276,6 +276,7 @@ export default {
   methods: { 
     
     pesquisar() {
+      
       let params = {
                 pesquisa: this.pesquisa,
                 colecao: this.colecao, 

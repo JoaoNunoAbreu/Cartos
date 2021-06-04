@@ -132,10 +132,10 @@ export default {
 </script>
 <style scoped>
     .v-data-table /deep/ th{
-        background-color:#4b779e;
+        background: linear-gradient(to top, #376a53 0%, #549d7c 100%);
     }
     .v-data-table /deep/ tr{
-        color: #73879C;
+        color: black;
         font-size: 13px;
     }
     .v-data-table /deep/ tr:nth-child(even){

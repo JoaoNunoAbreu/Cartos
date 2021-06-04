@@ -183,7 +183,7 @@
               class="pa-15 change-font; text-left ; mx-auto"
               max-width="600"
             >
-              <div v-for="(item, index) in resultados" v-bind:key="item">
+              <div v-for="(item, index) in pageOfItems" v-bind:key="item">
                 <h3 class="font-weight-black change-font">
                   <a class="change-font" @click="showElemento(index)">{{
                     item.id
@@ -194,30 +194,13 @@
                 <p>{{ item.data_publicacao }}</p>
                 <br />
               </div>
-              <!--
-              <v-dialog
-                v-model="dialogElemento"
-                @keydown.esc="
-                  dialogElemento = !dialogElemento;
-                  conta = [];
-                "
-                persistent
-                scrollable
-                max-width="800px"
-              >
-                <v-card>
-                  <resultado
-                    :passedData="elementoAtual"
-                    @emiteFecho="emiteFecho($event)"
-                  ></resultado>
-                </v-card>
-              </v-dialog>-->
+
+              <!-- Pagination -->
               <div class="card-footer text-center change-font">
                 <jw-pagination
-                  v-if="resultados != null"
                   :items="resultados"
-                  @changePage="onChangePage"
-                ></jw-pagination>
+                  @changePage="onChangePage">
+                </jw-pagination>
               </div>
             </v-card>
           </v-col>
@@ -243,7 +226,6 @@ import ElementoFormEditable from "../components/elementoFormEditable.vue";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
 import PopupCartos from '../components/PopupCartos'
 
 export default {
@@ -267,7 +249,7 @@ export default {
     Navbar,
     Footer,
     PopupCartos,
-    ElementoFormEditable
+    ElementoFormEditable,
   },
   created() {
     var tempo_inic = performance.now();
@@ -282,7 +264,7 @@ export default {
 
         for (let i = 0; i < dados.data.length; i++)
           this.resultados.push(dados.data[i].e);
-        console.log(this.resultados);
+        
       })
       .catch((err) => {
         console.log(err.message);
@@ -299,6 +281,9 @@ export default {
     onChangePage(pageOfItems) {
       // update page of items
       this.pageOfItems = pageOfItems;
+    },
+    nextPage(){
+      
     },
     printSection() {
       // Pass the element id here

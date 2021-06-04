@@ -386,19 +386,6 @@ const routes = [
         }
       },
       {
-        path: 'mapas',
-        name: 'GoogleMap',
-        component: () => import('../views/GoogleMap.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          }
-          else {
-            next()
-          }
-        }
-      },
-      {
         path: 'localidades',
         name: 'Places',
         component: () => import('../views/PlaceList.vue'),
@@ -408,19 +395,6 @@ const routes = [
           }
           else if (!store.getters.isAdmin) {
             next(`/homeAdmin`)
-          }
-          else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'localidades/:nome',
-        name: 'Place',
-        component: () => import('../views/GoogleMapOnePlace.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
           }
           else {
             next()
@@ -441,6 +415,10 @@ const routes = [
         }
       }
     ]
+  },
+  { 
+    path: "*", 
+    component: () => import('../views/NotFound.vue'),
   }
 ]
 
