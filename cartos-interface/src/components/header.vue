@@ -7,6 +7,7 @@
             style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);"
         >
             <v-list-item two-line class="px-0">
+                <v-app-bar-nav-icon  @click="clicked"></v-app-bar-nav-icon>
                 <v-list-item-avatar min-width="55px" tile class="ava" @click="about = true">
                     <v-img src="@/assets/cartos_logo.png"/>
                 </v-list-item-avatar>
@@ -105,6 +106,7 @@
 
 <script>
 import axios from 'axios'
+import { eventBus } from '../main'
 export default {
     data() {
         return{
@@ -119,6 +121,7 @@ export default {
         }
     },
     methods:{
+        clicked() {eventBus.$emit('updateDrawer', 1)},
         logout: function(){
             this.$store.commit("guardaTokenUtilizador", "")
             this.$store.commit("guardaNomeUtilizador", "")

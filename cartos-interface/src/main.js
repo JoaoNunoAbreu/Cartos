@@ -23,6 +23,7 @@ import JwPagination from 'jw-vue-pagination';
 Vue.component('jw-pagination', JwPagination);
 
 
+export const eventBus = new Vue();
 
 
 Vue.config.productionTip = false

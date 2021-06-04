@@ -3,15 +3,14 @@
         <v-navigation-drawer app
           clipped
           v-if="true"
-          :mini-variant="drawer"
+          v-model="drawer"
           style="background: linear-gradient(to bottom, #376a53 50%, #549d7c 100%);"
         >
           <v-list
             nav
             dense
             dark
-          ><v-app-bar-nav-icon  @click="drawer = !drawer"></v-app-bar-nav-icon>
-             
+          >  
             <v-list-item link to="/admin/homeAdmin">
               <v-list-item-icon>
                 <v-icon>mdi-home</v-icon>
@@ -23,7 +22,6 @@
               prepend-icon="mdi-folder-open"
               :value="false"
               no-action
-              @click="drawer = !drawer && drawer"
               active-class="teal--text text--darken-4"
             >
               <template v-slot:activator>
@@ -38,7 +36,6 @@
               prepend-icon="mdi-format-list-bulleted-square"
               :value="false"
               no-action
-              @click="drawer = !drawer && drawer"
               active-class="teal--text text--darken-4"
             >
               <template v-slot:activator>
@@ -56,7 +53,6 @@
               prepend-icon="mdi-account-multiple"
               :value="false"
               no-action
-              @click="drawer = !drawer && drawer"
               active-class="teal--text text--darken-4"
             >
               <template v-slot:activator>
@@ -244,6 +240,7 @@
 
 <script>
 import axios from 'axios'
+import { eventBus } from '../main'
 export default {
     data() {
         return{
@@ -263,10 +260,14 @@ export default {
             nInds:0,
             runningDialog:false
             // hover:false
-            ,drawer:false
+            ,drawer:true
         }
     },
     created(){
+      eventBus.$on('updateDrawer', a => {
+        this.drawer = !this.drawer
+        console.log(a)
+      })
       axios.get(`https://tommi2.di.uminho.pt/api/users/foto/${this.$store.state.user._id}`, {
         responseType:'arraybuffer',
         headers: {
