@@ -62,7 +62,7 @@
     <div style="text-align:center">
       <v-tooltip bottom>
         <template v-slot:activator="{ on: tooltip }">
-          <v-btn text v-on="{ ...tooltip}" class="mr-5" style="background-color:lightgray" @click="dialogPW = true">
+          <v-btn text v-on="{ ...tooltip}" class="mr-5 mb-2 mt-n3" style="background-color:lightgray" @click="dialogPW = true">
             <v-icon>mdi-lock-reset</v-icon>
           </v-btn >
         </template>
@@ -70,7 +70,7 @@
       </v-tooltip>
       <v-tooltip bottom>
         <template v-slot:activator="{ on: tooltip }">
-          <v-btn text v-on="{ ...tooltip}" style="background-color:lightgray" @click="dialogPedido = true">
+          <v-btn text v-on="{ ...tooltip}" class="mt-n3 mb-2" style="background-color:lightgray" @click="dialogPedido = true">
             <v-icon>mdi-text-box-check</v-icon>
           </v-btn >
         </template>
@@ -208,8 +208,8 @@
                       <br>
                       <v-tooltip bottom>
                         <template v-slot:activator="{ on: tooltip }">
-                          <v-btn class="mr-5 mb-10 mt-10" @click.prevent="reset" v-on="{...tooltip}">
-                            <v-icon>mdi-history</v-icon>
+                          <v-btn class="white--text mr-5 mb-10 mt-10" color="#26B99A" @click.prevent="reset" v-on="{...tooltip}">
+                            <v-icon>mdi-broom</v-icon>
                           </v-btn>
                         </template>
                         <span>
@@ -218,8 +218,8 @@
                       </v-tooltip>
                       <v-tooltip bottom>
                         <template v-slot:activator="{ on: tooltip }">
-                          <v-btn class="mr-5 mb-10 mt-10" @click="post();" v-on="{ ...tooltip}" :disabled="disableButton">
-                            <v-icon>mdi-check</v-icon>
+                          <v-btn class="orange white--text mr-5 mb-10 mt-10" @click="post();" v-on="{ ...tooltip}" :disabled="disableButton">
+                            <v-icon>mdi-checkbox-marked-outline</v-icon>
                           </v-btn>
                         </template>
                         <span>
@@ -228,8 +228,8 @@
                       </v-tooltip>
                       <v-tooltip bottom>
                         <template v-slot:activator="{ on: tooltip }">
-                          <v-btn class="mb-10 mt-10" @click="dialogPedido = false" v-on="{ ...tooltip}">
-                            <v-icon>mdi-exit-to-app</v-icon>
+                          <v-btn class="white--text mb-10 mt-10" color="#26B99A" @click="dialogPedido = false" v-on="{ ...tooltip}">
+                            <v-icon>mdi-door-open</v-icon>
                           </v-btn>
                         </template>
                         <span>

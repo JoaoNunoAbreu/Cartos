@@ -24,6 +24,7 @@
               :value="false"
               no-action
               @click="drawer = !drawer && drawer"
+              active-class="teal--text text--darken-4"
             >
               <template v-slot:activator>
                 <v-list-item-title class="white--text">{{$t('navd.documents')}}</v-list-item-title>
@@ -38,9 +39,10 @@
               :value="false"
               no-action
               @click="drawer = !drawer && drawer"
+              active-class="teal--text text--darken-4"
             >
               <template v-slot:activator>
-                <v-list-item-title  color="#549D7C" class="white--text">{{$t('navd.analysis')}}</v-list-item-title>
+                <v-list-item-title  class="white--text">{{$t('navd.analysis')}}</v-list-item-title>
               </template>
               <v-list-item link to="/admin/analise">
                 <v-list-item-title class="white--text">{{$t('nav.barraPesquisa')}}</v-list-item-title>
@@ -55,6 +57,7 @@
               :value="false"
               no-action
               @click="drawer = !drawer && drawer"
+              active-class="teal--text text--darken-4"
             >
               <template v-slot:activator>
                 <v-list-item-title class="white--text">{{$t('navd.users')}}</v-list-item-title>
@@ -274,8 +277,7 @@ export default {
         var image = new Buffer(response.data, 'binary').toString('base64')
         this.userPic = `data:${response.headers['content-type'].toLowerCase()};base64,${image}`
       }).catch(e => {
-        //console.log(e)
-        this.errors.push(e)
+        console.log(e)
       })
     },
     methods:{

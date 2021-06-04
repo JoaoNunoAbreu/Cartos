@@ -30,27 +30,26 @@ def pesquisaresultados():
     colecao = request.args.get('colecao') 
     editora = request.args.get('editora')
     data = request.args.get('date')
-    newformat = None
     if(data):
         datetimeobject = datetime.strptime(data,'%Y-%m-%d')
-        newformat = datetimeobject.strftime('%d/%m/%Y')
+        data = datetimeobject.strftime('%d/%m/%Y')
 
     if colecao != "Todas" :
         if (editora != "Todas"): # col="todas" & edi="todas" 
-            if (newformat):
+            if (data):
                 res_pesquisa = neo4j_db.run(f'match (edi:Editora)<-[:publicado]-(e:Elemento)-[:integra]->(c:Colecao) where (e.titulo contains "{palavra}" and c.designacao="{colecao}" and e.data_publicacao="{data}" and edi.designacao="{editora}") return e')
             else: 
                 res_pesquisa = neo4j_db.run(f'match (edi:Editora)<-[:publicado]-(e:Elemento)-[:integra]->(c:Colecao) where (e.titulo contains "{palavra}" and c.designacao="{colecao}" and  edi.designacao="{editora}") return e')
-        elif (newformat):
+        elif (data):
             res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:integra]->(c:Colecao) where (e.titulo contains "{palavra}" and c.designacao="{colecao}" and e.data_publicacao="{data}"')
         else:
             res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:integra]->(c:Colecao) where (e.titulo contains "{palavra}" and c.designacao="{colecao}") return e')
     elif (editora != "Todas"):
-        if (newformat):
+        if (data):
             res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:publicado]->(edi:Editora) where (e.titulo contains "{palavra}" and edi.designacao="{editora}" and e.data_publicacao="{data}") return e')
         else: 
             res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:publicado]->(edi:Editora) where (e.titulo contains "{palavra}" and edi.designacao="{editora}") return e')
-    elif (newformat):
+    elif (data):
         res_pesquisa = neo4j_db.run(f'match (e:Elemento) where (e.titulo contains "{palavra}" and e.data_publicacao="{data}") return e')
     else:
         res_pesquisa = neo4j_db.run(f'match (e:Elemento) where e.titulo contains "{palavra}" return e')

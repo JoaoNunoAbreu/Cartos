@@ -172,6 +172,13 @@
                 <p>{{ item.data_publicacao }}</p>
                 <br />
               </div>
+              <div class="card-footer text-center change-font">
+                <jw-pagination
+                  v-if="resultados != null"
+                  :items="resultados"
+                  @changePage="onChangePage"
+                ></jw-pagination>
+              </div>
               <v-dialog
                 v-model="dialogElemento"
                 @keydown.esc="
@@ -189,13 +196,6 @@
                   ></resultado>
                 </v-card>
               </v-dialog>
-              <div class="card-footer text-center change-font">
-                <jw-pagination
-                  v-if="resultados != null"
-                  :items="resultados"
-                  @changePage="onChangePage"
-                ></jw-pagination>
-              </div>
             </v-card>
           </v-col>
         </v-row>
@@ -261,11 +261,12 @@ export default {
   methods: {
     goHome() {
       this.$router.push({
-        name: "home",
+        name: "Analise",
       });
     },
     onChangePage(pageOfItems) {
       // update page of items
+      console.log(pageOfItems);
       this.pageOfItems = pageOfItems;
     },
     printSection() {

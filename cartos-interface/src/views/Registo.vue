@@ -163,7 +163,6 @@ export default {
             'Content-Type': 'multipart/form-data'    
           }
         }).then(() => {
-            //console.log(data)
             this.$refs.form.reset()
             this.$router.push( {path:`/admin/login`})
         }).catch(e => {
