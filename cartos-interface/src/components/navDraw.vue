@@ -74,12 +74,6 @@
               </v-list-item-icon>
               <v-list-item-title>{{$t('navd.definitions')}}</v-list-item-title>
             </v-list-item>
-            <v-list-item link to="/admin/documentacao">
-              <v-list-item-icon>
-                <v-icon>mdi-text-box-multiple</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>{{$t('navd.docum')}}</v-list-item-title>
-            </v-list-item>
             <v-list-item link @click="about = true">
               <v-list-item-icon>
                 <v-icon>mdi-information-outline</v-icon>
@@ -225,6 +219,14 @@
             <div class="pa-2">
               <v-tooltip top> 
                 <template v-slot:activator="{ on }">
+                  <v-btn dark depressed min-width="60px" @click="goHome();" v-on="on">
+                    <v-icon>mdi-home</v-icon>
+                  </v-btn>
+                </template>
+                <span>{{$t('navd.home')}}</span>
+              </v-tooltip>
+              <v-tooltip top> 
+                <template v-slot:activator="{ on }">
                   <v-btn dark depressed min-width="60px" @click="logout();" v-on="on">
                     <v-icon>mdi-power</v-icon>
                   </v-btn>
@@ -258,9 +260,10 @@ export default {
             successDialog:false,
             nDocs:0,
             nInds:0,
-            runningDialog:false
+            runningDialog:false,
+            url: process.env.VUE_APP_URL,
             // hover:false
-            ,drawer:true
+            drawer:true
         }
     },
     created(){
@@ -268,7 +271,7 @@ export default {
         this.drawer = !this.drawer
         console.log(a)
       })
-      axios.get(`https://tommi2.di.uminho.pt/api/users/foto/${this.$store.state.user._id}`, {
+      axios.get(this.url + `/users/foto/${this.$store.state.user._id}`, {
         responseType:'arraybuffer',
         headers: {
             'Authorization': `Bearer: ${this.$store.state.jwt}`
@@ -283,14 +286,14 @@ export default {
     },
     methods:{
       reindFunc: function(){
-        axios.get(`https://tommi2.di.uminho.pt/api/import/reindex/`,{headers:{
+        axios.get(this.url + `/import/reindex/`,{headers:{
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
         .then(response => {
             // JSON responses are automatically parsed.
             //console.log(response.data)
             if (response.data.message === 'ok'){
-              axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
+              axios.get(this.url + `/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
                 Authorization:`Bearer: ${this.$store.state.jwt}`
               }})
               .then(response => {
@@ -298,7 +301,7 @@ export default {
               }).catch(e => {
                   this.errors.push(e)
               })
-              axios.get(`https://tommi2.di.uminho.pt/api/elementos/index?nome=${this.$store.state.user._id}`,{headers:{
+              axios.get(this.url + `/elementos/index?nome=${this.$store.state.user._id}`,{headers:{
                 'Content-Type': 'multipart/form-data',
                 Authorization:`Bearer: ${this.$store.state.jwt}`
               }})
@@ -323,6 +326,9 @@ export default {
         this.$store.commit("guardaNomeUtilizador", "")
         this.$router.push( {path:`/admin/login`})
       },
+      goHome: function(){
+        this.$router.push( {path:`/home`})
+      }
     }
 };
 </script>

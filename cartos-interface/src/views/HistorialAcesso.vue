@@ -125,7 +125,8 @@ export default {
                     text:`${this.$t('hist.req')}`,
                     value: 'request'
                 }
-            ]
+            ],
+            url: process.env.VUE_APP_URL,
         }
     },
     components:{
@@ -134,7 +135,7 @@ export default {
     },
     created: async function() {
         //Active
-        axios.get(`https://tommi2.di.uminho.pt/api/users/history?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url +`/users/history?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
             this.active = response.data.reqs
 
@@ -144,7 +145,7 @@ export default {
     },
     methods:{
         eliminarHistorico:function(){
-            axios.get(`https://tommi2.di.uminho.pt/api/users/historyCleanse?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+            axios.get(this.url +`/users/historyCleanse?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
             .then(response => {
                 this.active=response.data.history
 

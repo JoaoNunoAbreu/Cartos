@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+'''
 from app.settings import blueprint
 from flask import render_template, request, flash
 from flask_login import login_required
@@ -107,3 +107,4 @@ def route_template_editar_guardar():
     value = mongo.db.settings.update({"_id":elemento},{"$set":{"desc":desc,"wac":wac,"tag":tag,"exemplo":exemplo,"procura":procura}})    
     settings = mongo.db.settings.find()
     return json_util.dumps({'nome': nome,'settings':settings})
+'''

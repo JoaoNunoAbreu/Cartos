@@ -171,14 +171,14 @@ export default {
             data: this.$store.state.user.data,
             obs: this.$store.state.user.obs,
             userPic: '',
-            //////////
             selectedFile: null,
             isSelecting: false,
             cv:'',
             cvDialog:false,
             pageCount:0,
             currentPage:0,
-            page:1
+            page:1,
+            url: process.env.VUE_APP_URL,
         }
     },
     components:{
@@ -206,7 +206,7 @@ export default {
             
             let formData = new FormData()
             formData.append('curriculo',this.selectedFile)
-            axios.post(`https://tommi2.di.uminho.pt/api/users/curriculo/atualizar/${this.username}`,formData,{
+            axios.post(this.url + `/users/curriculo/atualizar/${this.username}`,formData,{
                 responseType:'arraybuffer',
                 headers: {
                     'Content-Type': 'multipart/form-data',
@@ -223,7 +223,7 @@ export default {
             this.selectedFile = e.target.files[0]
             let formData = new FormData()
             formData.append('foto',this.selectedFile)
-            axios.post(`https://tommi2.di.uminho.pt/api/users/foto/atualizar/${this.username}`,formData,{
+            axios.post(this.url + `/users/foto/atualizar/${this.username}`,formData,{
                 responseType:'arraybuffer',
                 headers: {
                     'Content-Type': 'multipart/form-data',
@@ -238,7 +238,7 @@ export default {
                 })
         },
         onUpdate(){
-            axios.get(`https://tommi2.di.uminho.pt/api/users/curriculo/${this.username}?seed=${Date.now()}`, {
+            axios.get(this.url + `/users/curriculo/${this.username}?seed=${Date.now()}`, {
                 responseType:'arraybuffer',
                 headers: {
                     'Authorization': `Bearer: ${this.$store.state.jwt}`
@@ -262,7 +262,7 @@ export default {
     },
     created() {
         this.userPic=''
-        axios.get(`https://tommi2.di.uminho.pt/api/users/foto/${this.username}?seed=${Date.now()}`, {
+        axios.get(this.url + `/users/foto/${this.username}?seed=${Date.now()}`, {
             responseType:'arraybuffer',
             headers: {
                 'Authorization': `Bearer: ${this.$store.state.jwt}`

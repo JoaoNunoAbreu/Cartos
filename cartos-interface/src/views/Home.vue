@@ -159,7 +159,7 @@
                 ></v-select>
               </v-col>
             </v-row>
-            <v-row align="start" justify="center" class="mb-3">
+            <v-row align="start" justify="center" class="mb-3 mt-n1">
               <v-col cols="12" md="3"> 
                 <v-menu
                   ref="menu"

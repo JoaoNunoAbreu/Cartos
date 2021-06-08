@@ -12,11 +12,15 @@
 </template>
 <script>
 import axios from 'axios'
-const lhost = 'https://tommi2.di.uminho.pt/api'
 export default {
+  data(){
+    return{
+      url: process.env.VUE_APP_URL,
+    }
+  },
   mounted: async function () {
     try {
-      var response = await axios.get(lhost + '/process', {headers: { 'Authorization': `Bearer: ${this.$store.state.jwt}`}})
+      var response = await axios.get(this.url + '/process', {headers: { 'Authorization': `Bearer: ${this.$store.state.jwt}`}})
       if(response.data.message){
         this.$router.push('/localidades')
       }

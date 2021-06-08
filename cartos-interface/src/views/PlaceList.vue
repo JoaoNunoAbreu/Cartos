@@ -19,6 +19,11 @@ import NavDraw from '../components/navDraw.vue'
 import navDrawLeitor from '../components/navDrawLeitor.vue'
 import placeListComponent from '../components/PlaceListComponent.vue'
 export default {
+    data() {
+        return {
+            url: process.env.VUE_APP_URL
+        }
+    },
     components:{
         'appHeader': Header,
         'navDraw':NavDraw,
@@ -26,7 +31,7 @@ export default {
         'placeListComponent': placeListComponent
     },
     created() {
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=admin`,{headers:{
+        axios.get(this.url +`/elementos/elementos?nome=admin`,{headers:{
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
         .then(response => {

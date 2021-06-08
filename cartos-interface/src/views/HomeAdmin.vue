@@ -3,6 +3,8 @@
         <appHeader></appHeader>
         <navDraw></navDraw>
         <div >
+
+            <!-- Counters -->
             <v-toolbar flat style="margin-top:2.5cm;margin-bottom:2.5cm">
                 <v-row>
                     <v-col>
@@ -34,38 +36,92 @@
                 </v-row>
             </v-toolbar>
         </div>
-        <!--
-        <div class="mt-12">
-            <h3 class="ml-10 mt-6">{{"Foram inseridos " + percent + "% dos elementos na última semana"}}</h3>
-            <v-row>
-                <v-col>
-                    <v-card style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark class="text-center ml-10 mt-6 mr-10">
-                        <v-card-text>
-                            <h2>{{$t('hAdmin.ins')}}</h2>
-                        </v-card-text>
-                    </v-card>
-                    <v-card class="ml-10 mt-6 mr-10" v-if="condition==true">
-                        <v-card-actions>
-                            <v-sparkline
-                                :labels="labels"
-                                :value="number"
-                                label-size="3"
-                                color="red"
-                                line-width="2"
-                                padding="16"
-                            ></v-sparkline>
-                        </v-card-actions>
-                    </v-card>
-                </v-col>
-            </v-row>
-        </div>
-        -->
+        <v-divider horizontal class="mt-n7"></v-divider>
+        <template>
+            <h3 style="text-align: center" class="mx-auto mt-5">Últimos Elementos Inseridos</h3>
+            <v-card
+                elevation="2"
+                max-width="400"
+                class="mx-auto mt-5"
+            >
+                <!-- Last 3 elements uploaded-->
+                
+                <v-carousel  cycle
+                    height="350"
+                    show-arrows-on-hover
+                >
+                    <v-carousel-item
+                        v-for="(elem,idx) in last3Elements"
+                        :key="idx"
+                    >
+                   
+                        <v-card 
+                            class="mx-auto"
+                            max-width="400"
+                            light    
+                        >
+                         <v-hover v-slot="{ hover }">
+                            <v-img
+                                class="white--text align-end"
+                                height="150px"
+                                :src="capas[idx]"
+                            >
+                            
+                             <v-expand-transition>
+                            <div v-if="hover" class="d-flex transition-fast-in-fast-out teal darken-1 v-reveal display-3 white--text"
+                                style="height: 100%;">
+                                <v-spacer></v-spacer>
+                                <v-btn icon  color="white" ><v-icon  @click="viewItem(item)">mdi-eye</v-icon></v-btn>
+                                <v-spacer></v-spacer>
+                            </div>
+                            
+                            </v-expand-transition>
+                            </v-img>
+                            </v-hover>
+                            <div class=text-center>
+                                <v-card-title cprimary-title class="justify-center">
+                                    {{elem.id}} 
+                                </v-card-title>
+                                <v-card-subtitle class="pb-0">
+                                {{elem.data_publicacao}}
+                                </v-card-subtitle>
+                                <v-card-text class="text--primary">
+                            
+                                <div><b>Coleção:</b> {{elem.colecao}}</div>
+                                <div><b>Editora:</b> {{elem.editora}}</div>
+                                <div><b>Língua:</b> {{elem.lingua}}</div>
+                                </v-card-text>
+                            </div>
+                        </v-card>
+                   
+                    </v-carousel-item>
+                </v-carousel>
+            </v-card>
+
+            <v-divider horizontal class="mt-8"></v-divider>
+
+            <!-- Colecoções Graph -->
+
+            <div class="mt-5">
+                <h3 style="text-align: center">Nº Elementos por Coleção</h3>
+                <line-chart :passedData="colecoes"></line-chart>
+            </div>
+
+            <!-- Editoras Graph -->
+
+            <div class="mt-5">
+                <h3 style="text-align: center">Nº Elementos por Editora</h3>
+                <line-chart :passedData="editoras"></line-chart>
+            </div>
+            
+        </template>
     </div>
 </template>
 <script>
 import axios from 'axios'
 import Header from '../components/header.vue'
 import NavDraw from '../components/navDraw.vue'
+import LineChart from '@/components/LineChart'
 
 export default {
     data(){
@@ -73,90 +129,106 @@ export default {
             nElementos:0,
             nColecoes:0,
             nUsers:0,
+            colecoes:{},
+            editoras:{},
             value:[],
-            labels:[],
             number:[],
+            capas:[],
             percent:0,
+            last3Elements: [],
             condition:false,
+            url: process.env.VUE_APP_URL,
+            headers: [{
+                text: this.$t("fol.id"),
+                align: "start",
+                value: "id",
+                },
+                {
+                text: `${this.$t("fol.col")}`,
+                value: "colecao",
+                },
+                {
+                text: this.$t("fol.edi"),
+                value: "editora",
+                },
+                {
+                text: `${this.$t("fol.data")}`,
+                value: "data_publicacao",
+                },
+                {
+                text: `${this.$t("fol.lin")}`,
+                value: "lingua",
+                },
+                {
+                text: `${this.$t("fol.opt")}`,
+                value: "options",
+                sortable: false,
+                },
+        ],
         }
     },
     components:{
             'appHeader': Header,
-            'navDraw':NavDraw
+            'navDraw':NavDraw,
+            LineChart
     },
     created: async function() {
-        //Data atual
-        var today = new Date()
-        var date = (today.getMonth()+1) + '/' + today.getDate() + '/' + today.getFullYear()
-        var dateTime = new Date(date).getTime()
-        for(let i = -14;i<=0;i++){
-            let last = new Date(dateTime + (i * 24 * 60 * 60 * 1000));
-            let day =last.getDate();
-            if(day <= 9)
-                day = '0' + day;
-            let month=last.getMonth()+1;
-            if(month <= 9)
-                month = '0' + month;
-            let year=last.getFullYear();
-            let label = (month + '/' + day + '/' + year)
-            this.labels.push(label)
-        }
-        //Users
-        axios.get(`https://tommi2.di.uminho.pt/api/users/users?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+
+        axios.get(this.url + `/home/index`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
-            this.nUsers = response.data.length
-            console.log(response.data)
+            this.last3Elements = response.data.lastElementos;
+            this.nUsers = response.data.n_users;
+            this.nElementos = response.data.n_elementos;
+            this.nColecoes= response.data.n_colecoes;
+            this.colecoes = response.data.colecoesContadas;
+            this.editoras = response.data.editorasContadas;
+            console.log("editoras = " + this.editoras)
+
+            for(let i = 0;i<response.data.lastElementos.length;i++){
+
+                var idd = this.last3Elements[i].id;
+                axios.get(this.url + `/elementos/ver/${idd}/foto`, {
+                    responseType: "arraybuffer",
+                })
+                .then((response) => {
+                    var image = new Buffer(response.data, "binary").toString("base64");
+                    this.capas.push(`data:${response.headers[
+                        "content-type"
+                    ].toLowerCase()};base64,${image}`);
+
+                })
+                .catch((err) => {
+                    console.log(err.message);
+                    this.error = err.message;
+                })
+            }
+
         }).catch(e => {
-            this.errors.push(e)
+            console.log(e);
+            alert("Não foi possível estabelecer conexão com a base de dados.")
         })
-
-
-        //Elementos
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
-            Authorization:`Bearer: ${this.$store.state.jwt}`
-            }})
-            .then(response => {
-                this.nElementos = response.data.length
-            }).catch(e => {
-                this.errors.push(e)
-        }),
-
-        //Coleções
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/colecoes`,{headers:{
-            Authorization:`Bearer: ${this.$store.state.jwt}`
-            }})
-            .then(response => {
-                this.nColecoes = response.data.length
-            }).catch(e => {
-                this.errors.push(e)
-        })
-
     },
     methods:{
-        contains: function(){
-            for(let i = 0;i<this.labels.length;i++){
-                this.number[i] = this.getOccurrence(this.value,this.labels[i])
-            }
-            this.percent = ((this.number.reduce((a, b) => a + b, 0)/this.nElementos)*100).toPrecision(4)
-            this.condition = true
-        },
         getOccurrence: function(array, value) {
             var count = 0;
             array.forEach((v) => (v === value && count++));
             return count;
-        }
+        },
+         printSection() {
+        this.$htmlToPaper("tabelaElementos");
+    },
     }
 }
 </script>
 <style scoped>
-    .v-data-table /deep/ th{
-        background-color:black;
-    }
-    .v-data-table /deep/ tr{
+    .v-data-table /deep/ th {
+        background: linear-gradient(to top, #376a53 0%, #549d7c 100%);
+        }
+    .v-data-table /deep/ tr {
         color: black;
         font-size: 13px;
-    }
-    .v-data-table /deep/ tr:nth-child(even){
+        }
+    .v-data-table /deep/ tr:nth-child(even) {
         background-color: rgb(245, 245, 245);
     }
     label {
@@ -173,4 +245,23 @@ export default {
                 margin: 20px auto;
                 margin-bottom: 80px;
     }
+    
+</style>
+
+<style>
+.v-carousel__controls{
+    background:  linear-gradient(to top, #376a53 0%, #549d7c 100%);
+}
+.v-expansion-panel {
+  box-shadow: none;
+}
+.v-reveal {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: .9;
+  position: absolute;
+  width: 100%;
+}
+
 </style>

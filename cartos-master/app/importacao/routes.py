@@ -4,8 +4,7 @@
 from app.importacao import blueprint
 from flask import render_template,request,flash,redirect,url_for, send_from_directory
 from flask_login import login_required
-from app import mongo,indexList,tags, token_required, admin_required, neo4j_db
-from app.indexador import indexacao as index, extractor as extract
+from app import indexList,tags, token_required, admin_required, neo4j_db
 import datetime
 import os
 from os.path import join, dirname, realpath

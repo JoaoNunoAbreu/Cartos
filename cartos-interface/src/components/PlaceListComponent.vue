@@ -67,7 +67,6 @@
 </template>
 <script>
 import axios from 'axios'
-const lhost = 'https://tommi2.di.uminho.pt/api/'
 export default {
   data () {
     return {
@@ -85,12 +84,13 @@ export default {
       ],
       places: [],
       showConfirm: false,
-      place: {}
+      place: {},
+      url: process.env.VUE_APP_URL,
     }
   },
   mounted: async function () {
     try {
-      var response = await axios.get(lhost + 'getPlaces',{headers: { 'Authorization': `Bearer: ${this.$store.state.jwt}`}})
+      var response = await axios.get(this.url + 'getPlaces',{headers: { 'Authorization': `Bearer: ${this.$store.state.jwt}`}})
       this.places = response.data
     } catch (e) {
       return e
@@ -113,7 +113,7 @@ export default {
     },
     removeLocalidade: async function (item) {
       try {
-        await axios.post(lhost + 'remove', item, {headers: { 'Authorization': `Bearer: ${this.$store.state.jwt}`}})
+        await axios.post(this.url + 'remove', item, {headers: { 'Authorization': `Bearer: ${this.$store.state.jwt}`}})
         this.places.splice(item, 1)
         this.showConfirm = false
       } catch (e) {

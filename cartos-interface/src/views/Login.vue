@@ -384,7 +384,6 @@ export default {
           Authorization:`Bearer: ${this.$store.state.jwt}`     
         }
       }).then(data => {
-          console.log("DATA = " + JSON.stringify(data))
           if (data.data.error){
             this.$refs.form.reset()
             this.dialog = !this.dialog
@@ -395,23 +394,24 @@ export default {
             this.$router.push( {path:`/admin/homeAdmin`})
           }
       }).catch(e => {
-          this.errors.push(e)
+          console.log(e)
+          alert("Não foi possível estabelecer conexão com a base de dados.")
       })
     },
     post: function() {
         let formData = new FormData()
-            formData.append('username',this.pedido.username)
-            formData.append('name',this.pedido.nome)
-            formData.append('password',this.pedido.pw)
-            formData.append('email',this.pedido.email)
-            formData.append('tipo',this.pedido.tipo)
-            formData.append('universidade',this.pedido.universidade)
-            formData.append('departamento',this.pedido.departamento)
-            formData.append('foto',this.pedido.foto)
-            formData.append('curriculo',this.pedido.curriculo)
-            formData.append('obs',this.pedido.observacoes)
+        formData.append('username',this.pedido.username)
+        formData.append('name',this.pedido.nome)
+        formData.append('password',this.pedido.pw)
+        formData.append('email',this.pedido.email)
+        formData.append('tipo',this.pedido.tipo)
+        formData.append('universidade',this.pedido.universidade)
+        formData.append('departamento',this.pedido.departamento)
+        formData.append('foto',this.pedido.foto)
+        formData.append('curriculo',this.pedido.curriculo)
+        formData.append('obs',this.pedido.observacoes)
 
-        axios.post('https://tommi2.di.uminho.pt/api/users/pedidos/registar',formData,{
+        axios.post(this.url+'/users/pedidos/registar',formData,{
           headers: {
             'Content-Type': 'multipart/form-data'    
           }

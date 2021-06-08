@@ -100,7 +100,8 @@ export default {
             tags:[],
             errors:[],
             dialog: false,
-            item:{}
+            item:{},
+            url: process.env.VUE_APP_URL,
         }
     },
     watch: {
@@ -128,15 +129,12 @@ export default {
       }
     },
     created() {
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/tags?nome=${this.$store.state.user._id}`,{headers:{
+        axios.get(this.url +`/elementos/tags?nome=${this.$store.state.user._id}`,{headers:{
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
         .then(response => {
-            // JSON responses are automatically parsed.
-            //console.log(response.data)
             this.tags = response.data.tags
         }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
     }

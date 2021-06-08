@@ -268,7 +268,8 @@ export default {
           this.elementos = response.data;
         })
         .catch((e) => {
-          this.errors.push(e);
+          console.log(e);
+          alert("Não foi possível estabelecer conexão com a base de dados.")
         });
     },
     printSection() {
@@ -308,7 +309,7 @@ export default {
       const index = this.elementos.indexOf(item);
       axios
         .get(
-          `https://tommi2.di.uminho.pt/api/elementos/ver/${this.elementos[index].id}/foto`,
+          this.url + `/elementos/ver/${this.elementos[index].id}/foto`,
           {
             responseType: "arraybuffer",
             headers: {

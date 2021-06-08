@@ -4,7 +4,7 @@
 from bcrypt import gensalt, hashpw
 from flask_login import UserMixin
 
-from app import mongo, login_manager
+from app import neo4j_db, login_manager
 
 class User(UserMixin):
     def __init__(self,username):
@@ -18,5 +18,5 @@ class User(UserMixin):
 
     @login_manager.user_loader
     def user_loader(email):
-        user = mongo.db.users.find_one({"email":email})
+        user = neo4j_db.evaluate('match (x:User) where x.email=$v return x limit 1',v=email)
         return User(user) if user else None

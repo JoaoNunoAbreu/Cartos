@@ -101,7 +101,8 @@ export default {
             indices:[],
             errors:[],
             dialog: false,
-            item:{}
+            item:{},
+            url: process.env.VUE_APP_URL,
         }
     },
     watch: {
@@ -129,7 +130,7 @@ export default {
       }
     },
     created() {
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/index?nome=${this.$store.state.user._id}`,{headers:{
+        axios.get(this.url + `/elementos/index?nome=${this.$store.state.user._id}`,{headers:{
           'Content-Type': 'multipart/form-data',
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})

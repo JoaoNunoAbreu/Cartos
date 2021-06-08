@@ -93,7 +93,8 @@ export default {
             ajuda:'pesquisas',
             pesquisas:[],
             errors:[],
-            item:{}
+            item:{},
+            url: process.env.VUE_APP_URL,
         }
     },
     // watch: {
@@ -116,7 +117,7 @@ export default {
     //     }
     // },
     created() {
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/pesquisas?nome=${this.$store.state.user._id}`,{headers:{
+        axios.get(this.url + `/elementos/pesquisas?nome=${this.$store.state.user._id}`,{headers:{
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
         .then(response => {

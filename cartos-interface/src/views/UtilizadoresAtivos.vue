@@ -63,7 +63,8 @@ export default {
                  text:`${this.$t('hist.adate')}`,
                     value: 'stamp'
                 }
-            ]
+            ],
+            url: process.env.VUE_APP_URL,
         }
     },
     components:{
@@ -72,7 +73,7 @@ export default {
     },
     //Active
     created:function(){
-        axios.get(`https://tommi2.di.uminho.pt/api/users/active?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url +`/users/active?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
             this.active = response.data.users
 

@@ -4,10 +4,11 @@
 from app.users import blueprint
 from flask import render_template, request, flash, send_from_directory
 from flask_login import login_required
-from app import mongo, token_required, admin_required, photo_auth, neo4j_db
+from app import token_required, admin_required, photo_auth, neo4j_db
 from os import path, remove, rename, replace
 from werkzeug.security import generate_password_hash
 import datetime
+import os
 from os.path import join, dirname, realpath
 from shutil import copyfile, move
 ###### este é meu
@@ -24,36 +25,9 @@ UPLOAD_FOLDER = './static/pics/'
 #@token_required
 #@login_required
 def route_users():
-    """Example endpoint returning a list of colors by palette
-    This is using docstrings for specifications.
-    ---
-    parameters:
-      - name: palette
-        in: path
-        type: string
-        enum: ['all', 'rgb', 'cmyk']
-        required: true
-        default: all
-    definitions:
-      Palette:
-        type: object
-        properties:
-          palette_name:
-            type: array
-            items:
-              $ref: '#/definitions/Color'
-      Color:
-        type: string
-    responses:
-      200:
-        description: A list of colors (may be filtered by palette)
-        schema:
-          $ref: '#/definitions/Palette'
-        examples:
-          rgb: ['red', 'green', 'blue']
-    """
+    
     users = neo4j_db.run('match (x:User) return x')
-    return json_util.dumps(users)
+    return json_util.dumps(users.data())
 
 
 @blueprint.route('/adicionar')
@@ -63,63 +37,15 @@ def route_template_adicionar():
     nome = request.args.get('nome')
     return render_template('registar.html',nome=nome)
 
-@blueprint.route('/registar', methods=['POST'])
-@admin_required
-#@login_required
-def route_template_registar():
-    username = request.form.get('username')
-    existe = mongo.db.users.find_one({"_id":username})
-    nome = request.args.get('nome')
-    if existe:
-        #flash('ERRO: Username já escolhido. Por favor escolha outro...')
-        #return render_template('registar.html',nome=nome)
-        return json_util.dumps({'nome': nome,'message':'já existe'})
-    else:
-        email = request.form.get('email')
-        name = request.form.get('name')
-        password = request.form.get('password')
-        encryptPass = generate_password_hash(password)
-        tipo = request.form.get('tipo')
-        universidade = request.form.get('universidade')
-        departamento = request.form.get('departamento')
-        now = datetime.datetime.now()
-        data = now.strftime("%Y-%m-%d %H:%M")
-        if 'foto' in request.files:
-            foto = request.files['foto']
-            if foto.filename != '':
-                foto.filename = username
-                upload_path = join(dirname(realpath(__file__)), 'static/pics/')
-                foto.save(upload_path + foto.filename)
-            else:
-                src = join(dirname(realpath(__file__)), 'static/pics/', username + ".png") 
-                upload_path = join(dirname(realpath(__file__)), 'static/pics/', username + ".png")
-                copyfile(src, upload_path)
-        if 'curriculo' in request.files:
-            curriculo = request.files['curriculo']
-            if curriculo.filename != '':
-                curriculo.filename = username
-                upload_path2 = join(dirname(realpath(__file__)), 'static/curriculo/')
-                curriculo.save(upload_path2 + curriculo.filename)
-            else:
-                src = join(dirname(realpath(__file__)), 'static/curriculo/', username + ".pdf") 
-                upload_path2 = join(dirname(realpath(__file__)), 'static/curriculo/', username + ".pdf")
-                copyfile(src, upload_path2)
-        obs = request.form.get('obs')
-        value = mongo.db.users.insert({"_id":username,"nome":name,"email":email,"password":encryptPass,"tipo":tipo,"universidade":universidade,"departamento":departamento,"data":data,"obs":obs})
-        users = mongo.db.users.find()
-        return json_util.dumps({'nome': nome})
-
 
 @blueprint.route('/ver/<user>', methods=['GET'])
 @admin_required
 #@login_required
 def route_template_ver(user):
     nome = request.args.get('nome')
-    existe = mongo.db.users.find_one({"_id":user})
+    existe = neo4j_db.evaluate('match (x:User) where x._id=$v return x',v=username)
     upload_path = join(dirname(realpath(__file__)), 'static/pics/', user)
     upload_path2 = join(dirname(realpath(__file__)), 'static/curriculo/', user)
-    print("path: " + upload_path)
-    print("name: " + user)
     if path.exists(upload_path):
         foto = user
     else:
@@ -211,7 +137,7 @@ def route_cur_atualizar(user):
 @admin_required
 #@login_required
 def route_template_editar(user):
-    existe = mongo.db.users.find_one({"_id":user})
+    existe = neo4j_db.evaluate('match (x:User) where x._id=$v return x',v=user)
     nome = request.args.get('nome')
     return json_util.dumps({'user': existe, 'nome': nome})
 
@@ -233,14 +159,14 @@ def route_template_remover(user):
 @admin_required
 #@login_required
 def route_template_apagar(user):
-    value = mongo.db.users.remove({"_id":user})
+    value = neo4j_db.evaluate('match (x:User) where x._id=$v delete x',v=user)
     upload_path = join(dirname(realpath(__file__)), 'static/pics/', user)
     upload_path2 = join(dirname(realpath(__file__)), 'static/curriculo/', user)
     if path.exists(upload_path): 
         remove(upload_path)
     if path.exists(upload_path2): 
         remove(upload_path2)
-    users = mongo.db.users.find()
+    users = neo4j_db.run('match (x:User) return x')
     nome = request.args.get('nome')
     return json_util.dumps({'users': users, 'nome': nome})
 
@@ -270,22 +196,31 @@ def route_template_editar_guardar():
                 curriculo.save(upload_path + curriculo.filename)
     password = request.form.get('password')
     if password:
-        value = mongo.db.users.update({"_id":username},{"nome":nome,"email":email,"password":password,"tipo":tipo,"universidade":universidade,"departamento":departamento,"obs":obs})
+        neo4j_db.run('UPDATE (n:User{_id:$username,nome:$name,email:$email,password:$password,tipo:$tipo,universidade:$universidade,departamento:$departamento,obs:$obs})',
+            username=username,
+            name=nome,
+            email=email,
+            password=password,
+            tipo=tipo,
+            universidade=universidade,
+            departamento=departamento,
+            obs=obs
+        )
     else:
-        value = mongo.db.users.update({"_id":username},{"$set":{"nome":nome,"email":email,"tipo":tipo,"universidade":universidade,"departamento":departamento,"obs":obs}})    
-    users = mongo.db.users.find()
+        neo4j_db.run('UPDATE (n:User{_id:$username,nome:$name,email:$email,password:$password,tipo:$tipo,universidade:$universidade,departamento:$departamento,obs:$obs})',
+            username=username,
+            name=nome,
+            email=email,
+            password=password,
+            tipo=tipo,
+            universidade=universidade,
+            departamento=departamento,
+            obs=obs
+        )
+    users = neo4j_db.run('match (x:User) return x')
     return json_util.dumps({'users': users, 'nome': nome2})
 
 ###### PEDIDOS ######
-
-@blueprint.route('/pedidos', methods=['GET'])
-@admin_required
-#@token_required
-#@login_required
-def route_pedidos():
-    pedidos= [doc for doc in mongo.db.pedidos.find()]
-    nome = request.args.get('nome')
-    return json_util.dumps({'pedidos': pedidos, 'nome': nome})
 
 @blueprint.route('/pedidos/registar', methods=['POST'])
 #@admin_required
@@ -345,27 +280,6 @@ def route_template_registar_pedido():
         return json_util.dumps({'nome': nome})
 
 
-@blueprint.route('/pedidos/ver/<pedido>', methods=['GET'])
-@admin_required
-#@login_required
-def route_template_ver_pedido(pedido):
-    nome = request.args.get('nome')
-    existe = mongo.db.pedidos.find_one({"_id":pedido})
-    upload_path = join(dirname(realpath(__file__)), 'static/picsPedidos/', pedido)
-    upload_path2 = join(dirname(realpath(__file__)), 'static/curriculoPedidos/', pedido)
-    print("path: " + upload_path)
-    print("name: " + pedido)
-    if path.exists(upload_path):
-        foto = pedido
-    else:
-        foto = "default.png"
-    if path.exists(upload_path2):
-        curriculo = pedido
-    else:
-        curriculo = "default.png"
-    return json_util.dumps({'pedido': existe, 'foto':upload_path, 'curriculo':upload_path2, 'nome':nome})
-
-
 
 ###########################################
 @blueprint.route('/pedidos/foto/<pedido>', methods=['GET'])
@@ -391,52 +305,18 @@ def route_cur_pedido(pedido):
         return send_from_directory(pathC, "Rafiki",mimetype='application/pdf')
 ##########################################
 
-@blueprint.route('/pedidos/apagar/<pedido>')
-@admin_required
-#@login_required
-def route_template_apagar_pedido(pedido):
-    value = mongo.db.pedidos.remove({"_id":pedido})
-    upload_path = join(dirname(realpath(__file__)), 'static/picsPedidos/', pedido)
-    upload_path2 = join(dirname(realpath(__file__)), 'static/curriculoPedidos/', pedido)
-    if path.exists(upload_path): 
-        remove(upload_path)
-    if path.exists(upload_path2): 
-        remove(upload_path2)
-    pedidos = mongo.db.pedidos.find()
-    nome = request.args.get('nome')
-    return json_util.dumps({'pedidos': pedidos, 'nome': nome})
-
-@blueprint.route('/pedidos/mover/<pedido>')
-@admin_required
-#@login_required
-def route_template_mover_pedido(pedido):
-    value1 = mongo.db.pedidos.find_one({"_id": pedido})
-    value2 = mongo.db.users.insert(value1)
-    value3 = mongo.db.pedidos.remove({"_id":pedido})
-    upload_path = join(dirname(realpath(__file__)), 'static/picsPedidos/', pedido)
-    upload_path2 = join(dirname(realpath(__file__)), 'static/curriculoPedidos/', pedido)
-    if path.exists(upload_path):
-        new_path = join(dirname(realpath(__file__)), 'static/pics/', pedido)
-        rename(upload_path, new_path)
-    if path.exists(upload_path2):
-        new_path2 = join(dirname(realpath(__file__)), 'static/curriculo/', pedido)
-        rename(upload_path2, new_path2)
-    pedidos = mongo.db.pedidos.find()
-    nome = request.args.get('nome')
-    return json_util.dumps({'pedidos': pedidos, 'nome': nome})
-
-
 
 @blueprint.route('/active', methods=['GET'])
 @token_required
 def route_active():
-    users= [doc for doc in mongo.db.activeUsers.find()]
+    users = neo4j_db.run('match (x:User) where x.ativo="true" return x').data()
     date = datetime.datetime.now()
     date = date - datetime.timedelta(minutes = 15)
     ret=[]
+    
     for u in users:
-        if datetime.datetime.strptime(u['stamp'],'%Y-%m-%d %H:%M:%S.%f') > date :
-            ret.append(u)
+        if datetime.datetime.strptime(u['x']['stamp'],'%Y-%m-%d %H:%M:%S.%f') > date :
+            ret.append(u['x'])
     return json_util.dumps({'users': ret})
     #return render_template('users.html',users=users,nome=nome)
 
@@ -444,12 +324,14 @@ def route_active():
 @blueprint.route('/history', methods=['GET'])
 @token_required
 def route_history():
-    reqs= [doc for doc in mongo.db.history.find()]
+    with open('historic.json') as json_file:
+        reqs = json.load(json_file)
     return json_util.dumps({'reqs': reqs})
+
 
 @blueprint.route('/historyCleanse', methods=['GET'])
 @token_required
 def route_historyCleanse():
-    mongo.db.history.drop()
-    reqs= [doc for doc in mongo.db.history.find()]
-    return json_util.dumps({'history': reqs})
+    with open('historic.json', 'w') as outfile:
+        json.dump([], outfile)
+    return json_util.dumps({'history': {} })

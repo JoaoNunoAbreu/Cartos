@@ -12,7 +12,7 @@
         <div class="text-center"> 
         <!-- Para ficar igual ao login -->
         <h2 class="change-font black--text"> {{ $t('nav.tituloProjeto') }}</h2>  
-        <h5 class="change-font black--text"> {{ $t('nav.sistemaPesquisa') }} </h5>
+        <h5 class="change-font black--text mt-5"> {{ $t('nav.sistemaPesquisa') }} </h5>
       </div>
       
       <!-- Só para afastar 2 centrimetro o titulo da pesquisa -->
@@ -157,7 +157,7 @@
                 ></v-select>
               </v-col>
             </v-row>
-            <v-row align="start" justify="center">
+            <v-row align="start" justify="center" class="mb-3 mt-n2">
               <v-col cols="12" md="3"> 
                 <v-menu
                   ref="menu"

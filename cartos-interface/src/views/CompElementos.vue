@@ -202,7 +202,8 @@ export default {
             dialog:false,
             helpCF:false,
             dialogPesquisas:false,
-            pesquisas:[]
+            pesquisas:[],
+            url: process.env.VUE_APP_URL,
         }
     },
     components: {
@@ -211,7 +212,7 @@ export default {
         'navDrawLeitor':navDrawLeitor,
     },
     created: function(){
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
+        axios.get(this.url + `/elementos/elementos?nome=${this.$store.state.user._id}`,{headers:{
                 Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
         .then(response => {
@@ -221,7 +222,7 @@ export default {
         }).catch(e => {
             this.errors.push(e)
         })
-        axios.get(`https://tommi2.di.uminho.pt/api/elementos/compElementos/pesquisas?nome=${this.$store.state.user._id}`,{
+        axios.get(this.url + `/elementos/compElementos/pesquisas?nome=${this.$store.state.user._id}`,{
             headers: {
                 Authorization: `Bearer: ${this.$store.state.jwt}`       
             }
@@ -254,7 +255,7 @@ export default {
             else{
                 formData.append('pesquisa',"todos os elementos")
             }
-            axios.post(`https://tommi2.di.uminho.pt/api/elementos/compElementos/post?nome=${this.$store.state.user._id}`,formData,{
+            axios.post(this.url + `/elementos/compElementos/post?nome=${this.$store.state.user._id}`,formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer: ${this.$store.state.jwt}`       

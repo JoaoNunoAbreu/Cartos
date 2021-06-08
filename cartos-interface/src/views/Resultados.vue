@@ -282,9 +282,6 @@ export default {
       // update page of items
       this.pageOfItems = pageOfItems;
     },
-    nextPage(){
-      
-    },
     printSection() {
       // Pass the element id here
       this.$htmlToPaper("imprimeMain");

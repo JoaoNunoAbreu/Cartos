@@ -268,11 +268,12 @@ export default {
             terms:false,
             credits:false,
             about:false,
-            drawerOn: true
+            drawerOn: true,
+            url: process.env.VUE_APP_URL,
         }
     },
     created(){
-      axios.get(`https://tommi2.di.uminho.pt/api/users/foto/${this.$store.state.user._id}`, {
+      axios.get(this.url + `/users/foto/${this.$store.state.user._id}`, {
         responseType:'arraybuffer',
         headers: {
             'Authorization': `Bearer: ${this.$store.state.jwt}`

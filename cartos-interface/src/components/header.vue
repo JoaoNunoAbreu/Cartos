@@ -112,7 +112,8 @@ export default {
         return{
             help: '',
             userPic: '',
-            about:false
+            about:false,
+            url: process.env.VUE_APP_URL,
         }
     },
     props:{
@@ -144,7 +145,7 @@ export default {
     },
     created(){
         this.userPic=''
-        axios.get(`https://tommi2.di.uminho.pt/api/users/foto/${this.$store.state.user._id}?seed=${Date.now()}`, {
+        axios.get(this.url + `/users/foto/${this.$store.state.user._id}?seed=${Date.now()}`, {
             responseType:'arraybuffer',
             headers: {
                 'Authorization': `Bearer: ${this.$store.state.jwt}`

@@ -4,7 +4,7 @@
 from app.elementos import blueprint
 from flask import render_template, request, url_for, send_from_directory
 from flask_login import login_required
-from app import mongo, token_required, admin_required, photo_auth, neo4j_db
+from app import token_required, admin_required, photo_auth, neo4j_db
 from os import path, remove, listdir
 from os.path import join, dirname, realpath
 from werkzeug.security import generate_password_hash
@@ -20,7 +20,7 @@ CORS(blueprint)
 ############################### ELEMENTOS #########################################
 
 @blueprint.route('/elementos', methods=['GET'])
-@token_required
+#@token_required
 #@login_required
 def route_template_elementos():
     elementos = neo4j_db.run('match (x:Elemento) return x')
@@ -170,32 +170,3 @@ def route_template_apagar(elemento):
             "lingua":lingua
         }) 
     return json_util.dumps(data)
-
-############################### Pesquisas ###################################
-
-@blueprint.route('/pesquisas', methods=['GET'])
-@admin_required
-def route_pesquisas():
-    pesquisas = [doc for doc in mongo.db.pesquisas.find()]
-    nome = request.args.get('nome')
-    return json_util.dumps({'pesquisas': pesquisas, 'nome': nome})
-
-@blueprint.route('/compElementos/pesquisas', methods=['GET'])
-@admin_required
-def route_pesquisasCompElementos():
-    nome = request.args.get('nome')
-    pesquisas= [doc for doc in mongo.db.pesquisasCF.find({"username":nome})]
-    return json_util.dumps({'pesquisas': pesquisas, 'nome': nome})
-
-@blueprint.route('/compElementos/post', methods=['POST'])
-@token_required
-#@login_required
-def route_pesquisasPost():
-    pesquisa = request.form.get('pesquisa')
-    username = request.form.get('username')
-    now = datetime.datetime.now()
-    data = now.strftime("%Y-%m-%d %H:%M")
-    value = mongo.db.pesquisasCF.insert({"pesquisa":pesquisa,"data":data,"username":username})
-    pesquisas= [doc for doc in mongo.db.pesquisasCF.find({"username":username})]
-    nome = request.args.get('nome')
-    return json_util.dumps({'pesquisas': pesquisas, 'nome': nome})

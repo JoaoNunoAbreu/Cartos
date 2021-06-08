@@ -180,7 +180,8 @@ export default {
                 tag: '',
                 exemplo: '',
                 procura:''
-            }
+            },
+            url: process.env.VUE_APP_URL,
         }
     },
     watch: {
@@ -214,7 +215,7 @@ export default {
         this.value='ver'
       },
       onUpdate(){
-          axios.get(`https://tommi2.di.uminho.pt/api/settings/ver?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+          axios.get(this.url + `/settings/ver?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
           .then(response => {
             // JSON responses are automatically parsed.
             //console.log(response.data)
@@ -229,7 +230,7 @@ export default {
       deleteItem (item) {
         const index = this.definitions.indexOf(item)
         //console.log('Index: ' + index + ' elemento: ' + this.definitions[index]._id)
-        axios.get(`https://tommi2.di.uminho.pt/api/settings/apagar/` + this.definitions[index]._id + `?nome=` + this.definitions[index].elemento,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/settings/apagar/` + this.definitions[index]._id + `?nome=` + this.definitions[index].elemento,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
             // JSON responses are automatically parsed.
             //console.log(response.data)

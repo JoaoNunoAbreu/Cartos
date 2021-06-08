@@ -167,6 +167,7 @@ export default {
         curriculo:{},
         observacoes:""
       },
+      url: process.env.VUE_APP_URL,
       dialogHelp:false,
       valid:true,
       rules: {
@@ -219,7 +220,7 @@ export default {
             this.$emit('atualizarInfo')
         },
         post(){
-            axios.get(`https://tommi2.di.uminho.pt/api/users/pedidos/mover/` + this.pedido.username + `?nome=` + this.pedido.username,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+            axios.get(this.url + `/users/pedidos/mover/` + this.pedido.username + `?nome=` + this.pedido.username,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
             .then(response => {
                 // JSON responses are automatically parsed.
                 //console.log(response.data)

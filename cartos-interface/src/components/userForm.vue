@@ -306,6 +306,7 @@ export default {
       dialog:false,
       dialogHelp:false,
       valid:true,
+      url: process.env.VUE_APP_URL,
       failureDialog:false,
       rules: {
           required: value => !!value || 'Required.',
@@ -339,9 +340,6 @@ export default {
     }
   },methods:{
     onUpdate(){
-      //console.log(typeof this.value)
-      //console.log('VALUE: ' + this.value)
-      //console.log(this.passedData.email)
       if(this.value != 'adicionar'){
         this.user.username = this.passedData._id
         this.user.nome = this.passedData.nome
@@ -377,7 +375,7 @@ export default {
         formData.append('obs',this.user.observacoes)
 
       if(this.value == 'editar'){
-        axios.post(`https://tommi2.di.uminho.pt/api/users/editar/guardar?nome=` + this.user.username,formData,{
+        axios.post(this.url + `/users/editar/guardar?nome=` + this.user.username,formData,{
           headers: {
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer: ${this.$store.state.jwt}`       
@@ -394,7 +392,7 @@ export default {
             this.errors.push(e)
         })
       }else if(this.value == 'adicionar'){
-        axios.post('https://tommi2.di.uminho.pt/api/users/registar',formData,{
+        axios.post(this.url + '/users/registar',formData,{
           headers: {
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer: ${this.$store.state.jwt}`       

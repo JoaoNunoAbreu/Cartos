@@ -185,6 +185,7 @@ export default {
       dialogHelp:false,
       valid:true,
       failureDialog:false,
+      url: process.env.VUE_APP_URL,
       rules: {
           required: value => !!value || 'Required.',
       }
@@ -223,7 +224,7 @@ export default {
         formData.append('tipo',this.doc.tipo)
         formData.append('ficheiro',this.doc.ficheiro)
 
-        axios.post('https://tommi2.di.uminho.pt/api/documentacao/adicionar',formData,{
+        axios.post(this.url + '/documentacao/adicionar',formData,{
           headers: {
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer: ${this.$store.state.jwt}`       

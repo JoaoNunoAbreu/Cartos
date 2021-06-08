@@ -148,34 +148,6 @@
                 </v-card-actions>
             </v-card>
         </v-dialog>
-        <!-- <v-dialog v-model="noCVDialog" scrollable width="500" persistent>
-            <v-card>
-                <v-row>
-                    <v-col style="margin-left:1cm;margin-right:1cm;max-width:20px; margin-top:15px" >
-                    <v-icon x-large color="blue" dark>mdi-message-text</v-icon>
-                    </v-col>
-                    <v-col>
-                    <v-card-text>
-                        <h3>{{$t('users.noCur')}}</h3>
-                    </v-card-text>
-                    </v-col>
-                </v-row>
-
-                <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-tooltip bottom>
-                    <template v-slot:activator="{ on: tooltip }">
-                        <v-btn style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark @click="noCVDialog = false" v-on="{ ...tooltip}">
-                        <v-icon>mdi-exit-to-app</v-icon>
-                        </v-btn>
-                    </template>
-                    <span>
-                        {{$t('indForm.close')}}
-                    </span>
-                    </v-tooltip>
-                </v-card-actions>
-            </v-card>
-        </v-dialog> -->
     </div>
 </template>
 
@@ -230,12 +202,12 @@ export default {
             picDialog:false,
             cv:'',
             cvDialog:false,
-            //noCVDialog:false,
             pageCount:0,
             currentPage:0,
             deleteDialog:false,
             tempValue:{},
-            page:1
+            page:1,
+            url: process.env.VUE_APP_URL,
         }
     },
     watch: {
@@ -253,12 +225,10 @@ export default {
     methods: {
       atualizarInfo: function(){
         this.dialog=false
-        axios.get(`https://tommi2.di.uminho.pt/api/documentacao/docs?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/documentacao/docs?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
           .then(response => {
-            // JSON responses are automatically parsed.
             this.docs = response.data.docs
           }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
       },
@@ -269,11 +239,8 @@ export default {
         this.dialog = true
       },
       verObjectItem(item){
-        //console.log(item)
         const index = this.docs.indexOf(item)
-        //console.log(this.users[index])        
-        // if (value == 'curriculo'){
-          axios.get(`https://tommi2.di.uminho.pt/api/documentacao/ficheiro/${this.docs[index]._id}?seed=${Date.now()}`, {
+          axios.get(this.url + `/documentacao/ficheiro/${this.docs[index]._id}?seed=${Date.now()}`, {
             responseType:'arraybuffer',
             headers: {
                 'Authorization': `Bearer: ${this.$store.state.jwt}`
@@ -284,28 +251,8 @@ export default {
                 this.cv = `data:${response.headers['content-type'].toLowerCase()};base64,${pdf}`
 				this.cvDialog=true
           }).catch(e => {
-              //this.noCVDialog = true
-              ////console.log(e)
               this.errors.push(e)
           })
-        // }
-        // else if(value == 'foto'){
-        //     axios.get(`https://tommi2.di.uminho.pt/api/documentacao/ficheiro/${this.docs[index]._id}?seed=${Date.now()}`, {
-        //         responseType:'arraybuffer',
-        //         headers: {
-        //             'Authorization': `Bearer: ${this.$store.state.jwt}`
-        //         }
-        //     })
-        //     .then(response => {
-        //         var image = new Buffer(response.data, 'binary').toString('base64')
-        //         this.userPic = `data:${response.headers['content-type'].toLowerCase()};base64,${image}`
-        //         this.picDialog = true
-        //     }).catch(e => {
-        //         alert('Este utilizador não possui foto')
-        //         //console.log(e)
-        //         this.errors.push(e)
-        //     })
-        // }
       },
       close () {
         this.dialog = false
@@ -315,15 +262,11 @@ export default {
 
       deleteItem (item) {
         const index = this.docs.indexOf(item)
-        //console.log('Index: ' + index + ' Username: ' + this.users[index]._id)
-        axios.get(`https://tommi2.di.uminho.pt/api/documentacao/apagar/` + this.docs[index]._id + `?nome=${this.$store.state.user._id}`,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/documentacao/apagar/` + this.docs[index]._id + `?nome=${this.$store.state.user._id}`,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
-            // JSON responses are automatically parsed.
-            //console.log(response.data)
             this.docs = response.data.docs
             this.tempValue = {}
         }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
       },
@@ -338,14 +281,10 @@ export default {
         }
     },
     created() {
-        //console.log('store->' + this.$store.state.jwt)
-        axios.get(`https://tommi2.di.uminho.pt/api/documentacao/docs?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/documentacao/docs?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
-            // JSON responses are automatically parsed.
             this.docs = response.data.docs
-            //console.log(this.users)
         }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
     }

@@ -161,7 +161,7 @@
               class="pa-15 change-font; text-left ; mx-auto"
               max-width="600"
             >
-              <div v-for="(item, index) in resultados" v-bind:key="item">
+              <div v-for="(item, index) in pageOfItems" v-bind:key="item">
                 <h3 class="font-weight-black change-font">
                   <a class="change-font" @click="showElemento(index)">{{
                     item.id
@@ -174,33 +174,24 @@
               </div>
               <div class="card-footer text-center change-font">
                 <jw-pagination
-                  v-if="resultados != null"
                   :items="resultados"
-                  @changePage="onChangePage"
-                ></jw-pagination>
+                  @changePage="onChangePage">
+                </jw-pagination>
               </div>
-              <v-dialog
-                v-model="dialogElemento"
-                @keydown.esc="
-                  dialogElemento = !dialogElemento;
-                  conta = [];
-                "
-                persistent
-                scrollable
-                max-width="800px"
-              >
-                <v-card>
-                  <resultado
-                    :passedData="elementoAtual"
-                    @emiteFecho="emiteFecho($event)"
-                  ></resultado>
-                </v-card>
-              </v-dialog>
             </v-card>
           </v-col>
         </v-row>
         <!-- tem de estar persistent para fazer clean do array conta -->
       </div>
+      <v-dialog persistent v-model="dialogElemento" max-width="800px">
+            <elementoFormEditable
+              :elemento="elementoAtual"
+              backTo="/admin/resultados"
+              :isDisabled="true"
+              :isDeleting="false"
+              @emiteFecho="emiteFecho($event)"
+            ></elementoFormEditable>
+      </v-dialog>
     <Footer />
       </v-container>
   </div>
@@ -208,10 +199,10 @@
 <script>
 import axios from "axios";
 import Footer from "../components/Footer";
-import resultado from "../views/Resultado";
 import NavDraw from '../components/navDraw.vue'
 import Header from '../components/header.vue'
 import navDrawLeitor from '../components/navDrawLeitor.vue'
+import ElementoFormEditable from "../components/elementoFormEditable.vue";
 
 export default {
   data() {
@@ -232,7 +223,7 @@ export default {
   },
   components: {
     Footer,
-    resultado,
+    ElementoFormEditable,
     'navDraw':NavDraw,
     'appHeader': Header,
     'navDrawLeitor':navDrawLeitor
@@ -266,7 +257,6 @@ export default {
     },
     onChangePage(pageOfItems) {
       // update page of items
-      console.log(pageOfItems);
       this.pageOfItems = pageOfItems;
     },
     printSection() {

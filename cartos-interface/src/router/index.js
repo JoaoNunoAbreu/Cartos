@@ -161,7 +161,7 @@ const routes = [
       },
       {
         path: 'tagging/elementoAnotado/ver/:id',
-        name: 'Editor',
+        name: 'VerElemento',
         component: () => import('../views/tagging/VerElemento.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
@@ -173,7 +173,7 @@ const routes = [
       },
       {
         path: 'tagging/elementoAtualizado/ver/:id',
-        name: 'Editor',
+        name: 'VerAtualizado',
         component: () => import('../views/tagging/VerAtualizado.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
@@ -185,7 +185,7 @@ const routes = [
       },
       {
         path: 'tagging/tags/dicionario',
-        name: 'Editor',
+        name: 'DicionarioTags',
         component: () => import('../views/tagging/DicionarioTags.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
@@ -209,7 +209,7 @@ const routes = [
       },
       {
         path: 'tagging/tags/lista',
-        name: 'Editor',
+        name: 'ListaTags',
         component: () => import('../views/tagging/ListaTags.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
@@ -221,7 +221,7 @@ const routes = [
       },
       {
         path: 'tagging/regras/lista',
-        name: 'Editor',
+        name: 'ListaRegras',
         component: () => import('../views/tagging/ListaRegras.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
@@ -395,19 +395,6 @@ const routes = [
           }
           else if (!store.getters.isAdmin) {
             next(`/homeAdmin`)
-          }
-          else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'processamento',
-        name: 'Processamento',
-        component: () => import('../views/ProgressBar.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
           }
           else {
             next()

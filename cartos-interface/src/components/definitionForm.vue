@@ -214,7 +214,8 @@ export default {
         procurar:""
       },
       dialogHelp:false,
-      dialog:false
+      dialog:false,
+      url: process.env.VUE_APP_URL,
     }
   },
   props:{
@@ -269,7 +270,7 @@ export default {
         formData.append('procurarr',this.definition.procurar)
       
       if(this.value == 'editar'){
-        axios.post(`https://tommi2.di.uminho.pt/api/settings/editar/guardar?desc=` + this.definition.elemento,formData,{
+        axios.post(this.url + `/settings/editar/guardar?desc=` + this.definition.elemento,formData,{
           headers: {
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer: ${this.$store.state.jwt}`       
@@ -287,7 +288,7 @@ export default {
             this.errors.push(e)
         })
       }else if(this.value == 'adicionar'){
-        axios.post('https://tommi2.di.uminho.pt/api/settings/registar',formData,{
+        axios.post(this.url + '/settings/registar',formData,{
           headers: {
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer: ${this.$store.state.jwt}`       

@@ -265,7 +265,8 @@ export default {
             currentPage:0,
             deleteDialog:false,
             tempValue:{},
-            page:1
+            page:1,
+            url: process.env.VUE_APP_URL,
         }
     },
     watch: {
@@ -282,7 +283,7 @@ export default {
     methods: {
       atualizarInfo: function(){
         this.dialog=false
-        axios.get(`https://tommi2.di.uminho.pt/api/users/users?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/users/users?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
           .then(response => {
             // JSON responses are automatically parsed.
             var todos = response.data.users
@@ -311,7 +312,7 @@ export default {
         const index = this.users.indexOf(item)
         //console.log(this.users[index])        
         if (value == 'curriculo'){
-          axios.get(`https://tommi2.di.uminho.pt/api/users/curriculo/${this.users[index]._id}?seed=${Date.now()}`, {
+          axios.get(this.url + `/users/curriculo/${this.users[index]._id}?seed=${Date.now()}`, {
             responseType:'arraybuffer',
             headers: {
                 'Authorization': `Bearer: ${this.$store.state.jwt}`
@@ -328,7 +329,7 @@ export default {
           })
         }
         else if(value == 'foto'){
-            axios.get(`https://tommi2.di.uminho.pt/api/users/foto/${this.users[index]._id}?seed=${Date.now()}`, {
+            axios.get(this.url + `/users/foto/${this.users[index]._id}?seed=${Date.now()}`, {
                 responseType:'arraybuffer',
                 headers: {
                     'Authorization': `Bearer: ${this.$store.state.jwt}`
@@ -352,7 +353,7 @@ export default {
       },
       edit(){
         this.update = true
-        axios.get(`https://tommi2.di.uminho.pt/api/users/users?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/users/users?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
           .then(response => {
               // JSON responses are automatically parsed.
               //console.log(response.data)
@@ -367,7 +368,7 @@ export default {
       deleteItem (item) {
         const index = this.users.indexOf(item)
         //console.log('Index: ' + index + ' Username: ' + this.users[index]._id)
-        axios.get(`https://tommi2.di.uminho.pt/api/users/apagar/` + this.users[index]._id + `?nome=` + this.users[index].username,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/users/apagar/` + this.users[index]._id + `?nome=` + this.users[index].username,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
             // JSON responses are automatically parsed.
             //console.log(response.data)
@@ -390,15 +391,15 @@ export default {
     },
     created() {
         //console.log('store->' + this.$store.state.jwt)
-        axios.get(`https://tommi2.di.uminho.pt/api/users/users?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/users/users?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
             // JSON responses are automatically parsed.
             //console.log(response.data)
-            var todos = response.data.users
-            for(let i = 0; i<todos.length;i++){
-                if(todos[i]._id === this.$store.state.user._id){
-                    todos.splice(i,1)
-                }
+            var data = response.data
+            var todos =[]
+            for(let i = 0; i<response.data.length ; i++){
+                todos.push(data[i]["x"])
+                
             }
             this.users = todos
             //console.log(this.users)

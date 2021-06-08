@@ -633,7 +633,6 @@ export default {
       this.tipo = this.elemento.tipo;
       this.getCapa(this.elemento.id);
       this.getVideo(this.elemento.id);
-      
     },
     reset() {
       //needs work for more resets
@@ -754,7 +753,7 @@ export default {
     deleteItem() {
       axios
         .get(
-          `https://tommi2.di.uminho.pt/api/elementos/apagar/` +
+          this.url + `/elementos/apagar/` +
             this.id +
             `?nome=${this.$store.state.user._id}`,
           {

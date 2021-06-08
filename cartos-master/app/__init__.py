@@ -6,8 +6,9 @@ from flask_login import LoginManager
 from importlib import import_module
 from logging import basicConfig, DEBUG, getLogger, StreamHandler
 from os import path
-from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import json
+
 ###Imports
 import datetime
 from functools import wraps
@@ -15,10 +16,10 @@ import jwt
 #########
 
 login_manager = LoginManager()
-mongo = PyMongo()
 dadosElemento = {}
 indexList = []
 tags = []
+historic = [ ]
 
 
 #################
@@ -40,7 +41,7 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
-    for module_name in ('base', 'home','users','elementos','settings','analise','tagging','importacao','georreferenciacao','base','documentacao'):
+    for module_name in ('home','users','elementos','analise','importacao','base'):
         module = import_module('app.{}.routes'.format(module_name))
         app.register_blueprint(module.blueprint)
 
@@ -63,9 +64,6 @@ def apply_themes(app):
 
 def create_app(config, selenium=False):
     app = Flask(__name__, static_folder='base/static')
-    app.config["MONGO_URI"] = "mongodb://localhost:27017/tommi"
-    app.config['SECRET_KEY'] = 'tommi'
-    mongo.init_app(app)
     if selenium:
         app.config['LOGIN_DISABLED'] = True
     register_extensions(app)
@@ -100,12 +98,19 @@ def token_required(f):
             user = neo4j_db.evaluate(query)
             now = datetime.datetime.now()
             date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
-            did = ObjectId()
+            did = json.dumps(ObjectId(), default=str)
             reqstring= request.method + ":" + request.url
             if not user:
                 raise RuntimeError('User not found')
-            mongo.db.activeUsers.find_one_and_update({"_id":data['sub']},{"$set":{"_id":data['sub'],"stamp":date}},upsert=True)
-            mongo.db.history.insert_one({"_id":did, "user":data['sub'], "stamp":date, "request":reqstring})
+           
+            neo4j_db.evaluate('match (x {_id:$v}) set  x+={ativo:"true" , stamp:$date} return x',v=data['sub'],date=date)
+            h= {"_id": did, "user":data['sub'], "stamp":date, "request":reqstring}
+            with open('historic.json') as json_file:
+                reqs = json.load(json_file)
+            reqs.append(h)
+            with open('historic.json', 'w') as outfile:
+                 json.dump(reqs, outfile)
+                 
             return f(*args, **kwargs)
         except jwt.ExpiredSignatureError:
             return jsonify(expired_msg), 401 # 401 is Unauthorized HTTP status code
@@ -143,8 +148,6 @@ def admin_required(f):
             reqstring= request.method + ":" + request.url '''
             if not user:
                 raise RuntimeError('User or Administrator not found')
-            ''' mongo.db.activeUsers.find_one_and_update({"_id":data['sub']},{"$set":{"_id":data['sub'],"stamp":date}},upsert=True)
-            mongo.db.history.insert_one({"_id":did, "user":data['sub'], "stamp":date, "request":reqstring}) '''
             return f(*args, **kwargs)
         except jwt.ExpiredSignatureError:
             return jsonify(expired_msg), 401 # 401 is Unauthorized HTTP status code
