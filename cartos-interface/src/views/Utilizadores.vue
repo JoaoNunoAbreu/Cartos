@@ -158,8 +158,8 @@
                     <v-spacer></v-spacer>
                     <v-tooltip bottom>
                     <template v-slot:activator="{ on: tooltip }">
-                        <v-btn class="mr-5" @click="deleteDialog = false;deleteItem(tempValue);" v-on="{ ...tooltip}">
-                        <v-icon>mdi-check</v-icon>
+                        <v-btn class="white--text mr-5" color="#cc0000" @click="deleteDialog = false;deleteItem(tempValue);" v-on="{ ...tooltip}">
+                        <v-icon>mdi-delete</v-icon>
                         </v-btn>
                     </template>
                     <span>
@@ -168,8 +168,8 @@
                     </v-tooltip>
                     <v-tooltip bottom>
                     <template v-slot:activator="{ on: tooltip }">
-                        <v-btn @click="deleteDialog = false" v-on="{ ...tooltip}">
-                        <v-icon>mdi-exit-to-app</v-icon>
+                        <v-btn color="#26B99A" class="white--text" @click="deleteDialog = false" v-on="{ ...tooltip}">
+                        <v-icon>mdi-door-open</v-icon>
                         </v-btn>
                     </template>
                     <span>
@@ -285,7 +285,6 @@ export default {
         this.dialog=false
         axios.get(this.url + `/users/users?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
           .then(response => {
-            // JSON responses are automatically parsed.
             var todos = response.data.users
             for(let i = 0; i<todos.length;i++){
                 if(todos[i]._id === this.$store.state.user._id){
@@ -294,7 +293,6 @@ export default {
             }
             this.users = todos
           }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
       },
@@ -302,15 +300,10 @@ export default {
         this.editedIndex = this.users.indexOf(item)
         this.editedItem = Object.assign({}, item)
         this.value=value
-        //console.log("AAAAAAAAAAAAA")
-        //console.log(this.value)
-        //console.log(this.editedItem)
         this.dialog = true
       },
       verObjectItem(item,value){
-        //console.log(item)
         const index = this.users.indexOf(item)
-        //console.log(this.users[index])        
         if (value == 'curriculo'){
           axios.get(this.url + `/users/curriculo/${this.users[index]._id}?seed=${Date.now()}`, {
             responseType:'arraybuffer',
@@ -324,7 +317,6 @@ export default {
 				this.cvDialog=true
           }).catch(e => {
               this.noCVDialog = true
-              ////console.log(e)
               this.errors.push(e)
           })
         }
@@ -353,13 +345,10 @@ export default {
       },
       edit(){
         this.update = true
-        axios.get(this.url + `/users/users?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/users/users?nome=${this.$store.state.user._id}`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
           .then(response => {
-              // JSON responses are automatically parsed.
-              //console.log(response.data)
               this.users = response.data.users
           }).catch(e => {
-              //console.log(e)
               this.errors.push(e)
         })
         this.update = false
@@ -367,18 +356,14 @@ export default {
 
       deleteItem (item) {
         const index = this.users.indexOf(item)
-        //console.log('Index: ' + index + ' Username: ' + this.users[index]._id)
-        axios.get(this.url + `/users/apagar/` + this.users[index]._id + `?nome=` + this.users[index].username,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+        axios.get(this.url + `/users/apagar/` + this.users[index]._id,{ headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
-            // JSON responses are automatically parsed.
-            //console.log(response.data)
-            this.users = response.data.users
+            this.users = response.data
             this.tempValue = {}
         }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
-      },
+        },
         emiteFecho(){
             this.dialog=false
         },
@@ -393,18 +378,13 @@ export default {
         //console.log('store->' + this.$store.state.jwt)
         axios.get(this.url + `/users/users?nome=admin`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
-            // JSON responses are automatically parsed.
-            //console.log(response.data)
             var data = response.data
             var todos =[]
             for(let i = 0; i<response.data.length ; i++){
                 todos.push(data[i]["x"])
-                
             }
             this.users = todos
-            //console.log(this.users)
         }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
     }
@@ -415,7 +395,7 @@ export default {
         background: linear-gradient(to top, #376a53 0%, #549d7c 100%);
     }
     .v-data-table /deep/ tr{
-        color: #73879C;
+        color: black;
         font-size: 13px;
     }
     .v-data-table /deep/ tr:nth-child(even){

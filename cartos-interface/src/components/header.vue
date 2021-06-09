@@ -145,7 +145,7 @@ export default {
     },
     created(){
         this.userPic=''
-        axios.get(this.url + `/users/foto/${this.$store.state.user._id}?seed=${Date.now()}`, {
+        axios.get(this.url + `/users/foto/${this.$store.state.user._id}`, {
             responseType:'arraybuffer',
             headers: {
                 'Authorization': `Bearer: ${this.$store.state.jwt}`

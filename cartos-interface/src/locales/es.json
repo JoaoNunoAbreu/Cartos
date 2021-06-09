@@ -279,5 +279,13 @@
     },
     "tForm": {
         "vT": "Ver etiquetas"
+    },
+    "pr":{
+        "da":"fecha de búsqueda",
+        "nome":"Nombre",
+        "texto":"Texto",
+        "col":"Colección",
+        "edi": "Compañia de Publicidad",
+        "d":"Fecha"
     }
 }

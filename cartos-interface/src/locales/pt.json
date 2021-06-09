@@ -374,12 +374,12 @@
         "ins":"Inserção de Elementos"
     },
     "pr":{
-        "pesq":"Pesquisas",
-        "fol":"Elemento",
-        "ver":"Versão",
-        "res":"Resultado",
-        "d":"Data",
-        "h":"Hora"
+        "da":"Data da Pesquisa",
+        "nome":"Nome",
+        "texto":"Texto",
+        "col":"Coleção",
+        "edi": "Editora",
+        "d":"Data"
     },
     "docs":{
         "ins":"Inserção de Elementos",

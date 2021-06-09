@@ -15,7 +15,7 @@ import json
 from bson import json_util
 from flask_cors import CORS, cross_origin
 CORS(blueprint)
-#######
+######
 
 ############################### ELEMENTOS #########################################
 

@@ -104,14 +104,18 @@
 
             <div class="mt-5">
                 <h3 style="text-align: center">Nº Elementos por Coleção</h3>
-                <line-chart :passedData="colecoes"></line-chart>
+                <div class="small">
+                    <line-chart :passedData="colecoes"></line-chart>
+                </div>
             </div>
 
             <!-- Editoras Graph -->
 
             <div class="mt-5">
                 <h3 style="text-align: center">Nº Elementos por Editora</h3>
-                <line-chart :passedData="editoras"></line-chart>
+                <div class="small">
+                    <line-chart :passedData="editoras"></line-chart>
+                </div>
             </div>
             
         </template>
@@ -182,7 +186,6 @@ export default {
             this.nColecoes= response.data.n_colecoes;
             this.colecoes = response.data.colecoesContadas;
             this.editoras = response.data.editorasContadas;
-            console.log("editoras = " + this.editoras)
 
             for(let i = 0;i<response.data.lastElementos.length;i++){
 
@@ -262,6 +265,14 @@ export default {
   opacity: .9;
   position: absolute;
   width: 100%;
+}
+
+.small {
+  transform: scale(0.9, 0.9);
+  -ms-transform: scale(0.9, 0.9); /* IE 9 */
+  -webkit-transform: scale(0.9, 0.9); /* Safari and Chrome */
+  -o-transform: scale(0.9, 0.9); /* Opera */
+  -moz-transform: scale(0.9, 0.9); /* Firefox */
 }
 
 </style>

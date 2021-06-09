@@ -28,7 +28,7 @@ def login():
     _id = request.form.get('id')
     print(f"_id: {_id}")
     password = request.form.get('password')
-    user = neo4j_db.evaluate('match (x:User) where x._id=$v return x',v=_id)
+    user = neo4j_db.evaluate(f'match (x:User) where x._id="{_id}" return x')
     print(f"user: {user}")
 
     if user and check_password_hash(user["password"], password):

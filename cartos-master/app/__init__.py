@@ -93,24 +93,39 @@ def token_required(f):
 
         try:
             token = auth_headers[1]
+            #print("BREAK 1")
             data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
+            #print("BREAK 2")
             query = f'match (n:User) where n._id = "{data["sub"]}" return n'
+            #print("BREAK 3")
             user = neo4j_db.evaluate(query)
+            #print("BREAK 4")
             now = datetime.datetime.now()
+            #print("BREAK 5")
             date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
-            did = json.dumps(ObjectId(), default=str)
+            #print("BREAK 6")
+            did = ObjectId()
+            #print("BREAK 7")
             reqstring= request.method + ":" + request.url
+            #print("BREAK 8")
             if not user:
                 raise RuntimeError('User not found')
            
             neo4j_db.evaluate('match (x {_id:$v}) set  x+={ativo:"true" , stamp:$date} return x',v=data['sub'],date=date)
-            h= {"_id": did, "user":data['sub'], "stamp":date, "request":reqstring}
+            #print("BREAK 9")
+            h = {"_id": str(did), "user":data['sub'], "stamp":date, "request":reqstring}
+            #print("BREAK 10")
+
             with open('historic.json') as json_file:
                 reqs = json.load(json_file)
+
             reqs.append(h)
+            #print("BREAK 11")
+
             with open('historic.json', 'w') as outfile:
-                 json.dump(reqs, outfile)
-                 
+                json.dump(reqs, outfile,indent=4,ensure_ascii=False)
+
+            #print("BREAK 12")
             return f(*args, **kwargs)
         except jwt.ExpiredSignatureError:
             return jsonify(expired_msg), 401 # 401 is Unauthorized HTTP status code

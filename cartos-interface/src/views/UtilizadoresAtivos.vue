@@ -10,7 +10,6 @@
                                 :headers="headers"
                                 :items="active"
                                 :sort-by="['_id']"
-                                :search="search"
                                 :items-per-page="15"
                                 multi-sort       
                             >
@@ -24,7 +23,6 @@
                                     ></v-divider>
                                     <v-spacer></v-spacer>
                                     <v-text-field
-                                        v-model="search"
                                         append-icon="mdi-magnify"
                                         label="Procura"
                                         single-line
