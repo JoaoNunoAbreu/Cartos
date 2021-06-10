@@ -1108,5 +1108,47 @@
         "user": "jna",
         "stamp": "2021-06-09 19:46:17.450721",
         "request": "GET:http://cartos.di.uminho.pt/users/curriculo/jna?seed=1623264377385"
+    },
+    {
+        "_id": "60c23eebadcce92fab4c6c7d",
+        "user": "jna",
+        "stamp": "2021-06-10 17:33:47.055348",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60c23f35adcce92fab4c6c7e",
+        "user": "jna",
+        "stamp": "2021-06-10 17:35:01.177076",
+        "request": "GET:http://cartos.di.uminho.pt/users/history?nome=jna"
+    },
+    {
+        "_id": "60c23f37adcce92fab4c6c7f",
+        "user": "jna",
+        "stamp": "2021-06-10 17:35:03.492592",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=jna"
+    },
+    {
+        "_id": "60c23f3dadcce92fab4c6c80",
+        "user": "jna",
+        "stamp": "2021-06-10 17:35:09.200319",
+        "request": "GET:http://cartos.di.uminho.pt/analise/pesquisas"
+    },
+    {
+        "_id": "60c23f97adcce92fab4c6c81",
+        "user": "jna",
+        "stamp": "2021-06-10 17:36:39.637993",
+        "request": "GET:http://cartos.di.uminho.pt/users/curriculo/comFoto?seed=1623342999501"
+    },
+    {
+        "_id": "60c23f99adcce92fab4c6c82",
+        "user": "jna",
+        "stamp": "2021-06-10 17:36:41.715841",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/comFoto?seed=1623343001611"
+    },
+    {
+        "_id": "60c2486ef59ee6e586b8ca68",
+        "user": "jna",
+        "stamp": "2021-06-10 18:14:22.808993",
+        "request": "GET:http://cartos.di.uminho.pt/analise/pesquisas"
     }
 ]
