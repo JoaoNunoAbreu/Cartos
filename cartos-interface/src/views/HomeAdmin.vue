@@ -71,7 +71,7 @@
                             <div v-if="hover" class="d-flex transition-fast-in-fast-out teal darken-1 v-reveal display-3 white--text"
                                 style="height: 100%;">
                                 <v-spacer></v-spacer>
-                                <v-btn icon  color="white" ><v-icon  @click="viewItem(item)">mdi-eye</v-icon></v-btn>
+                                <v-btn icon  color="white" ><v-icon  @click="viewItem(elem)">mdi-eye</v-icon></v-btn>
                                 <v-spacer></v-spacer>
                             </div>
                             
@@ -104,17 +104,28 @@
 
             <div class="mt-5">
                 <h3 style="text-align: center">Nº Elementos por Coleção</h3>
-                <line-chart :passedData="colecoes"></line-chart>
+                <div class="small">
+                    <line-chart :passedData="colecoes"></line-chart>
+                </div>
             </div>
 
             <!-- Editoras Graph -->
 
             <div class="mt-5">
                 <h3 style="text-align: center">Nº Elementos por Editora</h3>
-                <line-chart :passedData="editoras"></line-chart>
+                <div class="small">
+                    <line-chart :passedData="editoras"></line-chart>
+                </div>
             </div>
-            
         </template>
+        <v-dialog persistent v-model="dialog" max-width="800px">
+            <elementoFormEditable
+              :elemento="item"
+              :isDisabled="true"
+              :isDeleting="false"
+              @emiteFecho="emiteFecho($event)"
+            ></elementoFormEditable>
+        </v-dialog>
     </div>
 </template>
 <script>
@@ -122,6 +133,7 @@ import axios from 'axios'
 import Header from '../components/header.vue'
 import NavDraw from '../components/navDraw.vue'
 import LineChart from '@/components/LineChart'
+import ElementoFormEditable from "../components/elementoFormEditable.vue";
 
 export default {
     data(){
@@ -137,6 +149,8 @@ export default {
             percent:0,
             last3Elements: [],
             condition:false,
+            item: null,
+            dialog: false,
             url: process.env.VUE_APP_URL,
             headers: [{
                 text: this.$t("fol.id"),
@@ -170,7 +184,13 @@ export default {
     components:{
             'appHeader': Header,
             'navDraw':NavDraw,
-            LineChart
+            LineChart,
+            elementoFormEditable: ElementoFormEditable,
+    },
+    watch: {
+        dialog(val) {
+            val || this.close();
+        }
     },
     created: async function() {
 
@@ -182,9 +202,8 @@ export default {
             this.nColecoes= response.data.n_colecoes;
             this.colecoes = response.data.colecoesContadas;
             this.editoras = response.data.editorasContadas;
-            console.log("editoras = " + this.editoras)
 
-            for(let i = 0;i<response.data.lastElementos.length;i++){
+            for(let i = 0;i < this.last3Elements.length; i++){
 
                 var idd = this.last3Elements[i].id;
                 axios.get(this.url + `/elementos/ver/${idd}/foto`, {
@@ -215,8 +234,20 @@ export default {
             return count;
         },
          printSection() {
-        this.$htmlToPaper("tabelaElementos");
-    },
+            this.$htmlToPaper("tabelaElementos");
+        },
+        viewItem(item) {
+            this.item = item;
+            this.dialog = true;
+        },
+        close() {
+            this.dialog = false;
+            this.item = {};
+        },
+        emiteFecho: function () {
+            this.dialog = false;
+            /* this.getElementos(); */
+        },
     }
 }
 </script>
@@ -262,6 +293,14 @@ export default {
   opacity: .9;
   position: absolute;
   width: 100%;
+}
+
+.small {
+  transform: scale(0.9, 0.9);
+  -ms-transform: scale(0.9, 0.9); /* IE 9 */
+  -webkit-transform: scale(0.9, 0.9); /* Safari and Chrome */
+  -o-transform: scale(0.9, 0.9); /* Opera */
+  -moz-transform: scale(0.9, 0.9); /* Firefox */
 }
 
 </style>

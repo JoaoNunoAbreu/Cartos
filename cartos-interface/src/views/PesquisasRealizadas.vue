@@ -11,7 +11,7 @@
             :headers="headers"
             :items="pesquisas"
             :items-per-page="15"
-            :sort-by="['data']"
+            :sort-by="['data_atual']"
             :search="search"
             multi-sort            
         >
@@ -33,22 +33,22 @@
                     ></v-text-field>
                 </v-toolbar>
             </template>
-            <template v-slot:header.pesquisa="{ header }">
+            <template v-slot:header.data_atual="{ header }">
                 <label> {{header.text}} </label>
             </template>
-            <template v-slot:header.elemento="{ header }">
+            <template v-slot:header.nome="{ header }">
                 <label> {{header.text}} </label>
             </template>
-            <template v-slot:header.versao="{ header }">
+            <template v-slot:header.palavra="{ header }">
                 <label> {{header.text}} </label>
             </template>
-            <template v-slot:header.resultado="{ header }">
+            <template v-slot:header.colecao="{ header }">
+                <label> {{header.text}} </label>
+            </template>
+            <template v-slot:header.editora="{ header }">
                 <label> {{header.text}} </label>
             </template>
             <template v-slot:header.data="{ header }">
-                <label> {{header.text}} </label>
-            </template>
-            <template v-slot:header.hora="{ header }">
                 <label> {{header.text}} </label>
             </template>
         </v-data-table>
@@ -64,30 +64,31 @@ export default {
         return{
             headers:[
                 {
-                    text: `${this.$t('pr.pesq')}`,
+                    text: `${this.$t('pr.da')}`,
                     align: 'start',
-                    value: 'pesquisa'
+                    value: 'data_atual'
                 },
                 {
-                    text:`${this.$t('pr.fol')}`,
-                    value: 'elemento'
+                    text:`${this.$t('pr.nome')}`,
+                    value: 'nome'
                 },
                 {
-                    text:`${this.$t('pr.ver')}`,
-                    value: 'versao'
+                    text:`${this.$t('pr.texto')}`,
+                    value: 'palavra'
                 },
                 {
-                    text:`${this.$t('pr.pesq')}`,
-                    value: 'resultado'
+                    text:`${this.$t('pr.col')}`,
+                    value: 'colecao'
+                },
+                {
+                    text:`${this.$t('pr.edi')}`,
+                    value: 'editora'
                 },
                 {
                     text:`${this.$t('pr.d')}`,
                     value: 'data'
-                },
-                {
-                    text:`${this.$t('pr.h')}`,
-                    value:'hora'
                 }
+
             ],
             search:'',
             ajuda:'pesquisas',
@@ -117,15 +118,12 @@ export default {
     //     }
     // },
     created() {
-        axios.get(this.url + `/elementos/pesquisas?nome=${this.$store.state.user._id}`,{headers:{
+        axios.get(this.url + `/analise/pesquisas`,{headers:{
           Authorization:`Bearer: ${this.$store.state.jwt}`
         }})
         .then(response => {
-            // JSON responses are automatically parsed.
-            //console.log(response.data)
             this.pesquisas = response.data.pesquisas
         }).catch(e => {
-            //console.log(e)
             this.errors.push(e)
         })
     }

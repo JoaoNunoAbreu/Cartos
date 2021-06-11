@@ -233,7 +233,7 @@ export default {
 
     this.pesquisa = this.$route.params.pesquisa;
     axios
-      .get(this.url + "/analise/pesquisa", { params: this.$route.params })
+      .get(this.url + `/analise/pesquisa?nome=${this.$store.state.user._id}`, { params: this.$route.params })
       .then((dados) => {
         var tempo_fin = performance.now();
         this.tempoFinal = tempo_fin - tempo_inic;

@@ -15,7 +15,7 @@ import json
 from bson import json_util
 from flask_cors import CORS, cross_origin
 CORS(blueprint)
-#######
+######
 
 ############################### ELEMENTOS #########################################
 
@@ -122,16 +122,17 @@ def route_template_ver_video(elemento):
     pathCheck = join(pathVideo, f)
     if path.exists(pathCheck) :
         return send_from_directory(pathVideo, f, mimetype='video/mp4')
-    else :
-        return send_from_directory(pathVideo, "default", mimetype='videp/png')
+    else:
+        return send_from_directory(pathVideo, "default", mimetype='video/png')
 
 @blueprint.route('/ver/<elemento>/ficheiro', methods=['GET'])
 def route_template_ver_ficheiro(elemento):
     pathC = join(dirname(realpath(__file__)), 'static/doc/')
     f = elemento + ".pdf"
-    if path.exists(pathC) :    
+    pathCheck = join(pathC, f)
+    if path.exists(pathCheck) :    
         return send_from_directory(pathC, f ,mimetype='application/pdf')
-    else :
+    else:
         return send_from_directory(pathC, "blank.pdf",mimetype='application/pdf')
 
 @blueprint.route('/apagar/<elemento>', methods=['GET'])

@@ -249,7 +249,6 @@ export default {
                 this.cv = `data:${response.headers['content-type'].toLowerCase()};base64,${pdf}`
                 this.cvDialog=true
             }).catch(e => {
-                //console.log(e)
                 console.log(e)
             })
         },

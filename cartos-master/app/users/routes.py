@@ -214,11 +214,10 @@ def route_cur(user):
     """
 
     pathC = join(dirname(realpath(__file__)), 'static/curriculo/')
-    print (pathC)
-    print (user)
-    if photo_auth (request, user) :    
+    pathCheck = join(pathC, user)
+    if photo_auth(request, user) and path.exists(pathCheck):    
         return send_from_directory(pathC, user,mimetype='application/pdf')
-    else :
+    else:
         return send_from_directory(pathC, "blank.pdf",mimetype='application/pdf')
 
 @blueprint.route('/curriculo/atualizar/<user>', methods=['POST'])
@@ -354,17 +353,17 @@ def route_template_apagar(user):
         examples:
           rgb: ['red', 'green', 'blue']
     """
-    
-    value = neo4j_db.evaluate('match (x:User) where x._id=$v delete x',v=user)
+
+    neo4j_db.evaluate('match (x:User) where x._id=$v delete x',v=user)
     upload_path = join(dirname(realpath(__file__)), 'static/pics/', user)
     upload_path2 = join(dirname(realpath(__file__)), 'static/curriculo/', user)
     if path.exists(upload_path): 
         remove(upload_path)
     if path.exists(upload_path2): 
         remove(upload_path2)
-    users = neo4j_db.run('match (x:User) return x')
-    nome = request.args.get('nome')
-    return json_util.dumps({'users': users, 'nome': nome})
+    users = neo4j_db.run('match (x:User) return x').data()
+    data = [i['x'] for i in users]
+    return json_util.dumps(data)
 
 @blueprint.route('/editar/guardar', methods=['POST'])
 @admin_required
@@ -377,7 +376,6 @@ def route_template_editar_guardar():
     universidade = request.form.get('universidade')
     departamento = request.form.get('departamento')
     obs = request.form.get('obs')
-    nome2 = request.args.get('nome')
     if 'foto' in request.files:
             foto = request.files['foto']
             if foto.filename != '':
@@ -391,30 +389,13 @@ def route_template_editar_guardar():
                 upload_path = join(dirname(realpath(__file__)), 'static/curriculo/')
                 curriculo.save(upload_path + curriculo.filename)
     password = request.form.get('password')
-    if password:
-        neo4j_db.run('UPDATE (n:User{_id:$username,nome:$name,email:$email,password:$password,tipo:$tipo,universidade:$universidade,departamento:$departamento,obs:$obs})',
-            username=username,
-            name=nome,
-            email=email,
-            password=password,
-            tipo=tipo,
-            universidade=universidade,
-            departamento=departamento,
-            obs=obs
-        )
+
+    if password:    
+        neo4j_db.run(f'MATCH (n:User {{_id: "{username}"}}) SET n += {{nome: "{nome}",email: "{email}",password:"{password}", tipo: "{tipo}",universidade: "{universidade}",departamento: "{departamento}",obs: "{obs}" }} RETURN n')
     else:
-        neo4j_db.run('UPDATE (n:User{_id:$username,nome:$name,email:$email,password:$password,tipo:$tipo,universidade:$universidade,departamento:$departamento,obs:$obs})',
-            username=username,
-            name=nome,
-            email=email,
-            password=password,
-            tipo=tipo,
-            universidade=universidade,
-            departamento=departamento,
-            obs=obs
-        )
+        neo4j_db.run(f'MATCH (n:User {{"_id": "{username}"}}) SET n += {{nome: "{nome}",email: "{email}", tipo: "{tipo}",universidade: "{universidade}",departamento: "{departamento}",obs: "{obs}" }} RETURN n')
     users = neo4j_db.run('match (x:User) return x')
-    return json_util.dumps({'users': users, 'nome': nome2})
+    return json_util.dumps({'users': users})
 
 ###### PEDIDOS ######
 
@@ -621,4 +602,4 @@ def route_history():
 def route_historyCleanse():
     with open('historic.json', 'w') as outfile:
         json.dump([], outfile)
-    return json_util.dumps({'history': {} })
+    return json_util.dumps({'history': [] })

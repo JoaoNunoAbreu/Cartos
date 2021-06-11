@@ -285,5 +285,13 @@
     },
     "tForm": {
         "vT": "View tags"
+    },
+    "pr":{
+        "da":"Search's Date",
+        "nome":"Name",
+        "texto":"Text",
+        "col":"Collection",
+        "edi": "Publishing Company",
+        "d":"Date"
     }
 }

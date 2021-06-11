@@ -1,15 +1,25 @@
 from flask import jsonify, render_template, redirect, request, url_for
 from app.analise import blueprint
-
+from app import neo4j_db
 from bson.json_util import dumps
 from bson.json_util import loads 
 from datetime import datetime
+from app import token_required, admin_required, photo_auth, neo4j_db
+
 
 from flask_cors import CORS, cross_origin
 CORS(blueprint)
+import json
+from bson import json_util
 
-import re
-import time
+
+############################### PESQUISAS FEITAS #########################################
+
+@blueprint.route('/pesquisas', methods=['GET'])
+@token_required
+def route_pesquisas():
+    pesquisas = loadPesquisas()
+    return json_util.dumps({'pesquisas': pesquisas})
 
 @blueprint.route('/pesquisa', methods=['GET'])
 def pesquisaresultados():
@@ -17,6 +27,11 @@ def pesquisaresultados():
     colecao = request.args.get('colecao') 
     editora = request.args.get('editora')
     data = request.args.get('date')
+    nome = request.args.get('nome')
+
+    now = datetime.now()
+    data_atual = now.strftime("%Y-%m-%d %H:%M:%S.%f")
+
     if(data):
         datetimeobject = datetime.strptime(data,'%Y-%m-%d')
         data = datetimeobject.strftime('%d/%m/%Y')
@@ -41,8 +56,29 @@ def pesquisaresultados():
     else:
         res_pesquisa = neo4j_db.run(f'match (e:Elemento) where e.titulo contains "{palavra}" return e')
 
+    if(data == None):
+        data = "Todas"
+    if(nome == "undefined"):
+        nome = "Sem utilizador"
+    writeSearchInFile(data_atual, nome, palavra, colecao, editora,data)
 
     return jsonify(loads(dumps(res_pesquisa)))
+
+def loadPesquisas():
+    with open('pesquisas.json') as json_file:
+        pesquisas = json.load(json_file)
+    return pesquisas
+
+def writeSearchInFile(data_atual, nome, palavra, colecao, editora,data):
+    p = {"data_atual": str(data_atual), "nome":nome, "palavra":palavra, "colecao":colecao,"editora":editora, "data":data}
+
+    pesquisas = loadPesquisas()
+
+    pesquisas.append(p)
+
+    with open('pesquisas.json', 'w') as outfile:
+        json.dump(pesquisas, outfile,indent=4,ensure_ascii=False)
+
 
 # split com o operador '+'
 def pesquisaIncludePalavra(palavra):

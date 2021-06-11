@@ -74,15 +74,7 @@
             <v-spacer></v-spacer>
             <v-tooltip bottom>
               <template v-slot:activator="{ on: tooltip }">
-                  <v-btn @click="dialogHelp=true" v-on="{ ...tooltip}" class="mr-5"><v-icon>mdi-help</v-icon></v-btn>
-              </template>
-              <span>
-                  {{$t('p1.ajuda')}}
-              </span>
-            </v-tooltip>
-            <v-tooltip bottom>
-              <template v-slot:activator="{ on: tooltip }">
-                  <v-btn @click="emiteFecho" v-on="{ ...tooltip}" class="mr-10"><v-icon>mdi-exit-to-app</v-icon></v-btn>
+                  <v-btn @click="emiteFecho" v-on="{ ...tooltip}" class="white--text mr-10" color="#26B99A"><v-icon>mdi-door-open</v-icon></v-btn>
               </template>
               <span>
                   {{$t('indForm.close')}}
@@ -185,7 +177,7 @@
                     </v-tooltip>
                     <v-tooltip bottom v-if= "value === 'adicionar' || value === 'editar'">
                       <template v-slot:activator="{ on: tooltip }">
-                          <v-btn ref="submit" @click="post()" :disabled="disableButton" v-on="{ ...tooltip}"><v-icon>mdi-check</v-icon></v-btn>
+                          <v-btn class="orange white--text" ref="submit" @click="post()" :disabled="disableButton" v-on="{ ...tooltip}"><v-icon>mdi-checkbox-marked-outline</v-icon></v-btn>
                       </template>
                       <span>
                           {{$t('uF.conf')}}
@@ -232,7 +224,7 @@
                     </v-dialog>
                     <v-tooltip bottom>
                       <template v-slot:activator="{ on: tooltip }">
-                          <v-btn @click="emiteFecho" v-on="{ ...tooltip}"><v-icon>mdi-exit-to-app</v-icon></v-btn>
+                          <v-btn color="#26B99A" class="white--text" @click="emiteFecho" v-on="{ ...tooltip}"><v-icon>mdi-door-open</v-icon></v-btn>
                       </template>
                       <span>
                           {{$t('indForm.close')}}
@@ -375,7 +367,7 @@ export default {
         formData.append('obs',this.user.observacoes)
 
       if(this.value == 'editar'){
-        axios.post(this.url + `/users/editar/guardar?nome=` + this.user.username,formData,{
+        axios.post(this.url + `/users/editar/guardar`,formData,{
           headers: {
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer: ${this.$store.state.jwt}`       

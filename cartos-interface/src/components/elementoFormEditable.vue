@@ -381,6 +381,12 @@
                       @click="emiteFecho($event)"
                       ><v-icon>mdi-door-open</v-icon></v-btn
                     >
+                    <v-btn
+                      @click="pdfDialog = true;"
+                      v-on="{ ...tooltip }"
+                      class="grey--text mr-3" >
+                      <v-icon>mdi-eye</v-icon>
+                    </v-btn>
                   </template>
                   <span>
                     {{ $t("p1.leave") }}
@@ -452,11 +458,45 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+
+    <!-- Dialog do pdf -->
+
+    <v-dialog v-model="pdfDialog" width="800px">
+      <v-card>
+          <template>
+              {{page}}//{{pageCount}}
+              <pdf 
+                  :src="pdf"
+                  :page="page"
+                  @num-pages="pageCount = $event"	
+                  @page-loaded="currentPage = $event"
+                  style="width:700px"
+              ></pdf>
+          </template>
+          <v-btn color="#286090" dark @click="pageshift(-1)">
+              <v-icon>mdi-arrow-collapse-left</v-icon>
+          </v-btn>
+          <v-btn color="#286090" dark @click="pageshift(1)">
+              <v-icon>mdi-arrow-collapse-right</v-icon>
+          </v-btn>
+      </v-card>
+      <v-tooltip bottom>
+          <template v-slot:activator="{ on: tooltip }">
+          <v-btn color="#c9302c" dark @click="pdfDialog = false; page=1;" v-on="{ ...tooltip}">
+              <v-icon>mdi-close</v-icon>
+          </v-btn>
+          </template>
+          <span>
+          {{$t('indForm.close')}}
+          </span>
+      </v-tooltip>
+  </v-dialog>
   </div>
 </template>
 <script>
 import axios from "axios";
 import infoPopup from "../components/InfoPopup";
+import pdf from 'vue-pdf'
 export default {
   data() {
     return {
@@ -476,6 +516,8 @@ export default {
       tipo: "",
       capa: null,
       video: null,
+      pdf: null,
+      pdfDialog:false,
       url: process.env.VUE_APP_URL,
       dialog: false,
       counterCol: 0,
@@ -484,6 +526,9 @@ export default {
       counterLingua: 0,
       elemImport: [],
       valid: true,
+      pageCount:0,
+      currentPage:0,
+      page:1,
       rules: {
         dataRule: (value) => {
           const pattern = /^((0)[1-9]|[1-2][0-9]|(3)[0-1])(\/)(((0)[1-9])|((1)[0-2]))(\/)\d{4}$/;
@@ -616,7 +661,6 @@ export default {
     onUpdate() {
       this.hasVideo=false;
       this.hasCapa=false;
-      console.log("   UPDATE    ")
       this.video=null;
       this.id = this.elemento.id;
       this.titulo = this.elemento.titulo;
@@ -633,6 +677,7 @@ export default {
       this.tipo = this.elemento.tipo;
       this.getCapa(this.elemento.id);
       this.getVideo(this.elemento.id);
+      this.getPdf(this.elemento.id);
     },
     reset() {
       //needs work for more resets
@@ -689,7 +734,6 @@ export default {
           this.$router.push({ path: this.backTo });
         })
         .catch((e) => {
-          //console.log("ERRO = " + e);
           this.errors.push(e);
         });
     },
@@ -768,8 +812,21 @@ export default {
           this.errors.push(e);
         });
     },
+    getPdf(id){
+      axios.get(this.url + `/elementos/ver/${id}/ficheiro`, {
+          responseType:'arraybuffer',
+          headers: {
+              'Authorization': `Bearer: ${this.$store.state.jwt}`
+          }
+      })
+      .then(response => {
+          var pdf = new Buffer(response.data, 'binary').toString('base64')
+          this.pdf = `data:${response.headers['content-type'].toLowerCase()};base64,${pdf}`
+      }).catch(e => {
+          console.log(e)
+      })
+    },
     getCapa(id){
-      console.log("hascapa :  "+ this.hasCapa)
       axios
         .get(this.url + `/elementos/ver/${id}/foto`, {
           responseType: "arraybuffer",
@@ -780,16 +837,13 @@ export default {
           this.capa = `data:${response.headers[
             "content-type"
           ].toLowerCase()};base64,${image}`;
-          //console.log("resoponse:" + image)
         })
         .catch((err) => {
-          //console.log("resoponse:" + err)
           this.hasCapa=false;
           this.error = err.message;
         })
     },
     getVideo(id){
-       console.log("video :"+this.hasVideo)
       axios
         .get(this.url + `/elementos/ver/${id}/video`, {
           responseType: "arraybuffer",
@@ -806,6 +860,12 @@ export default {
          
           this.error = err.message;
         });
+    },
+    pageshift(shift){
+        var temp = this.page + shift
+        if (temp > 0 && temp <= this.pageCount){
+            this.page=temp
+        }
     }
   },
   computed: {
@@ -833,6 +893,7 @@ export default {
   },
   components: {
     infoPopup: infoPopup,
+    'pdf':pdf
   },
 };
 </script>
