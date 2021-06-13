@@ -25,6 +25,51 @@ CORS(blueprint)
 
 @blueprint.route('/login', methods=['POST'])
 def login():
+    """
+    Iniciar Sessão.
+    ---
+    parameters:
+      - token: token
+        type: string
+        required: true
+    
+    definitions:
+      LoginSucc:
+        type: object
+        properties:
+          token:
+            type: string
+            description: Chave de Sessão (JWT).
+          user:
+            type: string
+            description: Informação do utilizador.
+          users:
+            type: string
+            description: Utilizadores associados.
+          nome:
+            type: string
+            description: Nome do utilizador.
+
+      LoginFail:
+        type: object
+        properties:
+          error:
+            type: string
+            description: Mensagem informativa ao login.
+
+    responses:
+      200:
+        description: Sucesso a efetuar login.
+        schema:
+          type: object
+          $ref: '#/definitions/LoginSucc'
+      500:
+        description: Insucesso a efetuar login.
+        schema:
+          type: object
+          $ref: '#/definitions/LoginFail'
+    """
+
     _id = request.form.get('id')
     print(f"_id: {_id}")
     password = request.form.get('password')
@@ -53,5 +98,28 @@ def login():
 @token_required
 #@login_required
 def logout():
+    """
+    Sair de Sessão.
+    ---
+    parameters:
+      - token: token
+        type: string
+        required: true
+
+    definitions:
+      LogoutMsg:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Resultado do Logout.
+
+    responses:
+      200:
+        description: Informação de Logout.
+        schema:
+          $ref: '#/definitions/LogoutMsg'
+    """
+
     print("logging out")
     return json_util.dumps({'message': 'Logged out!'})

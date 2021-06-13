@@ -18,11 +18,73 @@ from bson import json_util
 @blueprint.route('/pesquisas', methods=['GET'])
 @token_required
 def route_pesquisas():
+    """
+    Consultar pesquisas anteriormente efetuadas.
+    ---
+    parameters:
+      - token: token
+        type: string
+        required: true
+
+    definitions:
+      PesquisasObj:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Resultado do Logout.
+
+    responses:
+      200:
+        description: Informação de Logout.
+        schema:
+          $ref: '#/definitions/PesquisasObj'
+    """
+
     pesquisas = loadPesquisas()
     return json_util.dumps({'pesquisas': pesquisas})
 
 @blueprint.route('/pesquisa', methods=['GET'])
 def pesquisaresultados():
+    """
+    Efetuar uma nova pesquisa.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+      - in: body
+        name: user
+        description: The user to create.
+        schema:
+          type: object
+          required:
+            - userName
+          properties:
+            userName:
+              type: string
+            firstName:
+              type: string
+            lastName:
+              type: string
+
+    definitions:
+      PesquisaObj:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Resultado da Pesquisa.
+
+    responses:
+      200:
+        description: Resultado da Pesquisa.
+        schema:
+          $ref: '#/definitions/PesquisaObj'
+    """
+
     palavra = request.args.get('pesquisa') 
     colecao = request.args.get('colecao') 
     editora = request.args.get('editora')
