@@ -37,9 +37,11 @@ def route_users():
 
     responses:
       200:
-        description: Change.
+        description: Lista de Utilizadores.
         schema:
-          type: string
+          type: array
+          items:
+            $ref: '#/definitions/Utilizador'
     """
     
     users = neo4j_db.run('match (x:User) return x')
@@ -58,11 +60,19 @@ def route_template_adicionar():
         name: Authorization
         type: string
         required: true
+      
+      - in: body
+        name: nome
+        description: Nome do utilizador
+        schema:
+          type: object
+          required:
+            - nome
 
 
     responses:
       200:
-        description: Change.
+        description: Página de Registo.
         schema:
           type: string
     """
@@ -138,8 +148,6 @@ def route_template_ver(user):
         description: Informação do utilizador.
         schema:
           $ref: '#/definitions/VerUtilizador'
-        examples:
-          rgb: ['red', 'green', 'blue']
     """
 
     nome = request.args.get('nome')
@@ -167,7 +175,9 @@ def route_photo(user):
     ---
     parameters:
       - in: header
-        name: Authorization
+        name: Authorization A list of colors (may be filtered by palette)
+        schema:
+          $ref: '#/definitions/Palette'
         type: string
         required: true
 
@@ -176,13 +186,11 @@ def route_photo(user):
         type: string
         required: true
 
+    produces:
+      - image/png
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
-        schema:
-          $ref: '#/definitions/NotDefined'
-        examples:
-          rgb: ['red', 'green', 'blue']
+        description: Foto do Utilizador.
     """
 
     pathPhoto = join(dirname(realpath(__file__)), 'static/pics/')
@@ -209,13 +217,16 @@ def route_foto_atualizar(user):
         type: string
         required: true
 
+      - in: formData
+        name: foto
+        type: file
+        required: true
+
+    produces:
+      - image/png
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
-        schema:
-          $ref: '#/definitions/Palette'
-        examples:
-          rgb: ['red', 'green', 'blue']
+        description: Ok, se o pedido for efetuado.
     """
 
     if 'foto' in request.files:
@@ -258,13 +269,14 @@ def route_cur(user):
         in: user
         type: string
         required: true
+
+    produces:
+        - application/pdf
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
+        description: PDF correspondente ao curriculo do utilizador.
         schema:
-          $ref: '#/definitions/Palette'
-        examples:
-          rgb: ['red', 'green', 'blue']
+          type: file
     """
 
     pathC = join(dirname(realpath(__file__)), 'static/curriculo/')
@@ -290,13 +302,19 @@ def route_cur_atualizar(user):
         in: user
         type: string
         required: true
+
+      - in: formData
+        name: curriculo
+        type: file
+        required: true
+
+    produces:
+        - application/pdf
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
+        description: PDF atualizado.
         schema:
-          $ref: '#/definitions/Palette'
-        examples:
-          rgb: ['red', 'green', 'blue']
+          type: file
     """
     
     if 'curriculo' in request.files:
@@ -353,11 +371,9 @@ def route_template_editar(user):
     
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
+        description: Resultado da edição de utilizador
         schema:
           $ref: '#/definitions/EditarUtilizador'
-        examples:
-          rgb: ['red', 'green', 'blue']
     """
     
     existe = neo4j_db.evaluate('match (x:User) where x._id=$v return x',v=user)
@@ -385,11 +401,9 @@ def route_template_remover(user):
 
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
+        description: Página de remoção do utilizador.
         schema:
-          $ref: '#/definitions/NotDefined'
-        examples:
-          rgb: ['red', 'green', 'blue']
+          type: file
     """
     
     nome = request.args.get('nome')
@@ -421,11 +435,9 @@ def route_template_apagar(user):
 
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
+        description: Utilizador removido.
         schema:
-          $ref: '#/definitions/EditarUtilizador'
-        examples:
-          rgb: ['red', 'green', 'blue']
+          $ref: '#/definitions/Utilizador'
     """
 
     neo4j_db.evaluate('match (x:User) where x._id=$v delete x',v=user)
@@ -451,7 +463,35 @@ def route_template_editar_guardar():
         name: Authorization
         type: string
         required: true
+    
+      - in: formData
+        name: username
+        type: string
 
+      - in: formData
+        name: name
+        type: string
+
+      - in: formData
+        name: email
+        type: string
+
+      - in: formData
+        name: tipo
+        type: string
+
+      - in: formData
+        name: universidade
+        type: string
+
+      - in: formData
+        name: departamento
+        type: string
+
+      - in: formData
+        name: obs
+        type: string
+        
     responses:
       200:
         description: Change.
@@ -496,11 +536,43 @@ def route_template_registar_pedido():
     Efetuar um pedido de resgisto.
     ---
     parameters:
-      # No Params ?
-      - name: user
-        in: user
-        type: string
+      - in: formData
+        name: foto
+        type: file
         required: true
+
+      - in: formData
+        name: curriculo
+        type: file
+        required: true
+
+      - in: formData
+        name: username
+        type: string
+
+      - in: formData
+        name: name
+        type: string
+
+      - in: formData
+        name: email
+        type: string
+
+      - in: formData
+        name: tipo
+        type: string
+
+      - in: formData
+        name: universidade
+        type: string
+
+      - in: formData
+        name: departamento
+        type: string
+
+      - in: formData
+        name: obs
+        type: string
 
     definitions:
       PedidoRegistar:
@@ -515,8 +587,6 @@ def route_template_registar_pedido():
         description: A list of colors (may be filtered by palette)
         schema:
           $ref: '#/definitions/PedidoRegistar'
-        examples:
-          rgb: ['red', 'green', 'blue']
     """
     
     username = request.form.get('username')
@@ -591,14 +661,13 @@ def route_photo_pedido(pedido):
         in: pedido
         type: string
         required: true
-        
+    
+
+    produces:
+      - image/png
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
-        schema:
-          $ref: '#/definitions/Palette'
-        examples:
-          rgb: ['red', 'green', 'blue']
+        description: Foto que se encontra no pedido.
     """
     
     pathPhoto = join(dirname(realpath(__file__)), 'static/picsPedidos/')
@@ -625,13 +694,14 @@ def route_cur_pedido(pedido):
         in: pedido
         type: string
         required: true
+
+    produces:
+      - application/pdf
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
+        description: PDF atualizado.
         schema:
-          $ref: '#/definitions/Palette'
-        examples:
-          rgb: ['red', 'green', 'blue']
+          type: file
     """
     
     pathC = join(dirname(realpath(__file__)), 'static/curriculoPedidos/')
@@ -668,11 +738,9 @@ def route_active():
 
     responses:
       200:
-        description: A list of colors (may be filtered by palette)
+        description: Lista de utilizadores ativos.
         schema:
           $ref: '#/definitions/UtilizadoresAtivos'
-        examples:
-          rgb: ['red', 'green', 'blue']
     """
     
     users = neo4j_db.run('match (x:User) where x.ativo="true" return x').data()
@@ -701,9 +769,11 @@ def route_history():
 
     responses:
       200:
-        description: Change.
+        description: Histórico.
         schema:
-          type: string
+          type: array
+          items:
+            type: string
     """
     with open('historic.json') as json_file:
         reqs = json.load(json_file)
@@ -724,9 +794,11 @@ def route_historyCleanse():
 
     responses:
       200:
-        description: Change.
+        description: Histórico Limpo.
         schema:
-          type: string
+          type: array
+          items:
+            type: string
     """
     with open('historic.json', 'w') as outfile:
         json.dump([], outfile)
