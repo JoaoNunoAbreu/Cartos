@@ -175,14 +175,17 @@ def route_photo(user):
     ---
     parameters:
       - in: header
-        name: Authorization A list of colors (may be filtered by palette)
-        schema:
-          $ref: '#/definitions/Palette'
+        name: Authorization
         type: string
         required: true
 
-      - name: user
-        in: user
+      - in: formData
+        name: foto
+        type: file
+        required: true
+
+      - in: path
+        name: user
         type: string
         required: true
 

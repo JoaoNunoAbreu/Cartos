@@ -56,20 +56,31 @@ def pesquisaresultados():
         type: string
         required: true
 
-      - in: body
-        name: user
-        description: The user to create.
-        schema:
-          type: object
-          required:
-            - userName
-          properties:
-            userName:
-              type: string
-            firstName:
-              type: string
-            lastName:
-              type: string
+      - in: formData
+        name: pesquisa
+        type: string
+        required: true
+
+      - in: formData
+        name: colecao
+        type: string
+        required: true
+
+      - in: formData
+        name: editora
+        type: string
+        required: true
+
+      - in: formData
+        name: date
+        type: string
+        required: true
+
+      - in: formData
+        name: nome
+        type: string
+        required: true
+
 
     definitions:
       PesquisaObj:

@@ -68,6 +68,18 @@ def route_template_editElement():
         type: string
         required: true
 
+      - in: formData
+        name: capa
+        type: file
+        description: PNG.
+        required: true
+
+      - in: formData
+        name: ficheiro
+        type: file
+        description: PDF.
+        required: true
+
     # Defenir objetos em utilização na documentação como retorno.
     definitions:
 

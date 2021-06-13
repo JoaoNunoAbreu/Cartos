@@ -29,7 +29,18 @@ def login():
     Iniciar Sessão.
     ---
     parameters:
-      - token: token
+      - in: formData
+        name: id
+        type: string
+        required: true
+
+      - in: formData
+        name: nome
+        type: string
+        required: true
+
+      - in: formData
+        name: password
         type: string
         required: true
     
@@ -41,7 +52,8 @@ def login():
             type: string
             description: Chave de Sessão (JWT).
           user:
-            type: string
+            type: object
+            $ref: '#/definitions/Utilizador'
             description: Informação do utilizador.
           users:
             type: string
@@ -104,10 +116,6 @@ def logout():
     parameters:
       - in: header
         name: Authorization
-        type: string
-        required: true
-
-      - token: token
         type: string
         required: true
 
