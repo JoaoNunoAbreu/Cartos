@@ -59,6 +59,36 @@ def route_template_passo6():
 @admin_required
 #@login_required
 def route_template_editElement():
+    """
+    Ver informação respetiva a um utilizador.
+    ---
+    parameters:
+      - name: user
+        in: user
+        type: string
+        required: true
+
+    # Defenir objetos em utilização na documentação como retorno.
+    definitions:
+
+      EditarElemento:
+        type: object
+        properties:
+          nome:
+            type: string
+            description: Nome do elemento.
+          message:
+            type: string
+            description: Status da operação.
+
+    responses:
+      200:
+        description: Informação do utilizador.
+        schema:
+          $ref: '#/definitions/EditarElemento'
+        examples:
+          rgb: ['red', 'green', 'blue']
+    """
 
     nome = request.args.get('nome')
     path = ""

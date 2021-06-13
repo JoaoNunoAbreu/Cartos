@@ -23,6 +23,78 @@ CORS(blueprint)
 #@token_required
 #@login_required
 def route_template_elementos():
+    """
+    Get Elementos no Sistema.
+    ---
+    parameters:
+      - token: token
+        type: string
+        required: true
+    
+    definitions:
+      Elemento:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: Identificador único.
+          titulo:
+            type: string
+            description: Titúlo.
+          capa:
+            type: string
+            description: Capa.
+          estado:
+            type: string
+            description: Estado do conteúdo.
+          numero:
+            type: integer
+            description: Número
+          nr_paginas:
+            type: integer
+            description: Número de páginas.
+          texto:
+            type: string
+            description: Texto adicional ao Elemento.
+          observacoes:
+            type: string
+            description: Observações textuais.
+          tamanho:
+            type: integer
+            description: Tamanho do Elemento.
+          personagens:
+            type: array
+            items:
+              type: string
+            description: Nomes das personagens do Elemento.
+          serie:
+            type: string
+            description: Serie a que o Elemento pertence.
+          data_publicacao:
+            type: date
+            description: Data de Publicação.
+          colecao:
+            type: string
+            description: Coleção a que o Elemento pertence.
+          editora:
+            type: string
+            description: Editora.
+          lingua:
+            type: string
+            description: Língua.
+          tipo:
+            type: string
+            description: Tipo do Elemento.
+
+    responses:
+      200:
+        description: Informação do Index da Home.
+        schema:
+          type: array
+          items:
+            $ref: '#/definitions/Elemento'
+    """
+
     elementos = neo4j_db.run('match (x:Elemento) return x')
   
     data = [ ]
@@ -53,6 +125,23 @@ def route_template_elementos():
 
 @blueprint.route('/<elemento>', methods=['GET'])
 def route_template_elemento(elemento):
+    """
+    Get Elemento por ID.
+    ---
+    parameters:
+      - name: elemento
+        in: elemento
+        type: integer
+        required: true
+
+    responses:
+      200:
+        description: Lista com o Elemento correspondente.
+        schema:
+          type: array
+          items:
+            type: string
+    """
     
     el = neo4j_db.evaluate(f'match (x:Elemento) where x.id="{elemento}" return x')
     data = [ ]
@@ -82,21 +171,93 @@ def route_template_elemento(elemento):
 
 @blueprint.route('/editoras', methods=['GET'])
 def route_template_editoras():
+    """
+    Get Editoras.
+    ---
+    parameters:
+      - name: elemento
+        in: elemento
+        type: integer
+        required: true
+
+    responses:
+      200:
+        description: Lista de Editoras.
+        schema:
+          type: array
+          items:
+            type: string
+    """
+
     editoras = neo4j_db.run('match (x:Editora) return x')
     return json_util.dumps(editoras)
 
 @blueprint.route('/colecoes', methods=['GET'])
 def route_template_colecoes():
+    """
+    Get Coleções.
+    ---
+    parameters:
+      - name: elemento
+        in: elemento
+        type: integer
+        required: true
+
+    responses:
+      200:
+        description: Lista de Coleções.
+        schema:
+          type: array
+          items:
+            type: string
+    """
+   
     colecoes = neo4j_db.run('match (x:Colecao) return x')
     return json_util.dumps(colecoes)
 
 @blueprint.route('/linguas', methods=['GET'])
 def route_template_linguas():
+    """
+    Get Línguas.
+    ---
+    parameters:
+      - name: elemento
+        in: elemento
+        type: integer
+        required: true
+
+    responses:
+      200:
+        description: Lista de Línguas.
+        schema:
+          type: array
+          items:
+            type: string
+    """
+
     linguas = neo4j_db.run('match (x:Lingua) return x')
     return json_util.dumps(linguas)
 
 @blueprint.route('/tipos', methods=['GET'])
 def route_template_tipo():
+    """
+    Get Tipos.
+    ---
+    parameters:
+      - name: elemento
+        in: elemento
+        type: integer
+        required: true
+
+    responses:
+      200:
+        description: Lista de Tipos.
+        schema:
+          type: array
+          items:
+            type: string
+    """
+
     tipos = neo4j_db.run('match (x:Tipo) return x')
     return json_util.dumps(tipos)
 
@@ -105,6 +266,22 @@ def route_template_tipo():
 #@token_required
 #@login_required
 def route_template_ver_foto(elemento):
+    """
+    Ver foto do elemento.
+    ---
+    parameters:
+      - name: elemento
+        in: elemento
+        type: integer
+        required: true
+
+    responses:
+      200:
+        description: Foto associada ao Elemento.
+        schema:
+          type: string
+    """
+
     f = elemento + ".png"
     pathPhoto = join(dirname(realpath(__file__)), 'static/pics/')
     pathCheck = join(pathPhoto, f)
@@ -117,6 +294,22 @@ def route_template_ver_foto(elemento):
 #@token_required
 #@login_required
 def route_template_ver_video(elemento):
+    """
+    Ver vídeo do elemento.
+    ---
+    parameters:
+      - name: elemento
+        in: elemento
+        type: integer
+        required: true
+
+    responses:
+      200:
+        description: Vídeo associada ao Elemento.
+        schema:
+          type: string
+    """
+
     f = elemento + ".mp4"
     pathVideo = join(dirname(realpath(__file__)), 'static/pics/')
     pathCheck = join(pathVideo, f)
@@ -127,6 +320,22 @@ def route_template_ver_video(elemento):
 
 @blueprint.route('/ver/<elemento>/ficheiro', methods=['GET'])
 def route_template_ver_ficheiro(elemento):
+    """
+    Ver ficheiro do elemento.
+    ---
+    parameters:
+      - name: elemento
+        in: elemento
+        type: integer
+        required: true
+
+    responses:
+      200:
+        description: Ficheiro associada ao Elemento.
+        schema:
+          type: string
+    """
+
     pathC = join(dirname(realpath(__file__)), 'static/doc/')
     f = elemento + ".pdf"
     pathCheck = join(pathC, f)
@@ -139,6 +348,22 @@ def route_template_ver_ficheiro(elemento):
 @admin_required
 #@login_required
 def route_template_apagar(elemento):
+    """
+    Apagar elemento.
+    ---
+    parameters:
+      - name: elemento
+        in: elemento
+        type: integer
+        required: true
+
+    responses:
+      200:
+        description: Retorna o sucesso/insucesso da operação.
+        schema:
+          type: boolean
+    """
+
 
     q = f'MATCH (n:Elemento)-[r]-() where n.id="{elemento}" DELETE r'
     neo4j_db.run(q)

@@ -566,7 +566,7 @@ def route_active():
             type: array
             items:
               $ref: '#/definitions/Utilizador'
-            description: Nome do Utilizador.
+            description: Array de Utilizadores.
 
     responses:
       200:
