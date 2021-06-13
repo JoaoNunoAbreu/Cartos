@@ -63,8 +63,8 @@ def route_template_editElement():
     Ver informação respetiva a um utilizador.
     ---
     parameters:
-      - name: user
-        in: user
+      - in: header
+        name: Authorization
         type: string
         required: true
 

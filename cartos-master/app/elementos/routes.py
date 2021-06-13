@@ -352,6 +352,11 @@ def route_template_apagar(elemento):
     Apagar elemento.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+        
       - name: elemento
         in: elemento
         type: integer

@@ -102,6 +102,11 @@ def logout():
     Sair de Sessão.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - token: token
         type: string
         required: true

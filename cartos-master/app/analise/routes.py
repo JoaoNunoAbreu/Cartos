@@ -22,7 +22,8 @@ def route_pesquisas():
     Consultar pesquisas anteriormente efetuadas.
     ---
     parameters:
-      - token: token
+      - in: header
+        name: Authorization
         type: string
         required: true
 

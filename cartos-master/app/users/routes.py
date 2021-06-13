@@ -25,6 +25,22 @@ UPLOAD_FOLDER = './static/pics/'
 #@token_required
 #@login_required
 def route_users():
+    """
+    Consultar Utilizadores.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+
+    responses:
+      200:
+        description: Change.
+        schema:
+          type: string
+    """
     
     users = neo4j_db.run('match (x:User) return x')
     return json_util.dumps(users.data())
@@ -34,6 +50,22 @@ def route_users():
 @admin_required
 #@login_required
 def route_template_adicionar():
+    """
+    Adicionar Template.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+
+    responses:
+      200:
+        description: Change.
+        schema:
+          type: string
+    """
     nome = request.args.get('nome')
     return render_template('registar.html',nome=nome)
 
@@ -46,6 +78,11 @@ def route_template_ver(user):
     Ver informação respetiva a um utilizador.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: user
         in: user
         type: string
@@ -129,10 +166,16 @@ def route_photo(user):
     Consultar a imagem de perfil de um respetivo utilizador.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: user
         in: user
         type: string
         required: true
+
     responses:
       200:
         description: A list of colors (may be filtered by palette)
@@ -156,10 +199,16 @@ def route_foto_atualizar(user):
     Atualizar a imagem de perfil de um respetivo utilizador.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: user
         in: user
         type: string
         required: true
+
     responses:
       200:
         description: A list of colors (may be filtered by palette)
@@ -200,6 +249,11 @@ def route_cur(user):
     Consultar o curriculo de perfil de um respetivo utilizador.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: user
         in: user
         type: string
@@ -227,6 +281,11 @@ def route_cur_atualizar(user):
     Atualizar o curriculo de perfil de um respetivo utilizador.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: user
         in: user
         type: string
@@ -271,6 +330,11 @@ def route_template_editar(user):
     Editar a informação respetiva a um utilizador.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: user
         in: user
         type: string
@@ -309,6 +373,11 @@ def route_template_remover(user):
     Remover um utilizador.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: user
         in: user
         type: string
@@ -340,6 +409,11 @@ def route_template_apagar(user):
     Apagar um respetivo utilizador.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: user
         in: user
         type: string
@@ -369,6 +443,21 @@ def route_template_apagar(user):
 @admin_required
 #@login_required
 def route_template_editar_guardar():
+    """
+    Guardar Template Editado.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+    responses:
+      200:
+        description: Change.
+        schema:
+          type: string
+    """
     username = request.form.get('username')
     nome = request.form.get('name')
     email = request.form.get('email')
@@ -493,6 +582,11 @@ def route_photo_pedido(pedido):
     Pedido para importar foto de utilizador.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: pedido
         in: pedido
         type: string
@@ -522,6 +616,11 @@ def route_cur_pedido(pedido):
     Peido para inserir curriculo.
     ---
     parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
       - name: pedido
         in: pedido
         type: string
@@ -552,9 +651,8 @@ def route_active():
     Ativar conta de um respetivo utilizador.
     ---
     parameters:
-      # No Params?
-      - name: user
-        in: user
+      - in: header
+        name: Authorization
         type: string
         required: true
 
@@ -592,6 +690,21 @@ def route_active():
 @blueprint.route('/history', methods=['GET'])
 @token_required
 def route_history():
+    """
+    Consultar Histórico.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+    responses:
+      200:
+        description: Change.
+        schema:
+          type: string
+    """
     with open('historic.json') as json_file:
         reqs = json.load(json_file)
     return json_util.dumps({'reqs': reqs})
@@ -600,6 +713,21 @@ def route_history():
 @blueprint.route('/historyCleanse', methods=['GET'])
 @token_required
 def route_historyCleanse():
+    """
+    Limpar Histórico.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+    responses:
+      200:
+        description: Change.
+        schema:
+          type: string
+    """
     with open('historic.json', 'w') as outfile:
         json.dump([], outfile)
     return json_util.dumps({'history': [] })
