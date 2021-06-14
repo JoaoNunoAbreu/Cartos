@@ -26,10 +26,6 @@ def route_template_elementos():
     """
     Get Elementos no Sistema.
     ---
-    parameters:
-      - token: token
-        type: string
-        required: true
     
     definitions:
       Elemento:
@@ -140,7 +136,7 @@ def route_template_elemento(elemento):
         schema:
           type: array
           items:
-            type: string
+            $ref: '#/definitions/Elemento'
     """
     
     el = neo4j_db.evaluate(f'match (x:Elemento) where x.id="{elemento}" return x')
@@ -362,11 +358,33 @@ def route_template_apagar(elemento):
         type: integer
         required: true
 
+    definitions:
+      ApagarElemento:
+        type: object
+        properties:
+          id:
+            type: string
+            description: Identificador do Elemento.
+          data_publicacao:
+            type: string
+            description: Data da publicação.
+          colecao:
+            type: string
+            description: Coleção.
+          editora:
+            type: string
+            description: Editora.
+          lingua:
+            type: string
+            description: Língua.
+
     responses:
       200:
         description: Retorna o sucesso/insucesso da operação.
         schema:
-          type: boolean
+          type: array
+          items:
+            $ref: '#/definitions/ApagarElemento'
     """
 
 
