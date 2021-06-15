@@ -377,7 +377,7 @@
       </v-row>
     </v-sheet>
     <v-dialog v-model="submitDialog" scrollable width="500">
-      <infoPopup @emiteFecho="emiteFecho($event)"></infoPopup>
+      <infoPopup nSucesso="1" nInsucesso="0" @emiteFecho="emiteFecho($event)"></infoPopup>
     </v-dialog>
     <v-dialog
       persistent
@@ -594,8 +594,6 @@ export default {
         .then((response) => {
           for (let i = 0; i < response.data.length; i++)
             this.elemImport.push(response.data[i].id);
-
-          console.log(this.elemImport);
         })
         .catch((e) => {
           this.errors.push(e);

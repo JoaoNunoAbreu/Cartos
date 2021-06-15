@@ -14,7 +14,12 @@
     "navd": {
         "home": "Início",
         "import": "Importação",
-        "documents": "Elementos ",
+        "sucess": "Sucesso",
+        "textoImportCSV": "Ficheiro Importado", 
+        "sucessoCSV": "  novos elementos inseridos no sistema",
+        "insucessoCSV": " elementos recusados",
+        "razao": "Razão",
+        "documents": "Elementos",
         "index":"Indexação",
         "elementos": "Gestão de Elementos",
         "indexes": "Gestor de Índices",
@@ -181,8 +186,8 @@
         "quest": "Não tem credenciais de acesso?",
         "reg": "Pedido de credenciais de acesso",
         "rec": "Recuperar palavra-passe",
-        "reqacesso":"Requisitar credenciais de acesso",
         "adminSystem":"Sistema de Administração",
+        "reqacesso":"Requisitar credenciais de acesso",
         "enter":"Entrar",
         "pCred":"Pedido de recuperação de credenciais enviado ao sistema.",
         "re":"Repôr",
@@ -333,9 +338,9 @@
         "string": "String",
         "inteiro": "Int",
         "data": "Data",
-        "listaP": "Lista de Personagens"
-
-
+        "listaP": "Lista de Personagens",
+        "pdf":"Ver pdf",
+        "clean":"Limpar"
     },
     "pForm": {
         "aU": "Adicionar utilizadores",
@@ -371,7 +376,11 @@
         "f":"Elementos",
         "col":"Coleções",
         "users":"Utilizadores",
-        "ins":"Inserção de Elementos"
+        "ins":"Inserção de Elementos",
+        "ultimosInseridos":"Últimos Elementos Inseridos",
+        "nElemCol":"Nº Elementos por Coleção",
+        "nElemEdi": "Nº Elementos por Editora"
+
     },
     "pr":{
         "da":"Data da Pesquisa",

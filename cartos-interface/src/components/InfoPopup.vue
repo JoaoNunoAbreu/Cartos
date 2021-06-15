@@ -16,7 +16,9 @@
           </v-col>
           <v-col style="margin-top: 20px;">
             <v-card-text>
-              <h3>{{ $t("fol.imp") }}</h3>
+              <h3>{{ $t("navd.textoImportCSV") }}</h3>
+              <h3> {{nSucesso}} {{ $t("navd.sucessoCSV") }}</h3>
+              <h3> {{nInsucesso}}{{ $t("navd.insucessoCSV") }}</h3>
             </v-card-text>
           </v-col>
         </v-row>
@@ -41,12 +43,39 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+    }
+  },
+  props: {
+    nSucesso: {
+      type: Number,
+    },
+    nInsucesso: {
+      type: Number,
+    },
+  },
+  watch: {
+    nSucesso: {
+      immediate: true,
+      deep: true,
+      handler() {
+        this.onUpdate();
+      },
+    },
+    nInsucesso:{
+      immediate: true,
+      deep: true,
+      handler() {
+        this.onUpdate();
+      },
+    }
   },
   methods: {
-        emiteFecho(){
-            this.$emit('emiteFecho')
-            }
+    emiteFecho(){
+      this.$emit('emiteFecho')
+    },
+    onUpdate() {
+    }
     },
 }
 </script>

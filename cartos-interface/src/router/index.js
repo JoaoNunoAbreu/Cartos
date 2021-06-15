@@ -100,6 +100,18 @@ const routes = [
         }
       },
       {
+        path: 'importCSV',
+        name: 'importCSV',
+       component: () => import('../views/ImportCSV.vue'),
+        beforeEnter (to, from, next) {
+          if (!store.getters.isAuthenticated) {
+            next(`/login`)
+          } else {
+            next()
+          }
+        }
+      },
+      {
         path: 'elementos/indices',
         name: 'Indices',
         component: () => import('../views/Indices.vue'),

@@ -8,9 +8,16 @@
     "message": "Welcome to Cartos - Hosting and Exploring System of Comic Books.",
     "navd": {
         "home": "Begin",
+        "confirm":"Yes",
+        "nao":"No",
         "import": "Import",
-        "documents": "Documents",
-        "elementos": "Elementos",
+        "sucess": "Success",
+        "textoImportCSV": "File Imported", 
+        "sucessoCSV": "  elements added to the system",
+        "insucessoCSV": " denied elements",
+        "razao": "Reason",
+        "documents": "Elements",
+        "elementos": "Element Management",
         "indexes": "Indexes",
         "tags": "Tags",
         "analysis": "Analysis",
@@ -38,7 +45,13 @@
         "reltec": "Technical Report",
         "siweb": "Websites",
         "importAjuda": "How to import a document",
-        "textoImportAjuda": "Help Text"
+        "textoImportAjuda": "Help Text",
+        "terms": "Terms of Using",
+        "priv": "Restrictions",
+        "tituloProjeto": "Hosting and Exploring System of Comic Books",
+        "exit":"Exit",
+        "se":"Search",
+        "textoLoginAjuda": "Help Text"
     },
     "nav": {
         "instrucoesPesquisa": "Search instructions",
@@ -84,7 +97,14 @@
         "primeiroPagina": "First",
         "ultimaPagina": "Last",
         "proximaPagina": "Next",
-        "previousPagina": "Previous"
+        "previousPagina": "Previous",
+        "sistemaPesquisa" : "Search Engine",
+        "Sair" : "Exit",
+        "LinguaPT" : "Língua Portuguesa",
+        "LinguaEN" : "English Language", 
+        "LinguaES" : "Idioma Español",
+        "SistemaCartosHeader" : "Cartos System", 
+        "SistemaCartosExpli" : "\n Cartos Information System"
     },
     "head": {
         "help": "Help",
@@ -101,22 +121,24 @@
         "wac": "WAC",
         "tagHTML": "TagHTML",
         "ex": "Examples",
-        "opt": "Options"
+        "opt": "Options",
+        "elim":"Are you sure you want to delete this setting?"
     },
     "fol": {
         "title": "Element Management",
         "id": "Id",
         "dom": "Dominion",
         "col": "Collection",
-        "edi": "Publishing Company",
+        "edi": "Publisher",
         "data": "Date",
         "lin": "Language",
         "versao": "Version",
         "sum": "Summary",
         "tipo": "Type",
         "opt": "Options",
-        "insert": "Insert document",
-        "print": "Print or export document records"
+        "insert": "Insert element",
+        "print": "Print or export elements records",
+        "noPicText":"This element does not have a photograph."
     },
     "imp": {
         "passo": "Step"
@@ -132,7 +154,14 @@
         "quest": "Don't you have access credentials?",
         "reg": "Request access credentials",
         "rec": "Recover password",
-        "adminSystem": "Administration System"
+        "adminSystem": "Administration System",
+        "reqacesso":"Request access credentials",
+        "enter":"Enter",
+        "pCred":"Credentials retrieval request sent to the system.",
+        "re":"Reset",
+        "sub":"Submit",
+        "uInv":"Invalid username or password, please try again.",
+        "new":"There is already a user or access request with that username, choose another."
     },
     "pedac": {
         "title": "Request access credentials",
@@ -185,7 +214,9 @@
         "nome": "Name",
         "email": "Email",
         "tipo": "Type",
-        "opt": "Options"
+        "opt": "Options",
+        "elim":"Are you sure you want to delete this user?",
+        "noCur":"This user has no curriculum."
     },
     "defForm": {
         "addDef": "Add settings",
@@ -204,7 +235,7 @@
         "visFol": "View Elementos",
         "id": "Identifier",
         "colecao": "Collection",
-        "editora": "Publishing Company",
+        "editora": "Publisher",
         "dataPub": "Date",
         "lingua": "Language",
         "tComTags": "Text with tags",
@@ -232,8 +263,8 @@
         "sd": "Semi-diplomatic",
         "tipo": "Type",
         "tipo2": "New Type",
-        "edi": "Publishing Company",
-        "edi2": "New Publishing Company",
+        "edi": "Publisher",
+        "edi2": "New Publisher",
         "lin": "Language",
         "lin2": "New Language",
         "col": "Collection",
@@ -258,7 +289,9 @@
         "skip": "Skip",
         "ajuda": "Help text",
         "apagar":"Delete",
-        "leave": "Exit insertion"
+        "leave": "Exit insertion",
+        "pdf":"See pdf",
+        "clean":"Clean"
     },
     "p2": {
         "tComTags": "Text with tags",
@@ -286,12 +319,28 @@
     "tForm": {
         "vT": "View tags"
     },
+    "hist":{
+        "haccess":"Access History",
+        "cleanH":"Clear history",
+        "elim":"Are you sure you want to delete the access history?",
+        "adate":"Access date",
+        "req":"Order"
+    },
     "pr":{
         "da":"Search's Date",
         "nome":"Name",
         "texto":"Text",
         "col":"Collection",
-        "edi": "Publishing Company",
+        "edi": "Publisher",
         "d":"Date"
+    },
+    "hAdmin":{
+        "f":"Elements",
+        "col":"Collections",
+        "users":"Users",
+        "ins":"Elements Insertion",
+        "ultimosInseridos":"Last Inserted Elements",
+        "nElemCol":"Number of Elements per Collection",
+        "nElemEdi": "Number of Elements by Publisher"
     }
 }

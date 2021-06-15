@@ -370,6 +370,20 @@
                     </v-card-actions>
                   </v-card>
                 </v-dialog>
+               
+                 <v-tooltip bottom>
+                  <template v-slot:activator="{ on: tooltip }">
+                         <v-btn
+                      @click="pdfDialog = true;"
+                      v-on="{ ...tooltip }"
+                      class="grey--text mr-3" >
+                      <v-icon>mdi-eye</v-icon>
+                    </v-btn>
+                  </template>
+                  <span>
+                    {{ $t("p1.pdf") }}
+                  </span>
+                </v-tooltip>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on: tooltip }">
                     <v-btn
@@ -381,21 +395,17 @@
                       @click="emiteFecho($event)"
                       ><v-icon>mdi-door-open</v-icon></v-btn
                     >
-                    <v-btn
-                      @click="pdfDialog = true;"
-                      v-on="{ ...tooltip }"
-                      class="grey--text mr-3" >
-                      <v-icon>mdi-eye</v-icon>
-                    </v-btn>
+                    
                   </template>
                   <span>
                     {{ $t("p1.leave") }}
                   </span>
-                </v-tooltip>
+                 </v-tooltip>
               </v-toolbar>
             </v-container>
           </v-form>
         </v-col>
+   
       </v-row>
     </v-sheet>
     <v-dialog v-model="submitDialog" scrollable width="500">

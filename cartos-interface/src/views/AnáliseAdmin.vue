@@ -12,7 +12,8 @@
         <div class="text-center"> 
         <!-- Para ficar igual ao login -->
         <h2 class="change-font black--text"> {{ $t('nav.tituloProjeto') }}</h2>  
-        <h5 class="change-font black--text mt-5"> {{ $t('nav.sistemaPesquisa') }} </h5>
+        <h3 class="change-font black--text mt-5"> {{ $t('nav.sistemaPesquisa') }} </h3>
+        <p/>
       </div>
       
       <!-- Só para afastar 2 centrimetro o titulo da pesquisa -->

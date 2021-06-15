@@ -30,6 +30,9 @@
                   <v-list-item link to="/admin/elementos">
                     <v-list-item-title class="white--text">{{$t('navd.elementos')}}</v-list-item-title>
                   </v-list-item>
+                  <v-list-item link to="/admin/importCSV">
+                    <v-list-item-title class="white--text">{{$t('navd.import')}}</v-list-item-title>
+                  </v-list-item>
             </v-list-group>
             <v-list-group
               class="white--text"
@@ -118,7 +121,7 @@
             <v-dialog @keydown.esc="credits = false"  v-model="credits" scrollable width="500">
               <v-card>
                 <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
-                  <h2>{{ $t('nav.creditos') }}</h2>
+                  <h2>{{ $t('navd.terms') }}</h2>
                 </v-toolbar>
                 
                 <v-divider

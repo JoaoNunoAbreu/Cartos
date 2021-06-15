@@ -59,7 +59,7 @@ def index():
     n_users = neo4j_db.evaluate('match (x:User) return count(x)')
     n_elementos = neo4j_db.evaluate('match (x:Elemento) return count(x)')
     n_colecoes = neo4j_db.evaluate('match (x:Colecao) return count(x)')
-    lastEle = neo4j_db.run('match (x:Elemento) return x as elemento order by elemento DESC limit 3')
+    lastEle = neo4j_db.run('MATCH (n:Elemento) RETURN n ORDER BY n.created_at desc LIMIT 6')
     
     # --------------
     colecoes = neo4j_db.run('match (x:Colecao) return x.designacao').data()

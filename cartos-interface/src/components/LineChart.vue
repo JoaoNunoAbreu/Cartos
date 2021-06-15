@@ -14,7 +14,7 @@
           labels: [],
           datasets: [
             {
-              label: 'Line Chart',
+              label: 'Nº Elementos',
               data: [],
               fill: false,
               borderColor: '#376a53',

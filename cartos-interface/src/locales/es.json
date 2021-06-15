@@ -9,7 +9,14 @@
     "navd": {
         "home": "Comienzo",
         "import": "Importar",
-        "documents": "Documentos",
+        "confirm":"Sí",
+        "nao":"No",
+        "sucess": "Éxito",
+        "textoImportCSV": "Archivo importado", 
+        "sucessoCSV": "  nuevos elementos insertados en el sistema",
+        "insucessoCSV": " elementos rechazados",
+        "razao": "Razón",
+        "documents": "Elementos",
         "elementos": "Gestión de Elementos",
         "indexes": "Índices",
         "tags": "Etiquetas",
@@ -38,7 +45,13 @@
         "reltec": "Relato técnico",
         "siweb": "Sitios Web",
         "importAjuda": "Cómo importar un documento",
-        "textoImportAjuda": "Texto de ayuda"
+        "textoImportAjuda": "Texto de ayuda",
+        "terms": "Condiciones",
+        "priv": "Restricciones",
+        "tituloProjeto": "Sistema de Recepción y Exploración de Cómics",
+        "exit":"Salir de la aplicación",
+        "se":"Buscar",
+        "textoLoginAjuda": "Texto de Ayuda"
     },
     "nav": {
         "instrucoesPesquisa": "Instrucciones de búsqueda",
@@ -77,14 +90,22 @@
         "textoSaberMais": "Texto de saber mais",
         "textoTermos": "Texto termos",
         "textoPriv": "Texto privacidade",
-        "buttonAjuda": "Ajuda",
+        "buttonAjuda": "Ayuda",
         "elementoAnaliseHeadline": "Sistema de Recepción y Exploración de Cómics",
         "tituloProjeto": "Sistema de Recepción y Exploración de Cómics",
         "imprimir": "Imprimir",
         "primeiroPagina": "Primeira",
         "ultimaPagina": "Última",
         "proximaPagina": "Próxima",
-        "previousPagina": "Retroceder"
+        "previousPagina": "Retroceder",
+        "sistemaPesquisa" : "Sistema de búsqueda",
+        "Sair" : "Salir",
+        "LinguaPT" : "Língua Portuguesa",
+        "LinguaEN" : "English Language", 
+        "LinguaES" : "Idioma Español",
+        "SistemaCartosHeader" : "Sistema Cartos", 
+        "SistemaCartosExpli" : "\n Sistema Cartos Información"
+
     },
     "head": {
         "help": "Ayuda",
@@ -101,20 +122,22 @@
         "wac": "WAC",
         "tagHTML": "TagHTML",
         "ex": "Ejemplos",
-        "opt": "Opciones"
+        "opt": "Opciones",
+        "elim": "¿Está seguro de que desea eliminar esta configuración?"
     },
     "fol": {
         "title": "Gestión de Elementos",
         "id": "Identificador",
         "dom": "Dominio",
         "col": "Colección",
-        "edi": "Compañia de Publicidad",
+        "edi": "Editora",
         "data": "Fecha de creación",
         "lin": "Idioma",
         "versao": "Versión",
         "opt": "Opciones",
         "insert": "Insertar Elemento",
-        "print": "Imprimir o exportar registros"
+        "print": "Imprimir o exportar elementos",
+        "noPicText":"Este elemento no tiene fotografía."
     },
     "imp": {
         "passo": "Inserción de Documentos"
@@ -130,7 +153,14 @@
         "quest": "¿No tiene credenciales de acceso?",
         "reg": "Solicitud de credenciales de acceso",
         "rec": "Recuperar contraseña",
-        "adminSystem": "Sistema de Administracion"
+        "adminSystem": "Sistema de Administracion",
+        "reqacesso":"Solicitar credenciales de acceso",
+        "enter":"Entrar",
+        "pCred":"Solicitud de recuperación de credenciales enviada al sistema.",
+        "re":"Reiniciar",
+        "sub":"Entregar",
+        "uInv":"Nombre de usuario o contraseña inválido. Por favor intente de nuevo.",
+        "new":"Ya existe un usuario o solicitud de acceso con ese nombre de usuario, elija otro."
     },
     "pedac": {
         "title": "Requerir credenciales de acceso",
@@ -183,7 +213,9 @@
         "nome": "Nombre",
         "email": "Email",
         "tipo": "Tipo",
-        "opt": "Opciones"
+        "opt": "Opciones",
+        "elim":"¿Está seguro de que desea eliminar este usuario?",
+        "noCur": "Este usuario no tiene un plan de estudios"
     },
     "defForm": {
         "addDef": "Insertar configuración",
@@ -202,7 +234,7 @@
         "visFol": "Ver elementos",
         "id": "Identificador",
         "colecao": "Colección",
-        "editora": "Compañia de Publicidad",
+        "editora": "Editora",
         "dataPub": "Fecha de creación",
         "lingua": "Idioma",
         "tComTags": "Texto com etiquetas",
@@ -230,8 +262,8 @@
         "sd": "Semi-diplomático",
         "tipo": "Tipo",
         "tipo2": "Nuevo Tipo",
-        "edi": "Compañia de Publicidad",
-        "edi2": "Nueva Compañia de Publicidad",
+        "edi": "Editora",
+        "edi2": "Nueva Editora",
         "lin": "Idioma",
         "lin2": "Nuevo Idioma",
         "col": "Colección",
@@ -252,7 +284,9 @@
         "skip": "Saltar",
         "ajuda": "Texto de ayuda",
         "apagar":"Eliminar",
-        "leave": "Quitar la inserción"
+        "leave": "Quitar la inserción",
+        "pdf": "Ver pdf",
+        "clean":"Limpiar"
     },
     "p2": {
         "tComTags": "Texto com etiquetas",
@@ -280,12 +314,29 @@
     "tForm": {
         "vT": "Ver etiquetas"
     },
+    "hist": {
+        "haccess": "Historial de acceso",
+        "cleanH": "Borrar historial",
+        "elim": "¿Está seguro de que desea eliminar el historial de acceso?",
+        "adate": "Fecha de acceso",
+        "req": "Pedido"
+    },
     "pr":{
         "da":"fecha de búsqueda",
         "nome":"Nombre",
         "texto":"Texto",
         "col":"Colección",
-        "edi": "Compañia de Publicidad",
+        "edi": "Editora",
         "d":"Fecha"
+    },
+    "hAdmin":{
+        "f":"Elementos",
+        "col":"Colecciones",
+        "users":"Usuarios",
+        "ins":"Inserción de elementos",
+        "ultimosInseridos":"Últimos elementos insertados",
+        "nElemCol":"Nº Elementos por Colección",
+        "nElemEdi": "Nº de elementos por Editora"
+
     }
 }

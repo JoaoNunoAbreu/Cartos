@@ -5,7 +5,7 @@ from app.importacao import blueprint
 from flask import render_template,request,flash,redirect,url_for, send_from_directory
 from flask_login import login_required
 from app import indexList,tags, token_required, admin_required, neo4j_db
-import datetime
+from datetime import datetime
 import os
 from os.path import join, dirname, realpath
 ###### este é meu
@@ -133,6 +133,7 @@ def route_template_editElement():
 
 class Aux:              
     def create_element(elem_id,titulo,numero,serie,nr_paginas,tamanho,personagens,estado,data_publicacao,capa,texto,observacoes):
+        timestamp = datetime.timestamp(datetime.now())
         q = f'CREATE (n:Elemento\
             {{\
                 id : "{elem_id}",\
@@ -146,7 +147,8 @@ class Aux:
                 data_publicacao : "{data_publicacao}",\
                 capa : "{capa}",\
                 texto : "{texto}",\
-                observacoes : "{observacoes}" \
+                observacoes : "{observacoes}", \
+                created_at : {timestamp} \
             }}\
         )'
         neo4j_db.run(q)

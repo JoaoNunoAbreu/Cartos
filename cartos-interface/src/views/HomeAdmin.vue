@@ -38,10 +38,10 @@
         </div>
         <v-divider horizontal class="mt-n7"></v-divider>
         <template>
-            <h3 style="text-align: center" class="mx-auto mt-5">Últimos Elementos Inseridos</h3>
+            <h3 style="text-align: center" class="mx-auto mt-5">{{$t('hAdmin.ultimosInseridos')}}</h3>
+      
             <v-card
                 elevation="2"
-                max-width="400"
                 class="mx-auto mt-5"
             >
                 <!-- Last 3 elements uploaded-->
@@ -50,24 +50,27 @@
                     height="350"
                     show-arrows-on-hover
                 >
-                    <v-carousel-item
-                        v-for="(elem,idx) in last3Elements"
-                        :key="idx"
-                    >
+                    <v-carousel-item v-for="(i) in 2" :key="i">
                    
-                        <v-card 
+                        <!-- <v-card 
                             class="mx-auto"
                             max-width="400"
                             light    
-                        >
-                         <v-hover v-slot="{ hover }">
-                            <v-img
+                        > -->
+                        <v-layout row>
+                        <v-flex xs4  v-for="(elem,j) in ele[i-1]" :key="j" >
+                         
+                            <v-img v-if="i===1"
                                 class="white--text align-end"
                                 height="150px"
-                                :src="capas[idx]"
-                            >
-                            
-                             <v-expand-transition>
+                                :src="capas[j]"
+                            ></v-img>
+                            <v-img v-else
+                                class="white--text align-end"
+                                height="150px"
+                                :src="capas[3+j]"
+                            ></v-img>
+                             <!-- <v-expand-transition>
                             <div v-if="hover" class="d-flex transition-fast-in-fast-out teal darken-1 v-reveal display-3 white--text"
                                 style="height: 100%;">
                                 <v-spacer></v-spacer>
@@ -75,11 +78,10 @@
                                 <v-spacer></v-spacer>
                             </div>
                             
-                            </v-expand-transition>
-                            </v-img>
-                            </v-hover>
+                            </v-expand-transition> -->
+                            
                             <div class=text-center>
-                                <v-card-title cprimary-title class="justify-center">
+                                <v-card-title style="color:black;" cprimary-title class="justify-center">
                                     {{elem.id}} 
                                 </v-card-title>
                                 <v-card-subtitle class="pb-0">
@@ -87,13 +89,15 @@
                                 </v-card-subtitle>
                                 <v-card-text class="text--primary">
                             
-                                <div><b>Coleção:</b> {{elem.colecao}}</div>
-                                <div><b>Editora:</b> {{elem.editora}}</div>
-                                <div><b>Língua:</b> {{elem.lingua}}</div>
+                                <div><b>{{$t('fol.col')}}:</b> {{elem.colecao}}</div>
+                                <div><b>{{$t('fol.edi')}}:</b> {{elem.editora}}</div>
+                                <div><b>{{$t('fol.lin')}}:</b> {{elem.lingua}}</div>
                                 </v-card-text>
                             </div>
-                        </v-card>
-                   
+                        <!-- </v-card> -->
+                        </v-flex>
+                        </v-layout>
+
                     </v-carousel-item>
                 </v-carousel>
             </v-card>
@@ -103,7 +107,7 @@
             <!-- Colecoções Graph -->
 
             <div class="mt-5">
-                <h3 style="text-align: center">Nº Elementos por Coleção</h3>
+                <h3 style="text-align: center">{{$t('hAdmin.nElemCol')}}</h3>
                 <div class="small">
                     <line-chart :passedData="colecoes"></line-chart>
                 </div>
@@ -112,7 +116,7 @@
             <!-- Editoras Graph -->
 
             <div class="mt-5">
-                <h3 style="text-align: center">Nº Elementos por Editora</h3>
+                <h3 style="text-align: center">{{$t('hAdmin.nElemEdi')}}</h3>
                 <div class="small">
                     <line-chart :passedData="editoras"></line-chart>
                 </div>
@@ -142,12 +146,13 @@ export default {
             nColecoes:0,
             nUsers:0,
             colecoes:{},
+            ele:[],
             editoras:{},
             value:[],
             number:[],
             capas:[],
             percent:0,
-            last3Elements: [],
+            last6Elements: [],
             condition:false,
             item: null,
             dialog: false,
@@ -177,6 +182,7 @@ export default {
                 text: `${this.$t("fol.opt")}`,
                 value: "options",
                 sortable: false,
+                
                 },
         ],
         }
@@ -196,16 +202,19 @@ export default {
 
         axios.get(this.url + `/home/index`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
-            this.last3Elements = response.data.lastElementos;
+            this.last6Elements = response.data.lastElementos;
+            let firstHalf = this.last6Elements.slice(0, this.last6Elements.length/2)
+            let secondHalf = this.last6Elements.slice(-this.last6Elements.length/2)
+            this.ele = [firstHalf,secondHalf]
             this.nUsers = response.data.n_users;
             this.nElementos = response.data.n_elementos;
             this.nColecoes= response.data.n_colecoes;
             this.colecoes = response.data.colecoesContadas;
             this.editoras = response.data.editorasContadas;
 
-            for(let i = 0;i < this.last3Elements.length; i++){
+            for(let i = 0; i < this.last6Elements.length; i++){
 
-                var idd = this.last3Elements[i].id;
+                var idd = this.last6Elements[i].id;
                 axios.get(this.url + `/elementos/ver/${idd}/foto`, {
                     responseType: "arraybuffer",
                 })
@@ -214,18 +223,24 @@ export default {
                     this.capas.push(`data:${response.headers[
                         "content-type"
                     ].toLowerCase()};base64,${image}`);
-
+                  
                 })
                 .catch((err) => {
                     console.log(err.message);
                     this.error = err.message;
                 })
+                
             }
+            
 
         }).catch(e => {
             console.log(e);
-            alert("Não foi possível estabelecer conexão com a base de dados.")
+            alert("Não foi possível estabelecer conexão com a base de dados. Por favor dar refresh da página.")
         })
+        
+     
+       
+     
     },
     methods:{
         getOccurrence: function(array, value) {

@@ -284,7 +284,7 @@ def route_template_ver_foto(elemento):
     if path.exists(pathCheck) :
         return send_from_directory(pathPhoto, f, mimetype='image/*')
     else :
-        return send_from_directory(pathPhoto, "default", mimetype='image/png')
+        return send_from_directory(pathPhoto, "default.jpg", mimetype='image/png')
 
 @blueprint.route('/ver/<elemento>/video', methods=['GET'])
 #@token_required

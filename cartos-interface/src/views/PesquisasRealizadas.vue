@@ -64,7 +64,7 @@ export default {
         return{
             headers:[
                 {
-                    text: `${this.$t('pr.da')}`,
+                    text: this.$t('navd.estatisticas'),
                     align: 'start',
                     value: 'data_atual'
                 },

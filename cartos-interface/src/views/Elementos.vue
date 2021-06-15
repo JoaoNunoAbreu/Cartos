@@ -269,7 +269,7 @@ export default {
         })
         .catch((e) => {
           console.log(e);
-          alert("Não foi possível estabelecer conexão com a base de dados.")
+          alert("Não foi possível estabelecer conexão com a base de dados. Por favor dar refresh da página.")
         });
     },
     printSection() {
