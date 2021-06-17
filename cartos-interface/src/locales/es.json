@@ -44,14 +44,16 @@
         "diss": "Disertaciones",
         "reltec": "Relato técnico",
         "siweb": "Sitios Web",
-        "importAjuda": "Cómo importar un documento",
-        "textoImportAjuda": "Texto de ayuda",
+        "importAjuda": "Cómo importar elementos",
+        "textoImportAjuda": "Seleccione un archivo CSV y clic en el botón enviar",
         "terms": "Condiciones",
         "priv": "Restricciones",
         "tituloProjeto": "Sistema de Recepción y Exploración de Cómics",
         "exit":"Salir de la aplicación",
         "se":"Buscar",
-        "textoLoginAjuda": "Texto de Ayuda"
+        "textoLoginAjuda": "Texto de Ayuda",
+        "insertAjuda": "Cómo insertar un elemento",
+        "insertAjudaTxt": "Complete todos los campos necesarios y luego haga clic en el botón Guardar"
     },
     "nav": {
         "instrucoesPesquisa": "Instrucciones de búsqueda",

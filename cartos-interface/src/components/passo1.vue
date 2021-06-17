@@ -327,14 +327,14 @@
                 >
                   <v-card>
                     <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
-                      <h3>{{ $t("navd.importAjuda") }}</h3>
+                      <h3>{{ $t("navd.insertAjuda") }}</h3>
                     </v-toolbar>
                     <v-divider class="mx-4" horizontal></v-divider>
 
                     <v-card-text
                       class="change-font mt-6"
                       style="white-space: pre-line"
-                      >{{ $t("navd.textoImportAjuda") }}</v-card-text
+                      >{{ $t("navd.insertAjudaTxt") }} <v-icon small >mdi-checkbox-marked-outline</v-icon></v-card-text
                     >
                     <v-card-actions>
                       <v-spacer></v-spacer>

@@ -44,14 +44,16 @@
         "diss": "Dissertations",
         "reltec": "Technical Report",
         "siweb": "Websites",
-        "importAjuda": "How to import a document",
-        "textoImportAjuda": "Help Text",
+        "importAjuda": "How to import elements",
+        "textoImportAjuda": "Select a CSV file and then click the submit button",
         "terms": "Terms of Using",
         "priv": "Restrictions",
         "tituloProjeto": "Hosting and Exploring System of Comic Books",
         "exit":"Exit",
         "se":"Search",
-        "textoLoginAjuda": "Help Text"
+        "textoLoginAjuda": "Help Text",
+        "insertAjuda": "How to insert an element",
+        "insertAjudaTxt": "Fill all necessary fields and then click on the Save button"
     },
     "nav": {
         "instrucoesPesquisa": "Search instructions",

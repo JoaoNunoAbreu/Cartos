@@ -1432,5 +1432,35 @@
         "user": "jna",
         "stamp": "2021-06-15 15:07:00.291182",
         "request": "GET:http://cartos.di.uminho.pt/users/history?nome=jna"
+    },
+    {
+        "_id": "60cb4a65b235297f285df2f8",
+        "user": "obelo",
+        "stamp": "2021-06-17 14:13:09.507320",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo"
+    },
+    {
+        "_id": "60cb4ab2b235297f285df2f9",
+        "user": "obelo",
+        "stamp": "2021-06-17 14:14:26.445985",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/comFoto?seed=1623935665540"
+    },
+    {
+        "_id": "60cb5f61b235297f285df2fa",
+        "user": "obelo",
+        "stamp": "2021-06-17 15:42:41.536798",
+        "request": "GET:http://cartos.di.uminho.pt/analise/pesquisas"
+    },
+    {
+        "_id": "60cb6d9fb235297f285df2fb",
+        "user": "jna",
+        "stamp": "2021-06-17 16:43:27.026762",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb7495b235297f285df2fc",
+        "user": "jna",
+        "stamp": "2021-06-17 17:13:09.910532",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
     }
 ]
