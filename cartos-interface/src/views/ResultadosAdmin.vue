@@ -118,7 +118,7 @@
                                   @click="dialog = false"
                                   v-on="on"
                                 >
-                                  <v-icon large>mdi-door-open</v-icon>
+                                  <v-icon>mdi-door-open</v-icon>
                                 </v-btn>
                               </template>
                               <span>{{ $t("nav.Sair") }}</span>
@@ -161,7 +161,7 @@
               class="pa-15 change-font; text-left ; mx-auto"
               max-width="600"
             >
-              <div v-for="(item, index) in pageOfItems" v-bind:key="item">
+              <div v-for="(item, index) in pageOfItems" v-bind:key="index">
                 <h3 class="font-weight-black change-font">
                   <a class="change-font" @click="showElemento(index)">{{
                     item.id
@@ -185,8 +185,17 @@
       </div>
       <v-dialog persistent v-model="dialogElemento" max-width="800px">
             <elementoFormEditable
+              v-if="$store.state.user.tipo === 'Admin'"
               :elemento="elementoAtual"
               backTo="/admin/resultados"
+              :isDisabled="true"
+              :isDeleting="false"
+              @emiteFecho="emiteFecho($event)"
+            ></elementoFormEditable>
+            <elementoFormEditable
+              v-else
+              :elemento="elementoAtual"
+              backTo="/leitor/resultados"
               :isDisabled="true"
               :isDeleting="false"
               @emiteFecho="emiteFecho($event)"
@@ -240,8 +249,7 @@ export default {
         this.numResultados = dados.data.length;
 
         for (let i = 0; i < dados.data.length; i++)
-          this.resultados.push(dados.data[i].e);
-        console.log(this.resultados);
+          this.resultados.push(dados.data[i]);
       })
       .catch((err) => {
         console.log(err.message);

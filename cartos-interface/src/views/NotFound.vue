@@ -13,7 +13,8 @@
             <div class="paragraph-text mt-2">
               <br />
               <br />
-              <a href="/"> Home </a>
+              <a href="/">Home</a>
+              <a class="ml-7" href="/login">Login</a>
             </div>
           </v-card>
         </v-flex>

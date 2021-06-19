@@ -135,22 +135,13 @@
                 </div>
                 <div class="child-left">
                   <label v-if="hasCapa===true" >{{ $t("p1.capa") }}:</label>
-                  <!--
-                  <v-file-input
-                    :disabled="isDisabled"
-                    show-size
-                    accept="image/jpg, image/jpeg, image/png,video/*"
-                    :label="$t('p1.file')"
-                    v-model="capa"
-                    @change="previewImage"
-                  >
-                  </v-file-input>
-                  <v-img :src="this.url" contain></v-img>
-                  -->
-                  <v-img v-if="hasCapa===true" v-bind:src="capa" contain max-width="100" />
-                  <label v-if="hasVideo===true">{{ $t("p1.Video") }}:</label>
-                  <div>
-                    <video v-if="hasVideo===true" width="200" :src="video" controls contain></video>
+                  <v-img  v-if="hasCapa===true"   :src="capa" @click="openImg=true" contain max-width="100" />
+                  <label>{{ $t("p1.Video") }}:</label>
+                  <div v-if="hasVideo===true">
+                    <video width="200" :src="video" controls contain></video>
+                  </div>
+                  <div v-else>
+                    <img width="200" src="https://i.imgur.com/cx4vjYm.jpg" controls contain/>
                   </div>
                 </div>
               </div>
@@ -342,14 +333,14 @@
                 >
                   <v-card>
                     <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
-                      <h3>{{ $t("navd.importAjuda") }}</h3>
+                      <h3>{{ $t("navd.help") }}</h3>
                     </v-toolbar>
                     <v-divider class="mx-4" horizontal></v-divider>
 
                     <v-card-text
                       class="change-font mt-6"
                       style="white-space: pre-line"
-                      >{{ $t("navd.textoImportAjuda") }}</v-card-text
+                      >{{ $t("navd.insertAjudaTxt") }}</v-card-text
                     >
                     <v-card-actions>
                       <v-spacer></v-spacer>
@@ -409,7 +400,43 @@
       </v-row>
     </v-sheet>
     <v-dialog v-model="submitDialog" scrollable width="500">
-      <infoPopup @emiteFecho="emiteFecho($event)"></infoPopup>
+      <v-card>
+        <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
+          <h2>{{ $t("fol.info") }}</h2>
+        </v-toolbar>
+        <v-row>
+          <v-col
+            style="
+              margin-left: 1cm;
+              margin-right: 1cm;
+              max-width: 40px;
+              margin-top: 20px;
+            "
+          >
+            <v-icon x-large color="#003399" dark>mdi-information</v-icon>
+          </v-col>
+          <v-col style="margin-top: 20px;">
+            <v-card-text>
+              <h3>{{ $t("navd.editSucess") }}</h3>
+            </v-card-text>
+          </v-col>
+        </v-row>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on: tooltip }">
+              <v-btn @click="emiteFecho" v-on="{ ...tooltip }" color="#26B99A"
+                      class="white--text mr-3"  >
+                <v-icon>mdi-door-open</v-icon>
+              </v-btn>
+            </template>
+            <span>
+              {{ $t("navd.leave") }}
+            </span>
+          </v-tooltip>
+        </v-card-actions>
+      </v-card>
     </v-dialog>
     <v-dialog v-model="deleteDialog" scrollable width="500" persistent>
        <v-card>
@@ -501,11 +528,13 @@
           </span>
       </v-tooltip>
   </v-dialog>
+  <v-dialog v-model="openImg" max-width="400px" >
+     <img :src="capa" width="100%" @click.stop="openImg=false">
+  </v-dialog>
   </div>
 </template>
 <script>
 import axios from "axios";
-import infoPopup from "../components/InfoPopup";
 import pdf from 'vue-pdf'
 export default {
   data() {
@@ -555,13 +584,15 @@ export default {
       dialogImp: false,
       idImport: "",
       maxId: 6,
-      maxChars: 20,
+      maxChars: 100,
       maxDate: 10,
       maxNum: 3,
-      maxPersChars: 100,
+      maxPersChars: 200,
       deleteDialog: false,
       hasVideo: false,
-      hasCapa: false
+      hasCapa: false,
+      openImg: false,
+      currentImg: ""
     };
   },
   props: {
@@ -617,6 +648,7 @@ export default {
         },
       })
       .then((response) => {
+        
         for (let i = 0; i < response.data.length; i++)
           this.editoraSel.push(response.data[i].x.designacao);
         this.editoraSel.push("Outra");
@@ -669,25 +701,27 @@ export default {
   },
   methods: {
     onUpdate() {
-      this.hasVideo=false;
-      this.hasCapa=false;
-      this.video=null;
-      this.id = this.elemento.id;
-      this.titulo = this.elemento.titulo;
-      this.colecao = this.elemento.colecao;
-      this.numero = this.elemento.numero;
-      this.serie = this.elemento.serie;
-      this.lingua = this.elemento.lingua;
-      this.paginas = this.elemento.nr_paginas;
-      this.size = this.elemento.tamanho;
-      this.personagens = this.elemento.personagens;
-      this.estado = this.elemento.estado;
-      this.editora = this.elemento.editora;
-      this.dataPub = this.elemento.data_publicacao;
-      this.tipo = this.elemento.tipo;
-      this.getCapa(this.elemento.id);
-      this.getVideo(this.elemento.id);
-      this.getPdf(this.elemento.id);
+      if(this.elemento !== undefined && Object.keys(this.elemento).length != 0){
+        this.hasVideo=false;
+        this.hasCapa=false;
+        this.video=null;
+        this.id = this.elemento.id;
+        this.titulo = this.elemento.titulo;
+        this.colecao = this.elemento.colecao;
+        this.numero = this.elemento.numero;
+        this.serie = this.elemento.serie;
+        this.lingua = this.elemento.lingua;
+        this.paginas = this.elemento.nr_paginas;
+        this.size = this.elemento.tamanho;
+        this.personagens = this.elemento.personagens;
+        this.estado = this.elemento.estado;
+        this.editora = this.elemento.editora;
+        this.dataPub = this.elemento.data_publicacao;
+        this.tipo = this.elemento.tipo;
+        this.getCapa(this.elemento.id);
+        this.getVideo(this.elemento.id);
+        this.getPdf(this.elemento.id);
+      }
     },
     reset() {
       //needs work for more resets
@@ -859,15 +893,17 @@ export default {
           responseType: "arraybuffer",
         })
         .then((response) => {
-          this.hasVideo=true;
-          var vi = new Buffer(response.data, "binary").toString("base64");
-          this.video = `data:${response.headers[
-            "content-type"
-          ].toLowerCase()};base64,${vi}`;
+          if(response.headers["content-type"]=="video/mp4"){
+            this.hasVideo=true;
+            var vi = new Buffer(response.data, "binary").toString("base64");
+            this.video = `data:${response.headers[
+              "content-type"
+            ].toLowerCase()};base64,${vi}`;
+          }
+          
         })
         .catch((err) => {
           this.hasVideo=false;
-         
           this.error = err.message;
         });
     },
@@ -882,7 +918,7 @@ export default {
     disableButton() {
       if (
         this.id.length > 1 &&
-        this.titulo.length > 0 &&
+        this.titulo.length > 0  &&
         this.colecao &&
         this.numero.length > 0 &&
         this.serie.length > 0 &&
@@ -893,7 +929,6 @@ export default {
         this.estado.length > 0 &&
         this.editora &&
         this.dataPub.length > 0 &&
-        this.ficheiro &&
         this.tipo &&
         this.valid
       )
@@ -902,7 +937,6 @@ export default {
     },
   },
   components: {
-    infoPopup: infoPopup,
     'pdf':pdf
   },
 };

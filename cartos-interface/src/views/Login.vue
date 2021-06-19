@@ -102,7 +102,7 @@
           <v-spacer></v-spacer>
           <v-tooltip bottom>
             <template v-slot:activator="{ on: tooltip }">
-              <v-btn color="#c9302c" dark @click="dialogPW = false" to="/admin/login" v-on="{ ...tooltip}">
+              <v-btn color="#c9302c" dark @click="dialogPW = false" to="/login" v-on="{ ...tooltip}">
                 <v-icon>mdi-close</v-icon>
               </v-btn>
             </template>
@@ -268,7 +268,7 @@
           <v-spacer></v-spacer>
           <v-tooltip bottom>
             <template v-slot:activator="{ on: tooltip }">
-              <v-btn @click="dialog = false" to="/admin/login" v-on="{ ...tooltip}">
+              <v-btn @click="dialog = false" to="/login" v-on="{ ...tooltip}">
                 <v-icon>mdi-exit-to-app</v-icon>
               </v-btn>
             </template>
@@ -314,7 +314,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <appFooter></appFooter>
+    <appFooter class="footer"></appFooter>
   </div>
 </template>
 <script>
@@ -388,12 +388,19 @@ export default {
             this.$refs.form.reset()
             this.dialog = !this.dialog
           }
-          else if(data.data.users && (data.data.token!=undefined)){
+          else if(data.data.users && (data.data.token!=undefined) && (data.data.user.tipo == "Admin")){
+ 
             this.$store.commit("guardaTokenUtilizador", data.data.token)
             this.$store.commit("guardaNomeUtilizador", data.data.user)
             this.$router.push( {path:`/admin/homeAdmin`})
           }
-      }).catch(e => {
+          else if (data.data.users && (data.data.token!=undefined) && (data.data.user.tipo == "Leitor")){
+          
+            this.$store.commit("guardaTokenUtilizador", data.data.token)
+            this.$store.commit("guardaNomeUtilizador", data.data.user)
+            this.$router.push( {path:`/leitor/elementos`})
+          }
+      }).catch(e => { 
           console.log(e)
           alert("Não foi possível estabelecer conexão com a base de dados. Por favor dar refresh da página.")
       })
@@ -422,7 +429,7 @@ export default {
           else{
             this.dialogPedido = false
             this.$refs.form.reset()
-            this.$router.push( {path:`/admin/login`})
+            this.$router.push( {path:`/login`})
           }
         }).catch(e => {
             this.errors.push(e)
@@ -502,4 +509,11 @@ export default {
   #checkboxes label{
             display: inline-block;
   }
+  .footer {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+}
 </style>

@@ -2,12 +2,9 @@
     <v-card>
         <v-navigation-drawer app
           clipped
-          v-if="drawerOn"
-          permanent
-          :expand-on-hover="expandOnHover"
-          :mini-variant="miniVariant"
-          style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);"
-          class="navBar"
+          v-if="true"
+          v-model="drawer"
+          style="background: linear-gradient(to bottom, #376a53 50%, #549d7c 100%);"
         >
 
           <v-list
@@ -15,92 +12,21 @@
             dense
             dark
           >
-            <v-divider light></v-divider>
-            <v-list-group
-              class="white--text"
-              prepend-icon="mdi-folder-open"
-              :value="false"
-              no-action
-            >
-              <template v-slot:activator>
-                <v-list-item-title class="white--text">{{$t('navd.documents')}}</v-list-item-title>
-              </template>
-                  <v-list-item link to="/admin/elementos">
-                    <v-list-item-title class="white--text">{{$t('navd.elementos')}}</v-list-item-title>
-                  </v-list-item>
-                  <v-list-item link to="/admin/compElementos">
-                    <v-list-item-title class="white--text">{{$t('navd.cf')}}</v-list-item-title>
-                  </v-list-item>
-            </v-list-group>
-              <v-list-item link to="/admin/elementos/indices">
-                  <v-list-item-icon>
-                    <v-icon>mdi-format-list-bulleted-square</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-title class="white--text">{{$t('navd.indexes')}}</v-list-item-title>
-              </v-list-item>
-              <v-list-group
-              class="white--text"
-              prepend-icon="mdi-note-multiple"
-              :value="false"
-              no-action
-            >
-              <template v-slot:activator>
-                <v-list-item-title class="white--text">{{$t('navd.annotations')}}</v-list-item-title>
-              </template>
-              <v-list-item link to="/admin/tagging">
-                <v-list-item-title class="white--text">{{$t('navd.etags')}}</v-list-item-title>
-              </v-list-item>
-              <v-list-item link to="/admin/elementos/tags">
-                <v-list-item-title class="white--text">{{$t('navd.eListaTags')}}</v-list-item-title>
-              </v-list-item>
-              <v-list-item link to="/admin/elementos/tags">
-                <v-list-item-title class="white--text">{{$t('navd.tags')}}</v-list-item-title>
-              </v-list-item>
-              <v-list-item link to="/admin/users">
-                <v-list-item-title class="white--text">{{$t('navd.ebase')}}</v-list-item-title>
-              </v-list-item>
-            </v-list-group>
-            <v-list-item link to="/admin/georef">
+            <v-list-item link to="/leitor/elementos">
               <v-list-item-icon>
-                <v-icon>mdi-map-marker</v-icon>
+                <v-icon>mdi-folder-open</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>{{$t('navd.georef')}}</v-list-item-title>
+              <v-list-item-title>{{$t('navd.documents')}}</v-list-item-title>
             </v-list-item>
-            <v-list-group
-              class="white--text"
-              prepend-icon="mdi-magnify"
-              :value="false"
-              no-action
-            >
-              <template v-slot:activator>
-                <v-list-item-title class="white--text">{{$t('navd.analysis')}}</v-list-item-title>
-              </template>
-              <v-list-item link to="/admin/analise">
-                <v-list-item-title class="white--text">{{$t('nav.barraPesquisa')}}</v-list-item-title>
-              </v-list-item>
-              <v-list-item link>
-                <v-list-item-title class="white--text">{{$t('navd.estatisticas')}}</v-list-item-title>
-              </v-list-item>
-            </v-list-group>
-            <v-list-item link to="/admin/definitions">
+              
+            <v-list-item link to="/leitor/analise">
               <v-list-item-icon>
-                <v-icon>mdi-cog</v-icon>
+                <v-icon>mdi-magnify</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>{{$t('navd.definitions')}}</v-list-item-title>
+              <v-list-item-title>{{$t('nav.barraPesquisa')}}</v-list-item-title>
             </v-list-item>
-            <v-list-item link to="/admin/documentacao">
-              <v-list-item-icon>
-                <v-icon>mdi-text-box-multiple</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>{{$t('navd.docum')}}</v-list-item-title>
-            </v-list-item>
-            <v-list-item link to="/admin/georef">
-              <v-list-item-icon>
-                <v-icon>mdi-map-marker</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>{{$t('navd.georef')}}</v-list-item-title>
-            </v-list-item>
-                        <v-list-item link @click="about = true">
+         
+            <v-list-item link @click="about = true">
               <v-list-item-icon>
                 <v-icon>mdi-information-outline</v-icon>
               </v-list-item-icon>
@@ -144,6 +70,7 @@
               <v-card>
                 <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
                   <h2>{{ $t('nav.creditos') }}</h2>
+                  
                 </v-toolbar>
                 
                 <v-divider
@@ -151,9 +78,14 @@
                 horizontal
                 ></v-divider>
                 
-                <v-card-text class="change-font mt-6" style="white-space: pre-line"
-                  >{{ $t('nav.textoCreditos') }}</v-card-text
-                >
+                <v-card-text class="change-font mt-6" style="white-space: pre-line">
+                  <h2> {{ $t('nav.textoCreditos') }} </h2>
+                  <p/>
+                  <v-icon>mdi-github</v-icon> <a href="https://github.com/Catarinacg16" target="blank_">Catarina Gil</a><p/>
+                  <v-icon>mdi-github</v-icon> <a href="https://github.com/goncalo-f" target="blank_">Gonçalo Ferreira</a><p/>
+                  <v-icon>mdi-github</v-icon> <a href="https://github.com/JoaoNunoAbreu" target="blank_">João Nuno Abreu</a>
+
+                </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   
@@ -242,20 +174,32 @@
           </v-list>
           <template v-slot:append>
             <div class="pa-2">
-              <v-btn dark depressed min-width="60px" @click="fixNav()" >
-                <v-icon>mdi-axis-arrow-lock</v-icon>
-              </v-btn>
-              <v-btn dark depressed min-width="60px" @click="logout();">
-                <v-icon>mdi-power</v-icon>
-              </v-btn>
+              <v-tooltip top> 
+                <template v-slot:activator="{ on }">
+                  <v-btn dark depressed min-width="60px" @click="goHome();" v-on="on">
+                    <v-icon>mdi-home</v-icon>
+                  </v-btn>
+                </template>
+                <span>{{$t('navd.home')}}</span>
+              </v-tooltip>
+              <v-tooltip top> 
+                <template v-slot:activator="{ on }">
+                  <v-btn dark depressed min-width="60px" @click="logout();" v-on="on">
+                    <v-icon>mdi-power</v-icon>
+                  </v-btn>
+                </template>
+                <span>{{$t('navd.exit')}}</span>
+              </v-tooltip>
             </div>
           </template>
+
         </v-navigation-drawer>
     </v-card>
 </template>
 
 <script>
 import axios from 'axios'
+import { eventBus } from '../main'
 export default {
     data() {
         return{
@@ -270,9 +214,14 @@ export default {
             about:false,
             drawerOn: true,
             url: process.env.VUE_APP_URL,
+            drawer:true
         }
     },
     created(){
+      eventBus.$on('updateDrawer', a => {
+        this.drawer = !this.drawer
+        console.log(a)
+      })
       axios.get(this.url + `/users/foto/${this.$store.state.user._id}`, {
         responseType:'arraybuffer',
         headers: {
@@ -291,15 +240,11 @@ export default {
         //console.log("destroy token here")
         this.$store.commit("guardaTokenUtilizador", "")
         this.$store.commit("guardaNomeUtilizador", "")
-        this.$router.push( {path:`/admin/login`})
+        this.$router.push( {path:`/login`})
       },
-      fixNav: function(){
-        this.expandOnHover=!this.expandOnHover
-        this.miniVariant=!this.miniVariant
-        this.drawerOn=false
-        this.$nextTick(() =>
-          this.drawerOn = true
-        )
+      
+      goHome: function(){
+        this.$router.push( {path:`/home`})
       }
     }
 };

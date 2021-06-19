@@ -12,6 +12,7 @@ from werkzeug.security import generate_password_hash
 ###### new imports
 import datetime
 import json 
+import os    
 from bson import json_util
 from flask_cors import CORS, cross_origin
 CORS(blueprint)
@@ -312,7 +313,7 @@ def route_template_ver_video(elemento):
     if path.exists(pathCheck) :
         return send_from_directory(pathVideo, f, mimetype='video/mp4')
     else:
-        return send_from_directory(pathVideo, "default", mimetype='video/png')
+        return json_util.dumps({"message":"Sem vídeo."})
 
 @blueprint.route('/ver/<elemento>/ficheiro', methods=['GET'])
 def route_template_ver_ficheiro(elemento):
@@ -399,9 +400,9 @@ def route_template_apagar(elemento):
     remove_path = join(dirname(realpath(__file__)), 'static/doc/', elemento_filename)
     if path.exists(remove_path):
         remove(remove_path)
-    foto_remove_path = join(dirname(realpath(__file__)), 'static/pics/', foto_filename)
-    if path.exists(foto_remove_path):
-        remove(foto_remove_path) 
+
+    pics = join(dirname(realpath(__file__)), 'static/pics/') 
+    deleteIfFotoVideoExists(pics,foto_filename)
 
     # -----------------------------
 
@@ -419,3 +420,10 @@ def route_template_apagar(elemento):
             "lingua":lingua
         }) 
     return json_util.dumps(data)
+
+def deleteIfFotoVideoExists(pics,file):
+  l = os.listdir(pics)
+  li = [x.split('.')[0] for x in l]
+  if (file in li):
+    remove = join(pics,file)
+    remove(remove)

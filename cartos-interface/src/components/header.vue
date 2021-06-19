@@ -13,7 +13,8 @@
                 </v-list-item-avatar>
               <v-list-item-content>
                 <v-list-item-title><h2>{{$t('navd.tituloProjeto')}}</h2></v-list-item-title>
-                <v-list-item-subtitle>{{$t('login.adminSystem')}}</v-list-item-subtitle>
+                <v-list-item-subtitle v-if="$store.state.user.tipo === 'Admin'" >{{$t('login.adminSystem')}}</v-list-item-subtitle>
+                <v-list-item-subtitle v-else>{{$t('login.leitorSystem')}}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
             <v-dialog @keydown.esc="about = false" v-model="about" scrollable width="500">
@@ -85,7 +86,7 @@
                 </v-tooltip>
             </template>
             <v-list>
-                <v-list-item link :to="`/admin/users/ver`">
+                <v-list-item link :to="`/users/ver`">
                     <v-list-item-title>{{$t('header.vPerfil')}}</v-list-item-title>
                 </v-list-item>
                 <v-list-item @click="logout();" text>
@@ -126,7 +127,7 @@ export default {
         logout: function(){
             this.$store.commit("guardaTokenUtilizador", "")
             this.$store.commit("guardaNomeUtilizador", "")
-            this.$router.push( {path:`/admin/login`})
+            this.$router.push( {path:`/login`})
         },
         getUrl: function(){
             var components = this.$route.path.split('/')

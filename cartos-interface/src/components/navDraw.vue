@@ -71,12 +71,6 @@
                 <v-list-item-title class="white--text">{{$t('navd.hacesso')}}</v-list-item-title>
               </v-list-item>
             </v-list-group>
-            <v-list-item link to="/admin/definitions">
-              <v-list-item-icon>
-                <v-icon>mdi-cog</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>{{$t('navd.definitions')}}</v-list-item-title>
-            </v-list-item>
             <v-list-item link @click="about = true">
               <v-list-item-icon>
                 <v-icon>mdi-information-outline</v-icon>
@@ -102,9 +96,10 @@
                   
                   <v-tooltip bottom> 
                     <template v-slot:activator="{ on }">
-                        <v-btn depressed color="white" @click="about=false" v-on="on">
-                          <v-icon large>mdi-exit-to-app</v-icon>
+                        <v-btn dark depressed color="#26B99A" @click="about=false" v-on="on">
+                          <v-icon >mdi-door-open</v-icon>
                         </v-btn>
+                        
                       </template>
                       <span>{{ $t('nav.Sair') }}</span>
                     </v-tooltip>
@@ -121,24 +116,29 @@
             <v-dialog @keydown.esc="credits = false"  v-model="credits" scrollable width="500">
               <v-card>
                 <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
-                  <h2>{{ $t('navd.terms') }}</h2>
+                  <h2>{{ $t('nav.creditos') }}</h2>
                 </v-toolbar>
                 
                 <v-divider
                 class="mx-4"
                 horizontal
-                ></v-divider>
+                ></v-divider>   
                 
-                <v-card-text class="change-font mt-6" style="white-space: pre-line"
-                  >{{ $t('nav.textoCreditos') }}</v-card-text
-                >
+                <v-card-text class="change-font mt-6" style="white-space: pre-line">
+                  <h2> {{ $t('nav.textoCreditos') }} </h2>
+                  <p/>
+                  <v-icon>mdi-github</v-icon> <a href="https://github.com/Catarinacg16" target="blank_">Catarina Gil</a><p/>
+                  <v-icon>mdi-github</v-icon> <a href="https://github.com/goncalo-f" target="blank_">Gonçalo Ferreira</a><p/>
+                  <v-icon>mdi-github</v-icon> <a href="https://github.com/JoaoNunoAbreu" target="blank_">João Nuno Abreu</a>
+
+                </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   
                   <v-tooltip bottom> 
                     <template v-slot:activator="{ on }">
-                        <v-btn depressed color="white" @click="credits=false" v-on="on">
-                          <v-icon large>mdi-exit-to-app</v-icon>
+                        <v-btn dark depressed color="#26B99A" @click="credits=false" v-on="on">
+                          <v-icon >mdi-door-open</v-icon>
                         </v-btn>
                       </template>
                       <span>{{ $t('nav.Sair') }}</span>
@@ -172,8 +172,8 @@
                   
                   <v-tooltip bottom> 
                     <template v-slot:activator="{ on }">
-                        <v-btn depressed color="white" @click="terms=false" v-on="on">
-                          <v-icon large>mdi-exit-to-app</v-icon>
+                        <v-btn depressed dark color="#26B99A" @click="terms=false" v-on="on">
+                          <v-icon >mdi-door-open</v-icon>
                         </v-btn>
                       </template>
                       <span>{{ $t('nav.Sair') }}</span>
@@ -206,9 +206,10 @@
                   
                   <v-tooltip bottom> 
                     <template v-slot:activator="{ on }">
-                        <v-btn depressed color="white" @click="priv=false" v-on="on">
-                          <v-icon large>mdi-exit-to-app</v-icon>
+                        <v-btn dark depressed color="#26B99A" @click="priv=false" v-on="on">
+                          <v-icon >mdi-door-open</v-icon>
                         </v-btn>
+                      
                       </template>
                       <span>{{ $t('nav.Sair') }}</span>
                     </v-tooltip>
@@ -327,7 +328,7 @@ export default {
       logout: function(){
         this.$store.commit("guardaTokenUtilizador", "")
         this.$store.commit("guardaNomeUtilizador", "")
-        this.$router.push( {path:`/admin/login`})
+        this.$router.push( {path:`/login`})
       },
       goHome: function(){
         this.$router.push( {path:`/home`})

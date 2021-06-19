@@ -15,7 +15,7 @@
     cols="12" 
     > 
       <div class="text-center"> 
-          <small class="grey--text change-font text-none">© Cartos, 2021</small> 
+          <small class="grey--text change-font text-none">©Cartos, 2021</small> 
       </div>
     </v-col>
     </v-row>
@@ -31,7 +31,6 @@ import PopupSaberMais from './adminPopupSaberMais';
 import PopupPrivacidade from './adminPopupPrivacidade';  
 import Popup from './adminPopupHelp'
 //import DropdownMenu from './DropdownMenu';
-
 export default {
   components: {PopupTermos,PopupCreditos,PopupSaberMais,PopupPrivacidade, Popup},
   data() {

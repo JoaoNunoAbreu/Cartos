@@ -140,7 +140,7 @@
                                   @click="dialog = false"
                                   v-on="on"
                                 >
-                                  <v-icon large>mdi-door-open</v-icon>
+                                  <v-icon>mdi-door-open</v-icon>
                                 </v-btn>
                               </template>
                               <span>{{ $t("nav.Sair") }}</span>
@@ -263,7 +263,7 @@ export default {
         this.numResultados = dados.data.length;
 
         for (let i = 0; i < dados.data.length; i++)
-          this.resultados.push(dados.data[i].e);
+          this.resultados.push(dados.data[i]);
         
       })
       .catch((err) => {

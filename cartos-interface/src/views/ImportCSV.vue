@@ -69,7 +69,7 @@
         @keydown.esc="dialog = false"
         v-model="dialog"
         scrollable
-        width="500"
+        width="850"
       >
         <v-card>
           <v-toolbar style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);" dark>
@@ -80,8 +80,12 @@
           <v-card-text
             class="change-font mt-6"
             style="white-space: pre-line"
-            >{{ $t("navd.textoImportAjuda") }}<v-icon small >mdi-checkbox-marked-outline</v-icon></v-card-text
-          >
+            >
+            {{ $t("navd.textoImportAjuda") }}<v-icon small >mdi-checkbox-marked-outline</v-icon>
+            <p>{{ $t("navd.textoImportAjuda2") }}</p>
+            <pre><code>Identificador,Titulo,Numero,Colecao,Série,Editora,Língua,NrPaginas,Tamanho,DtPublicacao,Personagens,Tipo,Estado
+RPT007,Batman: The Dark Knight,1,Batman,Batman,DC,Inglês,22,A4,01/01/2011,Batman,Ação,Bom</code></pre>
+          </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
 
@@ -89,11 +93,12 @@
               <template v-slot:activator="{ on }">
                 <v-btn
                   depressed
-                  color="white"
+                  color="#26B99A"
                   @click="dialog = false"
+                  class="white--text"
                   v-on="on"
                 >
-                  <v-icon large>mdi-exit-to-app</v-icon>
+                  <v-icon>mdi-door-open</v-icon>
                 </v-btn>
               </template>
               <span>{{ $t("nav.Sair") }}</span>
@@ -178,10 +183,6 @@ export default {
         .then(csvData => {
           csvData.data // Array of objects from file
           csvData.inValidMessages // Array of error messages
-          console.log("csvData.data: "+ JSON.stringify(csvData.data[0].Identificador))
-          console.log("csvData.inValidMessages: "+ csvData.inValidMessages)
-
-        /* let promises = [] */
 
         let seenIDS = []
         for(let i = 0; i < csvData.data.length; i++){
@@ -193,56 +194,59 @@ export default {
             seenIDS.push(csvData.data[i].Identificador)
           }
         }
-        console.log("seenIDS = " + seenIDS)
 
         if(csvData.inValidMessages.length == 0){
-          for(let i = 0; i < csvData.data.length; i++){
-            if(this.idRules(csvData.data[i].Identificador)
-            && this.anotherRules(csvData.data[i])){
-              let formData = new FormData()
-              let personagens = String(csvData.data[i].Personagens).replace(";",",")
-              formData.append('id',csvData.data[i].Identificador)
-              formData.append('titulo',csvData.data[i].Titulo)
-              formData.append('colecao',csvData.data[i].Colecao)
-              formData.append('numero',csvData.data[i].Numero)
-              formData.append('serie',csvData.data[i].Série)
-              formData.append('lingua',csvData.data[i].Língua)
-              formData.append('paginas',csvData.data[i].NrPaginas)
-              formData.append('size',csvData.data[i].Tamanho)
-              formData.append('personagens',personagens)
-              formData.append('estado',csvData.data[i].Estado)
-              formData.append('editora',csvData.data[i].Editora)
-              formData.append('dataPub',csvData.data[i].DtPublicacao)
-              formData.append('tipo',csvData.data[i].Tipo)
-
-              console.log("making post request " + i)
-              /* promises.push( */axios.post(this.url+`/import/passo6/?nome=${this.$store.state.user._id}`,formData,{
-                headers:{
-                  'Content-Type': 'multipart/form-data',
-                  Authorization:`Bearer: ${this.$store.state.jwt}`
-                }
-              })
-              .then(() => {
-                this.nSucesso+=1;
-              }).catch(e => {
-                  console.log("ERRO = " + e)
-                  this.errors.push(e)
-              })/* ) */
-            }
-            else { 
-              this.nInsucesso+=1;
-            }
-          }
+          this.doPostsSync(csvData);
         }
-        /* Promise.all(promises)
-          .then( */
-        
         this.confirmDialog = true
-        /* ) */
       })
       .catch(err => {
         console.log(err)
       })
+    },
+    async doPosts(formData){
+      try{
+        await axios.post(this.url+`/import/passo6/?nome=${this.$store.state.user._id}`,formData,{
+          headers:{
+            'Content-Type': 'multipart/form-data',
+            Authorization:`Bearer: ${this.$store.state.jwt}`
+          }
+        })
+        .then(() => {
+          this.nSucesso+=1;
+        })
+      }
+      catch(e){
+        console.log("ERRO = " + e)
+        this.errors.push(e)
+      }
+    },
+    async doPostsSync(csvData) {
+      for(let i = 0; i < csvData.data.length; i++){
+        if(this.idRules(csvData.data[i].Identificador) && this.anotherRules(csvData.data[i])){
+          let formData = new FormData()
+          let personagens = String(csvData.data[i].Personagens).replace(/;/g, ",")
+          formData.append('id',csvData.data[i].Identificador)
+          formData.append('titulo',csvData.data[i].Titulo)
+          formData.append('colecao',csvData.data[i].Colecao)
+          formData.append('numero',csvData.data[i].Numero)
+          formData.append('serie',csvData.data[i].Série)
+          formData.append('lingua',csvData.data[i].Língua)
+          formData.append('paginas',csvData.data[i].NrPaginas)
+          formData.append('size',csvData.data[i].Tamanho)
+          formData.append('personagens',personagens)
+          formData.append('estado',csvData.data[i].Estado)
+          formData.append('editora',csvData.data[i].Editora)
+          formData.append('dataPub',csvData.data[i].DtPublicacao)
+          formData.append('tipo',csvData.data[i].Tipo)
+
+          await this.doPosts(formData)
+          console.log("making post request " + i)
+        }
+        else { 
+          this.nInsucesso+=1;
+        }
+      }
     },
     idRules(elemId){
        return ( !this.elemImport.includes(elemId) && 

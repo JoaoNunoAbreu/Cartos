@@ -15,7 +15,8 @@
        ></v-divider>
 
         <v-card-text class="change-font" style="white-space: pre-line"
-          >{{ $t('nav.textoSaberMais') }}</v-card-text
+          >{{  $t('nav.textoSaberMais') }}
+          </v-card-text
         >
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -23,7 +24,7 @@
            <v-tooltip bottom> 
             <template v-slot:activator="{ on }">
                 <v-btn depressed color="#26B99A" class="white--text mr-3" @click="dialog=false" v-on="on">
-                  <v-icon large>mdi-door-open</v-icon>
+                  <v-icon>mdi-door-open</v-icon>
                 </v-btn>
               </template>
               <span>{{ $t('nav.Sair') }}</span>

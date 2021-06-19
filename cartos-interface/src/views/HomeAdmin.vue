@@ -1,4 +1,5 @@
 <template>
+    <div>
     <div id="homeAdmin" style="width:70%">
         <appHeader></appHeader>
         <navDraw></navDraw>
@@ -47,7 +48,7 @@
                 <!-- Last 3 elements uploaded-->
                 
                 <v-carousel  cycle
-                    height="350"
+                    height="370"
                     show-arrows-on-hover
                 >
                     <v-carousel-item v-for="(i) in 2" :key="i">
@@ -58,17 +59,20 @@
                             light    
                         > -->
                         <v-layout row>
-                        <v-flex xs4  v-for="(elem,j) in ele[i-1]" :key="j" >
+                        <v-flex xs4    v-for="(elem,j) in ele[i-1]" :key="j" >
                          
                             <v-img v-if="i===1"
-                                class="white--text align-end"
-                                height="150px"
+                                style="left:100px"
+                                height="170px"
+                                width="130px"
                                 :src="capas[j]"
                             ></v-img>
                             <v-img v-else
-                                class="white--text align-end"
-                                height="150px"
+                                style="left:100px"
+                                height="170px"
+                                width="130px"
                                 :src="capas[3+j]"
+
                             ></v-img>
                              <!-- <v-expand-transition>
                             <div v-if="hover" class="d-flex transition-fast-in-fast-out teal darken-1 v-reveal display-3 white--text"
@@ -130,6 +134,7 @@
               @emiteFecho="emiteFecho($event)"
             ></elementoFormEditable>
         </v-dialog>
+        </div>
     </div>
 </template>
 <script>
@@ -191,14 +196,14 @@ export default {
             'appHeader': Header,
             'navDraw':NavDraw,
             LineChart,
-            elementoFormEditable: ElementoFormEditable,
+            elementoFormEditable: ElementoFormEditable
     },
     watch: {
         dialog(val) {
             val || this.close();
         }
     },
-    created: async function() {
+    created() {
 
         axios.get(this.url + `/home/index`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
         .then(response => {
@@ -212,25 +217,7 @@ export default {
             this.colecoes = response.data.colecoesContadas;
             this.editoras = response.data.editorasContadas;
 
-            for(let i = 0; i < this.last6Elements.length; i++){
-
-                var idd = this.last6Elements[i].id;
-                axios.get(this.url + `/elementos/ver/${idd}/foto`, {
-                    responseType: "arraybuffer",
-                })
-                .then((response) => {
-                    var image = new Buffer(response.data, "binary").toString("base64");
-                    this.capas.push(`data:${response.headers[
-                        "content-type"
-                    ].toLowerCase()};base64,${image}`);
-                  
-                })
-                .catch((err) => {
-                    console.log(err.message);
-                    this.error = err.message;
-                })
-                
-            }
+            this.doGetPhotos()
             
 
         }).catch(e => {
@@ -263,6 +250,30 @@ export default {
             this.dialog = false;
             /* this.getElementos(); */
         },
+        async doGetPhotos(){
+            for(let i = 0; i < this.last6Elements.length; i++){
+                var idd = this.last6Elements[i].id;
+                await this.getPhoto(idd);
+            }
+        },
+        async getPhoto(idd) {
+            try{
+                await axios.get(this.url + `/elementos/ver/${idd}/foto`, {
+                    responseType: "arraybuffer",
+                })
+                .then((response) => {
+                    var image = new Buffer(response.data, "binary").toString("base64");
+                    this.capas.push(`data:${response.headers[
+                        "content-type"
+                    ].toLowerCase()};base64,${image}`);
+                    
+                })
+            }
+            catch(e){
+                console.log(e.message);
+                this.error = e.message;
+            }
+        }
     }
 }
 </script>

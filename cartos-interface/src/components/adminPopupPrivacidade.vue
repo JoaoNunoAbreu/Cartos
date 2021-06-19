@@ -24,7 +24,7 @@
                 <v-tooltip bottom> 
                 <template v-slot:activator="{ on }">
                     <v-btn depressed color="white" @click="dialog=false" v-on="on">
-                        <v-icon large>mdi-exit-to-app</v-icon>
+                        <v-icon>mdi-exit-to-app</v-icon>
                     </v-btn>
                     </template>
                     <span>{{ $t('nav.Sair') }}</span>

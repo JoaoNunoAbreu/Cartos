@@ -15,12 +15,12 @@
       :sort-by="['id']"
       :search="search"
       multi-sort
-    >
+    > 
       <template v-slot:top>
         <v-toolbar flat color="white">
-          <v-toolbar-title
-            ><b>{{ $t("fol.title") }}</b></v-toolbar-title
-          >
+           <v-toolbar-title v-if="$store.state.user.tipo === 'Admin'"><b>{{ $t("fol.title") }}</b> </v-toolbar-title>
+           <v-toolbar-title v-else><b>{{ $t("navd.documents") }}</b> </v-toolbar-title>
+        
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
           <v-text-field
@@ -87,9 +87,15 @@
         <label> {{ header.text }} </label>
       </template>
       <template v-slot:item.options="{ item }">
-        <v-icon small class="mr-2" @click="viewItem(item)"> mdi-eye </v-icon>
-        <v-icon small class="mr-2" @click="editItem(item)"> mdi-pencil </v-icon>
-        <v-icon v-if="$store.state.user.tipo === 'Admin'" small @click="deleteItem(item)"> mdi-trash-can </v-icon>
+        <div v-if="$store.state.user.tipo === 'Admin'" >
+          <v-icon small class="mr-2" @click="viewItem(item)"> mdi-eye </v-icon>
+          <v-icon small class="mr-2" @click="editItem(item)"> mdi-pencil </v-icon>
+          <v-icon  small @click="deleteItem(item)"> mdi-trash-can </v-icon>
+        </div>
+         <div v-else style="display: flex;justify-content: center;align-items: center;">
+          <v-icon small class="mr-2" @click="viewItem(item)"> mdi-eye </v-icon>
+        </div>
+       
       </template>
     </v-data-table>
     <v-dialog persistent v-model="dialog" max-width="800px">
@@ -215,6 +221,7 @@ export default {
           text: `${this.$t("fol.opt")}`,
           value: "options",
           sortable: false,
+           align: 'center',
         },
       ],
       search: "",

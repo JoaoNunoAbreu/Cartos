@@ -117,7 +117,7 @@
                           <v-tooltip bottom> 
                             <template v-slot:activator="{ on }">
                                 <v-btn depressed color="#26B99A" class="white--text mr-3" @click="dialog=false" v-on="on">
-                                  <v-icon large>mdi-door-open</v-icon>
+                                  <v-icon>mdi-door-open</v-icon>
                                 </v-btn>
                               </template>
                               <span>{{ $t('nav.Sair') }}</span>
@@ -316,11 +316,18 @@ export default {
                 editora: this.editora,
                 date: this.date
             }
-      this.$router.push({
-            name: 'AdminResultados',
-            params: params,
-            
-        });      
+      if(this.$store.state.user.tipo === 'Leitor'){
+        this.$router.push({
+              name: 'AdminResultadosLeitor',
+              params: params,
+          });   
+      }
+      else {
+         this.$router.push({
+              name: 'AdminResultados',
+              params: params,
+          }); 
+      }
     }, 
     reset() {
       this.$refs.form.reset();

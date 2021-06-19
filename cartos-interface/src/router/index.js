@@ -1,19 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from '../store'
-import * as VueGoogleMaps from 'vue2-google-maps'
-
-
 
 Vue.use(VueRouter)
-
-Vue.use(
-  VueGoogleMaps, {
-    load: {
-      key: 'AIzaSyAP-__9IVdlFFWVjAwMAlj91Bg-Aq-hUKQ'
-    }
-  }
-)
 
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
@@ -27,11 +16,17 @@ const routes = [
   },
   {
     path: '/login',
-    redirect : `/admin/login`
+    name: 'Login',
+    component: () => import('../views/Login.vue')
   },
   {
     path: '/admin',
-    redirect : `/admin/login`
+    redirect : `/login`
+  },
+  {
+    path: '/registo',
+    name: 'Registo',
+    component: () => import('../views/Registo.vue')
   },
   {
     path: '/home',
@@ -44,21 +39,46 @@ const routes = [
     component: () => import('../views/Resultados.vue')
   },
   {
+    path: '/users/ver',
+    name: 'Perfil',
+    component: () => import('../views/Perfil.vue'),
+    beforeEnter (to, from, next) {
+      if (!store.getters.isAuthenticated) {
+        next(`/login`)
+      } else {
+        next()
+      }
+    }
+  },
+  {
+    path: '/error404',
+    name: 'error404',
+    component: () => import('../views/NotFound.vue'),
+  },
+  {
+    path: '/error401',
+    name: 'error401',
+    component: () => import('../views/Unauthorized.vue'),
+  },
+  {
     path: '/admin',
     component: {
-      render(c) { return c('router-view')}
+      render(c) { 
+        return c('router-view')
+      }
+    },
+    beforeEnter (to, from, next) {
+      if (!store.getters.isAuthenticated) {
+        next(`/login`)
+      }
+      else if (!store.getters.isAdmin) {
+        next(`/error401`)
+      }
+      else {
+        next()
+      }
     },
     children:[
-      {
-        path: 'login',
-        name: 'Login',
-        component: () => import('../views/Login.vue')
-      },
-      {
-        path: 'registo',
-        name: 'Registo',
-        component: () => import('../views/Registo.vue')
-      },
       {
         path: 'users',
         name: 'Utilizadores',
@@ -71,18 +91,6 @@ const routes = [
             next(`/homeAdmin`)
           }
           else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'users/ver',
-        name: 'Perfil',
-        component: () => import('../views/Perfil.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
             next()
           }
         }
@@ -112,138 +120,6 @@ const routes = [
         }
       },
       {
-        path: 'elementos/indices',
-        name: 'Indices',
-        component: () => import('../views/Indices.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'elementos/tags',
-        name: 'Tags',
-        component: () => import('../views/Definitions.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'tagging',
-        name: 'ListaElementos',
-        component: () => import('../views/tagging/ListaElementos.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'tagging/editor',
-        name: 'Editor',
-        component: () => import('../views/tagging/Editor.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'tagging/modernizador',
-        name: 'Atualiza',
-        component: () => import('../views/tagging/Atualiza.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'tagging/elementoAnotado/ver/:id',
-        name: 'VerElemento',
-        component: () => import('../views/tagging/VerElemento.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'tagging/elementoAtualizado/ver/:id',
-        name: 'VerAtualizado',
-        component: () => import('../views/tagging/VerAtualizado.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'tagging/tags/dicionario',
-        name: 'DicionarioTags',
-        component: () => import('../views/tagging/DicionarioTags.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'tagging/anotaBase',
-        name: 'AnotaBase',
-        component: () => import('../views/tagging/AnotaBase.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'tagging/tags/lista',
-        name: 'ListaTags',
-        component: () => import('../views/tagging/ListaTags.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'tagging/regras/lista',
-        name: 'ListaRegras',
-        component: () => import('../views/tagging/ListaRegras.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
         path: 'about',
         name: 'Acerca',
         component: () => import('../views/About.vue'),
@@ -259,22 +135,6 @@ const routes = [
         path: 'import',
         name: 'Import',
         component: () => import('../views/Import.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          }
-          else if (!store.getters.isAdmin) {
-            next(`/homeAdmin`)
-          }
-          else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'definitions',
-        name: 'Definições',
-        component: () => import('../views/Definitions.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
             next(`/login`)
@@ -315,31 +175,6 @@ const routes = [
         path: 'homeAdmin',
         name: 'HomeAdmin',
         component: () => import('../views/HomeAdmin.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          }
-          else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'compElementos',
-        name: 'CompElementos',
-        component: () => import('../views/CompElementos.vue'),
-        beforeEnter (to, from, next) {
-          if (!store.getters.isAuthenticated) {
-            next(`/login`)
-          } else {
-            next()
-          }
-        }
-      },
-      {
-        path: 'documentacao',
-        name: 'Documentação',
-        component: () => import('../views/Documentacao.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
             next(`/login`)
@@ -397,22 +232,106 @@ const routes = [
           }
         }
       },
+    ]
+  },
+
+  /* ---------------------------------------------------------------------- */ 
+  /* ------------------------------- LEITOR ------------------------------- */ 
+  /* ---------------------------------------------------------------------- */ 
+
+  {
+    path: '/leitor',
+    component: {
+      render(c) { 
+        return c('router-view')
+      }
+    },
+    beforeEnter (to, from, next) {
+      if (!store.getters.isAuthenticated) {
+        next(`/login`)
+      }
+      else if (store.getters.isAdmin) {
+        next(`/error401`)
+      }
+      else {
+        next()
+      }
+    },
+    children:[
       {
-        path: 'localidades',
-        name: 'Places',
-        component: () => import('../views/PlaceList.vue'),
+        path: 'elementos',
+        name: 'ElementosLeitor',
+        component: () => import('../views/Elementos.vue'),
         beforeEnter (to, from, next) {
           if (!store.getters.isAuthenticated) {
             next(`/login`)
+          } else {
+            next()
           }
-          else if (!store.getters.isAdmin) {
-            next(`/homeAdmin`)
+        }
+      },
+      {
+        path: 'about',
+        name: 'AcercaLeitor',
+        component: () => import('../views/About.vue'),
+        beforeEnter (to, from, next) {
+          if (!store.getters.isAuthenticated) {
+            next(`/login`)
+          } else {
+            next()
+          }
+        }
+      },
+      {
+        path: 'import',
+        name: 'ImportLeitor',
+        component: () => import('../views/Import.vue'),
+        beforeEnter (to, from, next) {
+          if (!store.getters.isAuthenticated) {
+            next(`/login`)
           }
           else {
             next()
           }
         }
-      }
+      },
+      {
+        path: 'analise',
+        name: 'AnaliseLeitor',
+        component: () => import('../views/AnáliseAdmin.vue'),
+        beforeEnter (to, from, next) {
+          if (!store.getters.isAuthenticated) {
+            next(`/login`)
+          } else {
+            next()
+          }
+        }
+      },
+      {
+        path: 'resultados',
+        name: 'AdminResultadosLeitor',
+        component: () => import('../views/ResultadosAdmin.vue'),
+        beforeEnter (to, from, next) {
+          if (!store.getters.isAuthenticated) {
+            next(`/login`)
+          } else {
+            next()
+          }
+        }
+      },
+      {
+        path: 'pesquisas',
+        name: 'PesquisasRealizadasLeitor',
+        component: () => import('../views/PesquisasRealizadas.vue'),
+        beforeEnter (to, from, next) {
+          if (!store.getters.isAuthenticated) {
+            next(`/login`)
+          }
+          else {
+            next()
+          }
+        }
+      },
     ]
   },
   { 

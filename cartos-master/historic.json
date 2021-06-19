@@ -1462,5 +1462,791 @@
         "user": "jna",
         "stamp": "2021-06-17 17:13:09.910532",
         "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb778eb235297f285df2fd",
+        "user": "jna",
+        "stamp": "2021-06-17 17:25:50.362647",
+        "request": "GET:http://cartos.di.uminho.pt/analise/pesquisas"
+    },
+    {
+        "_id": "60cb7877b235297f285df2fe",
+        "user": "jna",
+        "stamp": "2021-06-17 17:29:43.718477",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=jna"
+    },
+    {
+        "_id": "60cb787cb235297f285df2ff",
+        "user": "jna",
+        "stamp": "2021-06-17 17:29:48.478572",
+        "request": "GET:http://cartos.di.uminho.pt/users/history?nome=jna"
+    },
+    {
+        "_id": "60cb822db235297f285df300",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:11:09.030645",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623949868676"
+    },
+    {
+        "_id": "60cb84a5b235297f285df301",
+        "user": "cat",
+        "stamp": "2021-06-17 18:21:41.823116",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat"
+    },
+    {
+        "_id": "60cb8522b235297f285df302",
+        "user": "jna",
+        "stamp": "2021-06-17 18:23:46.992595",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna?seed=1623950626803"
+    },
+    {
+        "_id": "60cb8529b235297f285df303",
+        "user": "cat",
+        "stamp": "2021-06-17 18:23:53.243209",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat"
+    },
+    {
+        "_id": "60cb8688b235297f285df304",
+        "user": "user",
+        "stamp": "2021-06-17 18:29:44.135693",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/user"
+    },
+    {
+        "_id": "60cb879ab235297f285df305",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:34:18.825525",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951258455"
+    },
+    {
+        "_id": "60cb886cb235297f285df306",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:37:48.023608",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951467212"
+    },
+    {
+        "_id": "60cb88fdb235297f285df307",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:40:13.553480",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951613323"
+    },
+    {
+        "_id": "60cb8914b235297f285df308",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:40:36.400402",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951636056"
+    },
+    {
+        "_id": "60cb891eb235297f285df309",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:40:46.418279",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951646232"
+    },
+    {
+        "_id": "60cb89a7b235297f285df30a",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:43:03.589196",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951783260"
+    },
+    {
+        "_id": "60cb89b0b235297f285df30b",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:43:12.515232",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951792270"
+    },
+    {
+        "_id": "60cb89c0b235297f285df30c",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:43:28.764596",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951808535"
+    },
+    {
+        "_id": "60cb8a3fb235297f285df30d",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:45:35.377824",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951935180"
+    },
+    {
+        "_id": "60cb8a73b235297f285df30e",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:46:27.706468",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623951987286"
+    },
+    {
+        "_id": "60cb8a8fb235297f285df30f",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:46:55.788245",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952015537"
+    },
+    {
+        "_id": "60cb8aa3b235297f285df310",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:47:15.133445",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952034951"
+    },
+    {
+        "_id": "60cb8aabb235297f285df311",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:47:23.319494",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952043064"
+    },
+    {
+        "_id": "60cb8ab9b235297f285df312",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:47:37.688237",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952057532"
+    },
+    {
+        "_id": "60cb8bd0b235297f285df313",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:52:16.322294",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952336194"
+    },
+    {
+        "_id": "60cb8bd9b235297f285df314",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:52:25.465810",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952345346"
+    },
+    {
+        "_id": "60cb8be1b235297f285df315",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:52:33.684525",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952353541"
+    },
+    {
+        "_id": "60cb8c21b235297f285df316",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:53:37.180203",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952417054"
+    },
+    {
+        "_id": "60cb8c53b235297f285df317",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:54:27.528281",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952466323"
+    },
+    {
+        "_id": "60cb8c57b235297f285df318",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:54:31.882610",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952471733"
+    },
+    {
+        "_id": "60cb8c7fb235297f285df319",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:55:11.248929",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952511081"
+    },
+    {
+        "_id": "60cb8ccdb235297f285df31a",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:56:29.161553",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952588935"
+    },
+    {
+        "_id": "60cb8cf0b235297f285df31b",
+        "user": "obelo",
+        "stamp": "2021-06-17 18:57:04.643204",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo?seed=1623952624508"
+    },
+    {
+        "_id": "60cb8e1ab235297f285df31c",
+        "user": "jna",
+        "stamp": "2021-06-17 19:02:02.869178",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=jna"
+    },
+    {
+        "_id": "60cb8e25b235297f285df31d",
+        "user": "jna",
+        "stamp": "2021-06-17 19:02:13.563907",
+        "request": "GET:http://cartos.di.uminho.pt/users/history?nome=jna"
+    },
+    {
+        "_id": "60cb8e28b235297f285df31e",
+        "user": "jna",
+        "stamp": "2021-06-17 19:02:16.162385",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=jna"
+    },
+    {
+        "_id": "60cb8e39b235297f285df31f",
+        "user": "jna",
+        "stamp": "2021-06-17 19:02:33.253262",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=jna"
+    },
+    {
+        "_id": "60cb8e43b235297f285df320",
+        "user": "jna",
+        "stamp": "2021-06-17 19:02:43.154445",
+        "request": "GET:http://cartos.di.uminho.pt/users/history?nome=jna"
+    },
+    {
+        "_id": "60cb9094b235297f285df321",
+        "user": "jna",
+        "stamp": "2021-06-17 19:12:36.828560",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb90e6b235297f285df322",
+        "user": "jna",
+        "stamp": "2021-06-17 19:13:58.119532",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb90e6b235297f285df323",
+        "user": "jna",
+        "stamp": "2021-06-17 19:13:58.312121",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb90efb235297f285df324",
+        "user": "jna",
+        "stamp": "2021-06-17 19:14:07.327691",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna?seed=1623953647124"
+    },
+    {
+        "_id": "60cb913cb235297f285df325",
+        "user": "jna",
+        "stamp": "2021-06-17 19:15:24.942823",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb913db235297f285df326",
+        "user": "jna",
+        "stamp": "2021-06-17 19:15:25.146205",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna?seed=1623953724597"
+    },
+    {
+        "_id": "60cb913db235297f285df327",
+        "user": "jna",
+        "stamp": "2021-06-17 19:15:25.286031",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9251b235297f285df328",
+        "user": "jna",
+        "stamp": "2021-06-17 19:20:01.075281",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9251b235297f285df329",
+        "user": "jna",
+        "stamp": "2021-06-17 19:20:01.179768",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9337b235297f285df32a",
+        "user": "jna",
+        "stamp": "2021-06-17 19:23:51.970761",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9337b235297f285df32b",
+        "user": "jna",
+        "stamp": "2021-06-17 19:23:51.994149",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb94beb235297f285df32c",
+        "user": "jna",
+        "stamp": "2021-06-17 19:30:22.012878",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb94beb235297f285df32d",
+        "user": "jna",
+        "stamp": "2021-06-17 19:30:22.020892",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb98b0e3f2a42219423560",
+        "user": "jna",
+        "stamp": "2021-06-17 19:47:12.153894",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb98bee3f2a42219423561",
+        "user": "jna",
+        "stamp": "2021-06-17 19:47:26.058498",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb98bee3f2a42219423563",
+        "user": "jna",
+        "stamp": "2021-06-17 19:47:26.236479",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb98bee3f2a42219423562",
+        "user": "jna",
+        "stamp": "2021-06-17 19:47:26.059826",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna?seed=1623955645509"
+    },
+    {
+        "_id": "60cb98c2e3f2a42219423564",
+        "user": "cat",
+        "stamp": "2021-06-17 19:47:30.702504",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat?seed=1623955650468"
+    },
+    {
+        "_id": "60cb98d2e3f2a42219423565",
+        "user": "jna",
+        "stamp": "2021-06-17 19:47:46.568831",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb98d2e3f2a42219423566",
+        "user": "jna",
+        "stamp": "2021-06-17 19:47:46.580990",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna?seed=1623955666097"
+    },
+    {
+        "_id": "60cb98d2e3f2a42219423567",
+        "user": "jna",
+        "stamp": "2021-06-17 19:47:46.613722",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb98d3e3f2a42219423568",
+        "user": "cat",
+        "stamp": "2021-06-17 19:47:47.925676",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat?seed=1623955667696"
+    },
+    {
+        "_id": "60cb99dee3f2a42219423569",
+        "user": "jna",
+        "stamp": "2021-06-17 19:52:14.963086",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb99f2e3f2a4221942356b",
+        "user": "jna",
+        "stamp": "2021-06-17 19:52:34.301540",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb99f2e3f2a4221942356c",
+        "user": "jna",
+        "stamp": "2021-06-17 19:52:34.321394",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9b16e3f2a4221942356d",
+        "user": "jna",
+        "stamp": "2021-06-17 19:57:26.824019",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9b16e3f2a4221942356e",
+        "user": "jna",
+        "stamp": "2021-06-17 19:57:26.826551",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9b2ae3f2a4221942356f",
+        "user": "jna",
+        "stamp": "2021-06-17 19:57:46.825614",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9b2ae3f2a42219423570",
+        "user": "jna",
+        "stamp": "2021-06-17 19:57:46.865788",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9b2ee3f2a42219423571",
+        "user": "jna",
+        "stamp": "2021-06-17 19:57:50.760611",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9b2ee3f2a42219423572",
+        "user": "jna",
+        "stamp": "2021-06-17 19:57:50.761595",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9b43e3f2a42219423573",
+        "user": "jna",
+        "stamp": "2021-06-17 19:58:11.019612",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9b43e3f2a42219423574",
+        "user": "jna",
+        "stamp": "2021-06-17 19:58:11.032478",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9bb4e3f2a42219423575",
+        "user": "jna",
+        "stamp": "2021-06-17 20:00:04.906275",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9bb4e3f2a42219423576",
+        "user": "jna",
+        "stamp": "2021-06-17 20:00:04.912425",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9c1ce3f2a42219423577",
+        "user": "jna",
+        "stamp": "2021-06-17 20:01:48.246809",
+        "request": "GET:http://cartos.di.uminho.pt/analise/pesquisas"
+    },
+    {
+        "_id": "60cb9e01e3f2a42219423578",
+        "user": "jna",
+        "stamp": "2021-06-17 20:09:53.996354",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9e02e3f2a42219423579",
+        "user": "jna",
+        "stamp": "2021-06-17 20:09:54.045677",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cb9e0be3f2a4221942357a",
+        "user": "jna",
+        "stamp": "2021-06-17 20:10:03.743370",
+        "request": "GET:http://cartos.di.uminho.pt/analise/pesquisas"
+    },
+    {
+        "_id": "60cba24be3f2a4221942357b",
+        "user": "jna",
+        "stamp": "2021-06-17 20:28:11.646591",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cba24be3f2a4221942357c",
+        "user": "jna",
+        "stamp": "2021-06-17 20:28:11.761691",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cba29ae3f2a4221942357d",
+        "user": "jna",
+        "stamp": "2021-06-17 20:29:30.865639",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cba29ae3f2a4221942357e",
+        "user": "jna",
+        "stamp": "2021-06-17 20:29:30.911980",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cba3edb893366bc5163c88",
+        "user": "jna",
+        "stamp": "2021-06-17 20:35:09.733855",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cba3edb893366bc5163c89",
+        "user": "jna",
+        "stamp": "2021-06-17 20:35:09.792031",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cba419b893366bc5163c8a",
+        "user": "jna",
+        "stamp": "2021-06-17 20:35:53.798617",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cba419b893366bc5163c8b",
+        "user": "jna",
+        "stamp": "2021-06-17 20:35:53.829609",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cba43eb893366bc5163c8c",
+        "user": "jna",
+        "stamp": "2021-06-17 20:36:30.695909",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cba43eb893366bc5163c8d",
+        "user": "jna",
+        "stamp": "2021-06-17 20:36:30.720329",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cca364b893366bc5163c8e",
+        "user": "jna",
+        "stamp": "2021-06-18 14:45:07.992486",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60ccac22b893366bc5163c8f",
+        "user": "jna",
+        "stamp": "2021-06-18 15:22:26.717650",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd10e440e1894b6f5dd8ef",
+        "user": "jna",
+        "stamp": "2021-06-18 22:32:20.679404",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna?seed=1624051940471"
+    },
+    {
+        "_id": "60cd10e940e1894b6f5dd8f0",
+        "user": "jna",
+        "stamp": "2021-06-18 22:32:25.103568",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna?seed=1624051944941"
+    },
+    {
+        "_id": "60cd10e940e1894b6f5dd8f1",
+        "user": "jna",
+        "stamp": "2021-06-18 22:32:25.132340",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd10e940e1894b6f5dd8f2",
+        "user": "jna",
+        "stamp": "2021-06-18 22:32:25.151727",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd111640e1894b6f5dd8f3",
+        "user": "obelo",
+        "stamp": "2021-06-18 22:33:10.175144",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/obelo"
+    },
+    {
+        "_id": "60cd111f40e1894b6f5dd8f4",
+        "user": "jna",
+        "stamp": "2021-06-18 22:33:19.647218",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna?seed=1624051999515"
+    },
+    {
+        "_id": "60cd112540e1894b6f5dd8f5",
+        "user": "jna",
+        "stamp": "2021-06-18 22:33:25.452387",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd112540e1894b6f5dd8f6",
+        "user": "jna",
+        "stamp": "2021-06-18 22:33:25.463495",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd113640e1894b6f5dd8f7",
+        "user": "cat",
+        "stamp": "2021-06-18 22:33:42.456421",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat"
+    },
+    {
+        "_id": "60cd121140e1894b6f5dd8f9",
+        "user": "jna",
+        "stamp": "2021-06-18 22:37:21.843284",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd15ed91df78f2ea6a58b4",
+        "user": "jna",
+        "stamp": "2021-06-18 22:53:49.571957",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd16c491df78f2ea6a58b5",
+        "user": "jna",
+        "stamp": "2021-06-18 22:57:24.613288",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd1ed38c37d8b7faaca041",
+        "user": "jna",
+        "stamp": "2021-06-18 23:31:47.275111",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd1f1d8c37d8b7faaca042",
+        "user": "jna",
+        "stamp": "2021-06-18 23:33:01.541858",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd1ff48c37d8b7faaca044",
+        "user": "cat",
+        "stamp": "2021-06-18 23:36:36.851060",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat"
+    },
+    {
+        "_id": "60cd1ff48c37d8b7faaca043",
+        "user": "cat",
+        "stamp": "2021-06-18 23:36:36.848837",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat"
+    },
+    {
+        "_id": "60cd20748c37d8b7faaca045",
+        "user": "cat",
+        "stamp": "2021-06-18 23:38:44.782715",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat"
+    },
+    {
+        "_id": "60cd20748c37d8b7faaca046",
+        "user": "cat",
+        "stamp": "2021-06-18 23:38:44.847669",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat"
+    },
+    {
+        "_id": "60cd254f8c37d8b7faaca047",
+        "user": "jna",
+        "stamp": "2021-06-18 23:59:27.389786",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=jna"
+    },
+    {
+        "_id": "60cd25a08c37d8b7faaca048",
+        "user": "jna",
+        "stamp": "2021-06-19 00:00:48.492517",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd267d8c37d8b7faaca049",
+        "user": "jna",
+        "stamp": "2021-06-19 00:04:29.348259",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd27cc8c37d8b7faaca04b",
+        "user": "jna",
+        "stamp": "2021-06-19 00:10:04.965407",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd28108c37d8b7faaca04c",
+        "user": "jna",
+        "stamp": "2021-06-19 00:11:12.481964",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cd284b8c37d8b7faaca04d",
+        "user": "jna",
+        "stamp": "2021-06-19 00:12:11.296789",
+        "request": "GET:http://cartos.di.uminho.pt/analise/pesquisas"
+    },
+    {
+        "_id": "60cd287c8c37d8b7faaca04e",
+        "user": "jna",
+        "stamp": "2021-06-19 00:13:00.138961",
+        "request": "GET:http://cartos.di.uminho.pt/users/curriculo/cat?seed=1624057980036"
+    },
+    {
+        "_id": "60cd288b8c37d8b7faaca04f",
+        "user": "jna",
+        "stamp": "2021-06-19 00:13:15.824707",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cde0b08c37d8b7faaca050",
+        "user": "teste",
+        "stamp": "2021-06-19 13:18:56.208718",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/teste"
+    },
+    {
+        "_id": "60cde35e8c37d8b7faaca051",
+        "user": "teste",
+        "stamp": "2021-06-19 13:30:22.136101",
+        "request": "GET:http://cartos.di.uminho.pt/analise/pesquisas"
+    },
+    {
+        "_id": "60cde3748c37d8b7faaca052",
+        "user": "teste",
+        "stamp": "2021-06-19 13:30:44.308145",
+        "request": "GET:http://cartos.di.uminho.pt/users/history?nome=teste"
+    },
+    {
+        "_id": "60cde3968c37d8b7faaca053",
+        "user": "teste",
+        "stamp": "2021-06-19 13:31:18.889520",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/cat?seed=1624105878815"
+    },
+    {
+        "_id": "60cde7978c37d8b7faaca054",
+        "user": "teste",
+        "stamp": "2021-06-19 13:48:23.435541",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=teste"
+    },
+    {
+        "_id": "60cde79b8c37d8b7faaca055",
+        "user": "teste",
+        "stamp": "2021-06-19 13:48:27.377801",
+        "request": "GET:http://cartos.di.uminho.pt/users/history?nome=teste"
+    },
+    {
+        "_id": "60cde79e8c37d8b7faaca056",
+        "user": "teste",
+        "stamp": "2021-06-19 13:48:30.470605",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=teste"
+    },
+    {
+        "_id": "60cde7a78c37d8b7faaca057",
+        "user": "teste",
+        "stamp": "2021-06-19 13:48:39.177551",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=teste"
+    },
+    {
+        "_id": "60cde7b18c37d8b7faaca058",
+        "user": "teste",
+        "stamp": "2021-06-19 13:48:49.327331",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=teste"
+    },
+    {
+        "_id": "60cde7bb8c37d8b7faaca059",
+        "user": "teste",
+        "stamp": "2021-06-19 13:48:59.973612",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=teste"
+    },
+    {
+        "_id": "60cdee13a2de819701693670",
+        "user": "teste",
+        "stamp": "2021-06-19 14:16:03.192673",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=teste"
+    },
+    {
+        "_id": "60cdee15a2de819701693671",
+        "user": "teste",
+        "stamp": "2021-06-19 14:16:05.802200",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=teste"
+    },
+    {
+        "_id": "60cdf942a2de819701693672",
+        "user": "jna",
+        "stamp": "2021-06-19 15:03:46.838165",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cdfaf5a2de819701693673",
+        "user": "jna",
+        "stamp": "2021-06-19 15:11:01.541806",
+        "request": "GET:http://cartos.di.uminho.pt/users/foto/jna"
+    },
+    {
+        "_id": "60cdfb19a2de819701693674",
+        "user": "jna",
+        "stamp": "2021-06-19 15:11:37.917186",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=jna"
+    },
+    {
+        "_id": "60cdfcbf30e93d9a1be60c4c",
+        "user": "jna",
+        "stamp": "2021-06-19 15:18:39.838167",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=jna"
+    },
+    {
+        "_id": "60cdfcc130e93d9a1be60c4d",
+        "user": "jna",
+        "stamp": "2021-06-19 15:18:41.835531",
+        "request": "GET:http://cartos.di.uminho.pt/users/history?nome=jna"
+    },
+    {
+        "_id": "60ce02ad30e93d9a1be60c4e",
+        "user": "teste",
+        "stamp": "2021-06-19 15:43:57.142436",
+        "request": "GET:http://cartos.di.uminho.pt/users/active?nome=teste"
     }
 ]

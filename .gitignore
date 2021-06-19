@@ -4,8 +4,11 @@ node_modules
 logs
 .vscode/
 
+cartos-database/
 cartos-master/app/elementos/static/
 cartos-master/app/users/static/
+doc/
+pics
 **/*.pyc
 **/__pycache*/
 **/*.log
