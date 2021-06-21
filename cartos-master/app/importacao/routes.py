@@ -12,6 +12,7 @@ from os.path import join, dirname, realpath
 import json 
 from bson import json_util
 from flask_cors import CORS, cross_origin
+from flasgger import swag_from
 CORS(blueprint)
 #######
 UPLOAD_FOLDER = '../elementos/static/pics/'
@@ -58,50 +59,8 @@ def route_template_passo6():
 @blueprint.route('/editElement/',methods=['POST'])
 @admin_required
 #@login_required
+@swag_from('docs/editElement-post.yml')
 def route_template_editElement():
-    """
-    Ver informação respetiva a um utilizador.
-    ---
-    parameters:
-      - in: header
-        name: Authorization
-        type: string
-        required: true
-
-      - in: formData
-        name: capa
-        type: file
-        description: PNG.
-        required: true
-
-      - in: formData
-        name: ficheiro
-        type: file
-        description: PDF.
-        required: true
-
-    # Defenir objetos em utilização na documentação como retorno.
-    definitions:
-
-      EditarElemento:
-        type: object
-        properties:
-          nome:
-            type: string
-            description: Nome do elemento.
-          message:
-            type: string
-            description: Status da operação.
-
-    responses:
-      200:
-        description: Informação do utilizador.
-        schema:
-          $ref: '#/definitions/EditarElemento'
-        examples:
-          rgb: ['red', 'green', 'blue']
-    """
-
     nome = request.args.get('nome')
     path = ""
     capa = ""
