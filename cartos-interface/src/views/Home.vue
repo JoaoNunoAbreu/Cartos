@@ -64,7 +64,6 @@
                 v-bind:label="$t('nav.barraPesquisa')"
                 v-model="pesquisa" 
                 hide-no-data
-                :rules="rulesRequired($t('nav.pesquisaNaoVazia'))"
                 required
               > 
               </v-combobox>          

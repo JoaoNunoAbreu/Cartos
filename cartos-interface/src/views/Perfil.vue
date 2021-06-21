@@ -122,24 +122,13 @@
             <v-dialog v-model="cvDialog" width="800px">
                 <v-card>
                     <template>
-                        {{page}}//{{pageCount}}
-                        <pdf 
-                            :src="cv"
-                            :page="page"
-                            @num-pages="pageCount = $event"	
-                            @page-loaded="currentPage = $event"
-                            style="width:700px"
-                        ></pdf>
-                    </template>
-                    <v-btn color="#286090" dark @click="pageshift(-1)">
-                        <v-icon>mdi-arrow-collapse-left</v-icon>
-                    </v-btn>
-                    <v-btn color="#286090" dark @click="pageshift(1)">
-                        <v-icon>mdi-arrow-collapse-right</v-icon>
-                    </v-btn>
-                </v-card>
-                <v-tooltip bottom>
-                    <template v-slot:activator="{ on: tooltip }">
+            <v-row>
+                <v-col style=" text-align: right;">
+              {{page}}/{{pageCount}}
+               </v-col>
+              <v-col style=" text-align: right;">
+                <v-tooltip >
+                    <template  v-slot:activator="{ on: tooltip }">
                     <v-btn color="#c9302c" dark @click="cvDialog = false; page=1;" v-on="{ ...tooltip}">
                         <v-icon>mdi-close</v-icon>
                     </v-btn>
@@ -148,6 +137,31 @@
                     {{$t('indForm.close')}}
                     </span>
                 </v-tooltip>
+              </v-col>
+              </v-row>
+               <v-row>
+                <v-col>
+                  <v-btn style="top:400px" color="#286090" dark @click="pageshift(-1)">
+                      <v-icon>mdi-arrow-collapse-left</v-icon>
+                  </v-btn>
+                </v-col>
+                <v-col>
+                    <pdf 
+                            :src="cv"
+                            :page="page"
+                            @num-pages="pageCount = $event"	
+                            @page-loaded="currentPage = $event"
+                            style="width:600px"
+                    ></pdf>
+                </v-col>
+              <v-col>
+              <v-btn style="top:400px" color="#286090" dark @click="pageshift(1)">
+              <v-icon>mdi-arrow-collapse-right</v-icon>
+          </v-btn>
+          </v-col>
+              </v-row>
+          </template>
+                </v-card>
             </v-dialog>
         </v-container>
     </div>

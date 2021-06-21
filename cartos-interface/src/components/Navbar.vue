@@ -2,6 +2,23 @@
   <nav>
     <v-toolbar flat style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);">
       <v-spacer></v-spacer>
+      <v-btn
+        dark
+        color="#29b89b"
+        to="/login"
+      >
+        Log In
+      </v-btn>
+
+      <v-btn
+        dark
+        class="mr-10 ml-3"
+        color= "#2C6FAE"
+        to="/registo"
+      >
+        {{ $t('nav.registo') }}
+      </v-btn>
+
       <v-tooltip bottom> 
         <template v-slot:activator="{ on }">
         <v-btn text small class="white--text change-font" v-bind:class="{active: activeBtn === 'btn1' }" @click="setLocale('pt'); activeBtn = 'btn1'" v-on="on">PT</v-btn>
@@ -28,8 +45,6 @@
 </template>
 
 <script>
-//import Popup from './Popup'; 
-//import DropdownMenu from './DropdownMenu';
 
 export default {
   components: {},

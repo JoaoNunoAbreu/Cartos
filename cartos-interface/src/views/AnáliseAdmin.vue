@@ -66,7 +66,6 @@
                 v-bind:label="$t('nav.barraPesquisa')"
                 v-model="pesquisa" 
                 hide-no-data
-                :rules="rulesRequired($t('nav.pesquisaNaoVazia'))"
                 required
               > 
               </v-combobox>          
@@ -225,7 +224,6 @@
             </v-col>
           </v-row>
        </v-container>
-      <Footer/>
     </div>
 </template>
 
@@ -235,7 +233,6 @@ import NavDraw from '../components/navDraw.vue'
 import Header from '../components/header.vue'
 import navDrawLeitor from '../components/navDrawLeitor.vue'
 import PopupCartos from '../components/PopupCartos'
-import Footer from '../components/Footer'
 
 export default {
   name: "Home",
@@ -243,8 +240,7 @@ export default {
     'navDraw':NavDraw,
     'appHeader': Header,
     'PopupCartos':PopupCartos,
-    'navDrawLeitor':navDrawLeitor,
-    Footer
+    'navDrawLeitor':navDrawLeitor
   },
   data() {
     return {

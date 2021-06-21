@@ -181,8 +181,10 @@ export default {
       }
       CSVFileValidator(this.ficheiro, config)
         .then(csvData => {
+         
           csvData.data // Array of objects from file
           csvData.inValidMessages // Array of error messages
+          console.log(csvData.inValidMessages)
 
         let seenIDS = []
         for(let i = 0; i < csvData.data.length; i++){
@@ -194,10 +196,7 @@ export default {
             seenIDS.push(csvData.data[i].Identificador)
           }
         }
-
-        if(csvData.inValidMessages.length == 0){
-          this.doPostsSync(csvData);
-        }
+        this.doPostsSync(csvData);
         this.confirmDialog = true
       })
       .catch(err => {
@@ -256,7 +255,12 @@ export default {
     },
     anotherRules(elem){
       let pattern = /^((0)[1-9]|[1-2][0-9]|(3)[0-1])(\/)(((0)[1-9])|((1)[0-2]))(\/)\d{4}$/;
-      return ( pattern.test(elem.DtPublicacao) &&  
+      return ( pattern.test(elem.DtPublicacao) &&   
+               elem.Titulo && elem.Colecao && 
+               elem.Numero && elem.Série && 
+               elem.Língua && elem.NrPaginas && 
+               elem.Tamanho && elem.Estado && 
+               elem.Editora && elem.DtPublicacao &&
                elem.Titulo.length <= 100 && elem.Colecao.length <= 100 && 
                elem.Numero.length <= 100 && elem.Série.length <= 100 && 
                elem.Língua.length <= 100 && elem.NrPaginas.length <= 3 && 

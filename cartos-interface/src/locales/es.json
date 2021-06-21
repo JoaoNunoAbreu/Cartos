@@ -110,7 +110,8 @@
         "LinguaEN" : "English Language", 
         "LinguaES" : "Idioma Español",
         "SistemaCartosHeader" : "Sistema Cartos", 
-        "SistemaCartosExpli" : "\n Sistema Cartos Información"
+        "SistemaCartosExpli" : "\n Sistema Cartos Información",
+        "registo":"Inscribirse"
 
     },
     "head": {
@@ -143,7 +144,9 @@
         "opt": "Opciones",
         "insert": "Insertar Elemento",
         "print": "Imprimir o exportar elementos",
-        "noPicText":"Este elemento no tiene fotografía."
+        "noPicText":"Este elemento no tiene fotografía.",
+        "visualizacaoElemento":"Vista de elementos",
+        "titulo":"Título"
     },
     "imp": {
         "passo": "Inserción de Documentos"
@@ -167,7 +170,8 @@
         "re":"Reiniciar",
         "sub":"Entregar",
         "uInv":"Nombre de usuario o contraseña inválido. Por favor intente de nuevo.",
-        "new":"Ya existe un usuario o solicitud de acceso con ese nombre de usuario, elija otro."
+        "new":"Ya existe un usuario o solicitud de acceso con ese nombre de usuario, elija otro.",
+        "naotemconta":"¿No tienes una cuenta?"
     },
     "pedac": {
         "title": "Requerir credenciales de acceso",
@@ -293,7 +297,18 @@
         "apagar":"Eliminar",
         "leave": "Quitar la inserción",
         "pdf": "Ver pdf",
-        "clean":"Limpiar"
+        "clean":"Limpiar",
+        "tit": "Título",
+        "num":"Número",
+        "serie":"Serie",
+        "pag":"Página",
+        "size":"Tamanho",
+        "pers": "Caracteres",
+        "estado": "Estado",
+        "dataP": "Fecha de publicación",
+        "nrPaginas":"Número de páginas",
+        "verCapa":"Ver Portada",
+        "verVideo":"Ver Video"
     },
     "p2": {
         "tComTags": "Texto com etiquetas",
@@ -345,5 +360,11 @@
         "nElemCol":"Nº Elementos por Colección",
         "nElemEdi": "Nº de elementos por Editora"
 
+    },
+    "uF": {
+        "conf":"Confirmar envío de usuario",
+        "helpEdit":"Edite los campos según sea necesario y haga clic en el botón Confirmar envío",
+        "help":"Complete los campos obligatorios y haga clic en el botón Confirmar envío",
+        "badChoice":"Ya existe un usuario con ese nombre de usuario, elige otro."
     }
 }

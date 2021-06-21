@@ -1,6 +1,14 @@
 <template>
     <v-app-bar app style="background: linear-gradient(to top, #376a53 0%, #549d7c 100%);">
         <div class="spacer"></div>
+        <v-btn
+            dark
+            elevation="2"
+            color="#29b89b"
+            to="/home"
+        >
+            Home
+        </v-btn>
         <v-tooltip bottom> 
             <template v-slot:activator="{ on }">
             <v-btn text small class="white--text change-font" @click="setLocale('pt')" v-on="on">PT</v-btn>

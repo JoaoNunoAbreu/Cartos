@@ -184,22 +184,22 @@
         <!-- tem de estar persistent para fazer clean do array conta -->
       </div>
       <v-dialog persistent v-model="dialogElemento" max-width="800px">
-            <elementoFormEditable
+            <verElemento
               v-if="$store.state.user.tipo === 'Admin'"
-              :elemento="elementoAtual"
+              :passedData="elementoAtual"
               backTo="/admin/resultados"
               :isDisabled="true"
               :isDeleting="false"
               @emiteFecho="emiteFecho($event)"
-            ></elementoFormEditable>
-            <elementoFormEditable
+            ></verElemento>
+            <verElemento
               v-else
-              :elemento="elementoAtual"
+              :passedData="elementoAtual"
               backTo="/leitor/resultados"
               :isDisabled="true"
               :isDeleting="false"
               @emiteFecho="emiteFecho($event)"
-            ></elementoFormEditable>
+            ></verElemento>
       </v-dialog>
     <Footer />
       </v-container>
@@ -211,7 +211,7 @@ import Footer from "../components/Footer";
 import NavDraw from '../components/navDraw.vue'
 import Header from '../components/header.vue'
 import navDrawLeitor from '../components/navDrawLeitor.vue'
-import ElementoFormEditable from "../components/elementoFormEditable.vue";
+import VerElemento from "../components/verElemento.vue";
 
 export default {
   data() {
@@ -232,7 +232,7 @@ export default {
   },
   components: {
     Footer,
-    ElementoFormEditable,
+    VerElemento,
     'navDraw':NavDraw,
     'appHeader': Header,
     'navDrawLeitor':navDrawLeitor

@@ -11,22 +11,91 @@ from flask_cors import CORS, cross_origin
 CORS(blueprint)
 import json
 from bson import json_util
-from flasgger import swag_from
 
 
 ############################### PESQUISAS FEITAS #########################################
 
 @blueprint.route('/pesquisas', methods=['GET'])
 @token_required
-@swag_from('docs/pesquisas-get.yml')
 def route_pesquisas():
+    """
+    Consultar pesquisas anteriormente efetuadas.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+    definitions:
+      PesquisasObj:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Resultado do Logout.
+
+    responses:
+      200:
+        description: Pesquisas Realizadas.
+        schema:
+          $ref: '#/definitions/PesquisasObj'
+    """
 
     pesquisas = loadPesquisas()
     return json_util.dumps({'pesquisas': pesquisas})
 
 @blueprint.route('/pesquisa', methods=['GET'])
-@swag_from('docs/pesquisa-get.yml')
 def pesquisaresultados():
+    """
+    Efetuar uma nova pesquisa.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+      - in: query
+        name: pesquisa
+        type: string
+        required: true
+
+      - in: query
+        name: colecao
+        type: string
+        required: true
+
+      - in: query
+        name: editora
+        type: string
+        required: true
+
+      - in: query
+        name: date
+        type: string
+        required: false
+
+      - in: query
+        name: nome
+        type: string
+        required: true
+
+
+    definitions:
+      PesquisaObj:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Resultado da Pesquisa.
+
+    responses:
+      200:
+        description: Resultado da Pesquisa.
+        schema:
+          $ref: '#/definitions/PesquisaObj'
+    """
 
     palavra = request.args.get('pesquisa') 
     colecao = request.args.get('colecao') 
@@ -46,9 +115,9 @@ def pesquisaresultados():
             if (data):
                 res_pesquisa = neo4j_db.run(f'match (edi:Editora)<-[:publicado]-(e:Elemento)-[:integra]->(c:Colecao) where (toLower(e.titulo) contains toLower("{palavra}") and c.designacao="{colecao}" and e.data_publicacao="{data}" and edi.designacao="{editora}") return e')
             else: 
-                res_pesquisa = neo4j_db.run(f'match (edi:Editora)<-[:publicado]-(e:Elemento)-[:integra]->(c:Colecao) where (toLower(e.titulo) contains toLower("{palavra}")) and c.designacao="{colecao}" and  edi.designacao="{editora}") return e')
+                res_pesquisa = neo4j_db.run(f'match (edi:Editora)<-[:publicado]-(e:Elemento)-[:integra]->(c:Colecao) where (toLower(e.titulo) contains toLower("{palavra}") and c.designacao="{colecao}" and  edi.designacao="{editora}") return e')
         elif (data):
-            res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:integra]->(c:Colecao) where (toLower(e.titulo) contains toLower("{palavra}") and c.designacao="{colecao}" and e.data_publicacao="{data}"')
+            res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:integra]->(c:Colecao) where (toLower(e.titulo) contains toLower("{palavra}") and c.designacao="{colecao}" and e.data_publicacao="{data}") return e')
         else:
             res_pesquisa = neo4j_db.run(f'match (e:Elemento)-[:integra]->(c:Colecao) where (toLower(e.titulo) contains toLower("{palavra}") and c.designacao="{colecao}") return e')
     elif (editora != "Todas"):

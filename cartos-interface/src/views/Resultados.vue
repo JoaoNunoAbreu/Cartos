@@ -208,13 +208,13 @@
         <!-- tem de estar persistent para fazer clean do array conta -->
       </div>
       <v-dialog persistent v-model="dialogElemento" max-width="800px">
-            <elementoFormEditable
-              :elemento="elementoAtual"
+            <verElemento
+              :passedData="elementoAtual"
               backTo="/resultados"
               :isDisabled="true"
               :isDeleting="false"
               @emiteFecho="emiteFecho($event)"
-            ></elementoFormEditable>
+            ></verElemento>
       </v-dialog>
     </v-container>
     <Footer />
@@ -222,7 +222,7 @@
 </template>
 
 <script>
-import ElementoFormEditable from "../components/elementoFormEditable.vue";
+import VerElemento from "../components/verElemento.vue";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -249,7 +249,7 @@ export default {
     Navbar,
     Footer,
     PopupCartos,
-    ElementoFormEditable,
+    VerElemento,
   },
   created() {
     var tempo_inic = performance.now();

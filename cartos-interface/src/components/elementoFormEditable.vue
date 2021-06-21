@@ -389,7 +389,7 @@
                     
                   </template>
                   <span>
-                    {{ $t("p1.leave") }}
+                    {{ $t("head.exit") }}
                   </span>
                  </v-tooltip>
               </v-toolbar>

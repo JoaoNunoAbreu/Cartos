@@ -92,40 +92,41 @@ def token_required(f):
             return jsonify(invalid_msg), 401
 
         try:
+            # print("BREAK 0")
             token = auth_headers[1]
-            #print("BREAK 1")
+            # print("BREAK 1")
             data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
-            #print("BREAK 2")
+            # print("BREAK 2")
             query = f'match (n:User) where n._id = "{data["sub"]}" return n'
-            #print("BREAK 3")
+            # print("BREAK 3")
             user = neo4j_db.evaluate(query)
-            #print("BREAK 4")
+            # print("BREAK 4")
             now = datetime.datetime.now()
-            #print("BREAK 5")
+            # print("BREAK 5")
             date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
-            #print("BREAK 6")
+            # print("BREAK 6")
             did = ObjectId()
-            #print("BREAK 7")
+            # print("BREAK 7")
             reqstring= request.method + ":" + request.url
-            #print("BREAK 8")
+            # print("BREAK 8")
             if not user:
                 raise RuntimeError('User not found')
            
             neo4j_db.evaluate('match (x {_id:$v}) set  x+={ativo:"true" , stamp:$date} return x',v=data['sub'],date=date)
-            #print("BREAK 9")
+            # print("BREAK 9")
             h = {"_id": str(did), "user":data['sub'], "stamp":date, "request":reqstring}
-            #print("BREAK 10")
+            # print("BREAK 10")
 
             with open('historic.json') as json_file:
                 reqs = json.load(json_file)
 
             reqs.append(h)
-            #print("BREAK 11")
+            # print("BREAK 11")
 
             with open('historic.json', 'w') as outfile:
                 json.dump(reqs, outfile,indent=4,ensure_ascii=False)
 
-            #print("BREAK 12")
+            # print("BREAK 12")
             return f(*args, **kwargs)
         except jwt.ExpiredSignatureError:
             return jsonify(expired_msg), 401 # 401 is Unauthorized HTTP status code
@@ -136,11 +137,14 @@ def token_required(f):
 
     return _verify
 
+import traceback
+
 def admin_required(f):
     @wraps(f)
     def _verify(*args, **kwargs):
+        
         auth_headers = request.headers.get('Authorization', '').split()
-        invalid_msg = {
+        invalid_msg = { 
             'message': 'Invalid token. Registeration and / or authentication required',
             'authenticated': False
         }
@@ -154,10 +158,15 @@ def admin_required(f):
 
         try:
             token = auth_headers[1]
+            #print("BREAK 1")
             data = jwt.decode(token,'\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i')
+            #print("BREAK 2")
             query = f'match (n:User) where n._id = "{data["sub"]}" AND n.tipo = "Admin" return n'
+            #print("BREAK 3")
             user = neo4j_db.evaluate(query)
+            #print("BREAK 4")
             now = datetime.datetime.now()
+            #print("BREAK 5")
             ''' date = now.strftime("%Y-%m-%d %H:%M:%S.%f")
             did = ObjectId()
             reqstring= request.method + ":" + request.url '''
@@ -166,8 +175,10 @@ def admin_required(f):
             return f(*args, **kwargs)
         except jwt.ExpiredSignatureError:
             return jsonify(expired_msg), 401 # 401 is Unauthorized HTTP status code
-        except (jwt.InvalidTokenError, Exception) as e:
-            print(e)
+        except (jwt.InvalidTokenError, Exception):
+            print(traceback.format_exc())
+            ''' print(e) '''
+            print("wrong token")
             return jsonify(invalid_msg), 401
 
     return _verify

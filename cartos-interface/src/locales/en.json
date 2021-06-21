@@ -109,7 +109,8 @@
         "LinguaEN" : "English Language", 
         "LinguaES" : "Idioma Español",
         "SistemaCartosHeader" : "Cartos System", 
-        "SistemaCartosExpli" : "\n Cartos Information System"
+        "SistemaCartosExpli" : "\n Cartos Information System",
+        "registo":"Sign up"
     },
     "head": {
         "help": "Help",
@@ -143,7 +144,9 @@
         "opt": "Options",
         "insert": "Insert element",
         "print": "Print or export elements records",
-        "noPicText":"This element does not have a photograph."
+        "noPicText":"This element does not have a photograph.",
+        "visualizacaoElemento":"Element view",
+        "titulo":"Title"
     },
     "imp": {
         "passo": "Step"
@@ -167,7 +170,8 @@
         "re":"Reset",
         "sub":"Submit",
         "uInv":"Invalid username or password, please try again.",
-        "new":"There is already a user or access request with that username, choose another."
+        "new":"There is already a user or access request with that username, choose another.",
+        "naotemconta":"Don't have an account?"
     },
     "pedac": {
         "title": "Request access credentials",
@@ -263,7 +267,7 @@
     "p1": {
         "ins": "Insert elemento",
         "id": "Identifier",
-        "import": "Import",
+        "imp": "Import",
         "ver": "Version",
         "int": "Interpretative",
         "sd": "Semi-diplomatic",
@@ -297,7 +301,18 @@
         "apagar":"Delete",
         "leave": "Exit insertion",
         "pdf":"See pdf",
-        "clean":"Clean"
+        "clean":"Clean",
+        "nrPaginas":"Number of pages",
+        "tit": "Title",
+        "num":"Number",
+        "serie":"Series",
+        "pag":"Page",
+        "size":"Size",
+        "pers": "Characters",
+        "estado": "State",
+        "dataP": "Publication date",
+        "verCapa":"See Cover",
+        "Ver video":"Watch Video"
     },
     "p2": {
         "tComTags": "Text with tags",
@@ -348,5 +363,11 @@
         "ultimosInseridos":"Last Inserted Elements",
         "nElemCol":"Number of Elements per Collection",
         "nElemEdi": "Number of Elements by Publisher"
+    },
+    "uF": {
+        "conf":"Confirm User Submission",
+        "helpEdit":"Edit the fields as needed and click on the Confirm Submission button",
+        "help":"Fill in the required fields and click on the Confirm Submission button",
+        "badChoice":"There is already a user with that username, choose another one."
     }
 }

@@ -203,7 +203,7 @@
                         </v-col>
                         <v-col>
                             <v-card-text>
-                            <h3>{{$t('uF.help')}}</h3>
+                            <h3>{{$t('uF.help')}}<v-icon small >mdi-checkbox-marked-outline</v-icon></h3>
                             </v-card-text>
                         </v-col>
                         </v-row>
@@ -275,10 +275,6 @@
 
 <script>
 import axios from 'axios'
-//depois usar para estabelecer as rules dos campos do form
-//import { required, email, max } from 'vee-validate/dist/rules'
-//import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
-// @ is an alias to /src
 
 export default {
   data(){
@@ -398,6 +394,7 @@ export default {
               this.$refs.form.reset()
               this.atualizarInfo()
             }
+            location.reload();
         }).catch(e => {
             this.errors.push(e)
         })
@@ -417,7 +414,6 @@ export default {
       this.user.observacoes=''
     },
     atualizarInfo(){
-      //console.log('ola')
       this.$emit('atualizarInfo')
     },
     emiteFecho(){

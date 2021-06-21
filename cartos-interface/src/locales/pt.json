@@ -131,7 +131,8 @@
         "Parametros" : "Pârametros:", 
         "resultadosEm" : "resultados em", 
         "milisegundos" : "millisegundos", 
-        "sistemaPesquisa" : "Sistema de Pesquisa"
+        "sistemaPesquisa" : "Sistema de Pesquisa",
+        "registo":"Registar"
     },
     "head": {
         "help": "Ajuda",
@@ -170,7 +171,9 @@
         "aviso": "Aviso",
         "erro": "Erro",
         "info": "Informação",
-        "imp": "Elemento inserido com sucesso! "
+        "imp": "Elemento inserido com sucesso! ",
+        "visualizacaoElemento":"Visualização Elemento",
+        "titulo":"Título"
 
     },
     "imp": {
@@ -199,7 +202,8 @@
         "re":"Repôr",
         "sub":"Submeter",
         "uInv":"Utilizador ou password inválidos, por favor tente de novo.",
-        "new":"Já existe um utilizador ou pedido de acesso com esse nome de utilizador, escolha outro."
+        "new":"Já existe um utilizador ou pedido de acesso com esse nome de utilizador, escolha outro.",
+        "naotemconta":"Não tem conta?"
     },
     "pedac": {
         "title": "Requerer pedidos de acesso",
@@ -316,7 +320,7 @@
         "lin":"Língua",
         "lin2":"Nova Língua",
         "pag":"Página",
-        "size": "Size",
+        "size": "Tamanho",
         "pers": "Personagens",
         "estado": "Estado",
         "edi": "Editora",
@@ -346,7 +350,10 @@
         "data": "Data",
         "listaP": "Lista de Personagens",
         "pdf":"Ver pdf",
-        "clean":"Limpar"
+        "clean":"Limpar",
+        "nrPaginas":"Número de páginas",
+        "verCapa":"Ver Capa",
+        "verVideo":"Ver Vídeo"
     },
     "pForm": {
         "aU": "Adicionar utilizadores",
@@ -355,7 +362,8 @@
     },
     "uF": {
         "conf":"Confirmar submissão de utilizador",
-        "help":"Ajuda da Gestão de Utilizadores",
+        "helpEdit":"Edite os campos que achar necessário e clique no botão Confirmar Submissão",
+        "help":"Preencha os campos necessários e clique no botão Confirmar Submissão",
         "badChoice":"Já existe um utilizador com esse username, escolha outro."
     },
     "tForm": {

@@ -15,7 +15,6 @@ from app.base import blueprint
 import re
 
 ###### este é meu
-from flasgger import swag_from
 from flask import jsonify
 from bson import json_util
 from flask_cors import CORS, cross_origin
@@ -25,8 +24,55 @@ CORS(blueprint)
 
 
 @blueprint.route('/login', methods=['POST'])
-@swag_from('docs/login-post.yml')
 def login():
+    """
+    Iniciar Sessão.
+    ---
+    parameters:
+      - in: formData
+        name: id
+        type: string
+        required: true
+
+      - in: formData
+        name: password
+        type: string
+        required: true
+    
+    definitions:
+      LoginSucc:
+        type: object
+        properties:
+          token:
+            type: string
+            description: Chave de Sessão (JWT).
+          user:
+            type: object
+            $ref: '#/definitions/Utilizador'
+            description: Informação do utilizador.
+          users:
+            type: string
+            description: Utilizadores associados.
+
+      LoginFail:
+        type: object
+        properties:
+          error:
+            type: string
+            description: Mensagem informativa ao login.
+
+    responses:
+      200:
+        description: Sucesso a efetuar login.
+        schema:
+          type: object
+          $ref: '#/definitions/LoginSucc'
+      500:
+        description: Insucesso a efetuar login.
+        schema:
+          type: object
+          $ref: '#/definitions/LoginFail'
+    """
 
     _id = request.form.get('id')
     print(f"_id: {_id}")
@@ -36,7 +82,6 @@ def login():
 
     if user and check_password_hash(user["password"], password):
         users= neo4j_db.evaluate('match (x:User) return x')
-        nome = request.args.get('nome')
 
         token = jwt.encode({
             'sub': _id,
@@ -44,19 +89,8 @@ def login():
             'exp': datetime.utcnow() + timedelta(minutes=720)},
             '\t\xcf\xbb\xe6~\x01\xdf4\x8b\xf3?i' #jwt app.config['SECRET_KEY']
         )
-        return json_util.dumps({'token': token.decode('UTF-8'), 'user':user, 'users': users, 'nome': nome})
+        return json_util.dumps({'token': token.decode('UTF-8'), 'user':user, 'users': users})
     elif(user == None):
         return json_util.dumps({'error': 'O utilizador não existe!'},indent=4,ensure_ascii=False)
     else:
         return json_util.dumps({'error': 'Password incorrecta!'},indent=4,ensure_ascii=False)
-
-
-
-@blueprint.route('/logout')
-@token_required
-#@login_required
-@swag_from('docs/logout.yml')
-def logout():
-
-    print("logging out")
-    return json_util.dumps({'message': 'Logged out!'})

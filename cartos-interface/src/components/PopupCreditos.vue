@@ -7,17 +7,15 @@
         </v-btn>
       </template>
       <v-card>
-        <v-card-title class="headline change-font">{{ $t('nav.creditos') }}</v-card-title>
-        
-        <v-divider
-        class="mx-4"
-        horizontal
-        ></v-divider>
-        
-        <v-card-text class="change-font" style="white-space: pre-line"
-          >{{ $t('nav.textoCreditos') }}
-        </v-card-text>
-        <v-card-actions>
+        <v-card-text class="change-font mt-6" style="white-space: pre-line">
+                  <h2> {{ $t('nav.textoCreditos') }} </h2>
+                  <p/>
+                  <v-icon>mdi-github</v-icon> <a href="https://github.com/Catarinacg16" target="blank_">Catarina Gil</a><p/>
+                  <v-icon>mdi-github</v-icon> <a href="https://github.com/goncalo-f" target="blank_">Gonçalo Ferreira</a><p/>
+                  <v-icon>mdi-github</v-icon> <a href="https://github.com/JoaoNunoAbreu" target="blank_">João Nuno Abreu</a>
+
+                </v-card-text>
+           <v-card-actions>
           <v-spacer></v-spacer>
            
            <v-tooltip bottom> 

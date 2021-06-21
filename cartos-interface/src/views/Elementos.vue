@@ -68,25 +68,25 @@
 
         </v-toolbar>
       </template>
-      <template v-slot:header.id="{ header }">
+      <template v-slot:[`header.id`]="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.colecao="{ header }">
+      <template v-slot:[`header.colecao`]="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.editora="{ header }">
+      <template v-slot:[`header.editora`]="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.data_publicacao="{ header }">
+      <template v-slot:[`header.data_publicacao`]="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.lingua="{ header }">
+      <template v-slot:[`header.lingua`]="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:header.options="{ header }">
+      <template v-slot:[`header.options`]="{ header }">
         <label> {{ header.text }} </label>
       </template>
-      <template v-slot:item.options="{ item }">
+      <template v-slot:[`item.options`]="{ item }">
         <div v-if="$store.state.user.tipo === 'Admin'" >
           <v-icon small class="mr-2" @click="viewItem(item)"> mdi-eye </v-icon>
           <v-icon small class="mr-2" @click="editItem(item)"> mdi-pencil </v-icon>
@@ -99,12 +99,12 @@
       </template>
     </v-data-table>
     <v-dialog persistent v-model="dialog" max-width="800px">
-            <elementoFormEditable
-              :elemento="item"
+            <verElemento
+              :passedData="item"
               :isDisabled="true"
               :isDeleting="false"
               @emiteFecho="emiteFecho($event)"
-            ></elementoFormEditable>
+            ></verElemento>
     </v-dialog>
     <v-dialog persistent v-model="dialogEdit" max-width="800px">
             <elementoFormEditable
@@ -190,6 +190,7 @@ import Header from "../components/header.vue";
 import NavDraw from "../components/navDraw.vue";
 import navDrawLeitor from "../components/navDrawLeitor.vue";
 import ElementoFormEditable from "../components/elementoFormEditable.vue";
+import verElemento from '../components/verElemento.vue'
 
 export default {
   data() {
@@ -221,7 +222,7 @@ export default {
           text: `${this.$t("fol.opt")}`,
           value: "options",
           sortable: false,
-           align: 'center',
+          align: 'center',
         },
       ],
       search: "",
@@ -255,6 +256,7 @@ export default {
     navDraw: NavDraw,
     navDrawLeitor: navDrawLeitor,
     elementoFormEditable: ElementoFormEditable,
+    verElemento
   },
   created() {
     this.getElementos();
@@ -272,6 +274,9 @@ export default {
         )
         .then((response) => {
           this.elementos = [];
+          for(var i = 0; i < response.data.length; i++){
+            response.data[i].data_publicacao = response.data[i].data_publicacao.split("/").reverse().join("/");
+          }
           this.elementos = response.data;
         })
         .catch((e) => {
