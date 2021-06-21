@@ -1,0 +1,15 @@
+Get Coleções.
+---
+parameters:
+  - name: elemento
+    in: elemento
+    type: integer
+    required: true
+
+responses:
+  200:
+    description: Lista de Coleções.
+    schema:
+      type: array
+      items:
+        type: string

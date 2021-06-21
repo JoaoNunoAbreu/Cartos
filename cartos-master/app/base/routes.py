@@ -15,6 +15,7 @@ from app.base import blueprint
 import re
 
 ###### este é meu
+from flasgger import swag_from
 from flask import jsonify
 from bson import json_util
 from flask_cors import CORS, cross_origin
@@ -24,63 +25,8 @@ CORS(blueprint)
 
 
 @blueprint.route('/login', methods=['POST'])
+@swag_from('docs/login-post.yml')
 def login():
-    """
-    Iniciar Sessão.
-    ---
-    parameters:
-      - in: formData
-        name: id
-        type: string
-        required: true
-
-      - in: formData
-        name: nome
-        type: string
-        required: true
-
-      - in: formData
-        name: password
-        type: string
-        required: true
-    
-    definitions:
-      LoginSucc:
-        type: object
-        properties:
-          token:
-            type: string
-            description: Chave de Sessão (JWT).
-          user:
-            type: object
-            $ref: '#/definitions/Utilizador'
-            description: Informação do utilizador.
-          users:
-            type: string
-            description: Utilizadores associados.
-          nome:
-            type: string
-            description: Nome do utilizador.
-
-      LoginFail:
-        type: object
-        properties:
-          error:
-            type: string
-            description: Mensagem informativa ao login.
-
-    responses:
-      200:
-        description: Sucesso a efetuar login.
-        schema:
-          type: object
-          $ref: '#/definitions/LoginSucc'
-      500:
-        description: Insucesso a efetuar login.
-        schema:
-          type: object
-          $ref: '#/definitions/LoginFail'
-    """
 
     _id = request.form.get('id')
     print(f"_id: {_id}")
@@ -109,30 +55,8 @@ def login():
 @blueprint.route('/logout')
 @token_required
 #@login_required
+@swag_from('docs/logout.yml')
 def logout():
-    """
-    Sair de Sessão.
-    ---
-    parameters:
-      - in: header
-        name: Authorization
-        type: string
-        required: true
-
-    definitions:
-      LogoutMsg:
-        type: object
-        properties:
-          message:
-            type: string
-            description: Resultado do Logout.
-
-    responses:
-      200:
-        description: Informação de Logout.
-        schema:
-          $ref: '#/definitions/LogoutMsg'
-    """
 
     print("logging out")
     return json_util.dumps({'message': 'Logged out!'})
