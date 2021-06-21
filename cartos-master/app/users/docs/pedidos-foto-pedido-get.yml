@@ -1,0 +1,19 @@
+Pedido para importar foto de utilizador.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+  - name: pedido
+    in: pedido
+    type: string
+    required: true
+
+
+produces:
+  - image/png
+responses:
+  200:
+    description: Foto que se encontra no pedido.

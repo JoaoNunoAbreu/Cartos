@@ -1,0 +1,41 @@
+Guardar Template Editado.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+  - in: formData
+    name: username
+    type: string
+
+  - in: formData
+    name: name
+    type: string
+
+  - in: formData
+    name: email
+    type: string
+
+  - in: formData
+    name: tipo
+    type: string
+
+  - in: formData
+    name: universidade
+    type: string
+
+  - in: formData
+    name: departamento
+    type: string
+
+  - in: formData
+    name: obs
+    type: string
+    
+responses:
+  200:
+    description: Change.
+    schema:
+      type: string

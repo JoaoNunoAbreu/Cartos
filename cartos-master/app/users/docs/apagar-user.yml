@@ -1,0 +1,18 @@
+Apagar um respetivo utilizador.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+  - name: user
+    in: user
+    type: string
+    required: true
+
+responses:
+  200:
+    description: Utilizador removido.
+    schema:
+      $ref: '#/definitions/Utilizador'

@@ -1,0 +1,20 @@
+Consultar o curriculo de perfil de um respetivo utilizador.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+  - name: user
+    in: user
+    type: string
+    required: true
+
+produces:
+    - application/pdf
+responses:
+  200:
+    description: PDF correspondente ao curriculo do utilizador.
+    schema:
+      type: file
