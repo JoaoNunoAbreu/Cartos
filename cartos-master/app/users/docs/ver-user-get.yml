@@ -1,0 +1,63 @@
+Ver informação respetiva a um utilizador.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+  - name: user
+    in: user
+    type: string
+    required: true
+
+# Defenir objetos em utilização na documentação como retorno.
+definitions:
+
+  NotDefined:
+    type: object
+    properties:
+      ndefined:
+        type: string
+
+  VerUtilizador:
+    type: object
+    properties:
+      user:
+        type: boolean
+        description: Existe Utilizador
+      foto:
+        type: string
+        description: Upload Path Foto
+      curriculo:
+        type: string
+        description: Upload Path Curriculo
+      nome:
+        type: string
+        description: Nome do Utilizador
+
+  Utilizador:
+    type: object
+    properties:
+      username:
+        type: string
+      name:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+      tipo:
+        type: string
+      universidade:
+        type: string
+      departamento:
+        type: string
+      obs:
+        type: string
+
+responses:
+  200:
+    description: Informação do utilizador.
+    schema:
+      $ref: '#/definitions/VerUtilizador'

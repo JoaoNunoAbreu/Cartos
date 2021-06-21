@@ -1,0 +1,15 @@
+Get Tipos.
+---
+parameters:
+  - name: elemento
+    in: elemento
+    type: integer
+    required: true
+
+responses:
+  200:
+    description: Lista de Tipos.
+    schema:
+      type: array
+      items:
+        type: string

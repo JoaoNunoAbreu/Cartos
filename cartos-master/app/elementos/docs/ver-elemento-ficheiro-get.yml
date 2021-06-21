@@ -1,0 +1,13 @@
+Ver ficheiro do elemento.
+---
+parameters:
+  - name: elemento
+    in: elemento
+    type: integer
+    required: true
+
+responses:
+  200:
+    description: Ficheiro associada ao Elemento.
+    schema:
+      type: string

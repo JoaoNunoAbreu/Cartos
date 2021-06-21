@@ -1,0 +1,47 @@
+
+Iniciar Sessão.
+---
+parameters:
+  - in: formData
+    name: id
+    type: string
+    required: true
+
+  - in: formData
+    name: password
+    type: string
+    required: true
+
+definitions:
+  LoginSucc:
+    type: object
+    properties:
+      token:
+        type: string
+        description: Chave de Sessão (JWT).
+      user:
+        type: object
+        $ref: '#/definitions/Utilizador'
+        description: Informação do utilizador.
+      users:
+        type: string
+        description: Utilizadores associados.
+
+  LoginFail:
+    type: object
+    properties:
+      error:
+        type: string
+        description: Mensagem informativa ao login.
+
+responses:
+  200:
+    description: Sucesso a efetuar login.
+    schema:
+      type: object
+      $ref: '#/definitions/LoginSucc'
+  500:
+    description: Insucesso a efetuar login.
+    schema:
+      type: object
+      $ref: '#/definitions/LoginFail'
