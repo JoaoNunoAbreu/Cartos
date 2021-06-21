@@ -8,53 +8,15 @@ from flask_login import login_required
 from app import token_required, neo4j_db
 from app import token_required
 from bson import json_util
+from flasgger import swag_from
 from flask_cors import CORS, cross_origin
 CORS(blueprint)
 
 @blueprint.route('/index', methods=['GET'])
 #@token_required
 #@login_required
+@swag_from('docs/index-get.yml')
 def index():
-    """
-    Ver Index.
-    ---
-    parameters:
-      - name: user
-        in: user
-        type: string
-        required: true
-    
-    definitions:
-      IndexHome:
-        type: object
-        properties:
-          n_users:
-            type: integer
-            description: Número de utilizadores.
-          n_elementos:
-            type: integer
-            description: Número de elementos.
-          n_colecoes:
-            type: integer
-            description: Número de coleções.
-          colecoesContadas:
-            type: integer
-            description: Número de coleções contadas.
-          editorasContadas:
-            type: integer
-            description: Número de editoras.
-          lastElementos:
-            type: array
-            items:
-              $ref: '#/definitions/Elemento'
-            description: Array dos últimos elementos adicionados.
-
-    responses:
-      200:
-        description: Informação do Index da Home.
-        schema:
-          $ref: '#/definitions/IndexHome'
-    """
 
     n_users = neo4j_db.evaluate('match (x:User) return count(x)')
     n_elementos = neo4j_db.evaluate('match (x:Elemento) return count(x)')
