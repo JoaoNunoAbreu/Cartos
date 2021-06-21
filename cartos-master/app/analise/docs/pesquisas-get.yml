@@ -1,0 +1,21 @@
+Consultar pesquisas anteriormente efetuadas.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+definitions:
+  PesquisasObj:
+    type: object
+    properties:
+      message:
+        type: string
+        description: Resultado do Logout.
+
+responses:
+  200:
+    description: Informação de Logout.
+    schema:
+      $ref: '#/definitions/PesquisasObj'
