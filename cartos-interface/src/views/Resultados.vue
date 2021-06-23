@@ -57,16 +57,6 @@
                 }}</span>
               </h3>
 
-              <h3 class="font-weight-light change-font">
-                {{ $t("nav.Parametros") }}
-                <span class="font-weight-black change-font"
-                  >{{ this.$route.params.selectedElemento }},
-                  {{ this.$route.params.tipo }},
-                  {{ this.$route.params.versao }},
-                  {{ this.$route.params.resultado }}</span
-                >
-              </h3>
-
               <h5 class="change-font blue--text text--darken-4">
                 {{ this.numResultados }} {{ $t("nav.resultadosEm") }}
                 {{ this.tempoFinal }} {{ $t("nav.milisegundos") }}

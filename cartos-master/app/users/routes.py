@@ -14,7 +14,6 @@ from shutil import copyfile, move
 ###### este é meu
 import json 
 from bson import json_util
-from flasgger import swag_from
 from flask_cors import CORS, cross_origin
 CORS(blueprint)
 #######
@@ -25,9 +24,26 @@ UPLOAD_FOLDER = './static/pics/'
 @admin_required
 #@token_required
 #@login_required
-@swag_from('docs/users.yml')
 def route_users():
+    """
+    Consultar Utilizadores.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
 
+
+    responses:
+      200:
+        description: Lista de Utilizadores.
+        schema:
+          type: array
+          items:
+            $ref: '#/definitions/Utilizador'
+    """
+    
     users = neo4j_db.run('match (x:User) return x')
     return json_util.dumps(users.data())
 
@@ -35,8 +51,32 @@ def route_users():
 ###########################################
 @blueprint.route('/foto/<user>', methods=['GET'])
 @token_required
-@swag_from('docs/foto-user-get.yml')
 def route_photo(user):
+    """
+    Consultar a imagem de perfil de um respetivo utilizador.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+      - in: formData
+        name: foto
+        type: file
+        required: true
+
+      - in: path
+        name: user
+        type: string
+        required: true
+
+    produces:
+      - image/png
+    responses:
+      200:
+        description: Foto do Utilizador.
+    """
 
     pathPhoto = join(dirname(realpath(__file__)), 'static/pics/')
     pathCheck = join(pathPhoto, user)
@@ -47,8 +87,32 @@ def route_photo(user):
 
 @blueprint.route('/foto/atualizar/<user>', methods=['POST'])
 @token_required
-@swag_from('docs/foto-atualizar-user-post.yml')
 def route_foto_atualizar(user):
+    """
+    Atualizar a imagem de perfil de um respetivo utilizador.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+      - name: user
+        in: user
+        type: string
+        required: true
+
+      - in: formData
+        name: foto
+        type: file
+        required: true
+
+    produces:
+      - image/png
+    responses:
+      200:
+        description: Ok, se o pedido for efetuado.
+    """
 
     if 'foto' in request.files:
         foto = request.files['foto']
@@ -76,8 +140,29 @@ def route_foto_atualizar(user):
 ##########################################
 @blueprint.route('/curriculo/<user>', methods=['GET'])
 @token_required
-@swag_from('docs/curriculo-user-get.yml')
 def route_cur(user):
+    """
+    Consultar o curriculo de perfil de um respetivo utilizador.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+      - name: user
+        in: user
+        type: string
+        required: true
+
+    produces:
+        - application/pdf
+    responses:
+      200:
+        description: PDF correspondente ao curriculo do utilizador.
+        schema:
+          type: file
+    """
 
     pathC = join(dirname(realpath(__file__)), 'static/curriculo/')
     pathCheck = join(pathC, user)
@@ -88,9 +173,35 @@ def route_cur(user):
 
 @blueprint.route('/curriculo/atualizar/<user>', methods=['POST'])
 @token_required
-@swag_from('docs/curriculo-atualizar-user-post.yml')
 def route_cur_atualizar(user):
+    """
+    Atualizar o curriculo de perfil de um respetivo utilizador.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
 
+      - name: user
+        in: user
+        type: string
+        required: true
+
+      - in: formData
+        name: curriculo
+        type: file
+        required: true
+
+    produces:
+        - application/pdf
+    responses:
+      200:
+        description: PDF atualizado.
+        schema:
+          type: file
+    """
+    
     if 'curriculo' in request.files:
         curriculo = request.files['curriculo']
         upload_path = join(dirname(realpath(__file__)), 'static/curriculo/', user)
@@ -115,8 +226,27 @@ def route_cur_atualizar(user):
 @blueprint.route('/apagar/<user>')
 @admin_required
 #@login_required
-@swag_from('docs/apagar-user.yml')
 def route_template_apagar(user):
+    """
+    Apagar um respetivo utilizador.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+      - name: user
+        in: user
+        type: string
+        required: true
+
+    responses:
+      200:
+        description: Utilizador removido.
+        schema:
+          $ref: '#/definitions/Utilizador'
+    """
 
     neo4j_db.evaluate('match (x:User) where x._id=$v delete x',v=user)
     upload_path = join(dirname(realpath(__file__)), 'static/pics/', user)
@@ -132,8 +262,50 @@ def route_template_apagar(user):
 @blueprint.route('/editar/guardar', methods=['POST'])
 @admin_required
 #@login_required
-@swag_from('docs/editar-guardar-post.yml')
 def route_template_editar_guardar():
+    """
+    Guardar Template Editado.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+    
+      - in: formData
+        name: username
+        type: string
+
+      - in: formData
+        name: name
+        type: string
+
+      - in: formData
+        name: email
+        type: string
+
+      - in: formData
+        name: tipo
+        type: string
+
+      - in: formData
+        name: universidade
+        type: string
+
+      - in: formData
+        name: departamento
+        type: string
+
+      - in: formData
+        name: obs
+        type: string
+        
+    responses:
+      200:
+        description: Change.
+        schema:
+          type: string
+    """
     username = request.form.get('username')
     nome = request.form.get('name')
     email = request.form.get('email')
@@ -175,8 +347,71 @@ def route_template_editar_guardar():
 @blueprint.route('/registar', methods=['POST'])
 #@admin_required
 #@login_required
-@swag_from('docs/registar-post.yml')
 def route_template_registar_pedido():
+    """
+    Efetuar um pedido de resgisto.
+    ---
+    parameters:
+      - in: formData
+        name: foto
+        type: file
+        
+      - in: formData
+        name: curriculo
+        type: file
+
+      - in: formData
+        name: username
+        type: string
+        required: true
+
+      - in: formData
+        name: name
+        type: string
+        required: true
+
+      - in: formData
+        name: password
+        type: string
+        required: true
+
+      - in: formData
+        name: email
+        type: string
+        required: true
+
+      - in: formData
+        name: tipo
+        type: string
+        required: true
+
+      - in: formData
+        name: universidade
+        type: string
+
+      - in: formData
+        name: departamento
+        type: string
+
+      - in: formData
+        name: obs
+        type: string
+
+    definitions:
+      PedidoRegistar:
+        type: object
+        properties:
+          nome:
+            type: string
+            description: Nome do Utilizador.
+
+    responses:
+      200:
+        description: A list of colors (may be filtered by palette)
+        schema:
+          $ref: '#/definitions/PedidoRegistar'
+    """
+    
     username = request.form.get('username')
     existeU = neo4j_db.evaluate('match (x:User) where x.username=$v return x',v=username)
 
@@ -234,8 +469,33 @@ def route_template_registar_pedido():
 
 @blueprint.route('/active', methods=['GET'])
 @token_required
-@swag_from('docs/active-get.yml')
 def route_active():
+    """
+    Ativar conta de um respetivo utilizador.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+    definitions:
+      UtilizadoresAtivos:
+        type: object
+        properties:
+          nome:
+            type: array
+            items:
+              $ref: '#/definitions/Utilizador'
+            description: Array de Utilizadores.
+
+    responses:
+      200:
+        description: Lista de utilizadores ativos.
+        schema:
+          $ref: '#/definitions/UtilizadoresAtivos'
+    """
+    
     users = neo4j_db.run('match (x:User) where x.ativo="true" return x').data()
     date = datetime.datetime.now()
     date = date - datetime.timedelta(minutes = 15)
@@ -250,8 +510,24 @@ def route_active():
 
 @blueprint.route('/history', methods=['GET'])
 @token_required
-@swag_from('docs/history-get.yml')
 def route_history():
+    """
+    Consultar Histórico.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+    responses:
+      200:
+        description: Histórico.
+        schema:
+          type: array
+          items:
+            type: string
+    """
     with open('historic.json') as json_file:
         reqs = json.load(json_file)
     return json_util.dumps({'reqs': reqs})
@@ -259,8 +535,24 @@ def route_history():
 
 @blueprint.route('/historyCleanse', methods=['GET'])
 @token_required
-@swag_from('docs/historyCleanse-post.yml')
 def route_historyCleanse():
+    """
+    Limpar Histórico.
+    ---
+    parameters:
+      - in: header
+        name: Authorization
+        type: string
+        required: true
+
+    responses:
+      200:
+        description: Histórico Limpo.
+        schema:
+          type: array
+          items:
+            type: string
+    """
     with open('historic.json', 'w') as outfile:
         json.dump([], outfile)
     return json_util.dumps({'history': [] })

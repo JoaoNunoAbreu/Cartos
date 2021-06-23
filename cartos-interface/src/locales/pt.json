@@ -177,9 +177,7 @@
 
     },
     "imp": {
-        "back":"Voltar ao passo anterior",
         "passo": "Inserção de Elementos",
-        "or":"ou",
         "seq":"Sequência de carateres proibida detetada no pedido.",
         "new":"Já existe um elemento com esse identificador, escolha outro."
     },
@@ -330,11 +328,11 @@
         "trans": "Transcrição",
         "rev": "Revisão",
         "obs": "Observações",
-        "ACapa": "Adicionar Capa",
+        "ACapa": "Adicionar Capa (Opcional)",
         "foto": "Foto",
         "capa":"Capa",
         "f": "Foto",
-        "Avideo":"Adicionar Vídeo",
+        "Avideo":"Adicionar Vídeo (Opcional)",
         "Video":"Vídeo",
         "file": "Ficheiro",
         "tfile": "Ficheiro de texto",
@@ -353,7 +351,12 @@
         "clean":"Limpar",
         "nrPaginas":"Número de páginas",
         "verCapa":"Ver Capa",
-        "verVideo":"Ver Vídeo"
+        "verVideo":"Ver Vídeo",
+        "inicioNome":"O nome do Elemento necessita de começar com RPT.",
+        "tresDigitos":"O nome do Elemento tem de ter 3 dígito.",
+        "idRepetidos":"Identificador já está a ser utilizado.",
+        "seiscar":"O nome do Elemento tem de ter 6 caracteres.",
+        "dataRule":"A data deve ter o formato : DD/MM/AAAA."
     },
     "pForm": {
         "aU": "Adicionar utilizadores",

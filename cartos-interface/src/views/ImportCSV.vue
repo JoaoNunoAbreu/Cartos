@@ -109,8 +109,8 @@ RPT007,Batman: The Dark Knight,1,Batman,Batman,DC,Inglês,22,A4,01/01/2011,Batma
 
       <v-dialog v-model="confirmDialog" scrollable width="500">
         <InfoPopup 
-          :nSucesso="nSucesso"
-          :nInsucesso="nInsucesso"
+          :nSucesso="nSucesso.toString()"
+          :nInsucesso="nInsucesso.toString()"
            @emiteFecho="emiteFecho($event)">
         </InfoPopup>
       </v-dialog>
@@ -149,7 +149,8 @@ export default {
           {name: 'DtPublicacao',inputName: 'DtPublicacao',required: true},
           {name: 'Personagens',inputName: 'Personagens',required: true,isArray: true},
           {name: 'Tipo',inputName: 'Tipo',required: true},
-          {name: 'Estado',inputName: 'Estado',required: true}
+          {name: 'Estado',inputName: 'Estado',required: true},
+          {name: 'Pdf',inputName: 'Pdf',required: true },
         ]
     };
   },
@@ -184,7 +185,8 @@ export default {
          
           csvData.data // Array of objects from file
           csvData.inValidMessages // Array of error messages
-          console.log(csvData.inValidMessages)
+          console.log("csvData.data = " + JSON.stringify(csvData.data))
+          console.log("csvData.inValidMessages = " + csvData.inValidMessages)
 
         let seenIDS = []
         for(let i = 0; i < csvData.data.length; i++){
@@ -213,6 +215,7 @@ export default {
         })
         .then(() => {
           this.nSucesso+=1;
+          
         })
       }
       catch(e){
@@ -222,6 +225,7 @@ export default {
     },
     async doPostsSync(csvData) {
       for(let i = 0; i < csvData.data.length; i++){
+        console.log("antes do if")
         if(this.idRules(csvData.data[i].Identificador) && this.anotherRules(csvData.data[i])){
           let formData = new FormData()
           let personagens = String(csvData.data[i].Personagens).replace(/;/g, ",")
@@ -255,18 +259,20 @@ export default {
     },
     anotherRules(elem){
       let pattern = /^((0)[1-9]|[1-2][0-9]|(3)[0-1])(\/)(((0)[1-9])|((1)[0-2]))(\/)\d{4}$/;
-      return ( pattern.test(elem.DtPublicacao) &&   
-               elem.Titulo && elem.Colecao && 
-               elem.Numero && elem.Série && 
-               elem.Língua && elem.NrPaginas && 
-               elem.Tamanho && elem.Estado && 
-               elem.Editora && elem.DtPublicacao &&
+      return pattern.test(elem.DtPublicacao) &&   
+               "Titulo" in elem && "Colecao" in elem && 
+               "Numero" in elem && "Série" in elem && 
+               "Língua" in elem && "NrPaginas" in elem && 
+               "Tamanho" in elem && "Estado" in elem && 
+               "Editora" in elem && "DtPublicacao" in elem && 
+               "Pdf" in elem && "Personagens" in elem && "Tipo" in elem && 
                elem.Titulo.length <= 100 && elem.Colecao.length <= 100 && 
                elem.Numero.length <= 100 && elem.Série.length <= 100 && 
                elem.Língua.length <= 100 && elem.NrPaginas.length <= 3 && 
                elem.Tamanho.length <= 100 && elem.Estado.length <= 100 && 
                elem.Editora.length <= 100 && elem.DtPublicacao.length <= 100 &&
-               elem.Personagens.length <= 200)
+               elem.Personagens.length <= 200 && elem.Tipo.length <= 100
+            
           
     },
     emiteFecho: function () {

@@ -17,7 +17,6 @@ import re
 ###### este é meu
 from flask import jsonify
 from bson import json_util
-from flasgger import swag_from
 from flask_cors import CORS, cross_origin
 from datetime import datetime, timedelta
 import jwt
@@ -25,8 +24,55 @@ CORS(blueprint)
 
 
 @blueprint.route('/login', methods=['POST'])
-@swag_from('docs/login-post.yml')
 def login():
+    """
+    Iniciar Sessão.
+    ---
+    parameters:
+      - in: formData
+        name: id
+        type: string
+        required: true
+
+      - in: formData
+        name: password
+        type: string
+        required: true
+    
+    definitions:
+      LoginSucc:
+        type: object
+        properties:
+          token:
+            type: string
+            description: Chave de Sessão (JWT).
+          user:
+            type: object
+            $ref: '#/definitions/Utilizador'
+            description: Informação do utilizador.
+          users:
+            type: string
+            description: Utilizadores associados.
+
+      LoginFail:
+        type: object
+        properties:
+          error:
+            type: string
+            description: Mensagem informativa ao login.
+
+    responses:
+      200:
+        description: Sucesso a efetuar login.
+        schema:
+          type: object
+          $ref: '#/definitions/LoginSucc'
+      500:
+        description: Insucesso a efetuar login.
+        schema:
+          type: object
+          $ref: '#/definitions/LoginFail'
+    """
 
     _id = request.form.get('id')
     print(f"_id: {_id}")

@@ -48,10 +48,10 @@ export default {
   },
   props: {
     nSucesso: {
-      type: Number,
+      type: String,
     },
     nInsucesso: {
-      type: Number,
+      type: String,
     },
   },
   watch: {

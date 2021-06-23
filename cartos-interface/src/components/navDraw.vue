@@ -222,16 +222,16 @@
           <template v-slot:append>
             <div class="pa-2">
               <v-tooltip top> 
-                <template v-slot:activator="{ on }">
-                  <v-btn dark depressed min-width="60px" @click="goHome();" v-on="on">
+                <template  v-slot:activator="{ on }">
+                  <v-btn class="pa-2" dark depressed min-width="60px" @click="goHome();" v-on="on">
                     <v-icon>mdi-home</v-icon>
                   </v-btn>
                 </template>
                 <span>{{$t('navd.home')}}</span>
               </v-tooltip>
-              <v-tooltip top> 
+              <v-tooltip  top> 
                 <template v-slot:activator="{ on }">
-                  <v-btn dark depressed min-width="60px" @click="logout();" v-on="on">
+                  <v-btn class="pa-2" dark depressed min-width="60px" @click="logout();" v-on="on">
                     <v-icon>mdi-power</v-icon>
                   </v-btn>
                 </template>

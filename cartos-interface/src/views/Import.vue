@@ -223,6 +223,8 @@
                 formData.append('video',this.info.video)
                 formData.append('tipo',this.info.tipo)
 
+
+                
                 axios.post(this.url+`/import/passo6/?nome=${this.$store.state.user._id}`,formData,{headers:{
                     'Content-Type': 'multipart/form-data',
                     Authorization:`Bearer: ${this.$store.state.jwt}`

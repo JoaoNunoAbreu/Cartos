@@ -20,7 +20,10 @@
                         <v-text-field
                             label= "Username"
                             v-model="pedido.username"
-                            required                      
+                            required 
+                            :rules="[
+                              rules.idRepetidos,
+                            ]"                     
                         ></v-text-field>
                         <v-text-field
                         label="Password"
@@ -81,10 +84,6 @@
 <script>
 import axios from 'axios'
 import Header from '../components/headerLogin.vue'
-//depois usar para estabelecer as rules dos campos do form
-//import { required, email, max } from 'vee-validate/dist/rules'
-//import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
-// @ is an alias to /src
 
 export default {
   data(){
@@ -105,6 +104,7 @@ export default {
       dialog:false,
       ajuda:'registo',
       valid:true,
+      users:[],
       rules: {
           required: value => !!value || 'Required.',
           email: value => {
@@ -116,35 +116,13 @@ export default {
             }
             return pattern.test(value) || 'Invalid e-mail.'
           },
+          idRepetidos: (value) =>
+            !this.users.includes(value) ||
+            "Username já está a ser utilizado.",
       },
     }
   },
   methods:{
-    /*onUpdate(){
-      console.log(typeof this.value)
-      console.log('VALUE: ' + this.value)
-      //console.log(this.passedData.email)
-      if(this.value != 'adicionar'){
-        this.pedido.username = this.passedData._id
-        this.pedido.nome = this.passedData.nome
-        this.pedido.email = this.passedData.email
-        this.pedido.pw = this.passedData.password
-        this.pedido.tipo = this.passedData.tipo
-        this.pedido.universidade = this.passedData.universidade
-        this.pedido.departamento = this.passedData.departamento
-        this.pedido.observacoes = this.passedData.obs
-      }
-      else{
-        this.pedido.username = ''
-        this.pedido.nome = ''
-        this.pedido.email = ''
-        this.pedido.pw = ''
-        this.pedido.tipo = ''
-        this.pedido.universidade = ''
-        this.pedido.departamento = ''
-        this.pedido.observacoes = ''
-      }
-    },*/
     post: function() {
         let formData = new FormData()
             formData.append('username',this.pedido.username)
@@ -194,6 +172,14 @@ export default {
     this.pedido.foto={}
     this.pedido.curriculo={}
     this.pedido.observacoes=''
+    axios.get(this.url + `/users/users`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+      .then(response => {
+        for(let i = 0; i < response.data.length; i++){
+          this.users.push(response.data[i].x._id)
+        }
+      }).catch(e => {
+        this.errors.push(e)
+    })
   },
   computed:{
     disableButton (){

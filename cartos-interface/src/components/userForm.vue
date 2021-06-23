@@ -99,7 +99,7 @@
                           v-if= "value === 'adicionar'"
                           :label="$t('reg.unome')"
                           v-model="user.username"
-                          :rules="[rules.required]"            
+                          :rules="[rules.required,rules.idRepetidos]"            
                       ></v-text-field>
                       <v-text-field 
                           v-else-if="value === 'editar'"
@@ -296,6 +296,7 @@ export default {
       valid:true,
       url: process.env.VUE_APP_URL,
       failureDialog:false,
+      users:[],
       rules: {
           required: value => !!value || 'Required.',
           email: value => {
@@ -307,6 +308,9 @@ export default {
             }
             return pattern.test(value) || 'Invalid e-mail.'
           },
+          idRepetidos: (value) =>
+            !this.users.includes(value) ||
+            "Username já está a ser utilizado.",
       },
     }
   },
@@ -422,6 +426,14 @@ export default {
   },
   created(){
     this.onUpdate()
+    axios.get(this.url + `/users/users`, { headers: { Authorization: `Bearer: ${this.$store.state.jwt}` } })
+      .then(response => {
+        for(let i = 0; i < response.data.length; i++){
+          this.users.push(response.data[i].x._id)
+        }
+      }).catch(e => {
+        this.errors.push(e)
+    })
   },
   computed:{
     disableButton (){

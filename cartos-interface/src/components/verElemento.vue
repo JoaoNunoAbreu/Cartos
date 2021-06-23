@@ -209,7 +209,7 @@
           <template>
             <v-row>
                 <v-col style=" text-align: right;">
-              {{page}}/{{pageCount}}
+              {{page}}//{{pageCount}}
                </v-col>
               <v-col style=" text-align: right;">
                 <v-tooltip >
@@ -368,8 +368,10 @@ export default {
           }
       })
       .then(response => {
+         
           var pdf = new Buffer(response.data, 'binary').toString('base64')
           this.pdf = `data:${response.headers['content-type'].toLowerCase()};base64,${pdf}`
+           
       }).catch(e => {
           console.log(e)
       })

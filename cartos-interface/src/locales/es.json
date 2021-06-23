@@ -149,7 +149,9 @@
         "titulo":"Título"
     },
     "imp": {
-        "passo": "Inserción de Documentos"
+        "passo": "Inserción de Documentos",
+        "seq":"Cadena prohibida detectada en orden.",
+        "new":"Ya existe un elemento con este identificador, elija otro."
     },
     "ind": {
         "title": "Diccionario de índices",
@@ -308,7 +310,19 @@
         "dataP": "Fecha de publicación",
         "nrPaginas":"Número de páginas",
         "verCapa":"Ver Portada",
-        "verVideo":"Ver Video"
+        "verVideo":"Ver Video",
+        "string": "String",
+        "inteiro": "Int",
+        "capa":"Tapa",
+        "save": "Ahorrar",
+        "ACapa": "Agregar Tapa (Opcional)",
+        "Avideo":"Agregar Video (Opcional)",
+        "Video":"Vídeo",
+        "data":"Fecha",
+        "inicioNome":"El nombre del elemento debe comenzar con RPT.",
+        "tresDigitos": "El nombre del elemento debe tener 3 dígitos.",
+        "idRepetidos":"El identificador ya está en uso.",
+        "dataRule":"La fecha debe tener el formato: DD/MM/AAAA."
     },
     "p2": {
         "tComTags": "Texto com etiquetas",

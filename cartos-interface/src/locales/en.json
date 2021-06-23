@@ -149,7 +149,9 @@
         "titulo":"Title"
     },
     "imp": {
-        "passo": "Step"
+        "passo": "Insertion of Elements",
+        "seq":"Prohibited string detected in order.",
+        "new":"An element with this identifier already exists, choose another one."
     },
     "ind": {
         "title": "Index Dictionary",
@@ -287,9 +289,9 @@
         "rev": "Revision",
         "obs": "Notes",
         "foto": "Add photo",
-        "ACapa": "Add Cover",
+        "ACapa": "Add Cover (Optional)",
         "capa":"Cover",
-        "Avideo":"Add Video",
+        "Avideo":"Add Video (Optional)",
         "Video":"Video",
         "f": "Photo",
         "file": "File",
@@ -312,7 +314,16 @@
         "estado": "State",
         "dataP": "Publication date",
         "verCapa":"See Cover",
-        "Ver video":"Watch Video"
+        "Ver video":"Watch Video",
+        "string": "String",
+        "save": "Save",
+        "data": "Date",
+        "inteiro": "Int",
+        "inicioNome":"Element name needs to start with RPT.",
+        "tresDigitos":"Element name must be 3 digits.",
+        "idRepetidos":"Identifier is already in use.",
+        "seiscar":"Element name must be 6 characters long.",
+        "dataRule":"The date must have the format: DD/MM/YYYY."
     },
     "p2": {
         "tComTags": "Text with tags",

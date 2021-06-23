@@ -472,19 +472,19 @@ export default {
       rules: {
         inicioNome: (value) =>
           value.startsWith("RPT") ||
-          "O nome do Elemento necessita de começar com RPT",
+          this.$t('p1.inicioNome'),
         tresDigitos: (value) =>
           value.replace(/[^0-9]/g, "").length == 3 ||
-          "O nome do Elemento tem de ter 3 dígitos",
+          this.$t('p1.tresDigitos'),
         idRepetidos: (value) =>
           !this.elemImport.includes(value) ||
-          "Identificador já está a ser utilizado",
+          this.$t('p1.idRepetidos'),
         seiscar: (value) =>
-          value.length == 6 || "O nome do Elemento tem de ter 6 caracteres",
+          value.length == 6 || this.$t('p1.seiscar'),
         dataRule: (value) => {
           const pattern = /^((0)[1-9]|[1-2][0-9]|(3)[0-1])(\/)(((0)[1-9])|((1)[0-2]))(\/)\d{4}$/;
           return (
-            pattern.test(value) || "A data deve ter o formato : DD/MM/AAAA"
+            pattern.test(value) || this.$t('p1.dataRule')
           );
         },
       },
