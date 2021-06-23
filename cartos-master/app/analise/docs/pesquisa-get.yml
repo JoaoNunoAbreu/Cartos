@@ -1,0 +1,47 @@
+Efetuar uma nova pesquisa.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+  - in: formData
+    name: pesquisa
+    type: string
+    required: true
+
+  - in: formData
+    name: colecao
+    type: string
+    required: true
+
+  - in: formData
+    name: editora
+    type: string
+    required: true
+
+  - in: formData
+    name: date
+    type: string
+    required: true
+
+  - in: formData
+    name: nome
+    type: string
+    required: true
+
+
+definitions:
+  PesquisaObj:
+    type: object
+    properties:
+      message:
+        type: string
+        description: Resultado da Pesquisa.
+
+responses:
+  200:
+    description: Resultado da Pesquisa.
+    schema:
+      $ref: '#/definitions/PesquisaObj'

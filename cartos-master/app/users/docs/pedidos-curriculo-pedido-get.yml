@@ -1,0 +1,20 @@
+Peido para inserir curriculo.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+  - name: pedido
+    in: pedido
+    type: string
+    required: true
+
+produces:
+  - application/pdf
+responses:
+  200:
+    description: PDF atualizado.
+    schema:
+      type: file

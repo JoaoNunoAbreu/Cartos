@@ -14,6 +14,7 @@ import datetime
 import json 
 import os    
 from bson import json_util
+from flasgger import swag_from
 from flask_cors import CORS, cross_origin
 CORS(blueprint)
 ######
@@ -23,74 +24,8 @@ CORS(blueprint)
 @blueprint.route('/elementos', methods=['GET'])
 #@token_required
 #@login_required
+@swag_from('docs/elementos-get.yml')
 def route_template_elementos():
-    """
-    Get Elementos no Sistema.
-    ---
-    
-    definitions:
-      Elemento:
-        type: object
-        properties:
-          id:
-            type: string
-            description: Identificador único.
-          titulo:
-            type: string
-            description: Titúlo.
-          capa:
-            type: string
-            description: Capa.
-          estado:
-            type: string
-            description: Estado do conteúdo.
-          numero:
-            type: integer
-            description: Número
-          nr_paginas:
-            type: integer
-            description: Número de páginas.
-          texto:
-            type: string
-            description: Texto adicional ao Elemento.
-          observacoes:
-            type: string
-            description: Observações textuais.
-          tamanho:
-            type: integer
-            description: Tamanho do Elemento.
-          personagens:
-            type: array
-            items:
-              type: string
-            description: Nomes das personagens do Elemento.
-          serie:
-            type: string
-            description: Serie a que o Elemento pertence.
-          data_publicacao:
-            type: date
-            description: Data de Publicação.
-          colecao:
-            type: string
-            description: Coleção a que o Elemento pertence.
-          editora:
-            type: string
-            description: Editora.
-          lingua:
-            type: string
-            description: Língua.
-          tipo:
-            type: string
-            description: Tipo do Elemento.
-
-    responses:
-      200:
-        description: Informação do Index da Home.
-        schema:
-          type: array
-          items:
-            $ref: '#/definitions/Elemento'
-    """
 
     elementos = neo4j_db.run('match (x:Elemento) return x')
   
@@ -121,25 +56,9 @@ def route_template_elementos():
     return json_util.dumps(data)
 
 @blueprint.route('/<elemento>', methods=['GET'])
+@swag_from('docs/elemento-get.yml')
 def route_template_elemento(elemento):
-    """
-    Get Elemento por ID.
-    ---
-    parameters:
-      - name: elemento
-        in: elemento
-        type: string
-        required: true
 
-    responses:
-      200:
-        description: Lista com o Elemento correspondente.
-        schema:
-          type: array
-          items:
-            $ref: '#/definitions/Elemento'
-    """
-    
     el = neo4j_db.evaluate(f'match (x:Elemento) where x.id="{elemento}" return x')
     data = [ ]
     colecao = neo4j_db.evaluate(f'match (e:Elemento)-[]->(c:Colecao) where e.id="{el["id"]}" return c.designacao')
@@ -167,93 +86,29 @@ def route_template_elemento(elemento):
     return json_util.dumps(data)
 
 @blueprint.route('/editoras', methods=['GET'])
+@swag_from('docs/editoras-get.yml')
 def route_template_editoras():
-    """
-    Get Editoras.
-    ---
-    parameters:
-      - name: elemento
-        in: elemento
-        type: string
-        required: true
-
-    responses:
-      200:
-        description: Lista de Editoras.
-        schema:
-          type: array
-          items:
-            type: string
-    """
 
     editoras = neo4j_db.run('match (x:Editora) return x')
     return json_util.dumps(editoras)
 
 @blueprint.route('/colecoes', methods=['GET'])
+@swag_from('docs/colecoes-get.yml')
 def route_template_colecoes():
-    """
-    Get Coleções.
-    ---
-    parameters:
-      - name: elemento
-        in: elemento
-        type: string
-        required: true
 
-    responses:
-      200:
-        description: Lista de Coleções.
-        schema:
-          type: array
-          items:
-            type: string
-    """
-   
     colecoes = neo4j_db.run('match (x:Colecao) return x')
     return json_util.dumps(colecoes)
 
 @blueprint.route('/linguas', methods=['GET'])
+@swag_from('docs/linguas-get.yml')
 def route_template_linguas():
-    """
-    Get Línguas.
-    ---
-    parameters:
-      - name: elemento
-        in: elemento
-        type: string
-        required: true
-
-    responses:
-      200:
-        description: Lista de Línguas.
-        schema:
-          type: array
-          items:
-            type: string
-    """
 
     linguas = neo4j_db.run('match (x:Lingua) return x')
     return json_util.dumps(linguas)
 
 @blueprint.route('/tipos', methods=['GET'])
+@swag_from('docs/tipos-get.yml')
 def route_template_tipo():
-    """
-    Get Tipos.
-    ---
-    parameters:
-      - name: elemento
-        in: elemento
-        type: string
-        required: true
-
-    responses:
-      200:
-        description: Lista de Tipos.
-        schema:
-          type: array
-          items:
-            type: string
-    """
 
     tipos = neo4j_db.run('match (x:Tipo) return x')
     return json_util.dumps(tipos)
@@ -262,22 +117,8 @@ def route_template_tipo():
 @blueprint.route('/ver/<elemento>/foto', methods=['GET'])
 #@token_required
 #@login_required
+@swag_from('docs/ver-elemento-foto-get.yml')
 def route_template_ver_foto(elemento):
-    """
-    Ver foto do elemento.
-    ---
-    parameters:
-      - name: elemento
-        in: elemento
-        type: string
-        required: true
-
-    responses:
-      200:
-        description: Foto associada ao Elemento.
-        schema:
-          type: string
-    """
 
     f = elemento + ".png"
     pathPhoto = join(dirname(realpath(__file__)), 'static/pics/')
@@ -290,22 +131,8 @@ def route_template_ver_foto(elemento):
 @blueprint.route('/ver/<elemento>/video', methods=['GET'])
 #@token_required
 #@login_required
+@swag_from('docs/ver-elemento-video-get.yml')
 def route_template_ver_video(elemento):
-    """
-    Ver vídeo do elemento.
-    ---
-    parameters:
-      - name: elemento
-        in: elemento
-        type: string
-        required: true
-
-    responses:
-      200:
-        description: Vídeo associada ao Elemento.
-        schema:
-          type: string
-    """
 
     f = elemento + ".mp4"
     pathVideo = join(dirname(realpath(__file__)), 'static/pics/')
@@ -316,22 +143,8 @@ def route_template_ver_video(elemento):
         return json_util.dumps({"message":"Sem vídeo."})
 
 @blueprint.route('/ver/<elemento>/ficheiro', methods=['GET'])
+@swag_from('docs/ver-elemento-ficheiro-get.yml')
 def route_template_ver_ficheiro(elemento):
-    """
-    Ver ficheiro do elemento.
-    ---
-    parameters:
-      - name: elemento
-        in: elemento
-        type: string
-        required: true
-
-    responses:
-      200:
-        description: Ficheiro associada ao Elemento.
-        schema:
-          type: string
-    """
 
     pathC = join(dirname(realpath(__file__)), 'static/doc/')
     f = elemento + ".pdf"
@@ -344,50 +157,8 @@ def route_template_ver_ficheiro(elemento):
 @blueprint.route('/apagar/<elemento>', methods=['GET'])
 @admin_required
 #@login_required
+@swag_from('docs/apagar-elemento-get.yml')
 def route_template_apagar(elemento):
-    """
-    Apagar elemento.
-    ---
-    parameters:
-      - in: header
-        name: Authorization
-        type: string
-        required: true
-        
-      - name: elemento
-        in: path
-        type: string
-        required: true
-
-    definitions:
-      ApagarElemento:
-        type: object
-        properties:
-          id:
-            type: string
-            description: Identificador do Elemento.
-          data_publicacao:
-            type: string
-            description: Data da publicação.
-          colecao:
-            type: string
-            description: Coleção.
-          editora:
-            type: string
-            description: Editora.
-          lingua:
-            type: string
-            description: Língua.
-
-    responses:
-      200:
-        description: Retorna o sucesso/insucesso da operação.
-        schema:
-          type: array
-          items:
-            $ref: '#/definitions/ApagarElemento'
-    """
-
 
     q = f'MATCH (n:Elemento)-[r]-() where n.id="{elemento}" DELETE r'
     neo4j_db.run(q)

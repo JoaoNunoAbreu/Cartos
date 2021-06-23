@@ -1,0 +1,16 @@
+Consultar Utilizadores.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+
+responses:
+  200:
+    description: Lista de Utilizadores.
+    schema:
+      type: array
+      items:
+        $ref: '#/definitions/Utilizador'

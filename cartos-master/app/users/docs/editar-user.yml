@@ -1,0 +1,29 @@
+Editar a informação respetiva a um utilizador.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+  - name: user
+    in: user
+    type: string
+    required: true
+
+definitions:
+  EditarUtilizador:
+    type: object
+    properties:
+      user:
+        type: boolean
+        description: Existe Utilizador.
+      nome:
+        type: string
+        description: Nome do Utilizador.
+
+responses:
+  200:
+    description: Resultado da edição de utilizador
+    schema:
+      $ref: '#/definitions/EditarUtilizador'

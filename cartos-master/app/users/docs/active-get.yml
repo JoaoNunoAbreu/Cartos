@@ -1,0 +1,23 @@
+Ativar conta de um respetivo utilizador.
+---
+parameters:
+  - in: header
+    name: Authorization
+    type: string
+    required: true
+
+definitions:
+  UtilizadoresAtivos:
+    type: object
+    properties:
+      nome:
+        type: array
+        items:
+          $ref: '#/definitions/Utilizador'
+        description: Array de Utilizadores.
+
+responses:
+  200:
+    description: Lista de utilizadores ativos.
+    schema:
+      $ref: '#/definitions/UtilizadoresAtivos'
