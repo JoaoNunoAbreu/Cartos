@@ -8,6 +8,6 @@ Web platform for hosting and exploring a collection of comic books. It allows th
 * **Gonçalo Ferreira:** [goncalo-f](https://github.com/goncalo-f)
 * **João Nuno Abreu:** [JoaoNunoAbreu](https://github.com/JoaoNunoAbreu)
 
-## Supervised by:
+## Supervised by
 
 * **Orlando Belo:** [obelo@di.uminho.pt](obelo@di.uminho.pt)
